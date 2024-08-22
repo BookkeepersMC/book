@@ -18,6 +18,7 @@ local.settings.gradle
 *.ipr
 *.jar
 !gradle-wrapper.jar
+*.DS_STORE
 
 # eclipse
 .eclipse
