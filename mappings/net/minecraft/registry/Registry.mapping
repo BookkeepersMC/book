@@ -1,0 +1,36 @@
+CLASS net/minecraft/unmapped/C_tqxyjqsk net/minecraft/registry/Registry
+	METHOD keys keys (Lcom/mojang/serialization/DynamicOps;)Ljava/util/stream/Stream;
+		ARG 1 ops
+	METHOD m_akxosniq getKey ()Lnet/minecraft/unmapped/C_xhhleach;
+	METHOD m_aotfisde getLifecycle ()Lcom/mojang/serialization/Lifecycle;
+	METHOD m_blmrlzel (Lnet/minecraft/unmapped/C_cjzoxshv$C_rjzpeyec;)Lnet/minecraft/unmapped/C_cjzoxshv;
+		ARG 0 reference
+	METHOD m_cjwbheqc getKey (Ljava/lang/Object;)Ljava/util/Optional;
+		ARG 1 entry
+	METHOD m_ecfgtygn asLookup ()Lnet/minecraft/unmapped/C_vtbxyypo$C_drwjtlvl;
+	METHOD m_jouyrjiz get (Lnet/minecraft/unmapped/C_xhhleach;)Ljava/lang/Object;
+		ARG 1 key
+	METHOD m_ksueyykv getReferenceHolderLifecycle ()Lcom/mojang/serialization/Codec;
+	METHOD m_mazpxlja get (Lnet/minecraft/unmapped/C_ncpywfca;)Ljava/lang/Object;
+		ARG 1 key
+	METHOD m_nlhggctm getRegistrationInfo (Lnet/minecraft/unmapped/C_xhhleach;)Ljava/util/Optional;
+		ARG 1 key
+	METHOD m_pquqhkot holderByNameCodec ()Lcom/mojang/serialization/Codec;
+	METHOD m_pvyfqcdo getCodec ()Lcom/mojang/serialization/Codec;
+	METHOD m_qeyctvgm asHolderIdMap ()Lnet/minecraft/unmapped/C_feaetnaz;
+	METHOD m_qkhirdbw validateReference (Lnet/minecraft/unmapped/C_cjzoxshv;)Lcom/mojang/serialization/DataResult;
+		ARG 1 holder
+	METHOD m_viqiqvyl (Lnet/minecraft/unmapped/C_ncpywfca;)Lcom/mojang/serialization/DataResult;
+		ARG 1 id
+	METHOD m_vnyaisgo getOrEmpty (Lnet/minecraft/unmapped/C_ncpywfca;)Ljava/util/Optional;
+		ARG 1 id
+	METHOD m_vqpjfuha getId (Ljava/lang/Object;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 1 entry
+	METHOD m_vzcxipcd (Lnet/minecraft/unmapped/C_cjzoxshv$C_rjzpeyec;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 reference
+	METHOD m_wicxsqqn stream ()Ljava/util/stream/Stream;
+	METHOD m_zyikfshi asHolderOwner ()Lnet/minecraft/unmapped/C_hkebgttw;
+	CLASS C_dbbudibo TagsPending
+		METHOD m_lucdhycj apply ()V
+		METHOD m_pipptaec lookupHolder ()Lnet/minecraft/unmapped/C_vtbxyypo$C_drwjtlvl;
+		METHOD m_spczqdtt getKey ()Lnet/minecraft/unmapped/C_xhhleach;

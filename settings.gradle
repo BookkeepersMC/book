@@ -1,0 +1,29 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = "Quilt"
+			url = "https://maven.quiltmc.org/repository/release"
+		}
+		maven {
+			name "Notebook"
+			url "https://bookkeepersmc.github.io/m2/"
+		}
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		gradlePluginPortal()
+	}
+}
+
+// This check is done here before any plugins that may require java 21 are able to load.
+if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_21)) {
+	throw new UnsupportedOperationException("Book Mappings's buildscript requires Java 21 or higher. (current version: " + JavaVersion.current() + ")")
+}
+
+rootProject.name = "book-mappings"
+
+var localSettings = file("local.settings.gradle")
+if (localSettings.exists()) {
+	apply(from: localSettings)
+}

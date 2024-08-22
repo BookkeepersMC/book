@@ -1,0 +1,25 @@
+CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
+	METHOD m_aumcfxso getArgument (Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;
+		ARG 0 optionSet
+	METHOD m_gkmnsomg unescapeArgument (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 string
+	METHOD m_mxazyvex uuidIsValid (Ljoptsimple/OptionSpec;Ljoptsimple/OptionSet;Lorg/slf4j/Logger;)Z
+		ARG 0 optionSpec
+		ARG 1 optionSet
+		ARG 2 logger
+	METHOD m_ozvftywp isNotNullOrEmpty (Ljava/lang/String;)Z
+		ARG 0 string
+	METHOD m_rrcrxalk toOptionalString (Ljava/lang/String;)Ljava/util/Optional;
+		ARG 0 value
+	METHOD m_shcefism toOptionalInt (Ljava/lang/Integer;)Ljava/util/OptionalInt;
+		ARG 0 integer
+	METHOD m_vyozbrdc hasValidUuid (Ljoptsimple/OptionSpec;Ljoptsimple/OptionSet;Lorg/slf4j/Logger;)Z
+		ARG 0 optionSpec
+		ARG 1 optionSet
+		ARG 2 logger
+	METHOD main main ([Ljava/lang/String;)V
+		ARG 0 arguments
+	CLASS C_eserggzz
+		METHOD run run ()V
+	CLASS C_hetbuxhh
+		METHOD getPasswordAuthentication getPasswordAuthentication ()Ljava/net/PasswordAuthentication;

@@ -1,0 +1,231 @@
+{
+  // Codec
+  "com/mojang/serialization/Codec": "codec",
+  "com/mojang/serialization/Dynamic": "dynamic",
+  "com/mojang/serialization/DynamicOps": {
+    local_name: "ops",
+    fallback: [
+      "dynOps"
+    ]
+  },
+  "com/mojang/serialization/MapCodec": "codec",
+  "net/minecraft/unmapped/C_qsrmwluu": "packetCodec", // PacketCodec
+
+  // Data
+  "net/minecraft/unmapped/C_nykrdyol": "exporter", // RecipeExporter
+
+  // DFU
+  "com/mojang/datafixers/schemas/Schema": "schema",
+  "com/mojang/datafixers/DataFixer": "dataFixer",
+
+  // Brigadier
+  "com/mojang/brigadier/CommandDispatcher": "dispatcher",
+  "com/mojang/brigadier/StringReader": "reader",
+  "com/mojang/brigadier/context/CommandContext": "context",
+  "com/mojang/brigadier/suggestion/SuggestionsBuilder": "builder",
+
+  "net/minecraft/unmapped/C_pennblrk": "source", // ServerCommandSource
+
+  // Registries
+  "net/minecraft/unmapped/C_tqxyjqsk": "registry",
+  "net/minecraft/unmapped/C_xhhleach": "registryKey",
+  "net/minecraft/unmapped/C_wqxmvzdq": "registryManager", // DynamicRegistryManager
+  "net/minecraft/unmapped/C_hqoyyfco": "context", // BootstrapContext
+
+  // Client
+  "net/minecraft/unmapped/C_ayfeobid": "client", // MinecraftClient
+  "net/minecraft/unmapped/C_cnszsxvd": "matrices", // MatrixStack
+  "net/minecraft/unmapped/C_igrgeffe": "vertexConsumers", // VertexConsumerProvider
+  "net/minecraft/unmapped/C_mavozmpp": "textRenderer",
+  "net/minecraft/unmapped/C_nxnqmnng": "bufferBuilder",
+  "com/mojang/text2speech/Narrator": "narrator",
+
+  // Pos
+  "net/minecraft/unmapped/C_hynzadkk": "pos", // BlockPos
+  "net/minecraft/unmapped/C_hynzadkk$C_egqitdjk": {
+    local_name: "pos",
+    "fallback": [
+      "mutablePos"
+    ]
+  },
+  "net/minecraft/unmapped/C_ovcqqyqp": "globalPos", // GlobalPos
+
+  // Common
+  "net/minecraft/unmapped/C_rlomrsco": "random", // RandomGenerator
+  "net/minecraft/unmapped/C_xpuuihxf": "direction",
+  "net/minecraft/unmapped/C_eslcbfsq": "profiler",
+  "java/util/UUID": "uuid",
+
+  // States
+  "net/minecraft/unmapped/C_txtbiemp": { // BlockState
+    local_name: "state",
+    exclusive: true,
+    fallback: [
+      "blockState"
+    ]
+  },
+  "net/minecraft/unmapped/C_xqketiuf": { // FluidState
+    local_name: "state",
+    exclusive: true,
+    fallback: [
+      "fluidState"
+    ]
+  },
+
+  // Block
+  "net/minecraft/unmapped/C_mmxmpdoq": "block",
+  "net/minecraft/unmapped/C_jdakttms": "result", // BlockHitResult
+  "net/minecraft/unmapped/C_hgpogkhy": "type", // BlockSetType
+  "net/minecraft/unmapped/C_triydqro$C_xnkxsdfy": "settings", // AbstractBlock.Settings
+
+  // Item
+  "net/minecraft/unmapped/C_sddaxwyk": "stack", // ItemStack
+  "net/minecraft/unmapped/C_lnokcayd": { // ItemGroup
+    local_name: "group",
+    fallback: [
+      "itemGroup"
+    ]
+  },
+  "net/minecraft/unmapped/C_lnokcayd$C_wnogvxsu": "collector", // ItemGroup.ItemStackCollector
+  "net/minecraft/unmapped/C_lnokcayd$C_tndlmady": "visibility", // ItemGroup.Visibility
+
+  // Entity
+  "net/minecraft/unmapped/C_rjqjaxef": "brain",
+  "net/minecraft/unmapped/C_uzzvxofv": {
+    local_name: "reason",
+    fallback: [
+      "spawnReason"
+    ]
+  },
+
+  // Player
+  "net/minecraft/unmapped/C_jzrpycqo": { // PlayerEntity
+    local_name: "player",
+    fallback: [
+      "playerEntity"
+    ]
+  },
+  "net/minecraft/unmapped/C_mxrobsgg": { // ServerPlayerEntity
+    local_name: "player",
+    exclusive: true,
+    fallback: [
+      "playerEntity",
+      "serverPlayer",
+      "serverPlayerEntity"
+    ]
+  },
+  "net/minecraft/unmapped/C_jlopmfei": { // ClientPlayerEntity
+    local_name: "player",
+    exclusive: true,
+    fallback: [
+      "playerEntity",
+      "clientPlayer",
+      "clientPlayerEntity"
+    ]
+  },
+
+  // Resources
+  "net/minecraft/unmapped/C_tguinuvn": "resourcePack",
+  "net/minecraft/unmapped/C_tmnrpasf": "resourceManager",
+  "net/minecraft/unmapped/C_carvbxzj": { // AutoCloseableResourceManager
+    local_name: "resourceManager",
+    fallback: [
+      "autoCloseableResourceManager"
+    ]
+  },
+  "net/minecraft/unmapped/C_migzkpst": "resources", // ServerReloadableResources
+  "net/minecraft/unmapped/C_tjllhmjy": "dataPackSettings", // DataPackSettings
+
+  // Network
+  "net/minecraft/unmapped/C_idfydwco": "buf", // PacketByteBuf
+
+  // World
+  "net/minecraft/unmapped/C_cdctfzbn": "world",
+  "net/minecraft/unmapped/C_agsukcmb": { // TestableWorld
+    local_name: "world",
+    fallback: [
+      "testableWorld"
+    ]
+  },
+  "net/minecraft/unmapped/C_bdwnwhiu": { // ServerWorld
+    local_name: "world",
+    exclusive: true,
+    fallback: [
+      "serverWorld"
+    ]
+  },
+  "net/minecraft/unmapped/C_ghdnlrrw": { // ClientWorld
+    local_name: "world",
+    exclusive: true,
+    fallback: [
+      "clientWorld"
+    ]
+  },
+  "net/minecraft/unmapped/C_eemzphbi": { // WorldView
+    local_name: "world",
+    exclusive: true,
+    fallback: [
+      "worldView"
+    ]
+  },
+  "net/minecraft/unmapped/C_peaveboq": { // BlockView
+    local_name: "world",
+    exclusive: true,
+    fallback: [
+      "blockView"
+    ]
+  },
+  "net/minecraft/unmapped/C_vxzrjtdu": { // CollisionView
+    local_name: "world",
+    exclusive: true,
+    fallback: [
+      "collisionView"
+    ]
+  },
+  "net/minecraft/unmapped/C_qpninoyb": { // HeightLimitView
+    local_name: "world",
+    exclusive: true,
+    fallback: [
+      "heightLimitView"
+    ]
+  },
+  "net/minecraft/unmapped/C_xjeuupup": { // BlockRenderView
+    local_name: "world",
+    exclusive: true,
+    fallback: [
+      "blockRenderView"
+    ]
+  },
+
+  // Rendering
+  "net/minecraft/unmapped/C_dcmtgrvm": "camera", // Camera
+  "net/minecraft/unmapped/C_gjnplkfz": "modelLoader",
+  "net/minecraft/unmapped/C_sedilmty": "graphics", // GuiGraphics
+  "net/minecraft/unmapped/C_nrqwmhri": { // Unbaked Model
+    local_name: "model",
+    exclusive: true,
+    fallback: [
+      "unbakedModel"
+    ]
+  },
+  "net/minecraft/unmapped/C_nnhmhkbv": { // Baked Model
+    local_name: "model",
+    exclusive: true,
+    fallback: [
+      "bakedModel"
+    ]
+  },
+  "net/minecraft/unmapped/C_lrgsdfwv": "tracker", // DeltaTracker
+
+  // Server
+  "net/minecraft/unmapped/C_aqemmrby": "tracer",
+  "com/mojang/authlib/GameProfile": {
+    local_name: "profile",
+    fallback: [
+      "gameProfile"
+    ]
+  },
+
+  "net/minecraft/unmapped/C_ppzmqyxe": "protocol", // NetworkPhaseProtocol
+  "net/minecraft/unmapped/C_kxdobmrm": "phase", // NetworkPhase
+}

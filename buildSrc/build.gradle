@@ -1,0 +1,94 @@
+plugins {
+	id 'java'
+	id 'java-gradle-plugin'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+		name "Quilt Repositiory"
+		url "https://maven.quiltmc.org/repository/release"
+	}
+	maven {
+		name "Notebook"
+		url "https://bookkeepersmc.github.io/m2/"
+	}
+	maven {
+		name "Fabric Repository"
+		url 'https://maven.fabricmc.net'
+	}
+	maven {
+		name "Mojang"
+		url 'https://libraries.minecraft.net/'
+	}
+	// remove when ASM fix is released
+	maven {
+		url = "https://repository.ow2.org/nexus/content/repositories/snapshots/"
+	}
+	mavenLocal()
+}
+
+configurations {
+	proGuard
+}
+
+dependencies {
+	implementation(libs.commons.io)
+	implementation(libs.download.task)
+	implementation(libs.guava)
+	implementation(libs.jackson.xml)
+	implementation(libs.launchermeta.parser)
+
+	implementation(libs.bundles.enigma.full)
+	implementation(libs.tiny.remapper)
+	implementation(libs.stitch)
+	implementation(libs.bundles.unpick.full)
+	implementation(libs.mapping.io)
+	implementation(libs.javadoc.draftsman)
+
+	// Decompilers
+	implementation(libs.vineflower)
+
+	// Testing
+	testImplementation(libs.junit)
+	proGuard(libs.proguard)
+}
+
+tasks.register("inputTestJar", Jar.class) {
+	from(sourceSets.test.output) {
+		include 'book/mappings/input/**/*.class'
+	}
+
+	archiveFileName = 'test-input.jar'
+}
+
+tasks.register("inputTestObf", JavaExec.class) {
+	dependsOn 'inputTestJar'
+	mainClass = 'proguard.ProGuard'
+	classpath configurations.proGuard
+
+	if (!new File(file(System.properties['java.home']), 'jmods').exists()) {
+		println "Directory jmods does not exist in the Java home, skipping test jar obfuscation"
+		it.enabled = false
+	}
+
+	args '@src/test/resources/proguard-test.conf', '-injars', inputTestJar.archiveFile.get(),
+			'-libraryjars', '<java.home>/jmods/java.base.jmod(!**.jar;!module-info.class)',
+			'-outjars', file('build/libs/test-input-obf.jar'),
+			'-printmapping', file('build/resources/test/obf-mapping.txt')
+}
+
+test {
+	dependsOn inputTestObf
+	useJUnitPlatform()
+	enableAssertions = false
+}
+
+gradlePlugin {
+	plugins {
+		mappings {
+			id = 'mappings'
+			implementationClass = 'book.mappings.MappingsPlugin'
+		}
+	}
+}

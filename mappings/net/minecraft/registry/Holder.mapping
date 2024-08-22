@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_cjzoxshv net/minecraft/registry/Holder
+	METHOD m_ydnvjjng getValue ()Ljava/lang/Object;
+	CLASS C_dflbytmp Kind
+	CLASS C_rjzpeyec Reference

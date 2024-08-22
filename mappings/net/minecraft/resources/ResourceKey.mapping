@@ -1,0 +1,37 @@
+CLASS net/minecraft/unmapped/C_xhhleach net/minecraft/resources/ResourceKey
+	FIELD f_jevzsdmx value Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_nlfborlo INSTANCES Ljava/util/concurrent/ConcurrentMap;
+	FIELD f_olufpthr registry Lnet/minecraft/unmapped/C_ncpywfca;
+	METHOD <init> (Lnet/minecraft/unmapped/C_ncpywfca;Lnet/minecraft/unmapped/C_ncpywfca;)V
+		ARG 1 registry
+		ARG 2 value
+	METHOD m_achtcauh (Lnet/minecraft/unmapped/C_xhhleach;Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_xhhleach;
+		ARG 1 value
+	METHOD m_acppaety resourceKey ()Lnet/minecraft/unmapped/C_xhhleach;
+	METHOD m_bbzwrvpr packetCodec (Lnet/minecraft/unmapped/C_xhhleach;)Lnet/minecraft/unmapped/C_qsrmwluu;
+		ARG 0 key
+	METHOD m_fvrtwzrl create (Lnet/minecraft/unmapped/C_xhhleach;Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_xhhleach;
+		ARG 0 key
+		ARG 1 value
+	METHOD m_gzfvlawi create (Lnet/minecraft/unmapped/C_ncpywfca;Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_xhhleach;
+		ARG 0 registry
+		ARG 1 value
+	METHOD m_jjvdnjyc getValue ()Lnet/minecraft/unmapped/C_ncpywfca;
+	METHOD m_odeqnmwq isOf (Lnet/minecraft/unmapped/C_xhhleach;)Z
+		ARG 1 key
+	METHOD m_omukrpmi codec (Lnet/minecraft/unmapped/C_xhhleach;)Lcom/mojang/serialization/Codec;
+		ARG 0 key
+	METHOD m_puwkoaeq createResourceKey (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_xhhleach;
+		ARG 0 value
+	METHOD m_slcuvcqz (Lnet/minecraft/unmapped/C_xhhleach$C_gdrqkfgh;)Lnet/minecraft/unmapped/C_xhhleach;
+		ARG 0 internKey
+	METHOD m_tbhhljwv getRegistry ()Lnet/minecraft/unmapped/C_ncpywfca;
+	METHOD m_xhwzyssj (Lnet/minecraft/unmapped/C_xhhleach;Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_xhhleach;
+		ARG 1 id
+	METHOD m_yomlikvd cast (Lnet/minecraft/unmapped/C_xhhleach;)Ljava/util/Optional;
+		ARG 1 key
+	CLASS C_gdrqkfgh InternKey
+		FIELD f_arevugoo location Lnet/minecraft/unmapped/C_ncpywfca;
+		FIELD f_gcodbhyr registry Lnet/minecraft/unmapped/C_ncpywfca;
+		METHOD m_bacqpyoc location ()Lnet/minecraft/unmapped/C_ncpywfca;
+		METHOD m_iaymacgt registry ()Lnet/minecraft/unmapped/C_ncpywfca;

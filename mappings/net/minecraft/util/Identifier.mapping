@@ -1,0 +1,87 @@
+CLASS net/minecraft/unmapped/C_ncpywfca net/minecraft/util/Identifier
+	FIELD f_mkdmoqvz path Ljava/lang/String;
+	FIELD f_oqzsfwne NAMESPACE_SEPERATOR C
+	FIELD f_pupxcoog DEFAULT_NAMESPACE Ljava/lang/String;
+	FIELD f_sipmgjff CODEC Lcom/mojang/serialization/Codec;
+	FIELD f_vyokdaeu COMMAND_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_xnfsgrjc namespace Ljava/lang/String;
+	FIELD f_yljrpbez REALMS_NAMESPACE Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 namespace
+		ARG 2 path
+	METHOD compareTo compareTo (Ljava/lang/Object;)I
+		ARG 1 other
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 o
+	METHOD m_anmnhtwf ofDefault (Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 path
+	METHOD m_bkdtomxa isPathCharacterValid (C)Z
+		ARG 0 character
+	METHOD m_busiuktr withPrefix (Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 1 prefix
+	METHOD m_cnnbwbsu extendPath (Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 1 path
+	METHOD m_egmlfvuu of (Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 namespace
+		ARG 1 path
+	METHOD m_gnhdfxba toShortTranslationKey ()Ljava/lang/String;
+	METHOD m_hokecmdu isPathValid (Ljava/lang/String;)Z
+		ARG 0 path
+	METHOD m_hwomsdhy isNamespaceCharacterValid (C)Z
+		ARG 0 character
+	METHOD m_icvwyhda fromCommandInputNonEmpty (Lcom/mojang/brigadier/StringReader;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 reader
+	METHOD m_jncqetor isCharValid (C)Z
+		ARG 0 character
+	METHOD m_kuwopdmn tryParse (Ljava/lang/String;C)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 id
+		ARG 1 delimiter
+	METHOD m_kwahahgw fromCommandInput (Lcom/mojang/brigadier/StringReader;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 reader
+	METHOD m_lxrliuax validatePath (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 namespace
+		ARG 1 path
+	METHOD m_mtmkuzyt isNamespaceValud (Ljava/lang/String;)Z
+		ARG 0 namespace
+	METHOD m_mtmyhkca withPath (Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 1 path
+	METHOD m_nhedqonr toTranslationKey (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		ARG 1 prefix
+		ARG 2 suffix
+	METHOD m_nofgkkgq parse (Ljava/lang/String;C)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 id
+		ARG 1 delimiter
+	METHOD m_objfgggc getNamespace ()Ljava/lang/String;
+	METHOD m_qfesvyds parse (Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 id
+	METHOD m_qrnvqzhd readToCursor (Lcom/mojang/brigadier/StringReader;)Ljava/lang/String;
+		ARG 0 reader
+	METHOD m_ruyuqpbm ofValidated (Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 namespace
+		ARG 1 path
+	METHOD m_uptbalai toTranslationKey (Ljava/lang/String;)Ljava/lang/String;
+		ARG 1 prefix
+	METHOD m_vaxsptoa validate (Ljava/lang/String;)Lcom/mojang/serialization/DataResult;
+		ARG 0 id
+	METHOD m_warlfrkf toUnderscoreSeperatedString ()Ljava/lang/String;
+	METHOD m_wutvcxlb toTranslationKey ()Ljava/lang/String;
+	METHOD m_wxhslhfx tryParse (Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 id
+	METHOD m_ymfwdjmq validateNamespace (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 namespace
+		ARG 1 path
+	METHOD m_yyrvqafp getPath ()Ljava/lang/String;
+	METHOD m_yzofquyk withPath (Ljava/util/function/UnaryOperator;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 1 pathOp
+	METHOD m_zcrfpfxe tryValidate (Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 namespace
+		ARG 1 path
+	CLASS C_duwyvzzl Serializer
+		METHOD deserialize deserialize (Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Ljava/lang/Object;
+			ARG 1 json
+			ARG 2 type
+			ARG 3 context
+		METHOD serialize serialize (Ljava/lang/Object;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
+			ARG 1 id
+			ARG 2 type
+			ARG 3 context
