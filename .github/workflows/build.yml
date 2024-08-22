@@ -2,24 +2,20 @@ name: Build
 on: [push, pull_request]
 jobs:
   build:
-    strategy:
-      matrix:
-        java: [21]
     runs-on: ubuntu-latest
     container:
-      image: eclipse-temurin:${{ matrix.java }}
+      image: eclipse-temurin:21
       options: --user root
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: ${{ matrix.java }}
+          java-version: 21
           distribution: temurin
       - uses: gradle/wrapper-validation-action@v2
       - run: ./gradlew build javadocJar --stacktrace
       - name: Build artifacts
-        if: ${{ matrix.java == 21 }}
         continue-on-error: true
         uses: actions/upload-artifact@v3
         with:
