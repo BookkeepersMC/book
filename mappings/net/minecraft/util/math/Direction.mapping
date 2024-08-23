@@ -1,0 +1,138 @@
+CLASS net/minecraft/unmapped/C_xpuuihxf net/minecraft/util/math/Direction
+	FIELD f_abqikats name Ljava/lang/String;
+	FIELD f_aeejwnnb VERTICAL_CODEC Lcom/mojang/serialization/Codec;
+	FIELD f_bqmoexgm HORIZONTAL [Lnet/minecraft/unmapped/C_xpuuihxf;
+	FIELD f_cbbzbcev axis Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;
+	FIELD f_jqokexui idOpposite I
+	FIELD f_midvwggr VALUES [Lnet/minecraft/unmapped/C_xpuuihxf;
+	FIELD f_nxrqizwh PACKET_CODEC Lnet/minecraft/unmapped/C_qsrmwluu;
+	FIELD f_qmkvdeuo direction Lnet/minecraft/unmapped/C_xpuuihxf$C_ozjqcgqq;
+	FIELD f_wytgjiez idHorizontal I
+	FIELD f_xneestkm ALL [Lnet/minecraft/unmapped/C_xpuuihxf;
+	FIELD f_xnopevsr id I
+	FIELD f_yxdvzmgt vector Lnet/minecraft/unmapped/C_ceivtqhh;
+	FIELD f_zbhygcbw CODEC Lnet/minecraft/unmapped/C_lgkqzafw$C_nxwenkbc;
+	METHOD <init> (Ljava/lang/String;IIIILjava/lang/String;Lnet/minecraft/unmapped/C_xpuuihxf$C_ozjqcgqq;Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;Lnet/minecraft/unmapped/C_ceivtqhh;)V
+		ARG 3 id
+		ARG 4 idOpposite
+		ARG 5 idHorizontal
+		ARG 6 name
+		ARG 7 direction
+		ARG 8 axis
+		ARG 9 vector
+	METHOD m_arokrhof validateVertical (Lnet/minecraft/unmapped/C_xpuuihxf;)Lcom/mojang/serialization/DataResult;
+		ARG 0 direction
+	METHOD m_atdyqmtg getId ()I
+	METHOD m_buxxiflp getOpposite ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_cmaqxlom byId (I)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 id
+	METHOD m_dfjhoqwe fromHorizontal (I)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 value
+	METHOD m_egpdzvgz rotateXClockwise ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_ffngupha rotateXCounterclockwise ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_fsfcsxhu getDirection ()Lnet/minecraft/unmapped/C_xpuuihxf$C_ozjqcgqq;
+	METHOD m_gdxixwix rotateYCounterclockwise ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_gksmdspg random (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_hntyvpnl get (Lnet/minecraft/unmapped/C_xpuuihxf$C_ozjqcgqq;Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 direction
+		ARG 1 axis
+	METHOD m_iuvhambs getAxis ()Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;
+	METHOD m_iztsoygw getUnitVector ()Lorg/joml/Vector3f;
+	METHOD m_lxrgvhbm getOffsetY ()I
+	METHOD m_nyqvqnqv transform (Lorg/joml/Matrix4f;Lnet/minecraft/unmapped/C_xpuuihxf;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 position
+		ARG 1 direction
+	METHOD m_oqyobyjy getOffsetX ()I
+	METHOD m_osvadcjw rotateYClockwise ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_pbuextkm rotateCounterclockwise (Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 1 axis
+	METHOD m_pgajqvvm listClosest (Lnet/minecraft/unmapped/C_xpuuihxf;Lnet/minecraft/unmapped/C_xpuuihxf;Lnet/minecraft/unmapped/C_xpuuihxf;)[Lnet/minecraft/unmapped/C_xpuuihxf;
+		COMMENT Helper function that returns the 3 directions given, followed by the 3 opposite given in opposite order.
+		ARG 0 first
+		ARG 1 second
+		ARG 2 third
+	METHOD m_qkgkwquv rotateZCounterclockwise ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_qmmcdijv (Lnet/minecraft/unmapped/C_xpuuihxf;)I
+		ARG 0 direction
+	METHOD m_qnbvkhac getLookDirectionForAxis (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 entity
+		ARG 1 axis
+	METHOD m_rybsiiha getName ()Ljava/lang/String;
+	METHOD m_rzedosik from (Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;Lnet/minecraft/unmapped/C_xpuuihxf$C_ozjqcgqq;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 axis
+		ARG 1 direction
+	METHOD m_srfplate getEntityFacingOrder (Lnet/minecraft/unmapped/C_astfners;)[Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 entity
+	METHOD m_ucwgyusq getShuffledDirections (Lnet/minecraft/unmapped/C_rlomrsco;)Ljava/util/Collection;
+		ARG 0 random
+	METHOD m_veocfmwg pointsTo (F)Z
+		COMMENT {@return whether the given yaw points to the direction}
+		COMMENT
+		COMMENT @implNote This returns whether the yaw can make an acute angle with the direction.
+		COMMENT
+		COMMENT <p>This always returns {@code false} for vertical directions.
+		ARG 1 yaw
+	METHOD m_vyhskrab getOffsetZ ()I
+	METHOD m_wstyzrap (Lnet/minecraft/unmapped/C_xpuuihxf;)I
+		ARG 0 direction
+	METHOD m_xwgdebbi getRotationQuaternion ()Lorg/joml/Quaternionf;
+	METHOD m_ydwhfihm rotateClockwise (Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 1 axis
+	METHOD m_yjupawxt rotateZClockwise ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_ylzomeem asRotation ()F
+	METHOD m_zdhgkzlo stream ()Ljava/util/stream/Stream;
+	METHOD m_zdlrznbn fromRotation (D)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 rotation
+	METHOD m_zlqwwplb getHorizontal ()I
+	METHOD m_zriikhwb byName (Ljava/lang/String;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 0 name
+	CLASS C_ozjqcgqq AxisDirection
+		FIELD f_jbvalhqs description Ljava/lang/String;
+		FIELD f_xztwtwav offset I
+		METHOD <init> (Ljava/lang/String;IILjava/lang/String;)V
+			ARG 3 offset
+			ARG 4 description
+		METHOD m_kptehkfu getDescription ()Ljava/lang/String;
+		METHOD m_kszuosmd getOpposite ()Lnet/minecraft/unmapped/C_xpuuihxf$C_ozjqcgqq;
+		METHOD m_tgamfeqr offset ()I
+	CLASS C_rmpfouoz Axis
+		FIELD f_fpqfqffn CODEC Lnet/minecraft/unmapped/C_lgkqzafw$C_nxwenkbc;
+		FIELD f_peolenrj name Ljava/lang/String;
+		FIELD f_qzffmhel VALUES [Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;
+		METHOD <init> (Ljava/lang/String;ILjava/lang/String;)V
+			ARG 3 name
+		METHOD m_avmpldsj choose (DDD)D
+			ARG 1 x
+			ARG 3 y
+			ARG 5 z
+		METHOD m_hfqxfgee fromName (Ljava/lang/String;)Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;
+			ARG 0 name
+		METHOD m_jwnubmio isVertical ()Z
+		METHOD m_qewftacv getName ()Ljava/lang/String;
+		METHOD m_vfobospg choose (III)I
+			ARG 1 x
+			ARG 2 y
+			ARG 3 z
+		METHOD m_xfsvouev isHorizontal ()Z
+		METHOD m_xipigoyp pickRandomAxis (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;
+			ARG 0 random
+		METHOD m_xlbqghgy getType ()Lnet/minecraft/unmapped/C_xpuuihxf$C_zfjpudyv;
+		METHOD test test (Ljava/lang/Object;)Z
+			ARG 1 direction
+	CLASS C_zfjpudyv Type
+		FIELD f_jcvbkhmp axisArray [Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;
+		FIELD f_sdaumemt facingArray [Lnet/minecraft/unmapped/C_xpuuihxf;
+		METHOD <init> (Ljava/lang/String;I[Lnet/minecraft/unmapped/C_xpuuihxf;[Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;)V
+			ARG 3 facingArray
+			ARG 4 axisArray
+		METHOD iterator iterator ()Ljava/util/Iterator;
+		METHOD m_cydiecbf randomAxis (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;
+			ARG 1 random
+		METHOD m_eiwuurte copyShuffled (Lnet/minecraft/unmapped/C_rlomrsco;)Ljava/util/List;
+			ARG 1 random
+		METHOD m_fxxresix length ()I
+		METHOD m_kirapbhi stream ()Ljava/util/stream/Stream;
+		METHOD m_pmjuahoy random (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_xpuuihxf;
+			ARG 1 random
+		METHOD test test (Ljava/lang/Object;)Z
+			ARG 1 direction

@@ -1,0 +1,10 @@
+CLASS net/minecraft/unmapped/C_mavglqbj net/minecraft/server/dedicated/DedicatedServer
+	METHOD m_ahwiflxu getProperties ()Lnet/minecraft/unmapped/C_kefepfwh;
+	METHOD m_buqrlcno getLevelName ()Ljava/lang/String;
+	METHOD m_eetxphqc getPlugins ()Ljava/lang/String;
+	METHOD m_jnroiedb getMotd ()Ljava/lang/String;
+	METHOD m_mfpuqxhf getPort ()I
+	METHOD m_reyrvsjy getHostname ()Ljava/lang/String;
+	METHOD m_wfbdaffg executeRconCommand (Ljava/lang/String;)Ljava/lang/String;
+		ARG 1 command
+	METHOD m_xturscpm getPlayerNames ()[Ljava/lang/String;

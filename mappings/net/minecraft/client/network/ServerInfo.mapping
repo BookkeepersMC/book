@@ -1,0 +1,64 @@
+CLASS net/minecraft/unmapped/C_xotldzgg net/minecraft/client/network/ServerInfo
+	COMMENT The information of a server entry in the list of servers available in
+	COMMENT the multiplayer screen from the menu. The list of these servers is
+	COMMENT stored in the {@code servers.dat} file within the client game directory.
+	FIELD f_ccovbjyf players Lnet/minecraft/unmapped/C_bwttende$C_rjrbzqim;
+	FIELD f_eupavevc serverType Lnet/minecraft/unmapped/C_xotldzgg$C_ypdnyamw;
+	FIELD f_jjipwpuj PING_TIMEOUT I
+	FIELD f_mdiurrlz playerListSummary Ljava/util/List;
+	FIELD f_mhqyygsj label Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_mwumxqyg ping J
+	FIELD f_nzgnxtsb protocolVersion I
+	FIELD f_nzwrnsaw address Ljava/lang/String;
+	FIELD f_rnvkhkil favicon [B
+	FIELD f_sjhcpfte version Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_sodyeuzw resourcePackPolicy Lnet/minecraft/unmapped/C_xotldzgg$C_jaeepxbv;
+	FIELD f_udzwhvfj result Lnet/minecraft/unmapped/C_xotldzgg$C_odxprzma;
+	FIELD f_uyqyzmzi name Ljava/lang/String;
+	FIELD f_zcrddhkf playerCountLabel Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_gnaixzmz getServerType ()Lnet/minecraft/unmapped/C_xotldzgg$C_ypdnyamw;
+	METHOD m_ijmgdohe setFavicon ([B)V
+		ARG 1 favicon
+	METHOD m_ilxbxxlb getPingResult ()Lnet/minecraft/unmapped/C_xotldzgg$C_odxprzma;
+	METHOD m_kiyulysu isRealm ()Z
+	METHOD m_ktfqzyqf getFavicon ()[B
+	METHOD m_mgdrmoly toNbt ()Lnet/minecraft/unmapped/C_hhlwcnih;
+	METHOD m_ntjhtcjm copyWithSettingsFrom (Lnet/minecraft/unmapped/C_xotldzgg;)V
+		ARG 1 serverInfo
+	METHOD m_rvsteyeu setPingResult (Lnet/minecraft/unmapped/C_xotldzgg$C_odxprzma;)V
+		ARG 1 pingResult
+	METHOD m_tpvlinmq setResourcePackPolicy (Lnet/minecraft/unmapped/C_xotldzgg$C_jaeepxbv;)V
+		COMMENT Sets the resource pack policy on this server.
+		COMMENT
+		COMMENT <p>This is called when a user has responded to the prompt on whether to
+		COMMENT accept server resource packs from this server in the future.
+		ARG 1 policy
+	METHOD m_vlebsryp isLocal ()Z
+	METHOD m_whriojwn decodeServerFavicon ([B)[B
+		ARG 0 encoded
+	METHOD m_wtyyxnwz fromNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)Lnet/minecraft/unmapped/C_xotldzgg;
+		ARG 0 root
+	METHOD m_zimwwqts copyFrom (Lnet/minecraft/unmapped/C_xotldzgg;)V
+		ARG 1 serverInfo
+	METHOD m_zkpawdmx getResourcePackPolicy ()Lnet/minecraft/unmapped/C_xotldzgg$C_jaeepxbv;
+		COMMENT {@return the policy on resource packs sent by this server}
+	CLASS C_jaeepxbv ResourcePackPolicy
+		COMMENT The policy of the client when this server sends a {@linkplain
+		COMMENT net.minecraft.network.packet.s2c.common.AddResourcePackS2CPacket server
+		COMMENT resource pack}.
+		COMMENT
+		COMMENT @see ServerInfo#getResourcePackPolicy()
+		FIELD f_aspctper name Lnet/minecraft/unmapped/C_rdaqiwdt;
+		FIELD f_feuqfuap PROMPT Lnet/minecraft/unmapped/C_xotldzgg$C_jaeepxbv;
+			COMMENT Opens a screen on whether to always accept or reject resource packs from
+			COMMENT this server for the current pack or any pack in the future.
+		FIELD f_keyhdznt ENABLED Lnet/minecraft/unmapped/C_xotldzgg$C_jaeepxbv;
+			COMMENT Always accepts the resource pack and starts downloading it.
+		FIELD f_ocgzceev RESOURCE_PACK_POLICIES [Lnet/minecraft/unmapped/C_xotldzgg$C_jaeepxbv;
+		FIELD f_svhtnmlj DISABLED Lnet/minecraft/unmapped/C_xotldzgg$C_jaeepxbv;
+			COMMENT Always rejects the resource pack.
+		METHOD <init> (Ljava/lang/String;ILjava/lang/String;)V
+			ARG 3 name
+		METHOD m_wccufzll getName ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	CLASS C_odxprzma PingResult
+	CLASS C_ypdnyamw ServerType

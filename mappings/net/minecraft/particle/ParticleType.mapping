@@ -1,0 +1,5 @@
+CLASS net/minecraft/unmapped/C_qlzoaopu net/minecraft/particle/ParticleType
+	FIELD f_nrpskovg alwaysShow Z
+	METHOD m_jqmwpcoc shouldAlwaysSpawn ()Z
+	METHOD m_naxpwsjt getCodec ()Lcom/mojang/serialization/MapCodec;
+	METHOD m_vpwysfvm getPacketCodec ()Lnet/minecraft/unmapped/C_qsrmwluu;

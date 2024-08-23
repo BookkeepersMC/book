@@ -1,0 +1,74 @@
+CLASS net/minecraft/unmapped/C_jtheqbzk net/minecraft/command/argument/ScoreHolderArgumentType
+	FIELD f_aejgdblf EMPTY_SCORE_HOLDER_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_fjrofxas SUGGESTION_PROVIDER Lcom/mojang/brigadier/suggestion/SuggestionProvider;
+	FIELD f_hpqthetw EXAMPLES Ljava/util/Collection;
+	FIELD f_xiltcghp multiple Z
+	METHOD <init> (Z)V
+		ARG 1 multiple
+	METHOD getExamples getExamples ()Ljava/util/Collection;
+	METHOD m_auogzbmx getScoreHolder (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Lnet/minecraft/unmapped/C_hswmfudr;
+		ARG 0 context
+		ARG 1 name
+	METHOD m_bdbnooho scoreHolders ()Lnet/minecraft/unmapped/C_jtheqbzk;
+	METHOD m_gjpwdxar scoreHolder ()Lnet/minecraft/unmapped/C_jtheqbzk;
+	METHOD m_hivkcutg (Lcom/mojang/brigadier/context/CommandContext;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)V
+		ARG 1 builder
+	METHOD m_imaxcwoj getScoreHolders (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Ljava/util/Collection;
+		COMMENT {@return names of all score holders selected by the given argument}.
+		COMMENT Additionally disallows use of the wildcard symbol {@code *}.
+		COMMENT
+		COMMENT @throws com.mojang.brigadier.exceptions.CommandSyntaxException if no entities were matched by the argument value selector or wildcard was used
+		ARG 0 context
+			COMMENT context of the command to retrieve the argument from
+		ARG 1 name
+			COMMENT name of the argument to retrieve
+	METHOD m_jeblrdpp (Lcom/mojang/brigadier/context/CommandContext;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 context
+		ARG 1 builder
+	METHOD m_jghjaqcj (Ljava/util/List;Lnet/minecraft/unmapped/C_pennblrk;Ljava/util/function/Supplier;)Ljava/util/Collection;
+		ARG 1 source
+		ARG 2 strings
+	METHOD m_qvsvyhiv getScoreHolders (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;Ljava/util/function/Supplier;)Ljava/util/Collection;
+		COMMENT {@return names of all score holders selected by the given argument}.
+		COMMENT
+		COMMENT @throws com.mojang.brigadier.exceptions.CommandSyntaxException if no entities were matched by the argument value selector or wildcard was used and {@code wildcardValue} was empty
+		ARG 0 context
+			COMMENT context of the command to retrieve the argument from
+		ARG 1 name
+			COMMENT name of the argument to retrieve
+		ARG 2 wildcardValue
+			COMMENT names to return if the argument value was a wildcard ({@code *})}
+	METHOD m_rguimnzm parse (Lcom/mojang/brigadier/StringReader;Z)Lnet/minecraft/unmapped/C_jtheqbzk$C_keizypyt;
+	METHOD m_vrspzrva (Ljava/lang/String;Ljava/util/List;Lnet/minecraft/unmapped/C_pennblrk;Ljava/util/function/Supplier;)Ljava/util/Collection;
+		ARG 3 strings
+	METHOD m_xnumnlaa getScoreHoldersWithGlobalWildcard (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Ljava/util/Collection;
+		COMMENT {@return names of all score holders selected by the given argument, or all known players if wildcard symbol {@code *} was used}.
+		COMMENT
+		COMMENT @throws com.mojang.brigadier.exceptions.CommandSyntaxException if no entities were matched by the argument value selector
+		ARG 0 context
+			COMMENT context of the command to retrieve the argument from
+		ARG 1 name
+			COMMENT name of the argument to retrieve
+	METHOD m_yfzfzdxa (Ljava/util/UUID;Ljava/util/List;Lnet/minecraft/unmapped/C_pennblrk;Ljava/util/function/Supplier;)Ljava/util/Collection;
+		ARG 3 strings
+	METHOD m_yswlqmbz (Lnet/minecraft/unmapped/C_pennblrk;Ljava/util/function/Supplier;)Ljava/util/Collection;
+		ARG 0 source
+		ARG 1 strings
+	METHOD parse parse (Lcom/mojang/brigadier/StringReader;)Ljava/lang/Object;
+		ARG 1 reader
+	METHOD parse (Lcom/mojang/brigadier/StringReader;Ljava/lang/Object;)Ljava/lang/Object;
+		ARG 2 source
+	CLASS C_dsrdzzfp Info
+		FIELD f_fwoxdwvi FLAG_MULTIPLE B
+		CLASS C_svvhexwk Template
+			FIELD f_moyipebz multiple Z
+			METHOD <init> (Lnet/minecraft/unmapped/C_jtheqbzk$C_dsrdzzfp;Z)V
+				ARG 2 multiple
+	CLASS C_imjmhjgh SelectorScoreHolder
+		FIELD f_qpxnwqlq selector Lnet/minecraft/unmapped/C_nbqdyigm;
+		METHOD <init> (Lnet/minecraft/unmapped/C_nbqdyigm;)V
+			ARG 1 selector
+	CLASS C_keizypyt ScoreHolder
+		METHOD getNames getNames (Lnet/minecraft/unmapped/C_pennblrk;Ljava/util/function/Supplier;)Ljava/util/Collection;
+			ARG 1 source
+			ARG 2 strings

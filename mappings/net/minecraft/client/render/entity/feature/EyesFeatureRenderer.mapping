@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_oazuphju net/minecraft/client/render/entity/feature/EyesFeatureRenderer
+	METHOD m_gbnukvhn getEyesLayer ()Lnet/minecraft/unmapped/C_tizlwnnv;

@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_nriknjji net/minecraft/datafixer/fix/EntityBrushableBlockFieldsRenameFix
+	METHOD m_zrjghjnz renameFields (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/Dynamic;

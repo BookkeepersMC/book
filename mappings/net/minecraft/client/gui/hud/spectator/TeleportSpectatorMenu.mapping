@@ -1,0 +1,14 @@
+CLASS net/minecraft/unmapped/C_nhxcfbkg net/minecraft/client/gui/hud/spectator/TeleportSpectatorMenu
+	FIELD f_ajxcvery TELEPORT_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_iiaduswf TELEPORT Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_mfrdbcoi ORDERING Ljava/util/Comparator;
+	FIELD f_rtnaojfz PROMPT Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_vgtlhfsg elements Ljava/util/List;
+	METHOD <init> (Ljava/util/Collection;)V
+		ARG 1 entries
+	METHOD m_ggmalgeu (Lnet/minecraft/unmapped/C_rdnfmxue;)Ljava/util/UUID;
+		ARG 0 a
+	METHOD m_gldnclxo (Lnet/minecraft/unmapped/C_rdnfmxue;)Lnet/minecraft/unmapped/C_gwvsqmde;
+		ARG 0 entry
+	METHOD m_lisljwtu (Lnet/minecraft/unmapped/C_rdnfmxue;)Z
+		ARG 0 entry

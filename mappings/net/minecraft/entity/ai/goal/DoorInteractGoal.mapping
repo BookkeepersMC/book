@@ -1,0 +1,12 @@
+CLASS net/minecraft/unmapped/C_zmeaozjb net/minecraft/entity/ai/goal/DoorInteractGoal
+	FIELD f_bpwqykql offsetZ F
+	FIELD f_luzglgsu doorValid Z
+	FIELD f_mhhbxdjd shouldStop Z
+	FIELD f_ublspygo offsetX F
+	FIELD f_uhtgkrdi doorPos Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_uzrtbxrp mob Lnet/minecraft/unmapped/C_dxkfswlz;
+	METHOD <init> (Lnet/minecraft/unmapped/C_dxkfswlz;)V
+		ARG 1 mob
+	METHOD m_avbminqj setDoorOpen (Z)V
+		ARG 1 open
+	METHOD m_rautnxig isDoorOpen ()Z

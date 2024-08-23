@@ -1,0 +1,34 @@
+CLASS net/minecraft/unmapped/C_brvrbzqh net/minecraft/entity/ai/brain/sensor/Sensor
+	COMMENT A sensor can update memories over time in a brain. The sensor's computation
+	COMMENT replaces that of individual tasks, so that it is more efficient than the goal
+	COMMENT system.
+	COMMENT
+	COMMENT @see net.minecraft.entity.ai.brain.Brain#sensors
+	FIELD f_avedcbxv ATTACKABLE_TARGET_PREDICATE_IGNORE_VISIBILITY Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_bfcyfafb TARGET_PREDICATE_IGNORE_DISTANCE_SCALING Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_cntwatpt TARGET_PREDICATE Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_dadgqjbx senseInterval I
+	FIELD f_eigjameu RANDOM Lnet/minecraft/unmapped/C_rlomrsco;
+	FIELD f_gdnpaauu lastSenseTime J
+	FIELD f_hsvrjsuq ATTACKABLE_TARGET_PREDICATE_IGNORE_DISTANCE_SCALING Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_kfqocqmk DEFAULT_RUN_TIME I
+	FIELD f_olgwztxk ATTACKABLE_TARGET_PREDICATE_IGNORE_VISIBILITY_OR_DISTANCE_SCALING Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_savrjxrj ATTACKABLE_TARGET_PREDICATE Lnet/minecraft/unmapped/C_cjtyhinh;
+	METHOD <init> (I)V
+		ARG 1 senseInterval
+	METHOD m_dzzsgvsj tick (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_usxaxydn;)V
+		ARG 1 world
+		ARG 2 entity
+	METHOD m_namfjgwr testAttackableTargetPredicateIgnoreVisibility (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 entity
+		ARG 1 target
+	METHOD m_pjqiwcnh testTargetPredicate (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 entity
+		ARG 1 target
+	METHOD m_rtpssfaw testAttackableTargetPredicate (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 entity
+		ARG 1 target
+	METHOD m_ssofdmup sense (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_usxaxydn;)V
+		ARG 1 world
+		ARG 2 entity
+	METHOD m_ttqnpjnq getOutputMemoryModules ()Ljava/util/Set;

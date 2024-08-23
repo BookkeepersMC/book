@@ -1,0 +1,44 @@
+CLASS net/minecraft/unmapped/C_efrtubbp net/minecraft/screen/LoomScreenHandler
+	FIELD f_apvqdpus context Lnet/minecraft/unmapped/C_gsmfcjha;
+	FIELD f_autcieqv dyeSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_bjgbhqxl output Lnet/minecraft/unmapped/C_pjtstjoq;
+	FIELD f_fpbrxmox bannerSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_jmepxtwk PATTERN_NOT_SET I
+	FIELD f_jowwbshy input Lnet/minecraft/unmapped/C_pjtstjoq;
+	FIELD f_kslgnajy selectablePatterns Ljava/util/List;
+	FIELD f_nawvguvu lastTakeResultTime J
+	FIELD f_phiyualh HOTBAR_SLOTS_END I
+	FIELD f_piwunuqb HOTBAR_SLOTS_START I
+	FIELD f_pmjsvhms INVENTORY_SLOTS_START I
+	FIELD f_pwdinztm selectedPattern Lnet/minecraft/unmapped/C_xzbkunds;
+	FIELD f_qjfbdhvi inventoryChangeListener Ljava/lang/Runnable;
+	FIELD f_svkwlcol patternSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_trvhyfwg outputSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_zrkrvthh INVENTORY_SLOTS_END I
+	METHOD <init> (ILnet/minecraft/unmapped/C_sxzqocrm;)V
+		ARG 1 syncId
+		ARG 2 playerInventory
+	METHOD <init> (ILnet/minecraft/unmapped/C_sxzqocrm;Lnet/minecraft/unmapped/C_gsmfcjha;)V
+		ARG 1 syncId
+		ARG 2 playerInventory
+		ARG 3 context
+	METHOD m_dhhtnrkq isPatternIndexValid (I)Z
+		ARG 1 index
+	METHOD m_dijpweio getSelectedPattern ()I
+	METHOD m_fmvrlpip (Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;)V
+		ARG 2 world
+		ARG 3 pos
+	METHOD m_hvvpvzhf setInventoryChangeListener (Ljava/lang/Runnable;)V
+		ARG 1 inventoryChangeListener
+	METHOD m_mvjhovaj getDyeSlot ()Lnet/minecraft/unmapped/C_nhvqfffd;
+	METHOD m_sgwvwlom getSelectablePatterns ()Ljava/util/List;
+	METHOD m_sjxodipu getOutputSlot ()Lnet/minecraft/unmapped/C_nhvqfffd;
+	METHOD m_tqiaxmlu updateOutputSlot (Lnet/minecraft/unmapped/C_cjzoxshv;)V
+		ARG 1 pattern
+	METHOD m_tzybzuvc getBannerSlot ()Lnet/minecraft/unmapped/C_nhvqfffd;
+	METHOD m_uczgxwzl getPatternsFor (Lnet/minecraft/unmapped/C_sddaxwyk;)Ljava/util/List;
+	METHOD m_xakkfvvv getPatternSlot ()Lnet/minecraft/unmapped/C_nhvqfffd;
+	CLASS C_ntobwfpp
+		METHOD m_msqukbsc (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;)V
+			ARG 1 world
+			ARG 2 pos

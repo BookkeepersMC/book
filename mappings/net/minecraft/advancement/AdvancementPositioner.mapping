@@ -1,0 +1,39 @@
+CLASS net/minecraft/unmapped/C_dqdihuga net/minecraft/advancement/AdvancementPositioner
+	FIELD f_aaneqeqd optionalLast Lnet/minecraft/unmapped/C_dqdihuga;
+	FIELD f_calsoptt row F
+	FIELD f_gfccegwd previousSibling Lnet/minecraft/unmapped/C_dqdihuga;
+	FIELD f_ovvtwznd relativeRowInSiblings F
+	FIELD f_prctiroq children Ljava/util/List;
+	FIELD f_rivxclan parent Lnet/minecraft/unmapped/C_dqdihuga;
+	FIELD f_tqpltjrh substituteChild Lnet/minecraft/unmapped/C_dqdihuga;
+	FIELD f_wuldntie node Lnet/minecraft/unmapped/C_seqaydby;
+	FIELD f_xiqyqyaz shift F
+	FIELD f_xwpswyow depth I
+	FIELD f_youqvfcv change F
+	FIELD f_zpiioglf childrenSize I
+	METHOD m_azffbwnh pushDown (Lnet/minecraft/unmapped/C_dqdihuga;F)V
+		ARG 1 positioner
+		ARG 2 extraRowDistance
+	METHOD m_bpnhnqkv calculateRecursively ()V
+	METHOD m_bqjokrwq getFirstChild ()Lnet/minecraft/unmapped/C_dqdihuga;
+	METHOD m_ctfqejrs onFinishChildrenCalculation ()V
+	METHOD m_hxnnbkjr increaseRowRecursively (F)V
+		ARG 1 deltaRow
+	METHOD m_ihadftgm onFinishCalculation (Lnet/minecraft/unmapped/C_dqdihuga;)Lnet/minecraft/unmapped/C_dqdihuga;
+		ARG 1 last
+	METHOD m_iwnxvukg getLastChild ()Lnet/minecraft/unmapped/C_dqdihuga;
+	METHOD m_jpeohigz (Lnet/minecraft/unmapped/C_bvqakncm;)V
+		ARG 1 display
+	METHOD m_lihmajuz findMinRowRecursively (FIF)F
+		ARG 1 deltaRow
+		ARG 2 depth
+		ARG 3 minRow
+	METHOD m_oeewhpnq getAncestor (Lnet/minecraft/unmapped/C_dqdihuga;Lnet/minecraft/unmapped/C_dqdihuga;)Lnet/minecraft/unmapped/C_dqdihuga;
+		ARG 1 potentialAncestor
+		ARG 2 defaultAncestor
+	METHOD m_tkrkvrbe apply ()V
+	METHOD m_upvmgssi arrangeForTree (Lnet/minecraft/unmapped/C_seqaydby;)V
+		ARG 0 root
+	METHOD m_xuurhqjn findChildRecursively (Lnet/minecraft/unmapped/C_seqaydby;Lnet/minecraft/unmapped/C_dqdihuga;)Lnet/minecraft/unmapped/C_dqdihuga;
+		ARG 1 node
+		ARG 2 lastChild

@@ -1,0 +1,256 @@
+CLASS net/minecraft/unmapped/C_vorddnax net/minecraft/item/Item
+	FIELD f_abyetwgs BLOCK_ITEMS Ljava/util/Map;
+	FIELD f_bkclyjsj MAX_DURABILITY_BAR_WIDTH I
+	FIELD f_cmbphknz components Lnet/minecraft/unmapped/C_kouhnfig;
+	FIELD f_hqzbeglm requiredFlags Lnet/minecraft/unmapped/C_czxxrbcp;
+	FIELD f_jphyibzg LOGGER Lorg/slf4j/Logger;
+	FIELD f_kdmqzdxr translationKey Ljava/lang/String;
+	FIELD f_lfoqoljh recipeRemainder Lnet/minecraft/unmapped/C_vorddnax;
+	FIELD f_nucbkqeo BASE_ATTACK_SPEED Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_puurvgcx BASE_ATTACK_DAMAGE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_rxraouwr builtInRegistryHolder Lnet/minecraft/unmapped/C_cjzoxshv$C_rjzpeyec;
+	FIELD f_vmipucxo ABSOLUTE_MAX_COUNT I
+	FIELD f_vwakrgmw DEFAULT_MAX_COUNT I
+	METHOD <init> (Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;)V
+		ARG 1 settings
+	METHOD m_bdsymcbv getName ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_bhfktmca getAttackDamage (Lnet/minecraft/unmapped/C_astfners;FLnet/minecraft/unmapped/C_sbxfkpyv;)F
+		ARG 1 target
+		ARG 2 damage
+		ARG 3 damageSource
+	METHOD m_ckolblsl onCraft (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_cdctfzbn;)V
+		COMMENT Called when the item is made by crafting, smelting, smithing, etc.
+	METHOD m_cnsoybmp postMine (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 1 stack
+		ARG 2 world
+		ARG 3 state
+		ARG 4 pos
+		ARG 5 miner
+	METHOD m_cqkbztpf getTooltipData (Lnet/minecraft/unmapped/C_sddaxwyk;)Ljava/util/Optional;
+		ARG 1 stack
+	METHOD m_dgdssmij fromBlock (Lnet/minecraft/unmapped/C_mmxmpdoq;)Lnet/minecraft/unmapped/C_vorddnax;
+		COMMENT @deprecated Please use {@link Block#asItem}
+		ARG 0 block
+	METHOD m_dnwybntd isCorrectForDrops (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_txtbiemp;)Z
+		COMMENT Determines whether this item can be used as a suitable tool for mining the specified block.
+		COMMENT Depending on block implementation, when combined together, the correct item and block may achieve a better mining speed and yield
+		COMMENT drops that would not be obtained when mining otherwise.
+		COMMENT <p>
+		COMMENT Note that this is not the <b>only</b> way to achieve "effectiveness" when mining.
+		COMMENT Other items, such as shears on string, may use their own logic
+		COMMENT and calls to this method might not return a value consistent to this rule for those items.
+		ARG 2 state
+	METHOD m_dzfzcxuk isItemBarVisible (Lnet/minecraft/unmapped/C_sddaxwyk;)Z
+		ARG 1 stack
+	METHOD m_dzyyhvup getItemBarStep (Lnet/minecraft/unmapped/C_sddaxwyk;)I
+		ARG 1 stack
+	METHOD m_ectuffur onItemEntityDestroyed (Lnet/minecraft/unmapped/C_uqpzijng;)V
+		ARG 1 entity
+	METHOD m_fofdychq hasRecipeRemainder ()Z
+		COMMENT Checks if this item has a remainder item that is left behind when used as a crafting ingredient.
+	METHOD m_fwxnsuhn onCraftByPlayer (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_jzrpycqo;)V
+		COMMENT Called when a player acquires the item by crafting, smelting, smithing, etc.
+		ARG 1 stack
+		ARG 2 world
+		ARG 3 player
+	METHOD m_gtcfvxxg isNetworkSynced ()Z
+	METHOD m_hsttveiz canRepair (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_sddaxwyk;)Z
+		ARG 1 stack
+		ARG 2 ingredient
+	METHOD m_hwkxajsh onStoppedUsing (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_usxaxydn;I)V
+		ARG 1 stack
+		ARG 2 world
+		ARG 3 user
+		ARG 4 remainingUseTicks
+	METHOD m_hwznhtnf getUseTicks (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_usxaxydn;)I
+		ARG 2 entity
+	METHOD m_inqbslnb useOnEntity (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_laxmzoqs;)Lnet/minecraft/unmapped/C_ozuepbyj;
+		ARG 1 stack
+		ARG 2 user
+		ARG 3 entity
+		ARG 4 hand
+	METHOD m_jbvnrizt postDamageEntity (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)V
+		COMMENT Called when a {@link LivingEntity} hits another {@link LivingEntity}
+		COMMENT
+		COMMENT @see ItemStack#postDamageEntity
+		ARG 2 target
+		ARG 3 attacker
+	METHOD m_jcukmzxf getBreakSound ()Lnet/minecraft/unmapped/C_avavozay;
+	METHOD m_knbnsgbn finishUsing (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_usxaxydn;)Lnet/minecraft/unmapped/C_sddaxwyk;
+		ARG 1 stack
+		ARG 2 world
+		ARG 3 user
+	METHOD m_lthgnjiq getDefaultStack ()Lnet/minecraft/unmapped/C_sddaxwyk;
+	METHOD m_mtceqnlj useOnBlock (Lnet/minecraft/unmapped/C_yyklzime;)Lnet/minecraft/unmapped/C_ozuepbyj;
+		COMMENT Called when an item is used on a block.
+		COMMENT
+		COMMENT <p>This method is called on both the logical client and logical server, so take caution when using this method.
+		COMMENT The logical side can be checked using {@link net.minecraft.world.World#isClient() context.getWorld().isClient()}.
+		COMMENT
+		COMMENT @return an action result that specifies if using the item on a block was successful.
+		ARG 1 context
+			COMMENT the usage context
+	METHOD m_mvuvxzgn usageTick (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_sddaxwyk;I)V
+		ARG 1 world
+		ARG 2 user
+		ARG 3 stack
+		ARG 4 remainingUseTicks
+	METHOD m_nczseldo canBeNested ()Z
+		COMMENT @return true if the item can be placed inside of shulker boxes or bundles.
+	METHOD m_nstqircw getMiningSpeedMultiplier (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_txtbiemp;)F
+		ARG 1 stack
+		ARG 2 state
+	METHOD m_nugtdlpo getBuiltInRegistryHolder ()Lnet/minecraft/unmapped/C_cjzoxshv$C_rjzpeyec;
+	METHOD m_pfwgoldc onClickedOnOther (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_nhvqfffd;Lnet/minecraft/unmapped/C_qcuteihm;Lnet/minecraft/unmapped/C_jzrpycqo;)Z
+		COMMENT Called when an {@link ItemStack} of this item is placed on another {@link ItemStack} in a slot.
+		COMMENT
+		COMMENT @see ItemStack#onClickedOnOther
+		COMMENT @see #onClicked
+		COMMENT @return whether an action was performed
+		ARG 1 thisStack
+		ARG 2 otherSlot
+		ARG 3 clickType
+		ARG 4 player
+	METHOD m_pktzlvtx onClicked (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_nhvqfffd;Lnet/minecraft/unmapped/C_qcuteihm;Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_xkkpnyvk;)Z
+		COMMENT Called when another {@link ItemStack} is placed on an {@link ItemStack} of this item.
+		COMMENT
+		COMMENT @see ItemStack#onClicked
+		COMMENT @see #onClickedOnOther
+		COMMENT @return whether an action was performed
+		ARG 1 thisStack
+		ARG 2 otherStack
+		ARG 3 thisSlot
+		ARG 4 clickType
+		ARG 5 player
+		ARG 6 cursorStackReference
+	METHOD m_plxsgnqi postHit (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		COMMENT @return {@code true} if the hit should count as a usage of the item, or {@code false} otherwise
+		ARG 1 stack
+		ARG 2 target
+		ARG 3 attacker
+	METHOD m_pppzvkhc hasGlint (Lnet/minecraft/unmapped/C_sddaxwyk;)Z
+		COMMENT Checks if the glint effect should be applied when the item is rendered.
+		COMMENT
+		COMMENT <p>By default, returns true if the item has enchantments.
+		ARG 1 stack
+	METHOD m_proceewu getMaxStackSize ()I
+	METHOD m_ptxvhcty getOrCreateTranslationKey ()Ljava/lang/String;
+	METHOD m_qibylykw getTranslationKey (Lnet/minecraft/unmapped/C_sddaxwyk;)Ljava/lang/String;
+		COMMENT Gets the translation key of this item using the provided item stack for context.
+		ARG 1 stack
+	METHOD m_qqswvlkq inventoryTick (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_astfners;IZ)V
+		ARG 1 stack
+		ARG 2 world
+		ARG 3 entity
+		ARG 4 slot
+		ARG 5 selected
+	METHOD m_rdxwitrr getRecipeRemainder ()Lnet/minecraft/unmapped/C_vorddnax;
+		COMMENT Gets the remainder item that should be left behind when this item is used as a crafting ingredient.
+	METHOD m_rwziztnd validateComponents (Lnet/minecraft/unmapped/C_sddaxwyk;)V
+	METHOD m_rxtlbzdr getName (Lnet/minecraft/unmapped/C_sddaxwyk;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 1 stack
+	METHOD m_srbfwvie getTranslationKey ()Ljava/lang/String;
+		COMMENT Gets the translation key of this item.
+	METHOD m_tkohmxbq canMine (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_jzrpycqo;)Z
+		COMMENT Checks if a player can break a block while holding the item.
+		ARG 1 state
+		ARG 2 world
+		ARG 3 pos
+		ARG 4 miner
+	METHOD m_ucwrwzur byRawId (I)Lnet/minecraft/unmapped/C_vorddnax;
+		ARG 0 id
+	METHOD m_uuqggdre getRawId (Lnet/minecraft/unmapped/C_vorddnax;)I
+		ARG 0 item
+	METHOD m_vkltyloi raycast (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_uyikqwzv$C_krdrvutw;)Lnet/minecraft/unmapped/C_jdakttms;
+		ARG 0 world
+		ARG 1 player
+		ARG 2 fluidHandling
+	METHOD m_vlpdhsgt appendTooltip (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_vorddnax$C_rdhfmrgz;Ljava/util/List;Lnet/minecraft/unmapped/C_taebrtdw;)V
+		ARG 1 stack
+		ARG 2 context
+		ARG 3 tooltip
+		ARG 4 config
+	METHOD m_wanuqhiu isUsedOnRelease (Lnet/minecraft/unmapped/C_sddaxwyk;)Z
+		ARG 1 stack
+	METHOD m_wolmtjeu getItemBarColor (Lnet/minecraft/unmapped/C_sddaxwyk;)I
+		ARG 1 stack
+	METHOD m_xljmpsqi getAttributeModifiers ()Lnet/minecraft/unmapped/C_azfkqhlm;
+	METHOD m_ylkygzjm getComponents ()Lnet/minecraft/unmapped/C_kouhnfig;
+	METHOD m_yvddkccr getUseAction (Lnet/minecraft/unmapped/C_sddaxwyk;)Lnet/minecraft/unmapped/C_qeajvgxm;
+		ARG 1 stack
+	METHOD m_znsmbimv use (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_laxmzoqs;)Lnet/minecraft/unmapped/C_ozuepbyj;
+		COMMENT Called when an item is used by a player.
+		COMMENT The use action, by default, is bound to the right mouse button.
+		COMMENT
+		COMMENT <p>This method is called on both the logical client and logical server, so take caution when overriding this method.
+		COMMENT The logical side can be checked using {@link net.minecraft.world.World#isClient() world.isClient()}.
+		COMMENT
+		COMMENT @return a typed action result that specifies whether using the item was successful.
+		COMMENT The action result contains the new item stack that the player's hand will be set to.
+		ARG 1 world
+			COMMENT the world the item was used in
+		ARG 2 user
+			COMMENT the player who used the item
+		ARG 3 hand
+			COMMENT the hand used
+	CLASS C_bfrytpdl Settings
+		FIELD f_emilnckp recipeRemainder Lnet/minecraft/unmapped/C_vorddnax;
+		FIELD f_gjqaneav requiredFlags Lnet/minecraft/unmapped/C_czxxrbcp;
+		FIELD f_mhwyzhjj COMPONENT_MAP_INTERNER Lcom/google/common/collect/Interner;
+		FIELD f_znexcclr builder Lnet/minecraft/unmapped/C_kouhnfig$C_vfzyoahz;
+		METHOD m_gdfazvhf maxCount (I)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			COMMENT Sets the maximum stack count of any ItemStack with an Item using this Settings instance.
+			COMMENT
+			COMMENT <p>Note that a count over 64 leads to unreliable behavior in GUIs.
+			COMMENT Damageable items can not have a maximum stack count (they default to 1).
+			COMMENT An Item.Settings' max count defaults to 64.
+			COMMENT
+			COMMENT @throws RuntimeException if this Settings instance also has a max damage value set
+			COMMENT @return this instance
+			ARG 1 maxCount
+				COMMENT maximum stack count of any ItemStack with an item using this Settings instance
+		METHOD m_hmyxymsz fireproof ()Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			COMMENT If called, any item with this Settings instance is immune to fire and lava damage.
+			COMMENT
+			COMMENT @return this instance
+		METHOD m_klokuyzb buildComponents ()Lnet/minecraft/unmapped/C_kouhnfig;
+		METHOD m_nuwctbay recipeRemainder (Lnet/minecraft/unmapped/C_vorddnax;)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			COMMENT Sets the recipe remainder for any item configured with this Settings instance.
+			COMMENT When an item with a recipe remainder is used in a crafting recipe, the remainder is left in the table or returned to the player.
+			COMMENT
+			COMMENT @return this instance
+			ARG 1 recipeRemainder
+		METHOD m_pvohmnyq jukeboxSong (Lnet/minecraft/unmapped/C_xhhleach;)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			ARG 1 song
+		METHOD m_qvwjjfqj buildAndValidateComponents ()Lnet/minecraft/unmapped/C_kouhnfig;
+		METHOD m_robddprv maxDamage (I)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			COMMENT Sets the maximum durability of any item configured with this Settings instance.
+			COMMENT
+			COMMENT <p>Note that max stack count is set to 1 when this method is called.
+			COMMENT
+			COMMENT @return this instance
+			ARG 1 maxDamage
+				COMMENT maximum durability of an ItemStack using an item with this Item.Settings instance
+		METHOD m_tsalbwou requiredFlags ([Lnet/minecraft/unmapped/C_kksdgidr;)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			ARG 1 flags
+		METHOD m_voqbvsse component (Lnet/minecraft/unmapped/C_pscqxfcs;Ljava/lang/Object;)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			ARG 1 type
+			ARG 2 value
+		METHOD m_wosoxphz attributeModifiersComponent (Lnet/minecraft/unmapped/C_azfkqhlm;)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+		METHOD m_zglwepxe rarity (Lnet/minecraft/unmapped/C_mqmixksm;)Lnet/minecraft/unmapped/C_vorddnax$C_bfrytpdl;
+			COMMENT Sets the {@link Rarity} of any item configured with this Settings instance, which changes the color of its name.
+			COMMENT
+			COMMENT <p>An item's rarity defaults to {@link Rarity#COMMON}.
+			COMMENT
+			COMMENT @return this instance
+			ARG 1 rarity
+				COMMENT rarity to apply to items using this Settings instance
+	CLASS C_rdhfmrgz TooltipContext
+		FIELD f_kflbnvga EMPTY Lnet/minecraft/unmapped/C_vorddnax$C_rdhfmrgz;
+		METHOD m_adcyfttv create (Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)Lnet/minecraft/unmapped/C_vorddnax$C_rdhfmrgz;
+			ARG 0 lookup
+		METHOD m_cnghxzmx getMapState (Lnet/minecraft/unmapped/C_qqxyyzzm;)Lnet/minecraft/unmapped/C_nvpllgmg;
+			ARG 1 id
+		METHOD m_fyhcyijp getLookup ()Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;
+		METHOD m_iygpuvqa create (Lnet/minecraft/unmapped/C_cdctfzbn;)Lnet/minecraft/unmapped/C_vorddnax$C_rdhfmrgz;
+		METHOD m_krwdvrdq getTickRate ()F

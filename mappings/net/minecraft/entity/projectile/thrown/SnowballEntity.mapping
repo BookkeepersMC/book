@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_pxyfxaho net/minecraft/entity/projectile/thrown/SnowballEntity
+	METHOD m_zhggzqug getParticleParameters ()Lnet/minecraft/unmapped/C_nqucohct;

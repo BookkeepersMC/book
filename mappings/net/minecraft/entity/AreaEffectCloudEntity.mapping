@@ -1,0 +1,59 @@
+CLASS net/minecraft/unmapped/C_dtsrsfye net/minecraft/entity/AreaEffectCloudEntity
+	FIELD f_ahaszcmw LOGGER Lorg/slf4j/Logger;
+	FIELD f_cmvhxlzn MIN_RADIUS F
+	FIELD f_dblgpftb durationOnUse I
+	FIELD f_dcbuthnz DEFAULT_RADIUS F
+	FIELD f_fnmdnkyf affectedEntities Ljava/util/Map;
+	FIELD f_hbcphlsn owner Lnet/minecraft/unmapped/C_usxaxydn;
+	FIELD f_icetwohf ownerUuid Ljava/util/UUID;
+	FIELD f_mzzwujqa waitTime I
+	FIELD f_ptifiiup potionContents Lnet/minecraft/unmapped/C_xpqegwnr;
+	FIELD f_qxguiqim RADIUS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_qzqthyoy MAX_RADIUS F
+	FIELD f_taokxghk radiusGrowth F
+	FIELD f_tcsjekly HEIGHT F
+	FIELD f_vdfsdyql radiusOnUse F
+	FIELD f_wihxxpfv PARTICLE_ID Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_xafxhgoq APPLY_EFFECT_PER_TICK I
+	FIELD f_xehknean WAITING Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_xxlyscnf duration I
+	FIELD f_ysmfwsec reapplicationDelay I
+	FIELD f_zoaccgjh DEFAULT_WIDTH F
+	METHOD <init> (Lnet/minecraft/unmapped/C_cdctfzbn;DDD)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+	METHOD m_bfrkvfja setRadiusGrowth (F)V
+		ARG 1 growth
+	METHOD m_eqkyeibg getRadiusOnUse ()F
+	METHOD m_ereonukk setDurationOnUse (I)V
+		ARG 1 durationOnUse
+	METHOD m_euwjyelc getRadius ()F
+	METHOD m_flhzipiq setRadiusOnUse (F)V
+		ARG 1 radius
+	METHOD m_fplpcruv setDuration (I)V
+		ARG 1 duration
+	METHOD m_hjqqiqis getRadiusGrowth ()F
+	METHOD m_iqawzfao getDurationOnUse ()I
+	METHOD m_jirviivs setRadius (F)V
+		ARG 1 radius
+	METHOD m_jpxfgsej addEffect (Lnet/minecraft/unmapped/C_wpfizwve;)V
+		ARG 1 effect
+	METHOD m_krcrpiuw getParticleType ()Lnet/minecraft/unmapped/C_nqucohct;
+	METHOD m_ktgxcsyi setParticleType (Lnet/minecraft/unmapped/C_nqucohct;)V
+		ARG 1 particle
+	METHOD m_lpnocsoi setOwner (Lnet/minecraft/unmapped/C_usxaxydn;)V
+		ARG 1 owner
+	METHOD m_nlyxdrax (Ljava/util/Map$Entry;)Z
+		ARG 1 entry
+	METHOD m_nwhbrxxw setWaitTime (I)V
+		ARG 1 ticks
+	METHOD m_pexreefj setPotionContents (Lnet/minecraft/unmapped/C_xpqegwnr;)V
+		ARG 1 contents
+	METHOD m_tzkqswqg getWaitTime ()I
+	METHOD m_uyraeopr updateColor ()V
+	METHOD m_vnvjbhsy setWaiting (Z)V
+		ARG 1 waiting
+	METHOD m_volshxzg isWaiting ()Z
+	METHOD m_wqpyilil getDuration ()I

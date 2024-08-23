@@ -1,0 +1,9 @@
+CLASS net/minecraft/unmapped/C_whoksxux net/minecraft/nbt/scanner/SelectiveNbtCollector
+	COMMENT A selective NBT collector builds an NBT object including only the
+	COMMENT prescribed queries.
+	FIELD f_cquzshaw queriesLeft I
+	FIELD f_lqycvxet selectionStack Ljava/util/Deque;
+	FIELD f_pjtdrarx allPossibleTypes Ljava/util/Set;
+	METHOD <init> ([Lnet/minecraft/unmapped/C_lxuqtocl;)V
+		ARG 1 selectors
+	METHOD m_ocgekirv getQueriesLeft ()I

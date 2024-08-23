@@ -1,0 +1,1043 @@
+CLASS net/minecraft/unmapped/C_astfners net/minecraft/entity/Entity
+	COMMENT Represents an entity. Entities encompass all dynamic, moving objects.
+	FIELD f_ablxonpa horizontalCollision Z
+	FIELD f_ajffyhwa blockPos Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_apbfelpo submergedFluidTag Ljava/util/Set;
+	FIELD f_bejbcamf MAX_ENTITY_TAG_COUNT I
+	FIELD f_bgvyxbvq distanceTraveled F
+	FIELD f_bjvpodux passengerList Lcom/google/common/collect/ImmutableList;
+	FIELD f_bygzgscd id I
+		COMMENT The entity's network identifier, used as a reference for synchronization over network.
+		COMMENT This is not persistent across save and loads; use {@link #uuid} to identify
+		COMMENT an entity in those cases.
+		COMMENT
+		COMMENT @see #getId()
+	FIELD f_bzmyuqdb DELTA_AFFECTED_BY_BLOCKS_BELOW_0_5 D
+	FIELD f_cavwkpwd uuidString Ljava/lang/String;
+	FIELD f_cdurbrqe NULL_BOX Lnet/minecraft/unmapped/C_hbcjzgoe;
+	FIELD f_cffdjvfa nextStepSoundDistance F
+	FIELD f_chegcauz onGround Z
+	FIELD f_clzghgmt currentId Ljava/util/concurrent/atomic/AtomicInteger;
+		COMMENT A generator of unique entity {@link #id network identifiers}. The generated
+		COMMENT identifier for client entities are useless and discarded subsequently through
+		COMMENT {@link #setId(int)} calls.
+	FIELD f_crrlnxqg age I
+	FIELD f_csywjyej velocityModified Z
+	FIELD f_ctqyfogx renderDistanceMultiplier D
+	FIELD f_dirooojo chunkPos Lnet/minecraft/unmapped/C_ynrszrtu;
+	FIELD f_doofwhhb pos Lnet/minecraft/unmapped/C_vgpupfxx;
+	FIELD f_euemepwt FALL_FLYING_FLAG_INDEX I
+	FIELD f_ewpmuavf timeUntilRegen I
+	FIELD f_exdxhnda PASSENGERS_KEY Ljava/lang/String;
+	FIELD f_eyihyrff pistonMovementDelta [D
+	FIELD f_fngqrxks standingEyeHeight F
+	FIELD f_ghlcqzgv CONTENTS_SLOT_INDEX I
+	FIELD f_gzzxrhqg RIDING_COOLDOWN I
+	FIELD f_habutjjj scoreboardTags Ljava/util/Set;
+	FIELD f_hefasmoa inPowderSnow Z
+	FIELD f_hfjnvwdf inanimate Z
+	FIELD f_hgjnrumf random Lnet/minecraft/unmapped/C_rlomrsco;
+	FIELD f_hkohmlix ID_KEY Ljava/lang/String;
+	FIELD f_hmqhtisa FAST_LAVA_SPEED_FACTOR D
+	FIELD f_hxkuahwe minorHorizontalCollision Z
+	FIELD f_hyixntpo submergedInWater Z
+	FIELD f_hzlmaqrc removalReason Lnet/minecraft/unmapped/C_astfners$C_emmohndu;
+	FIELD f_idqxcmak DELTA_AFFECTED_BY_BLOCKS_BELOW_1_0 D
+	FIELD f_ihpdejin prevY D
+	FIELD f_ilwbyicy velocity Lnet/minecraft/unmapped/C_vgpupfxx;
+	FIELD f_iskwetjb CUSTOM_NAME Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_jijbnlgf SLOW_LAVA_SPEED_FACTOR D
+	FIELD f_jncusoxk touchingWater Z
+	FIELD f_jxhcznzh world Lnet/minecraft/unmapped/C_cdctfzbn;
+	FIELD f_kbrdyccj netherPortalCooldown I
+	FIELD f_kfpdxrrc vehicle Lnet/minecraft/unmapped/C_astfners;
+	FIELD f_kpcimogu uuid Ljava/util/UUID;
+	FIELD f_krxlkweq type Lnet/minecraft/unmapped/C_ogavsvbr;
+	FIELD f_lblxmmno FREEZE_DAMAGE_FREQUENCY I
+	FIELD f_llpiaiql fireTicks I
+	FIELD f_lnfbdcex firstUpdate Z
+	FIELD f_ltxgrrxv noClip Z
+	FIELD f_metfcppr velocityDirty Z
+	FIELD f_mhlwwcep POSE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_mnnqnavj glowing Z
+	FIELD f_mzwojhag SPRINTING_FLAG_INDEX I
+	FIELD f_naslivlb lastRenderY D
+	FIELD f_nexrnbri wasInPowderSnow Z
+	FIELD f_nzehfinv dimensions Lnet/minecraft/unmapped/C_sszpscpo;
+	FIELD f_oanvevib TOTAL_AIR_SUPPLY I
+	FIELD f_oritxgsn crystalSoundIntensity F
+	FIELD f_oysssbsf ridingCooldown I
+	FIELD f_paqudcks UUID_KEY Ljava/lang/String;
+	FIELD f_pebbtyzx NO_GRAVITY Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_pfezymmj prevYaw F
+	FIELD f_pfgaedzm MIN_TICKS_TO_FREEZE I
+	FIELD f_qazqhmfv SNEAKING_FLAG_INDEX I
+	FIELD f_qriixkyh SWIMMING_FLAG_INDEX I
+	FIELD f_qtxalbwz SAFE_FALL_DISTANCE I
+	FIELD f_qxfvmjxc lastRenderX D
+	FIELD f_qxqqtzyy NAME_VISIBLE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_rbybyzcg flyDistance F
+	FIELD f_rilctjct dataTracker Lnet/minecraft/unmapped/C_pyoaoolj;
+	FIELD f_rkfixhau verticalCollisionBelow Z
+	FIELD f_rnuwpthh WATER_SPEED_FACTOR D
+	FIELD f_rucrpdxa packetPositionCodec Lnet/minecraft/unmapped/C_kfofqpqr;
+	FIELD f_rwttyzfv onGroundNoBlocks Z
+	FIELD f_scozqngs invulnerable Z
+	FIELD f_sdtkwmca DELTA_AFFECTED_BY_BLOCKS_BELOW_0_2 F
+	FIELD f_sfjnvyan movementMultiplier Lnet/minecraft/unmapped/C_vgpupfxx;
+	FIELD f_skorbhua lastChimeAge I
+	FIELD f_smuuqtsj FROZEN_TICKS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_srfebjdd DEFAULT_BOUNDING_BOX_HEIGHT F
+	FIELD f_ssljujsr LOGGER Lorg/slf4j/Logger;
+	FIELD f_tigrjjuw DEFAULT_BOUNDING_BOX_WIDTH F
+	FIELD f_tklhtpht entityChangeListener Lnet/minecraft/unmapped/C_ylpvpknw;
+	FIELD f_ujsjgylb fallDistance F
+	FIELD f_vdsiqqmt prevPitch F
+	FIELD f_vettyvgp hasVisualFire Z
+	FIELD f_vlasppic pistonMovementTick J
+	FIELD f_vwokuaty yaw F
+	FIELD f_waxazwex prevZ D
+	FIELD f_wphccfzk GLOWING_FLAG_INDEX I
+	FIELD f_wqxxdylj ON_FIRE_FLAG_INDEX I
+	FIELD f_wtzimzjs entityBounds Lnet/minecraft/unmapped/C_hbcjzgoe;
+	FIELD f_xiekhjgc supportingBlockPos Ljava/util/Optional;
+	FIELD f_xtllilwz fluidHeight Lit/unimi/dsi/fastutil/objects/Object2DoubleMap;
+	FIELD f_xunwzhqo portalProcessor Lnet/minecraft/unmapped/C_axrkcdro;
+	FIELD f_yfdxpwmi lastRenderZ D
+	FIELD f_ynvrafke FLAGS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_yqdhmihw INVISIBLE_FLAG_INDEX I
+	FIELD f_yqjyujwv SILENT Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_yyonjapw prevX D
+	FIELD f_yyqamqtt verticalCollision Z
+	FIELD f_zesrveqd pitch F
+	FIELD f_zntizrau AIR Lnet/minecraft/unmapped/C_rinmcaxy;
+	METHOD <init> (Lnet/minecraft/unmapped/C_ogavsvbr;Lnet/minecraft/unmapped/C_cdctfzbn;)V
+		ARG 1 type
+		ARG 2 world
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 o
+	METHOD m_aageeeod emitEffectsFromStep (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;ZZLnet/minecraft/unmapped/C_vgpupfxx;)Z
+		ARG 3 emitStepSounds
+		ARG 4 emitStepEvent
+		ARG 5 movement
+	METHOD m_acgnvjmq isTeammate (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 other
+	METHOD m_acybdbgv canUsePortals (Z)Z
+		ARG 1 allowVehicles
+	METHOD m_agpbjygj getControlledVehicle ()Lnet/minecraft/unmapped/C_astfners;
+	METHOD m_agyyuimo getEyeHeight (Lnet/minecraft/unmapped/C_ufdjspmk;)F
+		ARG 1 pose
+	METHOD m_ahglzvvg getBodyY (D)D
+		ARG 1 heightScale
+	METHOD m_ajnomikh getEffectiveExplosionResistance (Lnet/minecraft/unmapped/C_aahhrzpf;Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_xqketiuf;F)F
+		ARG 1 explosion
+		ARG 2 world
+		ARG 3 pos
+		ARG 4 blockState
+		ARG 5 fluidState
+		ARG 6 max
+	METHOD m_almiwujd isInLava ()Z
+	METHOD m_arkgrfeb tick ()V
+	METHOD m_ashzovao canAcceptPassenger ()Z
+	METHOD m_avzrjosw canAiMove ()Z
+	METHOD m_awmlhinf setVelocity (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_bbxashol isRegionUnloaded ()Z
+		COMMENT Returns whether any part of this entity's bounding box is in an unloaded
+		COMMENT region of the world the entity is in.
+		COMMENT
+		COMMENT @implSpec This implementation expands this entity's bounding box by 1 in
+		COMMENT each axis and checks whether the expanded box's smallest enclosing
+		COMMENT axis-aligned integer box is fully loaded in the world.
+	METHOD m_bibfwntw adjustMovementForSneaking (Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_eojqvxuw;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 movement
+		ARG 2 type
+	METHOD m_bikcqssn setInsidePortal (Lnet/minecraft/unmapped/C_teerivzm;Lnet/minecraft/unmapped/C_hynzadkk;)V
+		ARG 1 portal
+	METHOD m_bjibgujk onRemoved ()V
+	METHOD m_bmjmwuig setBoundingBox (Lnet/minecraft/unmapped/C_hbcjzgoe;)V
+		ARG 1 boundingBox
+	METHOD m_bqujtsnz isSubmergedInWater ()Z
+		COMMENT {@return whether this entity's hitbox is fully submerged in water}
+	METHOD m_btnnyttp canBeHitByProjectile ()Z
+	METHOD m_btpwuyzu findCollisions (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_cdctfzbn;Ljava/util/List;Lnet/minecraft/unmapped/C_hbcjzgoe;)Ljava/util/List;
+		ARG 0 entity
+		ARG 2 expectedCollisions
+		ARG 3 entityBoundingBox
+	METHOD m_bzrtaquy getVehicle ()Lnet/minecraft/unmapped/C_astfners;
+	METHOD m_bzveerey collides ()Z
+	METHOD m_cckfyxyf fall (DZLnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;)V
+		ARG 1 fallDistance
+		ARG 3 onGround
+		ARG 4 landedState
+		ARG 5 landedPosition
+	METHOD m_cdiyauju recalculateDimensions (Lnet/minecraft/unmapped/C_sszpscpo;)Z
+		ARG 1 dimensions
+	METHOD m_ceengzrx onBlockCollision (Lnet/minecraft/unmapped/C_txtbiemp;)V
+		ARG 1 state
+	METHOD m_cflxndgy bypassesSteppingEffects ()Z
+	METHOD m_cghizmwf refreshPositionAndAngles (Lnet/minecraft/unmapped/C_hynzadkk;FF)V
+		ARG 1 pos
+		ARG 2 yaw
+		ARG 3 pitch
+	METHOD m_chpxygjr shouldSpawnSprintingParticles ()Z
+	METHOD m_cizdqdzz addVelocity (DDD)V
+		ARG 1 deltaX
+		ARG 3 deltaY
+		ARG 5 deltaZ
+	METHOD m_cjtrtfdq collidesWith (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 other
+	METHOD m_ckeimykr getPassengerAttachmentPos (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_pubtmkke;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 vehicle
+		ARG 1 passenger
+		ARG 2 attachments
+	METHOD m_clvtkwyd setFlag (IZ)V
+		ARG 1 index
+		ARG 2 value
+	METHOD m_clzfrnaq setPitch (F)V
+		ARG 1 pitch
+	METHOD m_cnqjofth hasPassengers ()Z
+	METHOD m_cpoqqugf applyRotation (Lnet/minecraft/unmapped/C_mboglirk;)F
+		ARG 1 rotation
+	METHOD m_cqjiujoa getUuidAsString ()Ljava/lang/String;
+	METHOD m_crbtimbo getFacing ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_csskrddd updateVelocity (FLnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 speed
+		ARG 2 movementInput
+	METHOD m_ctegebek isInRange (Lnet/minecraft/unmapped/C_astfners;D)Z
+		ARG 1 entity
+		ARG 2 radius
+	METHOD m_cvqrfbej getPrimaryPassenger ()Lnet/minecraft/unmapped/C_usxaxydn;
+	METHOD m_cwblvmlg tickNetherPortalCooldown ()V
+	METHOD m_czllkfyu isLogicalSideForUpdatingMovement ()Z
+	METHOD m_daozjmru stopRiding ()V
+	METHOD m_dgesbqpr calculateDimensions ()V
+	METHOD m_dlwxaobh getRandom ()Lnet/minecraft/unmapped/C_rlomrsco;
+	METHOD m_dmqmmjta getWidth ()F
+		COMMENT {@return the width of this entity}
+	METHOD m_dofvpclc positionInPortal (Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;Lnet/minecraft/unmapped/C_wauhtoaq$C_tqypnjit;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 portalAxis
+		ARG 2 portalRect
+	METHOD m_dphgtkki isSwimming ()Z
+	METHOD m_dqqvhtsj setSneaking (Z)V
+		ARG 1 sneaking
+	METHOD m_dsagprus getRotationVector ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_dsjrxsps spawnSprintingParticles ()V
+	METHOD m_dsrcsmiw (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 checkedPassenger
+	METHOD m_dsukauvx updateSubmergedInWaterState ()V
+	METHOD m_dtzgxqjr setRenderDistanceMultiplier (D)V
+		ARG 0 value
+	METHOD m_duektjoe adjustMovementForPiston (Lnet/minecraft/unmapped/C_vgpupfxx;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 movement
+	METHOD m_dwotjukl toNbtList ([D)Lnet/minecraft/unmapped/C_hqhtfwlr;
+		ARG 1 values
+	METHOD m_dxohridw getMoveEffect ()Lnet/minecraft/unmapped/C_astfners$C_tcfxsqwc;
+		COMMENT {@return the possible effect(s) of an entity moving}
+		COMMENT
+		COMMENT @implNote If an entity does not emit game events or play move sounds, this
+		COMMENT method should be overridden as returning a value other than
+		COMMENT {@linkplain Entity.MoveEffect#ALL ALL} allows skipping some movement logic
+		COMMENT and boost ticking performance.
+	METHOD m_dzhivofg getSteppingPosition ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_dziryrcm getJumpVelocityMultiplier ()F
+	METHOD m_dzufvcbo getLerpTargetX ()D
+	METHOD m_ecfubkpz isTouchingWaterOrRain ()Z
+	METHOD m_edsbhryk playAmethystChimeSound ()V
+	METHOD m_egrevgdy getMovementDirection ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_ehxuiwfs getSafeFallDistance ()I
+		COMMENT {@return the fall distance that's safe before this entity takes fall damage}
+	METHOD m_ejhzkfsp addPassenger (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 passenger
+	METHOD m_elbjzlaw isRemoved ()Z
+		COMMENT Returns whether this entity has been removed or not.
+		COMMENT <p>
+		COMMENT A removed entity should no longer be used as it means it has been removed from
+		COMMENT the world it was previously in, and it has been discarded from the game context.
+		COMMENT
+		COMMENT @return {@code true} if this entity has been removed, or {@code false} otherwise
+		COMMENT @see #getRemovalReason()
+		COMMENT @see #setRemoved(RemovalReason)
+	METHOD m_elzzvnlh isSubmergedIn (Lnet/minecraft/unmapped/C_ednuhnnn;)Z
+		ARG 1 key
+	METHOD m_enouepiv isImmuneToExplosion (Lnet/minecraft/unmapped/C_aahhrzpf;)Z
+		ARG 1 explosion
+	METHOD m_eoaarjeb setPose (Lnet/minecraft/unmapped/C_ufdjspmk;)V
+		ARG 1 pose
+	METHOD m_eoelkgqb isOnGround ()Z
+		COMMENT Returns whether this entity is standing on the ground or not.
+		COMMENT
+		COMMENT @return {@code true} if this entity is on the ground, or {@code false} otherwise
+	METHOD m_eoypgeqt getChunkPos ()Lnet/minecraft/unmapped/C_ynrszrtu;
+	METHOD m_eqefuhaz canExplosionDestroyBlock (Lnet/minecraft/unmapped/C_aahhrzpf;Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;F)Z
+		ARG 1 explosion
+		ARG 2 world
+		ARG 3 pos
+		ARG 4 state
+		ARG 5 explosionPower
+	METHOD m_etjezvwe getHoverEvent ()Lnet/minecraft/unmapped/C_qhrnrrcp;
+	METHOD m_exebbkmr addAirTravelEffects ()V
+		COMMENT Adds the effects of this entity when it travels in air, usually to the
+		COMMENT world the entity is in.
+		COMMENT <p>
+		COMMENT This is only called when the entity {@linkplain #getMoveEffect() has
+		COMMENT any move effect}, from {@link #move(MovementType, Vec3d)}
+	METHOD m_eyjjblao isSneaking ()Z
+	METHOD m_fafpthyt getPassengersDeep ()Ljava/lang/Iterable;
+	METHOD m_fccepfav onSpawnPacket (Lnet/minecraft/unmapped/C_qdqrqwvy;)V
+		ARG 1 packet
+	METHOD m_fcumyzkt getType ()Lnet/minecraft/unmapped/C_ogavsvbr;
+	METHOD m_fdhoudpd interact (Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_laxmzoqs;)Lnet/minecraft/unmapped/C_ozuepbyj;
+		COMMENT Called when a player interacts with this entity.
+		ARG 1 player
+			COMMENT the player
+		ARG 2 hand
+			COMMENT the hand the player used to interact with this entity
+	METHOD m_fepbvbrn updateTrackedPositionAndAngles (DDDFFI)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 yaw
+		ARG 8 pitch
+		ARG 9 interpolationSteps
+	METHOD m_fgmpibkk setId (I)V
+		COMMENT Sets the network identifier of this entity.
+		COMMENT
+		COMMENT @apiNote This is used by client-side networking logic to set up the network
+		COMMENT identifier of entities from the server. This shouldn't be used by server-side logic
+		COMMENT as the network identifier is already properly initialized on entity object construction.
+		COMMENT
+		COMMENT @see #getId()
+		ARG 1 id
+	METHOD m_fizdaqdb getHorizontalFacing ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_fkhcxqii squaredDistanceTo (Lnet/minecraft/unmapped/C_vgpupfxx;)D
+		ARG 1 vector
+	METHOD m_flwyasfx getPassengerDismountOffset (DDF)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 vehicleWidth
+		ARG 2 passengerWidth
+		ARG 4 passengerYaw
+	METHOD m_flzueuli populateCrashReport (Lnet/minecraft/unmapped/C_qympisds;)V
+		ARG 1 section
+	METHOD m_foapnmxd detach ()V
+		COMMENT Removes all the passengers and removes this entity from any vehicles it is riding.
+	METHOD m_foqrqvze shouldRender (D)Z
+		ARG 1 distance
+	METHOD m_fpobayhy hasPassengerType (Ljava/util/function/Predicate;)Z
+		ARG 1 predicate
+	METHOD m_fqqxgvvd getHeight ()F
+		COMMENT {@return the height of this entity}
+	METHOD m_fqsmgmzi setMovementMultiplier (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 state
+		ARG 2 multiplier
+	METHOD m_fymcirnf setCustomName (Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 name
+	METHOD m_fzshfvfl isSprinting ()Z
+	METHOD m_gakqenyv getLerpTargetPitch ()F
+	METHOD m_gavkvalj hasWings ()Z
+	METHOD m_ggpcigyk addVelocityInternal (Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 velocity
+	METHOD m_ghqcprlw onPlayerCollision (Lnet/minecraft/unmapped/C_jzrpycqo;)V
+		ARG 1 player
+	METHOD m_glbnrqjr getFirstPassenger ()Lnet/minecraft/unmapped/C_astfners;
+	METHOD m_gliwfays getGravity ()D
+	METHOD m_gmlierig setBodyYaw (F)V
+		ARG 1 bodyYaw
+	METHOD m_gmmuescl getRenderDistanceMultiplier ()D
+	METHOD m_goqphzpp isInvulnerableTo (Lnet/minecraft/unmapped/C_sbxfkpyv;)Z
+		ARG 1 damageSource
+	METHOD m_gortryza tickInVoid ()V
+	METHOD m_gperiimb setRotation (FF)V
+		ARG 1 yaw
+		ARG 2 pitch
+	METHOD m_grytvnwh getLeashHoldPosition (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 delta
+	METHOD m_gtyitted getLerpedPos (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 delta
+	METHOD m_gwopyrde dismountVehicle ()V
+		COMMENT Dismounts the vehicle if present.
+		COMMENT <p>
+		COMMENT For players, will not trigger any networking changes. Use {@link #stopRiding()} instead.
+		COMMENT
+		COMMENT @see #stopRiding()
+	METHOD m_gwusjpmx updatePassengerPosition (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_astfners$C_aobkcgmf;)V
+		ARG 1 passenger
+		ARG 2 positionUpdater
+	METHOD m_gxfczhkq getLeashOffset ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_gxhbysyl isInFluid ()Z
+	METHOD m_gxhwoqaa getTeamColorValue ()I
+	METHOD m_gykcjypz addPortalTicket (Lnet/minecraft/unmapped/C_hynzadkk;)V
+	METHOD m_hehkhdfc isFrozen ()Z
+	METHOD m_hhmmivsh tryTickInVoid ()V
+	METHOD m_hhwoykag calculateNextStepSoundDistance ()F
+	METHOD m_hisokqyg setOnFireFor (I)V
+		ARG 1 ticks
+	METHOD m_hjjjfrzw getScoreboardTeam ()Lnet/minecraft/unmapped/C_dvkwmbxw;
+	METHOD m_hklyvsue raycast (DFZ)Lnet/minecraft/unmapped/C_eetoegzn;
+		ARG 1 maxDistance
+		ARG 3 tickDelta
+		ARG 4 includeFluids
+	METHOD m_hlvusmpl requestTeleportAndDismount (DDD)V
+		ARG 1 destX
+		ARG 3 destY
+		ARG 5 destZ
+	METHOD m_hmduabhp dropItem (Lnet/minecraft/unmapped/C_gmbqjnle;I)Lnet/minecraft/unmapped/C_uqpzijng;
+		ARG 1 item
+		ARG 2 yOffset
+	METHOD m_hnfpqqwz getFluidHeight (Lnet/minecraft/unmapped/C_ednuhnnn;)D
+		ARG 1 tag
+	METHOD m_hpsqosvu setVelocity (Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 velocity
+	METHOD m_hundseou getFlag (I)Z
+		ARG 1 index
+	METHOD m_hupbgksc getOppositeRotationVector (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 tickDelta
+	METHOD m_husiwzso startRiding (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 entity
+	METHOD m_huwcpczk canBeSpectated (Lnet/minecraft/unmapped/C_mxrobsgg;)Z
+		ARG 1 spectator
+	METHOD m_hvcwbybh startRiding (Lnet/minecraft/unmapped/C_astfners;Z)Z
+		ARG 1 entity
+		ARG 2 force
+	METHOD m_hvrxcdhf playSound (Lnet/minecraft/unmapped/C_avavozay;)V
+		COMMENT Plays a given sound coming from this entity, if this entity is not silent
+		COMMENT
+		COMMENT @see #isSilent()
+		COMMENT @see #playSound(SoundEvent, float, float)
+		ARG 1 sound
+			COMMENT the sound to play
+	METHOD m_hvxlsjsw getFrozenTicks ()I
+	METHOD m_hxboixtd isInsideBubbleColumn ()Z
+	METHOD m_hzdsqmkj getLandingPosition ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_iadcwgxh updateWaterState ()Z
+	METHOD m_ibtokcff setSilent (Z)V
+		ARG 1 silent
+	METHOD m_idibotas setNoGravity (Z)V
+		ARG 1 noGravity
+	METHOD m_ieagoqtl calculateBoundingBox ()Lnet/minecraft/unmapped/C_hbcjzgoe;
+	METHOD m_iiybnfrm setGlowing (Z)V
+		ARG 1 glowing
+	METHOD m_iiygiaqa hasNoGravity ()Z
+	METHOD m_ikbuyunb updatePositionAndAngles (DDDFF)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 yaw
+		ARG 8 pitch
+	METHOD m_impfppra setNetherPortalCooldown (I)V
+		ARG 1 cooldown
+	METHOD m_imqrqpcf getRotationVec (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 tickDelta
+	METHOD m_iohdoxun teleportPassengers ()V
+	METHOD m_iqvzwgkr canModifyAt (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 world
+		ARG 2 pos
+	METHOD m_iseshnfi isSpectator ()Z
+	METHOD m_iumntaeg dropStack (Lnet/minecraft/unmapped/C_sddaxwyk;)Lnet/minecraft/unmapped/C_uqpzijng;
+		ARG 1 stack
+	METHOD m_iznakrow removeFromDimension ()V
+	METHOD m_izrsdktf handleFallDamage (FFLnet/minecraft/unmapped/C_sbxfkpyv;)Z
+		ARG 1 fallDistance
+		ARG 2 damageMultiplier
+		ARG 3 damageSource
+	METHOD m_jaflucyh canSprintAsVehicle ()Z
+	METHOD m_jfqciigr hasCollidedSoftly (Lnet/minecraft/unmapped/C_vgpupfxx;)Z
+		ARG 1 adjustedMovement
+	METHOD m_jjhhwbds updateDynamicGameEventListener (Ljava/util/function/BiConsumer;)V
+		ARG 1 updater
+	METHOD m_jjorggkg (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 0 passenger
+	METHOD m_jjzcqljk setYaw (F)V
+		ARG 1 yaw
+	METHOD m_jlyguhnu setInvulnerable (Z)V
+		ARG 1 invulnerable
+	METHOD m_jntxmsea refreshPositionAndAngles (Lnet/minecraft/unmapped/C_vgpupfxx;FF)V
+		ARG 1 pos
+	METHOD m_jnzyorkg getLerpTargetYaw ()F
+	METHOD m_jofogjft getRegistryManager ()Lnet/minecraft/unmapped/C_wqxmvzdq;
+	METHOD m_jplnglbd distanceTo (Lnet/minecraft/unmapped/C_astfners;)F
+		ARG 1 entity
+	METHOD m_jrpsebzm hasPose (Lnet/minecraft/unmapped/C_ufdjspmk;)Z
+		ARG 1 pose
+	METHOD m_jrpyecoc setPosition (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_jvbaawvv killedEntity (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 2 entity
+	METHOD m_jvbeeoym getDefaultName ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_jvhgezub remove (Lnet/minecraft/unmapped/C_astfners$C_emmohndu;)V
+		ARG 1 reason
+	METHOD m_kcqonvtd pushOutOfBlocks (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_kkieextx handleStatus (B)V
+		ARG 1 status
+	METHOD m_klrrgmfl isOnFire ()Z
+	METHOD m_klrwauzh refreshPositionAfterTeleport (Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 pos
+	METHOD m_kmweazye getZ ()D
+	METHOD m_kqxvnqqn getWorld ()Lnet/minecraft/unmapped/C_cdctfzbn;
+		COMMENT {@return the world this entity is in}
+	METHOD m_krfnmqpx updateKilledAdvancementCriterion (Lnet/minecraft/unmapped/C_astfners;ILnet/minecraft/unmapped/C_sbxfkpyv;)V
+		ARG 1 killer
+		ARG 2 score
+		ARG 3 damageSource
+	METHOD m_kvelccqq applyMirror (Lnet/minecraft/unmapped/C_qomzaqud;)F
+		ARG 1 mirror
+	METHOD m_kvxkjouy setFireTicks (I)V
+		ARG 1 ticks
+	METHOD m_kymkfjov isAttackable ()Z
+	METHOD m_lfjmpwyp hasPlayerRider ()Z
+	METHOD m_lfpuwmgu removeAllPassengers ()V
+	METHOD m_lgmmhwrc hasPassenger (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 passenger
+	METHOD m_lhatfyyd getBlockStateAtPos ()Lnet/minecraft/unmapped/C_txtbiemp;
+	METHOD m_livkcpbq onSwimmingStart ()V
+	METHOD m_lmmpfjyz bypassesLandingEffects ()Z
+	METHOD m_loccnuga onStoppedTrackingBy (Lnet/minecraft/unmapped/C_mxrobsgg;)V
+		ARG 1 player
+	METHOD m_lpcryaya setOnFire (Z)V
+		ARG 1 onFire
+	METHOD m_lpqivees hasVehicle ()Z
+	METHOD m_lqtbefmj shouldLeaveSwimmingPose ()Z
+	METHOD m_lqwqqugl isInsideWaterOrBubbleColumn ()Z
+	METHOD m_lrfrrwvd getVelocityAffectingPos ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_lstmmenj syncPacketPositionCodec (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_luuqxfqy getLerpTargetY ()D
+	METHOD m_lvimckng getDefaultNetherPortalCooldown ()I
+	METHOD m_lvnfpsmt baseTick ()V
+	METHOD m_lvnmxdmg calculatePistonMovementFactor (Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;D)D
+		ARG 1 axis
+		ARG 2 offsetFactor
+	METHOD m_lwugwlsw initDataTracker (Lnet/minecraft/unmapped/C_pyoaoolj$C_oqzxcugu;)V
+		ARG 1 builder
+	METHOD m_lygmgdif getHoldingItemAngle (Lnet/minecraft/unmapped/C_vorddnax;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 item
+	METHOD m_lytsaqwc resetNetherPortalCooldown ()V
+	METHOD m_lyxnmous getPickBlockStack ()Lnet/minecraft/unmapped/C_sddaxwyk;
+	METHOD m_lzpwoeto updateSwimming ()V
+	METHOD m_mbesepaz isInvisibleTo (Lnet/minecraft/unmapped/C_jzrpycqo;)Z
+		ARG 1 player
+	METHOD m_mcimzscq setOnFireFromLava ()V
+	METHOD m_mdjbjjrz getServer ()Lnet/minecraft/server/MinecraftServer;
+	METHOD m_mhvikmsw isPushedByFluids ()Z
+	METHOD m_migwxxyu setOnGround (ZZLnet/minecraft/unmapped/C_vgpupfxx;)V
+	METHOD m_mnshvqhc getLerpedEyePos (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 tickDelta
+	METHOD m_mrxmgxtb kill ()V
+	METHOD m_mtipwdbc removeClickEvents (Lnet/minecraft/unmapped/C_rdaqiwdt;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 textComponent
+	METHOD m_muwkisky playSwimSound (F)V
+		ARG 1 volume
+	METHOD m_mvbgtgzd addScoreboardTag (Ljava/lang/String;)Z
+		ARG 1 tag
+	METHOD m_mvqgdaof isInSwimmingPose ()Z
+	METHOD m_mvydwrgl isCollidable ()Z
+	METHOD m_mwcgtbei getRotationClient ()Lnet/minecraft/unmapped/C_krlwdsom;
+	METHOD m_navgylsf addVelocity (Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 delta
+	METHOD m_naxzebqy getBlockZ ()I
+	METHOD m_nbygubbe offsetX (D)D
+		ARG 1 widthScale
+	METHOD m_ncryhhth copyPositionAndRotation (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	METHOD m_ngysbrcu getSwimSound ()Lnet/minecraft/unmapped/C_avavozay;
+	METHOD m_nhuepqoa getOppositeRotationVector (FF)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 pitch
+		ARG 2 yaw
+	METHOD m_njhqnjqp isWet ()Z
+		COMMENT {@return whether this entity is touching water, or is being rained on, or is inside a bubble column}
+		COMMENT
+		COMMENT @see net.minecraft.entity.Entity#isTouchingWater()
+		COMMENT @see net.minecraft.entity.Entity#isBeingRainedOn()
+		COMMENT @see net.minecraft.entity.Entity#isInsideBubbleColumn()
+	METHOD m_nnymqfux onBubbleColumnSurfaceCollision (Z)V
+		ARG 1 drag
+	METHOD m_nsggwems getSoundCategory ()Lnet/minecraft/unmapped/C_pqzizukq;
+	METHOD m_nstmjlot setAir (I)V
+		ARG 1 air
+	METHOD m_ntlxnitl emitGameEvent (Lnet/minecraft/unmapped/C_cjzoxshv;)V
+		ARG 1 event
+	METHOD m_oagnumwt getLerpTargetZ ()D
+	METHOD m_oavmpfqe getAir ()I
+	METHOD m_obkzfysl readCustomDataFromNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+		ARG 1 nbt
+	METHOD m_obyhheyh handleDamagingEvent (Lnet/minecraft/unmapped/C_sbxfkpyv;)V
+		ARG 1 source
+	METHOD m_odnkfosg getEyePos ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_okzqpkgv isPushable ()Z
+	METHOD m_onpbziok setVelocityClient (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_onrjdopp getVisualYaw ()F
+	METHOD m_oqgpazne isInSneakingPose ()Z
+		COMMENT {@return whether the entity is in a crouching pose}
+		COMMENT <p>
+		COMMENT Compared to {@link #isSneaking()}, it only makes the entity appear
+		COMMENT crouching and does not bring other effects of sneaking, such as no less
+		COMMENT obvious name label rendering, no dismounting while riding, etc.
+		COMMENT <p>
+		COMMENT This is used by vanilla for non-player entities to crouch, such as
+		COMMENT for foxes and cats.
+	METHOD m_oqhlbqvs playStepSound (Lnet/minecraft/unmapped/C_txtbiemp;)V
+	METHOD m_oqjzpmsb setSwimming (Z)V
+		ARG 1 swimming
+	METHOD m_oryyldou isCustomNameVisible ()Z
+	METHOD m_ounwsonv isInvulnerable ()Z
+	METHOD m_owcsemrf doesNotCollide (DDD)Z
+		ARG 1 offsetX
+		ARG 3 offsetY
+		ARG 5 offsetZ
+	METHOD m_owvpveuv getStackReference (I)Lnet/minecraft/unmapped/C_xkkpnyvk;
+		COMMENT Obtains a stack reference to be modified. Used by commands like
+		COMMENT {@code /loot} or {@code /item}.
+		COMMENT
+		COMMENT @see net.minecraft.command.argument.ItemSlotArgumentType
+		ARG 1 mappedIndex
+			COMMENT the mapped index as given by the item slot argument
+	METHOD m_ozexriib playSound (Lnet/minecraft/unmapped/C_avavozay;FF)V
+		COMMENT Plays a given sound coming from this entity, if this entity is not silent.
+		COMMENT
+		COMMENT @see #isSilent()
+		COMMENT @see #playSound(SoundEvent)
+		ARG 1 sound
+			COMMENT the sound to play
+		ARG 2 volume
+			COMMENT the volume to play the sound at
+		ARG 3 pitch
+			COMMENT the pitch to play the sound at
+	METHOD m_ozpbkkuu updateMovementInFluid (Lnet/minecraft/unmapped/C_ednuhnnn;D)Z
+		ARG 1 key
+		ARG 2 velocity
+	METHOD m_paxmjcli movementInputToVelocity (Lnet/minecraft/unmapped/C_vgpupfxx;FF)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 movementInput
+		ARG 1 speed
+		ARG 2 yaw
+	METHOD m_pcyynmjj isSilent ()Z
+	METHOD m_pdtybxtp getRemovalReason ()Lnet/minecraft/unmapped/C_astfners$C_emmohndu;
+		COMMENT Gets the removal reason of this entity if it has been removed.
+		COMMENT <p>
+		COMMENT If the removal reason is not null, this means the entity has been removed from the
+		COMMENT world it was previously in, and it has been discarded from the game context.
+		COMMENT
+		COMMENT @return the removal reason of this entity if it has been removed, or {@code null} otherwise
+		COMMENT @see #isRemoved()
+		COMMENT @see #setRemoved(RemovalReason)
+	METHOD m_pedkbecv getParticleZ (D)D
+		ARG 1 widthScale
+	METHOD m_pfhawwtt canControlVehicle ()Z
+	METHOD m_pfpocpag getObservingLightPos (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 tickDelta
+	METHOD m_phkweapi updatePosition (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_plmkvbcv streamIntoPassengers ()Ljava/util/stream/Stream;
+	METHOD m_pnapxqoc updatePassengerPosition (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 passenger
+	METHOD m_psgotipc getProjectileDeflector (Lnet/minecraft/unmapped/C_ltpsyvhj;)Lnet/minecraft/unmapped/C_jslwmoew;
+		ARG 1 projectile
+	METHOD m_psnzmttx getVelocity ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_pvbcngmg getMaxFreezeTicks ()I
+	METHOD m_pvspcngk getDefaultGravity ()D
+	METHOD m_pwwzkeqh teleportToOffset (DDD)V
+		ARG 1 offsetX
+		ARG 3 offsetY
+		ARG 5 offsetZ
+	METHOD m_pxtokmcp unsetRemoved ()V
+	METHOD m_pxzrmrny getPassengerRidingPos (Lnet/minecraft/unmapped/C_astfners;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 entity
+	METHOD m_qbuogctw getPose ()Lnet/minecraft/unmapped/C_ufdjspmk;
+	METHOD m_qchceppc tickRiding ()V
+	METHOD m_qehyjnid tickPortalTeleportation ()V
+	METHOD m_qesgssdn entityDataRequiresOperator ()Z
+	METHOD m_qiicvjap isAlive ()Z
+	METHOD m_qjamcbax tryTeleportAndDismount (DDD)V
+		ARG 1 destX
+		ARG 3 destY
+		ARG 5 destZ
+	METHOD m_qmsqmnke doesRenderOnFire ()Z
+	METHOD m_qoreltrp getFreezingScale ()F
+	METHOD m_qpmhbrns extinguishWithEffects ()V
+	METHOD m_qqdihtpc shouldSetPositionOnLoad ()Z
+	METHOD m_qshpzohi dropItem (Lnet/minecraft/unmapped/C_gmbqjnle;)Lnet/minecraft/unmapped/C_uqpzijng;
+		ARG 1 item
+	METHOD m_qufdccav onExploded (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	METHOD m_qvezifat isDescending ()Z
+	METHOD m_qwhvqkqc setInPowderSnow (Z)V
+		ARG 1 inPowderSnow
+	METHOD m_qyzumuua refreshPositionAfterTeleport (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_qzemwoox hasControllingPassenger ()Z
+	METHOD m_rasonsrc getDamageSources ()Lnet/minecraft/unmapped/C_lddxcbik;
+	METHOD m_rjumlnsh getTargetingMargin ()F
+	METHOD m_rkfskqtn getRandomBodyY ()D
+	METHOD m_rnkadjyo shouldRenderName ()Z
+	METHOD m_rnleirmb playStepSound (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)V
+		ARG 1 pos
+		ARG 2 state
+	METHOD m_roxbbrfe getMovement ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_rrlohuwe getBlockY ()I
+	METHOD m_rrtmyzpv writeNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)Lnet/minecraft/unmapped/C_hhlwcnih;
+		ARG 1 nbt
+	METHOD m_ruylcvxe getBurningDuration ()I
+	METHOD m_rwwlsvsi getPitch (F)F
+		ARG 1 tickDelta
+	METHOD m_rxnxelrf collidesWithStateAtPos (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)Z
+		ARG 1 pos
+		ARG 2 state
+	METHOD m_ryjpmajv shouldRender (DDD)Z
+		ARG 1 cameraX
+		ARG 3 cameraY
+		ARG 5 cameraZ
+	METHOD m_rykuwyoq getPosition (F)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 1 offset
+	METHOD m_rypxvnpp toNbtList ([F)Lnet/minecraft/unmapped/C_hqhtfwlr;
+		ARG 1 values
+	METHOD m_ryyntoxx getStepHeight ()F
+	METHOD m_sciubbmh getStandingEyeHeight ()F
+	METHOD m_sdtijuxq getPacketPositionCodec ()Lnet/minecraft/unmapped/C_kfofqpqr;
+	METHOD m_sflppqpo limitFallDistance ()V
+	METHOD m_sfrpnqnb hasPermissionLevel (I)Z
+		ARG 1 permissionLevel
+	METHOD m_shlbgxdt saveSelfNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)Z
+		ARG 1 nbt
+	METHOD m_smbujbsa discard ()V
+	METHOD m_spboarji isTouchingWater ()Z
+		COMMENT {@return whether this entity's hitbox is touching water}
+	METHOD m_spnjhgke resetFallDistance ()V
+	METHOD m_spvlxclq setFrozenTicks (I)V
+		ARG 1 frozenTicks
+	METHOD m_srumsdfc setInvisible (Z)V
+		ARG 1 invisible
+	METHOD m_srxowajy adjustMovementForCollisions (Lnet/minecraft/unmapped/C_vgpupfxx;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 movement
+	METHOD m_swzplugo canStartRiding (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 entity
+	METHOD m_szxeksnh damage (Lnet/minecraft/unmapped/C_sbxfkpyv;F)Z
+		ARG 1 source
+		ARG 2 amount
+	METHOD m_tansqdcm shouldPlayAmethystChimeStepSound (Lnet/minecraft/unmapped/C_txtbiemp;)Z
+	METHOD m_tcblutba getDataTracker ()Lnet/minecraft/unmapped/C_pyoaoolj;
+	METHOD m_tctkucqa lerpPosAndRotation (IDDDDD)V
+		ARG 1 step
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 yaw
+		ARG 10 pitch
+	METHOD m_thnmjffg addFlapEffects ()V
+		COMMENT Adds the effects of this entity flapping, usually to the world the entity
+		COMMENT is in.
+		COMMENT <p>
+		COMMENT The actual flapping logic should be done in {@link #tick()} instead.
+		COMMENT <p>
+		COMMENT This is only called when the entity {@linkplain #hasWings() has wings}
+		COMMENT and the entity {@linkplain #getMoveEffect() has any move effect}, from
+		COMMENT {@link #addAirTravelEffects()}.
+	METHOD m_tjhbdkij isBeingRainedOn ()Z
+	METHOD m_tsseievl resetPosition ()V
+	METHOD m_ttjwufim getY ()D
+	METHOD m_ttlohclp isGlowing ()Z
+	METHOD m_tugxrexj createSpawnPacket (Lnet/minecraft/unmapped/C_yagtbmmk;)Lnet/minecraft/unmapped/C_zyjtrjrl;
+		ARG 1 trackerEntry
+	METHOD m_tuuhnzwi setHeadYaw (F)V
+		ARG 1 headYaw
+	METHOD m_txdckygw isFreezing ()Z
+	METHOD m_ubqkaspo getHighSpeedSplashSound ()Lnet/minecraft/unmapped/C_avavozay;
+	METHOD m_ucpbtirx changeLookDirection (DD)V
+		ARG 1 cursorDeltaX
+		ARG 3 cursorDeltaY
+	METHOD m_ucyctjbx getDimensions (Lnet/minecraft/unmapped/C_ufdjspmk;)Lnet/minecraft/unmapped/C_sszpscpo;
+		COMMENT {@return the dimensions of this entity depending on the given pose}
+		ARG 1 pose
+			COMMENT the entity pose
+	METHOD m_ueufodjy getSwimHeight ()D
+		COMMENT Returns the minimum submerged height of this entity in fluid so that it
+		COMMENT would be affected by fluid physics.
+		COMMENT
+		COMMENT @apiNote This is also used by living entities for checking whether to
+		COMMENT start swimming.
+		COMMENT
+		COMMENT @implSpec This implementation returns {@code 0.4} if its
+		COMMENT {@linkplain #getStandingEyeHeight standing eye height} is larger than
+		COMMENT {@code 0.4}; otherwise it returns {@code 0.0} for shorter entities.
+		COMMENT
+		COMMENT @implNote The swim height of 0 allows short entities like baby animals
+		COMMENT to start swimming to avoid suffocation.
+	METHOD m_uidprvfr applyGravity ()V
+	METHOD m_ujcgbwni squaredDistanceTo (DDD)D
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_uklridbs removeScoreboardTag (Ljava/lang/String;)Z
+		ARG 1 tag
+	METHOD m_ukwslhys lookAt (Lnet/minecraft/unmapped/C_xzznbkxo$C_vqytrhtw;Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 anchorPoint
+		ARG 2 target
+	METHOD m_ulbgxqnp isSneaky ()Z
+	METHOD m_umvbjaqw getFireTicks ()I
+	METHOD m_uoqfuwph updatePassengerForDismount (Lnet/minecraft/unmapped/C_usxaxydn;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 passenger
+	METHOD m_uoscerfj updateSupportingBlock (ZLnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 onGround
+		ARG 2 movementVector
+	METHOD m_uskzztzx doesNotCollide (Lnet/minecraft/unmapped/C_hbcjzgoe;)Z
+		ARG 1 box
+	METHOD m_usxkccap getScoreboardTags ()Ljava/util/Set;
+	METHOD m_utiirrqu isPartOf (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 entity
+	METHOD m_uvsfzohj handleAttack (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 attacker
+	METHOD m_uwdepeht moveToWorld (Lnet/minecraft/unmapped/C_zbvyjshu;)Lnet/minecraft/unmapped/C_astfners;
+		COMMENT Moves this entity to another world.
+		COMMENT <p>
+		COMMENT Note all entities except server player entities are completely recreated at the destination.
+		COMMENT
+		COMMENT @return the entity in the other world
+		ARG 1 transition
+	METHOD m_vbxcqznf adjustSingleAxisMovementForCollisions (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_hbcjzgoe;Lnet/minecraft/unmapped/C_cdctfzbn;Ljava/util/List;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 entity
+		ARG 1 movement
+		ARG 2 entityBoundingBox
+		ARG 3 world
+		ARG 4 shapes
+	METHOD m_vcemmyqu isOnRailTracks ()Z
+		COMMENT Returns whether this entity is locked onto rail tracks or not.
+		COMMENT
+		COMMENT @return {@code true} if this entity is locked onto rail tracks, or {@code false} otherwise
+	METHOD m_vcfvpihz checkDespawn ()V
+	METHOD m_vcplipih getLightLevelDependentValue ()F
+	METHOD m_vddvkdnu saveNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)Z
+		ARG 1 nbt
+	METHOD m_vewkkvlv isFireImmune ()Z
+	METHOD m_vfbpgxfo getAdjustedSpawnLocation (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_vfobpjve getParticleX (D)D
+		ARG 1 widthScale
+	METHOD m_vhqflgrn refreshPositionAndAngles (DDDFF)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 yaw
+		ARG 8 pitch
+	METHOD m_vindekkr onStruckByLightning (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_kbpqznyn;)V
+		ARG 1 world
+		ARG 2 lightning
+	METHOD m_visowrnn isSupportingBlock (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+	METHOD m_vjacwrod getRotationVecClient ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_vkgfaeyc getSplashSound ()Lnet/minecraft/unmapped/C_avavozay;
+	METHOD m_vkrbjcra getRidingPlayerCount ()I
+	METHOD m_vlnmoucu getRootVehicle ()Lnet/minecraft/unmapped/C_astfners;
+		COMMENT Gets the lowest entity this entity is riding.
+	METHOD m_vmlrfevg hasNetherPortalCooldown ()Z
+	METHOD m_vreufamy playStepSounds (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)V
+	METHOD m_vrnxwjtm canAvoidTraps ()Z
+	METHOD m_vrwpnkzf isLiving ()Z
+	METHOD m_vtzovzbl dampensVibrations ()Z
+	METHOD m_vvclgqgj interactAt (Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_laxmzoqs;)Lnet/minecraft/unmapped/C_ozuepbyj;
+		ARG 1 player
+		ARG 2 hitPos
+		ARG 3 hand
+	METHOD m_vxgatcdr isConnectedThroughVehicle (Lnet/minecraft/unmapped/C_astfners;)Z
+		COMMENT {@return whether this entity and another entity share the same root vehicle}
+		ARG 1 entity
+			COMMENT the other entity
+	METHOD m_vxtgbqxt getVelocityMultiplier ()F
+	METHOD m_wbxjpylm collectStepHeights (Lnet/minecraft/unmapped/C_hbcjzgoe;Ljava/util/List;FF)[F
+		ARG 0 boundingBox
+		ARG 1 collisions
+		ARG 2 stepHeight
+		ARG 3 collisionAdjustedYMovement
+	METHOD m_wcktnyqi setPos (DDD)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD m_wcqwgwbx getPermissionLevel ()I
+	METHOD m_wczujasu canFreeze ()Z
+	METHOD m_wfjjffoz emitGameEvent (Lnet/minecraft/unmapped/C_cjzoxshv;Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 event
+		ARG 2 entity
+	METHOD m_wghmcuvh setOnGround (Z)V
+		ARG 1 onGround
+	METHOD m_wgzrdnvs hasPassengerDeep (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 passenger
+	METHOD m_whvzamjj setWorld (Lnet/minecraft/unmapped/C_cdctfzbn;)V
+		COMMENT Sets the world this entity is in.
+		ARG 1 world
+			COMMENT the world
+	METHOD m_wiyveous getEyeY ()D
+	METHOD m_wjodonhd isInvisible ()Z
+	METHOD m_wkqvrgdz canAddPassenger (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 passenger
+	METHOD m_wmxlrpiw getPos ()Lnet/minecraft/unmapped/C_vgpupfxx;
+		COMMENT {@return the position in the world of this entity}
+	METHOD m_wnmvwdkc playSwimSound ()V
+	METHOD m_wqwhgnwv getSavedEntityId ()Ljava/lang/String;
+	METHOD m_wsfastbb copyFrom (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 original
+	METHOD m_wtbkyvms removePassenger (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 passenger
+	METHOD m_wtzjdmqq dropStack (Lnet/minecraft/unmapped/C_sddaxwyk;F)Lnet/minecraft/unmapped/C_uqpzijng;
+		ARG 1 stack
+		ARG 2 yOffset
+	METHOD m_wwyehasy updatePoseAndDimensions ()V
+	METHOD m_wzcmdoil isTeamPlayer (Lnet/minecraft/unmapped/C_qgtzypup;)Z
+		ARG 1 team
+	METHOD m_xbkkrydd setOnFireForSeconds (F)V
+		ARG 1 seconds
+	METHOD m_xelmhfxy onBubbleColumnCollision (Z)V
+		ARG 1 drag
+	METHOD m_xfogfxdp isInsideWall ()Z
+	METHOD m_xoeeitpc dismountsUnderwater ()Z
+	METHOD m_xoogehdd getYaw (F)F
+		ARG 1 tickDelta
+	METHOD m_xpuekaoa setUuid (Ljava/util/UUID;)V
+		ARG 1 uuid
+	METHOD m_xrvghdnl getLandingBlockStateLegacy ()Lnet/minecraft/unmapped/C_txtbiemp;
+	METHOD m_xthhawdp onStartedTrackingBy (Lnet/minecraft/unmapped/C_mxrobsgg;)V
+		ARG 1 player
+	METHOD m_xujkzfqh offsetZ (D)D
+		ARG 1 widthScale
+	METHOD m_xuwbpohg writeCustomDataToNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+		ARG 1 nbt
+	METHOD m_xvflsbzg scheduleVelocityUpdate ()V
+	METHOD m_xwbgqvgs readNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+		ARG 1 nbt
+	METHOD m_xwkoqqtf getPassengerAttachmentPos (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_sszpscpo;F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 entity
+		ARG 2 dimensions
+		ARG 3 scaleFactor
+	METHOD m_xyjymteg getVehicleAttachmentPos (Lnet/minecraft/unmapped/C_astfners;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 entity
+	METHOD m_xyqhaexi playCombinationStepSounds (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_txtbiemp;)V
+		ARG 1 primaryState
+		ARG 2 secondaryState
+	METHOD m_xzhydjzf getNetherPortalCooldown ()I
+	METHOD m_yagnxkaj getLandingBlockState ()Lnet/minecraft/unmapped/C_txtbiemp;
+	METHOD m_yejeaoze setCustomNameVisible (Z)V
+		ARG 1 visible
+	METHOD m_yerazzia getLeashOffset (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 tickDelta
+	METHOD m_yetbuitb (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 0 iteratedPassenger
+	METHOD m_yeurqvvo getRotationVector (FF)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 pitch
+		ARG 2 yaw
+	METHOD m_yfdhwxgc isClimbable (Lnet/minecraft/unmapped/C_txtbiemp;)Z
+	METHOD m_yhvbjlmg setPosition (Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 pos
+	METHOD m_yjtjhqxv lerpYaw (F)F
+	METHOD m_yjvnxlqe getPistonBehavior ()Lnet/minecraft/unmapped/C_mojvzhua;
+	METHOD m_ykrmhbpu getCommandSenderWorld ()Lnet/minecraft/unmapped/C_cdctfzbn;
+	METHOD m_yljnwzbr getHeadYaw ()F
+	METHOD m_ymnjzyng onPassengerLookAround (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 passenger
+	METHOD m_yndwkmtt animateDamage (F)V
+		ARG 1 yaw
+	METHOD m_ynhqjslw getX ()D
+	METHOD m_ynqvoxet getAttachmentPos ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_yoauovfn playExtinguishSound ()V
+	METHOD m_yontuqgh isInRange (Lnet/minecraft/unmapped/C_astfners;DD)Z
+		ARG 1 entity
+		ARG 2 horizonalRange
+		ARG 4 verticalRange
+	METHOD m_ysnccdty pushAwayFrom (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	METHOD m_ysprxwsv collideWithShapes (Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_hbcjzgoe;Ljava/util/List;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 movement
+		ARG 1 entityBoundingBox
+		ARG 2 shapes
+	METHOD m_ysuhpnbf getPassengerList ()Ljava/util/List;
+	METHOD m_yuckcotc squaredDistanceTo (Lnet/minecraft/unmapped/C_astfners;)D
+		ARG 1 entity
+	METHOD m_yufxwphq canChangeDimensions (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_cdctfzbn;)Z
+		ARG 1 from
+		ARG 2 to
+	METHOD m_ywnmbdjz getWeaponStack ()Lnet/minecraft/unmapped/C_sddaxwyk;
+	METHOD m_yxossras getMaxAir ()I
+	METHOD m_yzuahesn getPrimaryStepSoundPos (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_zbffjahn refreshPosition ()V
+	METHOD m_zcvlfcid move (Lnet/minecraft/unmapped/C_eojqvxuw;Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 1 movementType
+		ARG 2 movement
+	METHOD m_zgonvdqc extinguish ()V
+	METHOD m_zhcmfcni setSprinting (Z)V
+		ARG 1 sprinting
+	METHOD m_zhfwaekn getBlockX ()I
+	METHOD m_zhtbdonc isGlowingLocal ()Z
+	METHOD m_zhuydvfo setAngles (FF)V
+		ARG 1 yaw
+		ARG 2 pitch
+	METHOD m_zjgainuo updateTrackedHeadRotation (FI)V
+		ARG 1 yaw
+		ARG 2 interpolationSteps
+	METHOD m_zlfbgvdy getCommandSource ()Lnet/minecraft/unmapped/C_pennblrk;
+		COMMENT Creates a command source which represents this entity.
+		COMMENT
+		COMMENT @return the created command source
+	METHOD m_zoivpnyj getAttachments ()Lnet/minecraft/unmapped/C_pubtmkke;
+	METHOD m_zrismnrd checkWaterState ()V
+	CLASS C_aobkcgmf PositionUpdater
+		METHOD accept accept (Lnet/minecraft/unmapped/C_astfners;DDD)V
+			ARG 1 entity
+			ARG 2 x
+			ARG 4 y
+			ARG 6 z
+	CLASS C_emmohndu RemovalReason
+		COMMENT Represents the removal reason of an entity.
+		COMMENT <p>
+		COMMENT The removal reason determines whether the entity should be destroyed or not,
+		COMMENT and whether the entity should be saved or not.
+		FIELD f_iyplvxtf save Z
+		FIELD f_mfhxvshm KILLED Lnet/minecraft/unmapped/C_astfners$C_emmohndu;
+			COMMENT The entity is killed.
+		FIELD f_ohrdgcrv CHANGED_DIMENSION Lnet/minecraft/unmapped/C_astfners$C_emmohndu;
+			COMMENT The entity changed dimension.
+		FIELD f_vgvlzpcx DISCARDED Lnet/minecraft/unmapped/C_astfners$C_emmohndu;
+			COMMENT The entity has been discarded, it has been removed from the game without being killed.
+		FIELD f_wghthbky destroy Z
+		FIELD f_xgwqvbsx UNLOADED_TO_CHUNK Lnet/minecraft/unmapped/C_astfners$C_emmohndu;
+			COMMENT The entity is unloaded to chunk.
+			COMMENT <p>
+			COMMENT The entity should be saved.
+		FIELD f_zbjtvhcq UNLOADED_WITH_PLAYER Lnet/minecraft/unmapped/C_astfners$C_emmohndu;
+		METHOD <init> (Ljava/lang/String;IZZ)V
+			ARG 3 destroy
+			ARG 4 save
+		METHOD m_tqpzgdnn shouldDestroy ()Z
+			COMMENT Returns whether the entity should be destroyed or not.
+			COMMENT <p>
+			COMMENT If an entity should be destroyed, then the entity should not be re-used and any external data on the entity will be cleared.
+			COMMENT
+			COMMENT @return {@code true} if this entity should be destroyed, or {@code false} otherwise
+		METHOD m_wbwjpgww shouldSave ()Z
+			COMMENT Returns whether the entity should be saved or not.
+			COMMENT
+			COMMENT @return {@code true} if this entity should be saved, or {@code false} otherwise
+	CLASS C_tcfxsqwc MoveEffect
+		COMMENT The move effect represents possible effects of an entity moving, such as
+		COMMENT playing sounds, emitting game events, none, or both.
+		COMMENT
+		COMMENT @see Entity#getMoveEffect()
+		FIELD f_kgngyzlv events Z
+		FIELD f_yhwssfaj sounds Z
+		METHOD <init> (Ljava/lang/String;IZZ)V
+			ARG 3 sounds
+			ARG 4 events
+		METHOD m_marotqlx emitsGameEvents ()Z
+			COMMENT Returns whether this means an entity may emit game events as it moves.
+		METHOD m_vxuuqfzy playsSounds ()Z
+			COMMENT Returns whether this means an entity may play sounds as it moves.
+		METHOD m_xlnnqplp hasAny ()Z
+			COMMENT Returns whether this means an entity may emit game events or play sounds
+			COMMENT as it moves.

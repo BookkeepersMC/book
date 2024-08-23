@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_hejhsbhj net/minecraft/datafixer/fix/VillagerTradeFix
+	METHOD m_lvskjlbp fixPumpkinTrade (Lcom/mojang/datafixers/OpticFinder;Lcom/mojang/datafixers/Typed;)Lcom/mojang/datafixers/Typed;

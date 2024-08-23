@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_byxdmeio net/minecraft/datafixer/fix/BiomesFix
+	FIELD f_jkxdmnlv RENAMED_BIOMES Ljava/util/Map;

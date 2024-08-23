@@ -1,0 +1,72 @@
+CLASS net/minecraft/unmapped/C_ymlucuqe net/minecraft/client/gui/screen/ingame/MerchantScreen
+	FIELD f_adgarvcj selectedIndex I
+	FIELD f_aetjxctp OUT_OF_STOCK Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ailpuxlr EXPERIENCE_BAR_BACKGROUND Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_csukqbmb SCROLLBAR_OFFSET_Y I
+	FIELD f_cwhnqqng DISCOUNT_STRIKETHROUGH Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_dhkhusse TRADE_OFFER_BUTTON_HEIGHT I
+	FIELD f_dlluzodb TRADE_LIST_AREA_Y_OFFSET I
+	FIELD f_ecsnqact EXPERIENCE_BAR_RESULT Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ecvjejrg indexStartOffset I
+	FIELD f_fqsxbwfz MAX_TRADE_OFFERS I
+	FIELD f_ijrzmxjo TRADE_ARROW_OUT_OF_STOCK Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ixcfupdm SCROLLBAR_HEIGHT I
+	FIELD f_jhbstmth TEXTURE_WIDTH I
+	FIELD f_jviinllf LABEL_Y I
+	FIELD f_kpwxonuc SCROLLER Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_kxlyxlfa TRADES Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_lrtwadxh SCROLLER_DISABLED Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_njkukxiz EXPERIENCE_BAR_CURRENT Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_odpvjist DEPRECATED Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_ouvgnzep SCROLLBAR_AREA_HEIGHT I
+	FIELD f_pbawfnfx HANDLED_SCREEN_X_OFFSET I
+	FIELD f_qirdmels scrolling Z
+	FIELD f_rbqpwefq SECOND_BUY_ITEM_X_OFFSET I
+	FIELD f_rxowdfsh TRADE_OFFER_BUTTON_X I
+	FIELD f_tjxbjbvb TRADE_ARROW Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_uzcvvjse XP_BAR_X_OFFSET I
+	FIELD f_viwhwhwn TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_vjtdnkmq FIRST_BUY_ITEM_X_OFFSET I
+	FIELD f_vyblsdzm TEXTURE_HEIGHT I
+	FIELD f_wlorlfyd SCROLLBAR_OFFSET_X I
+	FIELD f_xckwvmcu SOLD_ITEM_X_OFFSET I
+	FIELD f_yqdxxubu TRADE_OFFER_BUTTON_WIDTH I
+	FIELD f_yrefesmy offers [Lnet/minecraft/unmapped/C_ymlucuqe$C_cqgmotei;
+	FIELD f_yznddijh SCROLLBAR_WIDTH I
+	METHOD <init> (Lnet/minecraft/unmapped/C_tesbksyu;Lnet/minecraft/unmapped/C_sxzqocrm;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 handler
+		ARG 2 inventory
+		ARG 3 title
+	METHOD m_culsijbm renderFirstBuyItem (Lnet/minecraft/unmapped/C_sedilmty;Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_sddaxwyk;II)V
+		ARG 2 adjustedFirstBuyItem
+		ARG 3 originalFirstBuyItem
+		ARG 4 x
+		ARG 5 y
+	METHOD m_tryjxqwu drawLevelInfo (Lnet/minecraft/unmapped/C_sedilmty;IILnet/minecraft/unmapped/C_argwryfu;)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 tradeOffer
+	METHOD m_uosbpqwc renderArrow (Lnet/minecraft/unmapped/C_sedilmty;Lnet/minecraft/unmapped/C_argwryfu;II)V
+		ARG 2 tradeOffer
+		ARG 3 x
+		ARG 4 y
+	METHOD m_wdjmsurv (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_weigqxxa renderScrollbar (Lnet/minecraft/unmapped/C_sedilmty;IILnet/minecraft/unmapped/C_eygsjfgm;)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 tradeOffers
+	METHOD m_wmofbvuc canScroll (I)Z
+		ARG 1 listSize
+	METHOD m_zbringro syncRecipeIndex ()V
+	CLASS C_cqgmotei WidgetButtonPage
+		FIELD f_qcukhnsz index I
+		METHOD <init> (Lnet/minecraft/unmapped/C_ymlucuqe;IIILnet/minecraft/unmapped/C_buwziidm$C_zlxjklbn;)V
+			ARG 2 x
+			ARG 3 y
+			ARG 4 index
+			ARG 5 onPress
+		METHOD m_dahfkweu getIndex ()I
+		METHOD m_xipyqifj renderTooltip (Lnet/minecraft/unmapped/C_sedilmty;II)V
+			ARG 2 x
+			ARG 3 y

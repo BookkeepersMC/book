@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_ovnsbjhl net/minecraft/datafixer/mapping/LegacyCoralFanBlockMapping
+	FIELD f_odykpgmo MAP Ljava/util/Map;

@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_nldngtbl net/minecraft/client/render/entity/StriderEntityRenderer
+	FIELD f_cqcekuou COLD_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_izpksmbx TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;

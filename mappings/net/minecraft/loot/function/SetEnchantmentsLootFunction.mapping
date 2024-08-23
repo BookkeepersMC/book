@@ -1,0 +1,8 @@
+CLASS net/minecraft/unmapped/C_bpyfibfg net/minecraft/loot/function/SetEnchantmentsLootFunction
+	FIELD f_lrrfbeoq enchantments Ljava/util/Map;
+	FIELD f_unibonct add Z
+	CLASS C_wzimofnb Builder
+		FIELD f_tftgatba add Z
+		FIELD f_wllspuwj enchantments Lcom/google/common/collect/ImmutableMap$Builder;
+		METHOD <init> (Z)V
+			ARG 1 add

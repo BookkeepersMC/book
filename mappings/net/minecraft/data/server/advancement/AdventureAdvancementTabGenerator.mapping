@@ -1,0 +1,41 @@
+CLASS net/minecraft/unmapped/C_unbelsbg net/minecraft/data/server/advancement/AdventureAdvancementTabGenerator
+	FIELD f_aqlhjrbz OVERWORLD_HEIGHT I
+	FIELD f_bnsjkewh OVERWORLD_BEDROCK_TOP_Y I
+	FIELD f_odnmebkp OVERWORLD_MIN_Y I
+	FIELD f_qzqtaacj OVERWORLD_MAX_Y I
+	FIELD f_rqtgaigz ENEMY_MOBS Ljava/util/List;
+	METHOD m_ctjmjeuy requireSalvagedSherd (Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;)Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;
+		ARG 1 task
+	METHOD m_cwszvfic requireAllExclusiveTrimmedArmor (Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;)Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;
+		ARG 0 task
+	METHOD m_fdomsedq usingItemAndLookingAtEntityCondition (Lnet/minecraft/unmapped/C_kvkvpjlm$C_fnhnavbg;Lnet/minecraft/unmapped/C_afravpde$C_qwujnjpk;)Lnet/minecraft/unmapped/C_rzypsigz;
+	METHOD m_hxwqoqup createKillAllEnemyMobsAdvancement (Lnet/minecraft/unmapped/C_unoypvme;Ljava/util/function/Consumer;Lnet/minecraft/unmapped/C_pzdchrcy;Ljava/util/List;)Lnet/minecraft/unmapped/C_unoypvme;
+		ARG 0 advancementHolder
+		ARG 1 advancementConsumer
+		ARG 3 enemies
+	METHOD m_iaxhxbmm requirePlacedComparatorReadingBlock (Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_mmxmpdoq;)Lnet/minecraft/unmapped/C_rzypsigz;
+	METHOD m_ibaruuym requireTrimmedArmor (Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;)Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;
+		ARG 0 task
+	METHOD m_kgqoflxt (Ljava/util/Set;Lnet/minecraft/unmapped/C_pnjbhirj$C_urfqysdj;)Z
+		ARG 1 template
+	METHOD m_kpzuqmoa lightningStruckWithingRange (Lnet/minecraft/unmapped/C_nihhkamy$C_mujuochb;Ljava/util/Optional;)Lnet/minecraft/unmapped/C_rzypsigz;
+		ARG 0 range
+		ARG 1 entityPredicate
+	METHOD m_mgvgqwrb appendEnterAllBiomesCriterion (Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;Ljava/util/List;)Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;
+		ARG 0 task
+		ARG 1 biomeProvider
+		ARG 2 biomes
+	METHOD m_pyldeoxx buildAdventuringTime (Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;Ljava/util/function/Consumer;Lnet/minecraft/unmapped/C_unoypvme;Lnet/minecraft/unmapped/C_xmtsvelx$C_jgklgqjr;)V
+		ARG 1 exporter
+		ARG 2 parent
+		ARG 3 preset
+	METHOD m_vrousmep (Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_ogavsvbr;)V
+		ARG 2 enemy
+	METHOD m_wculmwvf requirePlacedBlockReadByComparator (Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_mmxmpdoq;)Lnet/minecraft/unmapped/C_rzypsigz;
+	METHOD m_wvlvqnhd appendKillAllEnemyMobsCriterion (Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;Lnet/minecraft/unmapped/C_pzdchrcy;Ljava/util/List;)Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;
+		ARG 0 task
+		ARG 2 enemies
+	METHOD m_zrrgemef (Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;Lnet/minecraft/unmapped/C_pnjbhirj$C_urfqysdj;)V
+		ARG 1 template
+	METHOD m_zxppiupc (Lnet/minecraft/unmapped/C_kdwyuhdb$C_dukbjvrv;Lnet/minecraft/unmapped/C_ncpywfca;)V
+		ARG 1 template

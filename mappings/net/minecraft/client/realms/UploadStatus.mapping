@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_nkrqwoza net/minecraft/client/realms/UploadStatus
+	FIELD f_jqsggdqx bytesWritten J
+	FIELD f_mkemebyx totalBytes J

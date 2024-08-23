@@ -1,0 +1,21 @@
+CLASS net/minecraft/unmapped/C_ovjocfal net/minecraft/structure/piece/StructurePieceWithDimensions
+	FIELD f_dfaxwdxj heightPos I
+	FIELD f_dgnuyifn height I
+	FIELD f_imvmzmob width I
+	FIELD f_yfdarbjj depth I
+	METHOD <init> (Lnet/minecraft/unmapped/C_etqvykma;IIIIIILnet/minecraft/unmapped/C_xpuuihxf;)V
+		ARG 1 type
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 width
+		ARG 6 height
+		ARG 7 depth
+		ARG 8 orientation
+	METHOD m_lvrcisjd adjustToAverageHeight (Lnet/minecraft/unmapped/C_vdvbsyle;Lnet/minecraft/unmapped/C_hmqypqzz;I)Z
+		ARG 1 world
+		ARG 2 boundingBox
+		ARG 3 deltaY
+	METHOD m_xyonjkel adjustToMinHeight (Lnet/minecraft/unmapped/C_vdvbsyle;I)Z
+		ARG 1 world
+		ARG 2 deltaY

@@ -1,0 +1,18 @@
+CLASS net/minecraft/unmapped/C_klcypqlq net/minecraft/entity/ai/goal/TemptGoal
+	FIELD f_arjvkkfc predicate Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_bfzketot lastPlayerY D
+	FIELD f_fvikwscs cooldown I
+	FIELD f_gcukblrx canBeScared Z
+	FIELD f_gjozrwne active Z
+	FIELD f_hvntedfi lastPlayerZ D
+	FIELD f_iddzhkui speed D
+	FIELD f_imkviwrf lastPlayerPitch D
+	FIELD f_nzazfudk food Ljava/util/function/Predicate;
+	FIELD f_scbsiutq mob Lnet/minecraft/unmapped/C_hqdayibh;
+	FIELD f_stwralen lastPlayerX D
+	FIELD f_tfwxptmo closestPlayer Lnet/minecraft/unmapped/C_jzrpycqo;
+	FIELD f_twlffgvx lastPlayerYaw D
+	METHOD m_mgdyvbvj isActive ()Z
+	METHOD m_prlymqhz isTemptedBy (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 1 entity
+	METHOD m_qytkxnlv canBeScared ()Z

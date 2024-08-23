@@ -1,0 +1,15 @@
+CLASS net/minecraft/unmapped/C_vofymfgv net/minecraft/entity/ai/control/BodyControl
+	FIELD f_auxfvobb MAX_HEAD_YAW I
+	FIELD f_aypxvlqw ROTATION_INCREMENTS I
+	FIELD f_bmkvemqt MAX_ACTIVE_TICKS I
+	FIELD f_jggcabbj lastHeadYaw F
+	FIELD f_jhkameqo entity Lnet/minecraft/unmapped/C_dxkfswlz;
+	FIELD f_xqyifmaf activeTicks I
+	METHOD <init> (Lnet/minecraft/unmapped/C_dxkfswlz;)V
+		ARG 1 entity
+	METHOD m_enufoqdz rotateHead ()V
+	METHOD m_gkzyihfl rotateLook ()V
+	METHOD m_hnytvxve isIndependent ()Z
+	METHOD m_jvhgprwb isMoving ()Z
+	METHOD m_kgsfcfjq tick ()V
+	METHOD m_uvxgawrx rotateBody ()V

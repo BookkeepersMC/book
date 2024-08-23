@@ -1,0 +1,136 @@
+CLASS net/minecraft/unmapped/C_xondkbcs net/minecraft/command/argument/NbtPathArgumentType
+	FIELD f_beygqtpy RIGHT_CURLY_BRACKET C
+	FIELD f_boksygkd TOO_DEEP_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_hhbmykal LEFT_SQUARE_BRACKET C
+	FIELD f_lraveldk EXPECTED_LIST_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_olurmfbf EXAMPLES Ljava/util/Collection;
+	FIELD f_pbzniepu INVALID_INDEX_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_rekogewg RIGHT_SQUARE_BRACKET C
+	FIELD f_rmxjciqk LEFT_CURLY_BRACKET C
+	FIELD f_tfixjexb DOUBLE_QUOTE C
+	FIELD f_vzohkbnv BACKSLASH C
+	FIELD f_ygjsuegf NOTHING_FOUND_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_zfdfgeqs INVALID_PATH_NODE_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD getExamples getExamples ()Ljava/util/Collection;
+	METHOD m_hruawrtu parseNode (Lcom/mojang/brigadier/StringReader;Z)Lnet/minecraft/unmapped/C_xondkbcs$C_blxxczzh;
+		ARG 0 reader
+		ARG 1 root
+	METHOD m_lywsfpat nbtPath ()Lnet/minecraft/unmapped/C_xondkbcs;
+	METHOD m_muwfcwxe (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 path
+	METHOD m_poptnltc (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 index
+	METHOD m_qfioycxa readName (Lcom/mojang/brigadier/StringReader;)Ljava/lang/String;
+		ARG 0 reader
+	METHOD m_qrbitsnq isNameCharacter (C)Z
+		ARG 0 c
+	METHOD m_stggwydj readCompoundChildNode (Lcom/mojang/brigadier/StringReader;Ljava/lang/String;)Lnet/minecraft/unmapped/C_xondkbcs$C_blxxczzh;
+		ARG 0 reader
+		ARG 1 name
+	METHOD m_tnmfping (Lnet/minecraft/unmapped/C_hhlwcnih;Lnet/minecraft/unmapped/C_oivssbvb;)Z
+		ARG 1 nbt
+	METHOD m_wabhpryj (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 nbt
+	METHOD m_wbdwwacb getPredicate (Lnet/minecraft/unmapped/C_hhlwcnih;)Ljava/util/function/Predicate;
+		ARG 0 filter
+	METHOD m_yeakpxtc getNbtPath (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Lnet/minecraft/unmapped/C_xondkbcs$C_rgpfrkey;
+		ARG 0 context
+		ARG 1 name
+	METHOD parse parse (Lcom/mojang/brigadier/StringReader;)Ljava/lang/Object;
+		ARG 1 reader
+	CLASS C_abcnqxqb AllListElementNode
+		FIELD f_lchgcunm INSTANCE Lnet/minecraft/unmapped/C_xondkbcs$C_abcnqxqb;
+	CLASS C_blxxczzh PathNode
+		METHOD m_abuzflnq init ()Lnet/minecraft/unmapped/C_oivssbvb;
+		METHOD m_bopwjdhn clear (Lnet/minecraft/unmapped/C_oivssbvb;)I
+			ARG 1 nbt
+		METHOD m_cffsjhyx getOrInit (Lnet/minecraft/unmapped/C_oivssbvb;Ljava/util/function/Supplier;Ljava/util/List;)V
+			ARG 1 nbt
+			ARG 2 source
+			ARG 3 results
+		METHOD m_eiixvuaz get (Lnet/minecraft/unmapped/C_oivssbvb;Ljava/util/List;)V
+			ARG 1 nbt
+			ARG 2 results
+		METHOD m_isdvrydv (Ljava/util/function/Supplier;Lnet/minecraft/unmapped/C_oivssbvb;Ljava/util/List;)V
+			ARG 2 nbt
+			ARG 3 results
+		METHOD m_nnmtshdc set (Lnet/minecraft/unmapped/C_oivssbvb;Ljava/util/function/Supplier;)I
+			ARG 1 nbt
+			ARG 2 source
+		METHOD m_rlsoehkj process (Ljava/util/List;Ljava/util/function/BiConsumer;)Ljava/util/List;
+			ARG 1 elements
+			ARG 2 action
+		METHOD m_uoziawpc getOrInit (Ljava/util/List;Ljava/util/function/Supplier;)Ljava/util/List;
+			ARG 1 elements
+			ARG 2 supplier
+		METHOD m_upfhowiv get (Ljava/util/List;)Ljava/util/List;
+			ARG 1 elements
+	CLASS C_bpoqewtu FilteredListElementNode
+		FIELD f_fseurwjw filter Lnet/minecraft/unmapped/C_hhlwcnih;
+		FIELD f_lahdkwxi predicate Ljava/util/function/Predicate;
+		METHOD <init> (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+			ARG 1 filter
+		METHOD m_fpwrdycp (Ljava/util/List;Lorg/apache/commons/lang3/mutable/MutableBoolean;Lnet/minecraft/unmapped/C_oivssbvb;)V
+			ARG 2 _nbt
+	CLASS C_bynmloqe IndexedListElementNode
+		FIELD f_wxzimbgr index I
+		METHOD <init> (I)V
+			ARG 1 index
+	CLASS C_gipmbcio FilteredNamedNode
+		FIELD f_dtgglerx filter Lnet/minecraft/unmapped/C_hhlwcnih;
+		FIELD f_exwnuwoi name Ljava/lang/String;
+		FIELD f_tbptvmwz predicate Ljava/util/function/Predicate;
+		METHOD <init> (Ljava/lang/String;Lnet/minecraft/unmapped/C_hhlwcnih;)V
+			ARG 1 name
+			ARG 2 filter
+	CLASS C_jyuceqqr NamedNode
+		FIELD f_fordzlbg name Ljava/lang/String;
+		METHOD <init> (Ljava/lang/String;)V
+			ARG 1 name
+	CLASS C_rgpfrkey NbtPath
+		FIELD f_aogbdohi nodeEndIndices Lit/unimi/dsi/fastutil/objects/Object2IntMap;
+		FIELD f_tudauuyt nodes [Lnet/minecraft/unmapped/C_xondkbcs$C_blxxczzh;
+		FIELD f_umgfvbxl string Ljava/lang/String;
+		METHOD <init> (Ljava/lang/String;[Lnet/minecraft/unmapped/C_xondkbcs$C_blxxczzh;Lit/unimi/dsi/fastutil/objects/Object2IntMap;)V
+			ARG 1 string
+			ARG 2 nodes
+			ARG 3 nodeEndIndices
+		METHOD m_btosoubp createNothingFoundException (Lnet/minecraft/unmapped/C_xondkbcs$C_blxxczzh;)Lcom/mojang/brigadier/exceptions/CommandSyntaxException;
+			ARG 1 node
+		METHOD m_dhocbhvt get (Lnet/minecraft/unmapped/C_oivssbvb;)Ljava/util/List;
+			ARG 1 nbt
+		METHOD m_dqinbnvh insert (ILnet/minecraft/unmapped/C_hhlwcnih;Ljava/util/List;)I
+			ARG 1 index
+			ARG 2 nbt
+			ARG 3 elements
+		METHOD m_giykfbxy estimateDepth ()I
+		METHOD m_ispygytt getOrInit (Lnet/minecraft/unmapped/C_oivssbvb;Ljava/util/function/Supplier;)Ljava/util/List;
+			ARG 1 nbt
+			ARG 2 source
+		METHOD m_ixmzihyp forEach (Ljava/util/List;Ljava/util/function/Function;)I
+			ARG 0 elements
+			ARG 1 operation
+		METHOD m_kiiborhv isTooDeep (Lnet/minecraft/unmapped/C_oivssbvb;I)Z
+			ARG 0 nbt
+			ARG 1 length
+		METHOD m_mtzmiylk remove (Lnet/minecraft/unmapped/C_oivssbvb;)I
+			ARG 1 nbt
+		METHOD m_ocgwcqsm count (Lnet/minecraft/unmapped/C_oivssbvb;)I
+			ARG 1 nbt
+		METHOD m_rjtxsqqw getTerminals (Lnet/minecraft/unmapped/C_oivssbvb;)Ljava/util/List;
+			ARG 1 nbt
+		METHOD m_soirungq set (Lnet/minecraft/unmapped/C_oivssbvb;Lnet/minecraft/unmapped/C_oivssbvb;)I
+			ARG 1 original
+			ARG 2 replacement
+		METHOD m_tbydmdrl (Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
+			ARG 0 left
+			ARG 1 right
+		METHOD m_wwyqzgpp (Ljava/lang/String;)Lcom/mojang/serialization/DataResult;
+			ARG 0 path
+		METHOD m_xpoxgljh get ()Ljava/lang/String;
+		METHOD m_zixbjnei parse (Ljava/lang/String;)Lnet/minecraft/unmapped/C_xondkbcs$C_rgpfrkey;
+			ARG 0 path
+	CLASS C_vvxpwqjz FilteredRootNode
+		FIELD f_apisvgmm matcher Ljava/util/function/Predicate;
+		METHOD <init> (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+			ARG 1 filter

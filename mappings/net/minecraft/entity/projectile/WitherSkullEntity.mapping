@@ -1,0 +1,5 @@
+CLASS net/minecraft/unmapped/C_vzureqzt net/minecraft/entity/projectile/WitherSkullEntity
+	FIELD f_vjaaowts CHARGED Lnet/minecraft/unmapped/C_rinmcaxy;
+	METHOD m_lzdaljfl isCharged ()Z
+	METHOD m_zrdahfgu setCharged (Z)V
+		ARG 1 charged

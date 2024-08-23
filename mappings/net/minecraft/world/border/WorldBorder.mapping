@@ -1,0 +1,186 @@
+CLASS net/minecraft/unmapped/C_pneibfez net/minecraft/world/border/WorldBorder
+	FIELD f_bmqhxlhq centerZ D
+	FIELD f_dpvlxqbb centerX D
+	FIELD f_enpkynmr MAX_CENTER_COORDINATE D
+	FIELD f_fqhnwzjm area Lnet/minecraft/unmapped/C_pneibfez$C_wvskmywr;
+	FIELD f_hvxqjvib listeners Ljava/util/List;
+	FIELD f_knkzbnpx maxRadius I
+	FIELD f_lforvemw warningTime I
+	FIELD f_sssgwdin damagePerBlock D
+	FIELD f_toyylbpi DEFAULT_BORDER Lnet/minecraft/unmapped/C_pneibfez$C_koayjdos;
+	FIELD f_wmydarfu safeZone D
+	FIELD f_xygrkzdm MAX_SIZE D
+	FIELD f_yumwsdac warningBlocks I
+	METHOD m_agoadbhk getListeners ()Ljava/util/List;
+	METHOD m_btyvpimw getMaxRadius ()I
+		COMMENT Returns the maximum radius of this border, in blocks.
+		COMMENT
+		COMMENT <p>The default value is 29999984.
+	METHOD m_bxlhwbmt getBoundWest ()D
+	METHOD m_cqocgglm canCollide (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_hbcjzgoe;)Z
+		ARG 1 entity
+		ARG 2 box
+	METHOD m_csgqxgyg getCenterZ ()D
+	METHOD m_dhhjdcxh setWarningTime (I)V
+		COMMENT Sets the warning time of this border and notifies all listeners.
+		ARG 1 warningTime
+	METHOD m_ezzfqxbx setSize (D)V
+		COMMENT Sets the area of this border to a static area with the given {@code size},
+		COMMENT and notifies all listeners.
+		ARG 1 size
+	METHOD m_fbbkckdz addListener (Lnet/minecraft/unmapped/C_oeeocvfz;)V
+		ARG 1 listener
+	METHOD m_fijwfksk getSizeLerpTarget ()D
+	METHOD m_gghmggzw write ()Lnet/minecraft/unmapped/C_pneibfez$C_koayjdos;
+	METHOD m_hghifpnu contains (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	METHOD m_hrnecmit getSizeLerpTime ()J
+	METHOD m_icldefya asVoxelShape ()Lnet/minecraft/unmapped/C_zscvhwbd;
+	METHOD m_irhvnhxb getCenterX ()D
+	METHOD m_jsnaccqt getDistanceInsideBorder (Lnet/minecraft/unmapped/C_astfners;)D
+		ARG 1 entity
+	METHOD m_jywpmylk contains (Lnet/minecraft/unmapped/C_ynrszrtu;)Z
+		ARG 1 pos
+	METHOD m_kbsbhpcu contains (Lnet/minecraft/unmapped/C_hbcjzgoe;)Z
+		ARG 1 box
+	METHOD m_kfyxxtft interpolateSize (DDJ)V
+		ARG 1 fromSize
+		ARG 3 toSize
+		ARG 5 time
+	METHOD m_lsneixdd removeListener (Lnet/minecraft/unmapped/C_oeeocvfz;)V
+		ARG 1 listener
+	METHOD m_mmctmagp contains (DDD)Z
+		ARG 1 x
+		ARG 3 z
+		ARG 5 offset
+	METHOD m_moelrhva getBoundNorth ()D
+	METHOD m_nnfnigje getWarningTime ()I
+		COMMENT Returns the warning time of this border, in ticks.
+		COMMENT <p>Once a player goes beyond the border, this is the time before a message
+		COMMENT is displayed to them.
+		COMMENT
+		COMMENT <p>The default value is 15.
+	METHOD m_oyfyshcc setDamagePerBlock (D)V
+		COMMENT Sets the damage per block of this border and notifies all listeners.
+		ARG 1 damagePerBlock
+	METHOD m_psqmcoho getDistanceInsideBorder (DD)D
+		ARG 1 x
+		ARG 3 z
+	METHOD m_qrweqcuv getShrinkingSpeed ()D
+	METHOD m_rvfxuhnx setCenter (DD)V
+		COMMENT Sets the {@code x} and {@code z} coordinates of the center of this border,
+		COMMENT and notifies its area and all listeners.
+		ARG 1 x
+		ARG 3 z
+	METHOD m_shclqsot getStage ()Lnet/minecraft/unmapped/C_eabcdwzy;
+	METHOD m_suimnfyl setSafeZone (D)V
+		COMMENT Sets the safe zone of this border and notifies all listeners.
+		ARG 1 safeZone
+	METHOD m_suylfcrm setMaxRadius (I)V
+		COMMENT Sets the maximum radius of this border and notifies its area.
+		ARG 1 maxRadius
+	METHOD m_tegoerqq getSafeZone ()D
+		COMMENT Returns the safe zone of this border.
+		COMMENT
+		COMMENT <p>The default value is 5.0.
+	METHOD m_uaflvqmh load (Lnet/minecraft/unmapped/C_pneibfez$C_koayjdos;)V
+		ARG 1 properties
+	METHOD m_ugghurew getDamagePerBlock ()D
+		COMMENT Returns the damage increase per block beyond this border, in hearts.
+		COMMENT <p>Once an entity goes beyond the border and the safe zone, damage will be
+		COMMENT applied depending on the distance traveled multiplied by this damage increase.
+		COMMENT
+		COMMENT <p>The default value is 0.2.
+		COMMENT
+		COMMENT @see net.minecraft.entity.LivingEntity#baseTick()
+	METHOD m_vnkyxdhv clamp (DDD)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 1 x
+		ARG 5 z
+	METHOD m_wzayjnat contains (DD)Z
+		ARG 1 x
+		ARG 3 z
+	METHOD m_xgkkutln setWarningBlocks (I)V
+		COMMENT Sets the warning blocks of this border and notifies all listeners.
+		ARG 1 warningBlocks
+	METHOD m_xjmigxbn getBoundEast ()D
+	METHOD m_xxbozamz clamp (Lnet/minecraft/unmapped/C_vgpupfxx;)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 1 vec
+	METHOD m_yqehsxmb clamp (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_yrcphygs tick ()V
+	METHOD m_yxcbppzo getBoundSouth ()D
+	METHOD m_ztkzbzhx getWarningBlocks ()I
+		COMMENT Returns the warning distance of this border, in blocks.
+		COMMENT <p>When an entity approaches the border, this is the distance from which
+		COMMENT a warning will be displayed.
+		COMMENT
+		COMMENT <p>The default value is 5.
+	METHOD m_zutegmjd getSize ()D
+	CLASS C_jpezqkmy StaticArea
+		FIELD f_eewlbzle size D
+		FIELD f_pezaploj shape Lnet/minecraft/unmapped/C_zscvhwbd;
+		FIELD f_swkkcnlq boundNorth D
+		FIELD f_wymsjnhi boundEast D
+		FIELD f_xcwrkkpz boundSouth D
+		FIELD f_yoapsziw boundWest D
+		METHOD <init> (Lnet/minecraft/unmapped/C_pneibfez;D)V
+			ARG 2 size
+		METHOD m_zmwvyzuf recalculateBounds ()V
+	CLASS C_koayjdos Properties
+		FIELD f_gledpbnn damagePerBlock D
+		FIELD f_htijduel safeZone D
+		FIELD f_jfppmkhx warningTime I
+		FIELD f_lfcnpvnu centerX D
+		FIELD f_nakxugdf sizeLerpTime J
+		FIELD f_pfzaqxzg size D
+		FIELD f_phygimsi centerZ D
+		FIELD f_qbfwbzjb warningBlocks I
+		FIELD f_voxwpbtc sizeLerpTarget D
+		METHOD <init> (DDDDIIDJD)V
+			ARG 1 centerX
+			ARG 3 centerZ
+			ARG 5 damagePerBlock
+			ARG 7 safeZone
+			ARG 9 warningBlocks
+			ARG 10 warningTime
+			ARG 11 size
+			ARG 13 sizeLerpTime
+			ARG 15 sizeLerpTarget
+		METHOD <init> (Lnet/minecraft/unmapped/C_pneibfez;)V
+			ARG 1 worldBorder
+		METHOD m_asurbull getWarningTime ()I
+		METHOD m_btawsilq writeNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+			ARG 1 nbt
+		METHOD m_ccfbbyzi fromDynamic (Lcom/mojang/serialization/DynamicLike;Lnet/minecraft/unmapped/C_pneibfez$C_koayjdos;)Lnet/minecraft/unmapped/C_pneibfez$C_koayjdos;
+			ARG 1 properties
+		METHOD m_dsmxdcba getWarningBlocks ()I
+		METHOD m_dtgfbjqm getCenterX ()D
+		METHOD m_hfyvrjgo getSizeLerpTarget ()D
+		METHOD m_jadxqtxd getCenterZ ()D
+		METHOD m_lxzjofvk getSafeZone ()D
+		METHOD m_nololknn getSize ()D
+		METHOD m_tdydkcnr getSizeLerpTime ()J
+		METHOD m_thsezyhe getDamagePerBlock ()D
+	CLASS C_ubxsbnzy MovingArea
+		FIELD f_dkwcszsx oldSize D
+		FIELD f_gzkcyzfv timeDuration D
+		FIELD f_illafgnj timeStart J
+		FIELD f_pspajbvk newSize D
+		FIELD f_wrwrceni timeEnd J
+		METHOD <init> (Lnet/minecraft/unmapped/C_pneibfez;DDJ)V
+			ARG 2 oldSize
+			ARG 4 newSize
+			ARG 6 timeDuration
+	CLASS C_wvskmywr Area
+		METHOD m_bjnlxxyk getBoundNorth ()D
+		METHOD m_buwvvfgr getBoundSouth ()D
+		METHOD m_dqjicgmd onMaxRadiusChanged ()V
+		METHOD m_jvrhfdwg getSizeLerpTarget ()D
+		METHOD m_kbyatwkn getSizeLerpTime ()J
+		METHOD m_lrqpajyi getBoundWest ()D
+		METHOD m_lzeetxkt onCenterChanged ()V
+		METHOD m_mteyowuq asVoxelShape ()Lnet/minecraft/unmapped/C_zscvhwbd;
+		METHOD m_mzwlince getStage ()Lnet/minecraft/unmapped/C_eabcdwzy;
+		METHOD m_tmhvulgw getBoundEast ()D
+		METHOD m_uauoaitp getSize ()D
+		METHOD m_uctuxlfw getShrinkingSpeed ()D
+		METHOD m_yhygdxfh getAreaInstance ()Lnet/minecraft/unmapped/C_pneibfez$C_wvskmywr;

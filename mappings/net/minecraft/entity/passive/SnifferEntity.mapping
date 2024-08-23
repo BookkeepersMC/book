@@ -1,0 +1,61 @@
+CLASS net/minecraft/unmapped/C_frelvdpe net/minecraft/entity/passive/SnifferEntity
+	FIELD f_blwhlami DIGGING_PARTICLE_DURATION_TICKS I
+	FIELD f_djaefjjj DROP_SEED_AT_TICK Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_gmhfuhhd MAXIMUM_BABY_AGE I
+	FIELD f_iphoblce STATE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_jzatmnca DIGGING_SEED_DROP_OFFSET_TICKS I
+	FIELD f_kqvcpqxr DIGGING_PARTICLE_AMOUNT I
+	FIELD f_mgyiooox risingAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_njkxkonj scentingAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_qfuiywxb sniffingAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_tjypbezl DIGGING_PARTICLE_DELAY_TICKS I
+	FIELD f_umjtltfk diggingAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_vkiukhqv DIGGING_DIMENSIONS Lnet/minecraft/unmapped/C_sszpscpo;
+	FIELD f_ylpzfanu happyAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_zzyumlgm DIGGING_HITBOX_HEIGHT_OFFSET F
+	METHOD m_dcrkykvw onScentingStart ()Lnet/minecraft/unmapped/C_frelvdpe;
+	METHOD m_dfkptpop calculateDigPosition ()Ljava/util/Optional;
+	METHOD m_eddwijyy getState ()Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+	METHOD m_fdqfcdad isTempted ()Z
+	METHOD m_fgsgshva canDig ()Z
+	METHOD m_ibvekfzg isSearching ()Z
+	METHOD m_krkklgkl spawnDiggingParticles (Lnet/minecraft/unmapped/C_kxntavoz;)Lnet/minecraft/unmapped/C_frelvdpe;
+		ARG 1 animationState
+	METHOD m_metigshp canSniff ()Z
+	METHOD m_mfpydzkn rememberExploredPosition (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_frelvdpe;
+		COMMENT Remembers the given position in the sniffer's brain, up to a limit of 20 stored positions.
+		COMMENT If the limit is met, the oldest saved position is removed.
+		ARG 1 pos
+	METHOD m_mqhnexss getHeadBlock ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_nqjhhsoe updateState (Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;)Lnet/minecraft/unmapped/C_frelvdpe;
+		ARG 1 snifferState
+	METHOD m_nqoicoxq onDiggingStart ()Lnet/minecraft/unmapped/C_frelvdpe;
+	METHOD m_olijcupv getExploredPositions ()Ljava/util/stream/Stream;
+	METHOD m_rwbiemvz onDiggingComplete (Z)Lnet/minecraft/unmapped/C_frelvdpe;
+		ARG 1 rememberExploredPosition
+	METHOD m_tpcomtgk stopAnimations ()V
+	METHOD m_utjunwfo getHeadPosition ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_wxatdcid isDiggingSoundPlayable ()Z
+	METHOD m_wzcnuzsn canDig (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	METHOD m_yehkxrqm tryPlaySearchingSound ()V
+	METHOD m_yxzbqwhw dropSeed ()V
+	METHOD m_zbdrmcvd (I)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 range
+	METHOD m_zedtqxzx createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_zzpkctat setState (Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;)Lnet/minecraft/unmapped/C_frelvdpe;
+		ARG 1 snifferState
+	CLASS C_ekatpfyn State
+		FIELD f_dplhcpjf HAPPY Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+		FIELD f_dzlwbxot IDLING Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+		FIELD f_jiyqkeyh PACKET_CODEC Lnet/minecraft/unmapped/C_qsrmwluu;
+		FIELD f_ljpztdnk SNIFFING Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+		FIELD f_nxeotgrf id I
+		FIELD f_pkjifclz BY_ID Ljava/util/function/IntFunction;
+		FIELD f_qgkbyaxa SEARCHING Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+		FIELD f_tbzquwfe RISING Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+		FIELD f_toduazac DIGGING Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+		FIELD f_uanohqne SCENTING Lnet/minecraft/unmapped/C_frelvdpe$C_ekatpfyn;
+		METHOD <init> (Ljava/lang/String;II)V
+			ARG 3 id
+		METHOD m_jwgewysc getId ()I

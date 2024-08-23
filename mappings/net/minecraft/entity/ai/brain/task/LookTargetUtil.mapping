@@ -1,0 +1,85 @@
+CLASS net/minecraft/unmapped/C_glrklsny net/minecraft/entity/ai/brain/task/LookTargetUtil
+	METHOD m_awvvypat getEntity (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_vbbyoqyw;)Ljava/util/Optional;
+		ARG 0 entity
+		ARG 1 uuidMemoryModule
+	METHOD m_ctbmsqii lookAtEachOther (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)V
+		ARG 0 first
+		ARG 1 second
+	METHOD m_erntwxtk isValidBreedingTarget (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 entity
+	METHOD m_fdeslver canSee (Lnet/minecraft/unmapped/C_rjqjaxef;Lnet/minecraft/unmapped/C_vbbyoqyw;Lnet/minecraft/unmapped/C_ogavsvbr;)Z
+		ARG 0 brain
+		ARG 1 memoryModuleType
+		ARG 2 entityType
+	METHOD m_hmyszgwx isVisibleInMemory (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 source
+		ARG 1 target
+	METHOD m_iapcotew walkTowards (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_hynzadkk;FI)V
+		ARG 0 entity
+		ARG 1 target
+		ARG 2 speed
+		ARG 3 completionRange
+	METHOD m_ickeymbg walkTowardsEachOther (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;FI)V
+		ARG 0 first
+		ARG 1 second
+		ARG 2 speed
+	METHOD m_jopprbze getCloserEntity (Lnet/minecraft/unmapped/C_usxaxydn;Ljava/util/Optional;Lnet/minecraft/unmapped/C_usxaxydn;)Lnet/minecraft/unmapped/C_usxaxydn;
+		ARG 0 source
+		ARG 1 first
+		ARG 2 second
+	METHOD m_jqczfoso isTargetWithinAttackRange (Lnet/minecraft/unmapped/C_dxkfswlz;Lnet/minecraft/unmapped/C_usxaxydn;I)Z
+		ARG 0 source
+		ARG 1 target
+		ARG 2 rangedWeaponReachReduction
+	METHOD m_kuyqvzrm lookAtAndWalkTowardsEachOther (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;FI)V
+		ARG 0 first
+		ARG 1 second
+		ARG 2 speed
+	METHOD m_oewccwdc getCloserEntity (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)Lnet/minecraft/unmapped/C_usxaxydn;
+		ARG 0 source
+		ARG 1 first
+		ARG 2 second
+	METHOD m_phbmgvxr canSee (Lnet/minecraft/unmapped/C_rjqjaxef;Lnet/minecraft/unmapped/C_vbbyoqyw;Ljava/util/function/Predicate;)Z
+		ARG 0 brain
+		ARG 1 memoryType
+		ARG 2 filter
+	METHOD m_qonzbkul walkTowards (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_upikatuq;FI)V
+		ARG 0 entity
+		ARG 1 target
+		ARG 2 speed
+		ARG 3 completionTarget
+	METHOD m_rimkcqny find (Lnet/minecraft/unmapped/C_hqdayibh;II)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 entity
+		ARG 1 horizontalRange
+		ARG 2 verticalRange
+	METHOD m_rxoftlkg canSee (Lnet/minecraft/unmapped/C_rjqjaxef;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 brain
+		ARG 1 target
+	METHOD m_sbvwjqzq lookAt (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;)V
+		ARG 0 entity
+		ARG 1 target
+	METHOD m_suwuvdix walkTowards (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_astfners;FI)V
+		ARG 0 entity
+		ARG 1 target
+		ARG 2 speed
+		ARG 3 completionRange
+	METHOD m_twcvmjrq throwStack (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_vgpupfxx;F)V
+		ARG 0 thrower
+		ARG 2 throwVec
+		ARG 3 throwStrength
+		ARG 4 yOffset
+	METHOD m_vdaxycco getPosClosestToOccupiedPointOfInterest (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_zubvmeye;I)Lnet/minecraft/unmapped/C_zubvmeye;
+		ARG 0 world
+		ARG 1 center
+		ARG 2 radius
+	METHOD m_wwkgdngi isNewTargetTooFar (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_usxaxydn;D)Z
+		COMMENT Checks if an entity can be a new attack target for the source entity.
+		ARG 0 source
+			COMMENT the source entity
+		ARG 1 target
+			COMMENT the attack target candidate
+		ARG 2 extraDistance
+			COMMENT the max distance this new target can be farther compared to the existing target
+	METHOD m_xafgkpcc throwStack (Lnet/minecraft/unmapped/C_usxaxydn;Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 0 thrower
+		ARG 2 throwVec

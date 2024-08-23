@@ -1,0 +1,30 @@
+CLASS net/minecraft/unmapped/C_gcfircge net/minecraft/entity/passive/FrogEntity
+	FIELD f_aydfmrgq floatAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_fhflvgeh MODULES Lcom/google/common/collect/ImmutableList;
+	FIELD f_hceutdgz FALL_DAMAGE_REDUCTION I
+	FIELD f_hdhfqunh tongueAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_ituaqaqf SENSORS Lcom/google/common/collect/ImmutableList;
+	FIELD f_kbrwwixv longJumpAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_mupmmsbd TARGET_ENTITY_ID Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_tvuakrkf croakAnimationState Lnet/minecraft/unmapped/C_kxntavoz;
+	FIELD f_ulbksrem TYPE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_wjjrdvsc VARIANT_NBT_KEY Ljava/lang/String;
+	METHOD m_bfxagsst clearTargetEntity ()V
+	METHOD m_fhnhebsj createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_hgitrvje getTargetEntity ()Ljava/util/Optional;
+	METHOD m_hxgrsmrp canEat (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 entity
+	METHOD m_lfkqipai setTargetEntity (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	METHOD m_yoqmukqg canSpawn (Lnet/minecraft/unmapped/C_ogavsvbr;Lnet/minecraft/unmapped/C_vdvbsyle;Lnet/minecraft/unmapped/C_bhyaesep;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_rlomrsco;)Z
+		ARG 0 entity
+		ARG 1 world
+	CLASS C_ioluwgbh SwimNavigation
+		METHOD <init> (Lnet/minecraft/unmapped/C_gcfircge;Lnet/minecraft/unmapped/C_cdctfzbn;)V
+			ARG 1 frog
+			ARG 2 world
+	CLASS C_lvywjyln LookControl
+		METHOD <init> (Lnet/minecraft/unmapped/C_gcfircge;Lnet/minecraft/unmapped/C_dxkfswlz;)V
+			ARG 2 entity
+	CLASS C_pzzmcybd PathNodeMaker
+		FIELD f_lelflcla pos Lnet/minecraft/unmapped/C_hynzadkk$C_egqitdjk;

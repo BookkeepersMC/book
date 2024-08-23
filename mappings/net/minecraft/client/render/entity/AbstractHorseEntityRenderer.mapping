@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_wsowuuin net/minecraft/client/render/entity/AbstractHorseEntityRenderer
+	FIELD f_qcwzoqjn scale F

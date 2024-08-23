@@ -1,0 +1,13 @@
+CLASS net/minecraft/unmapped/C_jbfwoepk net/minecraft/client/gui/CubeMapRenderer
+	FIELD f_kxjibnwy faces [Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_owisvwir FACES I
+	METHOD <init> (Lnet/minecraft/unmapped/C_ncpywfca;)V
+		ARG 1 faces
+	METHOD m_hnaplvww draw (Lnet/minecraft/unmapped/C_ayfeobid;FFF)V
+		ARG 1 client
+		ARG 2 x
+		ARG 3 y
+		ARG 4 alpha
+	METHOD m_izgimzsq loadTexturesAsync (Lnet/minecraft/unmapped/C_rglkduer;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 textureManager
+		ARG 2 executor

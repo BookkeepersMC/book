@@ -1,0 +1,15 @@
+CLASS net/minecraft/unmapped/C_lsfjzcsq net/minecraft/entity/ai/goal/IronGolemWanderAroundGoal
+	FIELD f_djniewry VERTICAL_RANGE I
+	FIELD f_hwztyrie HORIZONTAL_RANGE I
+	FIELD f_nwxwmpdy ENTITY_COLLISION_RANGE I
+	FIELD f_zbrlzzgx CHUNK_RANGE I
+	METHOD m_iwxpmxcm findRandomInRange ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_jklfksaa findRandomPosInChunk (Lnet/minecraft/unmapped/C_zubvmeye;)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 1 pos
+	METHOD m_moaouysd findVillagerPos ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_nvrcwwkf (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_zubvmeye;)Z
+		ARG 1 pos
+	METHOD m_rgxpeyib findRandomBlockPos ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_xclseulk canVillagerSummonGolem (Lnet/minecraft/unmapped/C_pdtkdbte;)Z
+		ARG 1 villager
+	METHOD m_xwgqibfq findRandomChunkPos ()Lnet/minecraft/unmapped/C_zubvmeye;

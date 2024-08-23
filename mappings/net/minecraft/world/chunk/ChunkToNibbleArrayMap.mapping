@@ -1,0 +1,22 @@
+CLASS net/minecraft/unmapped/C_jdzznmbv net/minecraft/world/chunk/ChunkToNibbleArrayMap
+	FIELD f_crdzhcbu cacheArrays [Lnet/minecraft/unmapped/C_cneaxdxg;
+	FIELD f_jojbcung CACHE_SIZE I
+	FIELD f_jtysyrcl arrays Lit/unimi/dsi/fastutil/longs/Long2ObjectOpenHashMap;
+	FIELD f_vlnzrlyh cacheEnabled Z
+	FIELD f_yxenrauk cachePositions [J
+	METHOD <init> (Lit/unimi/dsi/fastutil/longs/Long2ObjectOpenHashMap;)V
+		ARG 1 arrays
+	METHOD m_bdhbfyra clearCache ()V
+	METHOD m_brivssdq disableCache ()V
+	METHOD m_gkmfhdkk get (J)Lnet/minecraft/unmapped/C_cneaxdxg;
+		ARG 1 chunkPos
+	METHOD m_lhfmdbat copy ()Lnet/minecraft/unmapped/C_jdzznmbv;
+	METHOD m_nzjurgxm put (JLnet/minecraft/unmapped/C_cneaxdxg;)V
+		ARG 1 pos
+		ARG 3 data
+	METHOD m_yaebvkdn removeChunk (J)Lnet/minecraft/unmapped/C_cneaxdxg;
+		ARG 1 chunkPos
+	METHOD m_ybzcnfjx replaceWithCopy (J)Lnet/minecraft/unmapped/C_cneaxdxg;
+		ARG 1 pos
+	METHOD m_yijhcuft containsKey (J)Z
+		ARG 1 chunkPos

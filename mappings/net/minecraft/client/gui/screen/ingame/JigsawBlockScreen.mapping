@@ -1,0 +1,51 @@
+CLASS net/minecraft/unmapped/C_pjsewajz net/minecraft/client/gui/screen/ingame/JigsawBlockScreen
+	FIELD f_blhhyirj JOINT_LABEL Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_blikqmie nameField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_cigtdoqx SELECTION_PRIORITY Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_fhtyoznm NAME Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_gsidvfyi joint Lnet/minecraft/unmapped/C_epwegwuj$C_exgsbpfq;
+	FIELD f_hiqkudce generationDepth I
+	FIELD f_jknudfhj PLACEMENT_PRIORITY Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_klqkidqq POOL Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_lolfmvcz poolField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_lwuwjrxl TARGET Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_mvijrgfs targetField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_ompzrqyg finalStateField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_sczmiimv selectionPriorityField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_tpcwnxip jointRotationButton Lnet/minecraft/unmapped/C_ikfvpkkf;
+	FIELD f_tvdwdfvg SELECTION_PRIORITY_TOOLTIP Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_unqhrndy keepJigsaws Z
+	FIELD f_uwmkaklf placementPriorityField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_vfzecdmm doneButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_xlnpttgi FINAL_STATE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_zjzytisr generateButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_zpgpckjz jigsaw Lnet/minecraft/unmapped/C_epwegwuj;
+	FIELD f_ztpgzzhv PLACEMENT_PRIORITY_TOOLTIP Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD <init> (Lnet/minecraft/unmapped/C_epwegwuj;)V
+		ARG 1 jigsaw
+	METHOD m_adnjvsxu (Lnet/minecraft/unmapped/C_ikfvpkkf;Ljava/lang/Boolean;)V
+		ARG 1 button
+		ARG 2 keepJigsaws
+	METHOD m_cefacyjq onDone ()V
+	METHOD m_cjojvlfe (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_crkdkiop (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_eptppkxc (Ljava/lang/String;)V
+		ARG 1 target
+	METHOD m_ewknpkqm parseInt (Ljava/lang/String;)I
+		ARG 1 string
+	METHOD m_hqpptkmv (Ljava/lang/String;)V
+		ARG 1 pool
+	METHOD m_jvajjnvh updateServer ()V
+	METHOD m_mezmbnxb updateDoneButtonState ()V
+	METHOD m_nteeblhq (Ljava/lang/String;)V
+		ARG 1 name
+	METHOD m_qdhbdbrz (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_tqdekfaw generate ()V
+	METHOD m_wulgpbne onCancel ()V
+	METHOD m_yqugxkkg (Lnet/minecraft/unmapped/C_ikfvpkkf;Lnet/minecraft/unmapped/C_epwegwuj$C_exgsbpfq;)V
+		ARG 1 button
+		ARG 2 joint
+	METHOD m_zxtorujv isValidIdentifier (Ljava/lang/String;)Z

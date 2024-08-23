@@ -1,0 +1,40 @@
+CLASS net/minecraft/unmapped/C_ggaqmxld net/minecraft/util/shape/BitSetVoxelSet
+	FIELD f_cgmhulqo minY I
+	FIELD f_ikfzrthw minX I
+	FIELD f_iscsirob maxX I
+	FIELD f_sbtgdyfy maxZ I
+	FIELD f_uasjufrp maxY I
+	FIELD f_uerxttid minZ I
+	FIELD f_wfhpimql storage Ljava/util/BitSet;
+	METHOD <init> (Lnet/minecraft/unmapped/C_bipoyzjn;)V
+		ARG 1 other
+	METHOD m_ddepxiuz combine (Lnet/minecraft/unmapped/C_bipoyzjn;Lnet/minecraft/unmapped/C_bipoyzjn;Lnet/minecraft/unmapped/C_dbdmfnqs;Lnet/minecraft/unmapped/C_dbdmfnqs;Lnet/minecraft/unmapped/C_dbdmfnqs;Lnet/minecraft/unmapped/C_glcezlyp;)Lnet/minecraft/unmapped/C_ggaqmxld;
+		ARG 0 first
+		ARG 1 second
+		ARG 2 xPoints
+		ARG 3 yPoints
+		ARG 4 zPoints
+		ARG 5 function
+	METHOD m_kmiuejhd isColumnFull (IIII)Z
+	METHOD m_msvadqhz (IIIZ)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD m_mwrcwtti (IIIIIIIII)Lnet/minecraft/unmapped/C_ggaqmxld;
+		ARG 0 sizeX
+		ARG 1 sizeY
+		ARG 2 sizeZ
+		ARG 3 minX
+		ARG 4 minY
+		ARG 5 minZ
+		ARG 6 maxX
+		ARG 7 maxY
+		ARG 8 maxZ
+	METHOD m_uibxloge getIndex (III)I
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD m_yxphxkdc (Lnet/minecraft/unmapped/C_bipoyzjn;Lnet/minecraft/unmapped/C_bipoyzjn$C_getdvbzp;Z)V
+		ARG 0 voxels
+		ARG 1 consumer
+		ARG 2 largest

@@ -1,0 +1,50 @@
+CLASS net/minecraft/unmapped/C_grwstqbm net/minecraft/client/render/LightmapTextureManager
+	COMMENT The lightmap texture manager maintains a texture containing the RGBA overlay for each of the 16&times;16 sky and block light combinations.
+	COMMENT <p>
+	COMMENT Also contains some utilities to pack and unpack lightmap coordinates from sky and block light values,
+	COMMENT and some lightmap coordinates constants.
+	FIELD f_abtihkiy renderer Lnet/minecraft/unmapped/C_sktkdoun;
+	FIELD f_ekwpgxae target Lnet/minecraft/unmapped/C_gfnigxuu;
+	FIELD f_iaaiacfc MAX_BLOCK_LIGHT_COORDINATE I
+		COMMENT Represents the maximum block-light-wise lightmap coordinate whose value is {@value}.
+		COMMENT This is equivalent to a {@code 0} sky light and {@code 15} block light.
+	FIELD f_mgviipnc client Lnet/minecraft/unmapped/C_ayfeobid;
+	FIELD f_nceuetsw TEXTURE_SIZE I
+	FIELD f_ngbaqzyp flickerIntensity F
+	FIELD f_qdketniz dirty Z
+	FIELD f_swrlerdp MAX_SKY_LIGHT_COORDINATE I
+		COMMENT Represents the maximum sky-light-wise lightmap coordinate whose value is {@value}.
+		COMMENT This is equivalent to a {@code 15} sky light and {@code 0} block light.
+	FIELD f_ytghrbva MAX_LIGHT_COORDINATE I
+		COMMENT Represents the maximum lightmap coordinate, where both sky light and block light equals {@code 15}.
+		COMMENT The value of this maximum lightmap coordinate is {@value}.
+	METHOD <init> (Lnet/minecraft/unmapped/C_sktkdoun;Lnet/minecraft/unmapped/C_ayfeobid;)V
+		ARG 1 renderer
+		ARG 2 client
+	METHOD close close ()V
+	METHOD m_crheesdy getDarknessGamma (F)F
+		ARG 1 tickDelta
+	METHOD m_dbomiadp getBlockLightCoordinates (I)I
+		ARG 0 light
+	METHOD m_ebgwofaw getSkyLightCoordinates (I)I
+		ARG 0 light
+	METHOD m_ejpyhqaw calculateDarknessScale (Lnet/minecraft/unmapped/C_usxaxydn;FF)F
+		ARG 1 entity
+		ARG 2 darknessGamma
+		ARG 3 tickDelta
+	METHOD m_fwqkbqzx pack (II)I
+		ARG 0 block
+		ARG 1 sky
+	METHOD m_guwobvaf getBrightness (FI)F
+		ARG 1 lightLevel
+	METHOD m_kzjmpsfo tick ()V
+	METHOD m_ooqbyqsa update (F)V
+		ARG 1 delta
+	METHOD m_tcwayifp getPackedCoordsWithEmission (II)I
+		ARG 0 lightLevel
+		ARG 1 emission
+	METHOD m_tfptisda getBrightness (Lnet/minecraft/unmapped/C_oxijnccf;I)F
+		ARG 0 dimension
+		ARG 1 lightLevel
+	METHOD m_vcrzikjz disable ()V
+	METHOD m_yumestcc enable ()V

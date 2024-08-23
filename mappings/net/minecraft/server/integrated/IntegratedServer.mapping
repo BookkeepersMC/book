@@ -1,0 +1,19 @@
+CLASS net/minecraft/unmapped/C_mxzbwazq net/minecraft/server/integrated/IntegratedServer
+	FIELD f_emvrxekh client Lnet/minecraft/unmapped/C_ayfeobid;
+	FIELD f_iiamgxxb localPlayerUuid Ljava/util/UUID;
+	FIELD f_meybcfyy LOGGER Lorg/slf4j/Logger;
+	FIELD f_ndkjydfc paused Z
+	FIELD f_nxbhkjum lanPort I
+	FIELD f_qzkftpyq lanPinger Lnet/minecraft/unmapped/C_vvcqwrwq;
+	FIELD f_zbbqinef forcedGameMode Lnet/minecraft/unmapped/C_lghcpyvl;
+	FIELD f_ztfzwoha previousSimulationDistance I
+	METHOD <init> (Ljava/lang/Thread;Lnet/minecraft/unmapped/C_ayfeobid;Lnet/minecraft/unmapped/C_bpwagnit$C_unecclfw;Lnet/minecraft/unmapped/C_dqfyacfy;Lnet/minecraft/unmapped/C_tljyhzqp;Lnet/minecraft/unmapped/C_vmxvaoqe;Lnet/minecraft/unmapped/C_lausdaxu;)V
+		ARG 1 serverThread
+		ARG 3 storageSession
+		ARG 4 dataPackManager
+		ARG 5 worldStem
+		ARG 6 services
+		ARG 7 worldGenerationProgressListenerFactory
+	METHOD m_ahzcjijq incrementTotalWorldTimeStat ()V
+	METHOD m_gymkeqcq setLocalPlayerUuid (Ljava/util/UUID;)V
+		ARG 1 localPlayerUuid

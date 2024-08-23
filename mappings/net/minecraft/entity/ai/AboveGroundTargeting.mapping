@@ -1,0 +1,14 @@
+CLASS net/minecraft/unmapped/C_xrcqltzd net/minecraft/entity/ai/AboveGroundTargeting
+	COMMENT Similar to {@link FuzzyTargeting}, but the positions this class' utility methods
+	COMMENT find never have pathfinding penalties and are always above ground or water.
+	METHOD m_kohzsjgj find (Lnet/minecraft/unmapped/C_hqdayibh;IIDDFII)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 entity
+		ARG 1 horizontalRange
+		ARG 2 verticalRange
+		ARG 3 x
+		ARG 5 z
+		ARG 7 angle
+		ARG 8 maxAboveSolid
+		ARG 9 minAboveSolid
+	METHOD m_zstrywzx (Lnet/minecraft/unmapped/C_hqdayibh;Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos

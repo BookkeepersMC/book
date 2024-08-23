@@ -1,0 +1,93 @@
+CLASS net/minecraft/unmapped/C_lybmfibg net/minecraft/client/gui/hud/PlayerListHud
+	COMMENT Responsible for rendering the player list while the {@linkplain
+	COMMENT net.minecraft.client.option.GameOptions#playerListKey player list
+	COMMENT key} is pressed.
+	COMMENT <p>
+	COMMENT The current instance used by the client can be obtained by {@code
+	COMMENT MinecraftClient.getInstance().inGameHud.getPlayerListHud()}.
+	FIELD f_aqdebnaj footer Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_arjiwzge HEART_ABSORBING_HALF_BLINKING Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_bxlmioxe client Lnet/minecraft/unmapped/C_ayfeobid;
+	FIELD f_emedoizb HEART_CONTAINER Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ezknoamc inGameHud Lnet/minecraft/unmapped/C_nepwsmgw;
+	FIELD f_jhcnkfav HEART_CONTAINER_BLINKING Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_jiamjiev PING_1 Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_jkcanugf HEART_FULL_BLINKING Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ktwaykkh PING_UNKNOWN Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_mzpxxguo MAX_ROWS I
+	FIELD f_olfjtuba PING_3 Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_oqvfncry PING_5 Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_plvwhbqq SORTING_COMPARATOR Ljava/util/Comparator;
+	FIELD f_qjlfisaf PING_4 Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_rawrkdoa visible Z
+	FIELD f_symsmfej PING_2 Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_tdjdpgrs HEART_ABSORBING_FULL_BLINKING Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_umakqjuj HEART_FULL Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_vkoeybdy HEART_HALF Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_wclourtf HEART_HALF_BLINKING Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_yxtxfrdr header Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_yyjbokhz healthStates Ljava/util/Map;
+	METHOD <init> (Lnet/minecraft/unmapped/C_ayfeobid;Lnet/minecraft/unmapped/C_nepwsmgw;)V
+		ARG 1 client
+		ARG 2 inGameHud
+	METHOD m_aynvsezf setVisible (Z)V
+		ARG 1 visible
+	METHOD m_cgfdvjil applyGameModeFormatting (Lnet/minecraft/unmapped/C_rdnfmxue;Lnet/minecraft/unmapped/C_npqneive;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		COMMENT {@linkplain net.minecraft.util.Formatting#ITALIC Italicizes} the given text if
+		COMMENT the given player is in {@linkplain net.minecraft.world.GameMode#SPECTATOR spectator mode}.
+		ARG 1 entry
+		ARG 2 name
+	METHOD m_fenugziv renderHearts (IIILjava/util/UUID;Lnet/minecraft/unmapped/C_sedilmty;I)V
+		ARG 1 y
+		ARG 2 left
+		ARG 3 right
+		ARG 5 graphics
+		ARG 6 playerScore
+	METHOD m_fmfnthyf clear ()V
+	METHOD m_ggkyrghc (Lnet/minecraft/unmapped/C_rdnfmxue;)Ljava/lang/String;
+		ARG 0 entry
+	METHOD m_kyffpcde getPlayerName (Lnet/minecraft/unmapped/C_rdnfmxue;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		COMMENT {@return the player name rendered by this HUD}
+		ARG 1 entry
+	METHOD m_liqwrxfq (Lnet/minecraft/unmapped/C_rdnfmxue;)I
+		ARG 0 entry
+	METHOD m_lytcfhdw (Lnet/minecraft/unmapped/C_rdnfmxue;)I
+		ARG 0 entry
+	METHOD m_qkiaiqtl renderScoreboardObjective (Lnet/minecraft/unmapped/C_tlhwodcf;ILnet/minecraft/unmapped/C_lybmfibg$C_hyyqqfbu;IILjava/util/UUID;Lnet/minecraft/unmapped/C_sedilmty;)V
+		ARG 1 objective
+		ARG 2 y
+		ARG 3 entry
+		ARG 4 startX
+		ARG 5 endX
+		ARG 7 graphics
+	METHOD m_rdwisheo renderLatencyIcon (Lnet/minecraft/unmapped/C_sedilmty;IIILnet/minecraft/unmapped/C_rdnfmxue;)V
+		ARG 2 width
+		ARG 3 x
+		ARG 4 y
+		ARG 5 entry
+	METHOD m_teyuiwbq getVisibleEntries ()Ljava/util/List;
+	METHOD m_tyifjnah render (Lnet/minecraft/unmapped/C_sedilmty;ILnet/minecraft/unmapped/C_ymwyplge;Lnet/minecraft/unmapped/C_tlhwodcf;)V
+		ARG 2 scaledWindowWidth
+		ARG 3 scoreboard
+		ARG 4 objective
+	METHOD m_woaumrkf setFooter (Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 footer
+	METHOD m_xynqlahi setHeader (Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 header
+	CLASS C_hfngggba PlayerHealthState
+		FIELD f_heoyikdu DECREASE_BLINK_DURATION J
+		FIELD f_iylxcjyr value I
+		FIELD f_jwqaoowr lastValue I
+		FIELD f_nibpfirl lastUpdateTick J
+		FIELD f_niprglim UPDATE_DELAY J
+		FIELD f_pcwzfkye INCREASE_BLINK_DURATION J
+		FIELD f_qojpqiic lastBlinkTick J
+		METHOD <init> (I)V
+			ARG 1 value
+		METHOD m_hfejovaj update (IJ)V
+			ARG 1 value
+			ARG 2 time
+		METHOD m_omdjxzqx isBlinking (J)Z
+			ARG 1 time
+		METHOD m_ydqstbjr getValue ()I
+	CLASS C_hyyqqfbu Entry

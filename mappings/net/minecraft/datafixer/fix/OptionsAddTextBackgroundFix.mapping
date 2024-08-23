@@ -1,0 +1,7 @@
+CLASS net/minecraft/unmapped/C_fsuiopvr net/minecraft/datafixer/fix/OptionsAddTextBackgroundFix
+	METHOD <init> (Lcom/mojang/datafixers/schemas/Schema;Z)V
+		ARG 1 outputSchema
+		ARG 2 changesType
+	METHOD m_ddftazsf convertToTextBackgroundOpacity (Ljava/lang/String;)D
+		ARG 1 chatOpacity
+	METHOD makeRule makeRule ()Lcom/mojang/datafixers/TypeRewriteRule;

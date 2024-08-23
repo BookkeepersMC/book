@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_vvwlqdtn net/minecraft/loot/condition/RandomChanceLootCondition
+	METHOD test (Ljava/lang/Object;)Z
+		ARG 1 context

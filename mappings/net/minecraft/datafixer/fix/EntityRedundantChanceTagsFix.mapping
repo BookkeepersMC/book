@@ -1,0 +1,9 @@
+CLASS net/minecraft/unmapped/C_mngpolcv net/minecraft/datafixer/fix/EntityRedundantChanceTagsFix
+	FIELD f_qgwakxnt FLOAT_LIST_CODEC Lcom/mojang/serialization/Codec;
+	METHOD <init> (Lcom/mojang/datafixers/schemas/Schema;Z)V
+		ARG 1 outputSchema
+		ARG 2 changesType
+	METHOD m_ubeenhuz hasZeroDropChance (Lcom/mojang/serialization/OptionalDynamic;I)Z
+		ARG 0 listTag
+		ARG 1 expectedLength
+	METHOD makeRule makeRule ()Lcom/mojang/datafixers/TypeRewriteRule;

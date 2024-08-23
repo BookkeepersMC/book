@@ -1,0 +1,28 @@
+CLASS net/minecraft/unmapped/C_wbfyxnvb net/minecraft/advancement/AdvancementRequirements
+	FIELD f_tkcwteeq EMPTY Lnet/minecraft/unmapped/C_wbfyxnvb;
+	FIELD f_wauysoso requirements Ljava/util/List;
+	METHOD m_bnmpyfyz validate (Ljava/util/Set;)Lcom/mojang/serialization/DataResult;
+		ARG 1 requirements
+	METHOD m_ehrayjiz length ()I
+	METHOD m_gzkxpsoh anyMatch (Ljava/util/List;Ljava/util/function/Predicate;)Z
+		ARG 0 requirements
+		ARG 1 predicate
+	METHOD m_hdmfabfc allMatch (Ljava/util/function/Predicate;)Z
+		ARG 1 predicate
+	METHOD m_hzrzuiom (Lnet/minecraft/unmapped/C_idfydwco;Ljava/util/List;)V
+		ARG 1 requirements
+	METHOD m_jupbcyte anyOf (Ljava/util/Collection;)Lnet/minecraft/unmapped/C_wbfyxnvb;
+		ARG 0 collection
+	METHOD m_nxtypetc toSet ()Ljava/util/Set;
+	METHOD m_pkhatonp toPacket (Lnet/minecraft/unmapped/C_idfydwco;)V
+	METHOD m_tvrlcuao allOf (Ljava/util/Collection;)Lnet/minecraft/unmapped/C_wbfyxnvb;
+		ARG 0 collection
+	METHOD m_xvzpcfxt empty ()Z
+	METHOD m_ypaiwcgh countMatches (Ljava/util/function/Predicate;)I
+		COMMENT Counts the amount of inner arrays that contain a {@link String} that matches the provided {@link Predicate}.
+		ARG 1 predicate
+	CLASS C_huwvdbdx RequirementMerger
+		FIELD f_kkwnhuse ALL Lnet/minecraft/unmapped/C_wbfyxnvb$C_huwvdbdx;
+		FIELD f_zvupbphi ANY Lnet/minecraft/unmapped/C_wbfyxnvb$C_huwvdbdx;
+		METHOD create create (Ljava/util/Collection;)Lnet/minecraft/unmapped/C_wbfyxnvb;
+			ARG 1 requirements

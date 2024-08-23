@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_ftwidtyt net/minecraft/client/gui/hud/debug/PingDebugChartRenderer
+	FIELD f_rxkpzchl CHART_TOP_VALUE I

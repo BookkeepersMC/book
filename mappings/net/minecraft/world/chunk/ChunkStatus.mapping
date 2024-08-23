@@ -1,0 +1,15 @@
+CLASS net/minecraft/unmapped/C_kogtzhzt net/minecraft/world/chunk/ChunkStatus
+	FIELD f_ctewstbh previous Lnet/minecraft/unmapped/C_kogtzhzt;
+	FIELD f_jubsnmxj chunkType Lnet/minecraft/unmapped/C_etstfzdn;
+	FIELD f_mwzbxwga index I
+	FIELD f_pojlaofj heightMapTypes Ljava/util/EnumSet;
+	FIELD f_xpxqwbnq MAX_STRUCTURE_DISTANCE I
+	METHOD m_cpvbhfym createOrderedList ()Ljava/util/List;
+	METHOD m_gcnipypa getHeightmapTypes ()Ljava/util/EnumSet;
+	METHOD m_ghbhrtxe getChunkType ()Lnet/minecraft/unmapped/C_etstfzdn;
+	METHOD m_hbxmpwik byId (Ljava/lang/String;)Lnet/minecraft/unmapped/C_kogtzhzt;
+		ARG 0 id
+	METHOD m_lfglxmpx getPrevious ()Lnet/minecraft/unmapped/C_kogtzhzt;
+	METHOD m_trcddfwc getIndex ()I
+	METHOD m_ykttxqcu isAtLeast (Lnet/minecraft/unmapped/C_kogtzhzt;)Z
+		ARG 1 chunk

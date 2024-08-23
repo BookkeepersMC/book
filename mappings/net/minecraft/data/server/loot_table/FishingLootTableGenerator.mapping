@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_hcpoclvd net/minecraft/data/server/loot_table/FishingLootTableGenerator
+	METHOD m_ewgtmwvx fishingTable ()Lnet/minecraft/unmapped/C_inwsuliy$C_daaljsfu;

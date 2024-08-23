@@ -1,0 +1,172 @@
+CLASS net/minecraft/unmapped/C_ogdzfiek net/minecraft/entity/passive/PandaEntity
+	FIELD f_aauupedi SCARED_FLAG I
+	FIELD f_atzkabla ASK_FOR_BAMBOO_TICKS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_cxfblpnk HIDDEN_GENE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_dkvzgtwk PLAYING_FLAG I
+	FIELD f_etskruvh EATING_TICKS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_exglwjlc playingTicks I
+	FIELD f_gtmvomiy lieOnBackAnimationProgress F
+	FIELD f_huxkofnh EAT_TICK_INTERVAL I
+	FIELD f_isekwnez shouldAttack Z
+	FIELD f_ldbqmjqq SNEEZE_PROGRESS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_lqyfxnbv playingJump Lnet/minecraft/unmapped/C_vgpupfxx;
+	FIELD f_mmixdadl lookAtPlayerGoal Lnet/minecraft/unmapped/C_ogdzfiek$C_gpurpozr;
+	FIELD f_msmqxszy MAIN_GENE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_ngbiulef TOTAL_UNHAPPY_TIME I
+	FIELD f_pgnztokh lastLieOnBackAnimationProgress F
+	FIELD f_rvxvhibf rollOverAnimationProgress F
+	FIELD f_sksxuvrc shouldGetRevenge Z
+	FIELD f_susxkkyr lastRollOverAnimationProgress F
+	FIELD f_syelvfob lastScaredAnimationProgress F
+	FIELD f_umascrqh BABY_DIMENSIONS Lnet/minecraft/unmapped/C_sszpscpo;
+	FIELD f_vmidpwwb ASK_FOR_BAMBOO_TARGET Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_vzewvcle scaredAnimationProgress F
+	FIELD f_xswdhdvi LYING_ON_BACK_FLAG I
+	FIELD f_yqzucmdm SNEEZING_FLAG I
+	FIELD f_znnbhixw TOTAL_ROLL_STEPS I
+	FIELD f_zujszpzs PANDA_FLAGS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_zzzxofxg IS_FOOD Ljava/util/function/Predicate;
+	METHOD m_azemiuag updateLieOnBackAnimation ()V
+	METHOD m_djjrtvuy setEatingTicks (I)V
+		ARG 1 eatingTicks
+	METHOD m_ejbgiqkr isLyingOnBack ()Z
+	METHOD m_ekchzocl getRollOverAnimationProgress (F)F
+		ARG 1 tickDelta
+	METHOD m_elvgoqrx isWeak ()Z
+	METHOD m_fopuguvz isLazy ()Z
+	METHOD m_gssqiqdy playEatingAnimation ()V
+	METHOD m_gtvhpjje isScared ()Z
+	METHOD m_hejiisvh isPlayful ()Z
+	METHOD m_hocynznk initGenes (Lnet/minecraft/unmapped/C_ogdzfiek;Lnet/minecraft/unmapped/C_ogdzfiek;)V
+		ARG 1 mother
+		ARG 2 father
+	METHOD m_ieyebqay getScaredAnimationProgress (F)F
+		ARG 1 tickDelta
+	METHOD m_jmpdwqmv setSneezing (Z)V
+		ARG 1 sneezing
+	METHOD m_jqqgbkjz isPlaying ()Z
+	METHOD m_kihafctk isWorried ()Z
+	METHOD m_lahhrres isSneezing ()Z
+	METHOD m_lxwngrwd getEatingTicks ()I
+	METHOD m_lybngpkd updateRollOverAnimation ()V
+	METHOD m_mrlyynsk getMainGene ()Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+	METHOD m_mvsciniz sneeze ()V
+	METHOD m_narbdsbi resetAttributes ()V
+	METHOD m_ngfhflvi updatePlaying ()V
+	METHOD m_nunrbrgb getProductGene ()Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+	METHOD m_ooiciybb getRandomGene ()Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+	METHOD m_osmrkcvb setEating (Z)V
+		ARG 1 eating
+	METHOD m_otwhcqoe updateEatingAnimation ()V
+	METHOD m_oyddteww isEating ()Z
+	METHOD m_oyivnfrx getSneezeProgress ()I
+	METHOD m_pbhcmlvv getHiddenGene ()Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+	METHOD m_phqwwvra canEat (Lnet/minecraft/unmapped/C_sddaxwyk;)Z
+		ARG 1 stack
+	METHOD m_qiuoqxyv setSneezeProgress (I)V
+		ARG 1 sneezeProgress
+	METHOD m_qkabypre createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_qpicwtsh setPandaFlag (IZ)V
+		ARG 1 mask
+		ARG 2 value
+	METHOD m_qpsfcceu isScaredByThunderstorm ()Z
+	METHOD m_qxchjigc isBrown ()Z
+	METHOD m_rfucfbtt setMainGene (Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;)V
+		ARG 1 gene
+	METHOD m_rnkrwtww hasPandaFlag (I)Z
+		ARG 1 bitmask
+	METHOD m_rqcwiqqd setPlaying (Z)V
+		ARG 1 playing
+	METHOD m_slvxcbou stop ()V
+	METHOD m_sndnmaae setHiddenGene (Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;)V
+		ARG 1 gene
+	METHOD m_utupmiku setScared (Z)V
+		ARG 1 scared
+	METHOD m_wyhmqufi isIdle ()Z
+	METHOD m_xwvzmeou updateScaredAnimation ()V
+	METHOD m_zfmgvrhj setLyingOnBack (Z)V
+		ARG 1 lyingOnBack
+	METHOD m_zgmyswwj setAskForBambooTicks (I)V
+		ARG 1 askForBambooTicks
+	METHOD m_zppqsxlq getAskForBambooTicks ()I
+	METHOD m_ztfblmej getLayingAnimationProgress (F)F
+		ARG 1 tickDelta
+	CLASS C_djzoyosk Gene
+		FIELD f_gfneadmv MAX_GENES I
+		FIELD f_jwcoeepb recessive Z
+		FIELD f_lhtfrejp GENE_CODEC Lnet/minecraft/unmapped/C_lgkqzafw$C_nxwenkbc;
+		FIELD f_mirrwljl id I
+		FIELD f_mumtwisj name Ljava/lang/String;
+		FIELD f_tzyyzptr VALUES Ljava/util/function/IntFunction;
+		METHOD <init> (Ljava/lang/String;IILjava/lang/String;Z)V
+			ARG 3 id
+			ARG 4 name
+			ARG 5 recessive
+		METHOD m_dywrtdnt isRecessive ()Z
+		METHOD m_hijobhtj byId (I)Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+			ARG 0 id
+		METHOD m_jwbiedsb getProductGene (Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;)Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+			ARG 0 mainGene
+			ARG 1 hiddenGene
+		METHOD m_kgzzxblc getId ()I
+		METHOD m_wjqzwvew byName (Ljava/lang/String;)Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+			ARG 0 name
+		METHOD m_yhuswgei createRandom (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_ogdzfiek$C_djzoyosk;
+	CLASS C_ecftulny PandaMoveControl
+		FIELD f_qmgkzzvo panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;)V
+			ARG 1 panda
+	CLASS C_gpurpozr LookAtEntityGoal
+		FIELD f_quiumsbr panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;Ljava/lang/Class;F)V
+			ARG 1 panda
+			ARG 2 targetType
+			ARG 3 range
+		METHOD m_lluggump setTarget (Lnet/minecraft/unmapped/C_usxaxydn;)V
+			ARG 1 target
+	CLASS C_lawgcfxm SneezeGoal
+		FIELD f_ypiutiwk panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;)V
+			ARG 1 panda
+	CLASS C_oeyauryk PandaMateGoal
+		FIELD f_jnyrwszp nextAskPlayerForBambooAge I
+		FIELD f_lixdioeu panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;D)V
+			ARG 1 panda
+			ARG 2 chance
+		METHOD m_vkhildao isBambooClose ()Z
+	CLASS C_qjfmcdzp PandaRevengeGoal
+		FIELD f_bqiynyxl panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;[Ljava/lang/Class;)V
+			ARG 1 panda
+			ARG 2 noRevengeTypes
+	CLASS C_rjhbedxz AttackGoal
+		FIELD f_yfujbvdd panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;DZ)V
+			ARG 1 panda
+			ARG 2 speed
+			ARG 4 pauseWhenMobIdle
+	CLASS C_tvevtopz LieOnBackGoal
+		FIELD f_aehyhmon nextLieOnBackAge I
+		FIELD f_iymalsls panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;)V
+			ARG 1 panda
+	CLASS C_uyqtcfsq PickUpFoodGoal
+		FIELD f_acqfsygq startAge I
+	CLASS C_vzreztyw PandaEscapeDangerGoal
+		FIELD f_bctmlama panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;D)V
+			ARG 1 panda
+			ARG 2 speed
+	CLASS C_wsnsswmt PandaFleeGoal
+		FIELD f_xaqfbkjs panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;Ljava/lang/Class;FDD)V
+			ARG 1 panda
+			ARG 2 fleeFromType
+			ARG 3 distance
+			ARG 4 slowSpeed
+			ARG 6 fastSpeed
+	CLASS C_yvtrpfem PlayGoal
+		FIELD f_qhgvpfpd panda Lnet/minecraft/unmapped/C_ogdzfiek;
+		METHOD <init> (Lnet/minecraft/unmapped/C_ogdzfiek;)V
+			ARG 1 panda

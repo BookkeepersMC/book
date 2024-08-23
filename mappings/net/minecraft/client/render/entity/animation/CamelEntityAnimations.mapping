@@ -1,0 +1,7 @@
+CLASS net/minecraft/unmapped/C_fqbihbys net/minecraft/client/render/entity/animation/CamelEntityAnimations
+	FIELD f_cjdrfcgg SIT Lnet/minecraft/unmapped/C_mnzbondw;
+	FIELD f_jqinjslh WALK Lnet/minecraft/unmapped/C_mnzbondw;
+	FIELD f_nxvsopvo DASH Lnet/minecraft/unmapped/C_mnzbondw;
+	FIELD f_uuglkfqt STAND_UP Lnet/minecraft/unmapped/C_mnzbondw;
+	FIELD f_vvygjfnx IDLE Lnet/minecraft/unmapped/C_mnzbondw;
+	FIELD f_yeavzukq SIT_POSE Lnet/minecraft/unmapped/C_mnzbondw;

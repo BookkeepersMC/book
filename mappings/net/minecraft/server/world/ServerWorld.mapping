@@ -1,0 +1,237 @@
+CLASS net/minecraft/unmapped/C_bdwnwhiu net/minecraft/server/world/ServerWorld
+	FIELD f_ajnajowl shouldTickTime Z
+	FIELD f_apgvwxdi sleepManager Lnet/minecraft/unmapped/C_pkqtxbsb;
+	FIELD f_atwjstul blockTickScheduler Lnet/minecraft/unmapped/C_cropbciq;
+	FIELD f_bfzmdzwe entityManager Lnet/minecraft/unmapped/C_jdbhctxz;
+	FIELD f_bljyejgt MAX_SCHEDULED_TICKS I
+	FIELD f_cpeuzhki raidManager Lnet/minecraft/unmapped/C_gyltordp;
+	FIELD f_egordcxu pathNodeTypeCache Lnet/minecraft/unmapped/C_utuhijqr;
+	FIELD f_gfhsuipm gameEventDispatcher Lnet/minecraft/unmapped/C_tcmbbpqi;
+	FIELD f_hzsuzwuz savingDisabled Z
+	FIELD f_ixkepxes randomSequences Lnet/minecraft/unmapped/C_xmjhbbku;
+	FIELD f_japyenfx chunkManager Lnet/minecraft/unmapped/C_ebcmvjwj;
+	FIELD f_jzicyqgy worldProperties Lnet/minecraft/unmapped/C_gjwbvqct;
+	FIELD f_kjxiwofl isUpdatingMobNavigations Z
+	FIELD f_kmgtbgrd players Ljava/util/List;
+	FIELD f_limvtnaq idleTimeout I
+	FIELD f_ockdexkx portalForcer Lnet/minecraft/unmapped/C_daetwwvm;
+	FIELD f_ocsgirly fluidTickScheduler Lnet/minecraft/unmapped/C_cropbciq;
+	FIELD f_orgkwkdj structureChecker Lnet/minecraft/unmapped/C_jydrhkzs;
+	FIELD f_rfnywfgx loadedMobs Ljava/util/Set;
+	FIELD f_rjtvtwmg SERVER_IDLE_COOLDOWN I
+		COMMENT The number of ticks ({@value}) the world will continue to tick entities after
+		COMMENT all players have left and the world does not contain any forced chunks.
+	FIELD f_sshhcfhx LOGGER Lorg/slf4j/Logger;
+	FIELD f_strhbyex syncedBlockEventQueue Lit/unimi/dsi/fastutil/objects/ObjectLinkedOpenHashSet;
+	FIELD f_szhwhemd server Lnet/minecraft/server/MinecraftServer;
+	FIELD f_upxokhvn END_SPAWN_POS Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_vulmwwnu dragonParts Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;
+	FIELD f_vyudgfls entityList Lnet/minecraft/unmapped/C_rtdymhtu;
+	FIELD f_xdkqjfus spawners Ljava/util/List;
+	FIELD f_xunoqjxj structureManager Lnet/minecraft/unmapped/C_rhdulivw;
+	FIELD f_xxncbrtq enderDragonFight Lnet/minecraft/unmapped/C_hxzjzvro;
+	FIELD f_zwskxqrh inBlockTick Z
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Ljava/util/concurrent/Executor;Lnet/minecraft/unmapped/C_bpwagnit$C_unecclfw;Lnet/minecraft/unmapped/C_gjwbvqct;Lnet/minecraft/unmapped/C_xhhleach;Lnet/minecraft/unmapped/C_alziuayn;Lnet/minecraft/unmapped/C_jnfclwgd;ZJLjava/util/List;ZLnet/minecraft/unmapped/C_xmjhbbku;)V
+		ARG 3 session
+		ARG 6 dimensionOptions
+		ARG 7 worldgenProgressListener
+		ARG 13 randomSequences
+	METHOD m_acuodrlx getLightningRodPos (Lnet/minecraft/unmapped/C_hynzadkk;)Ljava/util/Optional;
+		ARG 1 pos
+	METHOD m_aonmqwml onPlayerRespawned (Lnet/minecraft/unmapped/C_mxrobsgg;)V
+		ARG 1 player
+	METHOD m_aqoiocut getLogicalHeight ()I
+	METHOD m_bbslyzvv processSyncedBlockEvents ()V
+	METHOD m_behijzhe getStructureManager ()Lnet/minecraft/unmapped/C_rhdulivw;
+	METHOD m_bkrelajn isNearOccupiedPointOfInterest (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	METHOD m_bpfpypvf getEntity (Ljava/util/UUID;)Lnet/minecraft/unmapped/C_astfners;
+		ARG 1 uuid
+	METHOD m_bzxokruu setChunkForced (IIZ)Z
+		ARG 1 x
+		ARG 2 z
+		ARG 3 forced
+	METHOD m_cbjhfxlh isSleepingEnabled ()Z
+	METHOD m_ckqdfoye iterateEntities ()Ljava/lang/Iterable;
+	METHOD m_cmmftqtr getOrCreateRandom (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_rlomrsco;
+	METHOD m_dmjacdzr getPortalForcer ()Lnet/minecraft/unmapped/C_daetwwvm;
+	METHOD m_edeyxlpg getEntitiesByType (Lnet/minecraft/unmapped/C_ocpldaah;Ljava/util/function/Predicate;)Ljava/util/List;
+		COMMENT Computes a list of entities of the given type.
+		COMMENT
+		COMMENT <strong>Warning:</strong> If {@code null} is passed as the entity type filter, care should be
+		COMMENT taken that the type argument {@code T} is set to {@link Entity}, otherwise heap pollution
+		COMMENT in the returned list or {@link ClassCastException} can occur.
+		COMMENT
+		COMMENT @return a list of entities of the given type
+		ARG 2 predicate
+			COMMENT a predicate which returned entities must satisfy
+	METHOD m_ednromrs isInBlockTick ()Z
+	METHOD m_ehgekgua getPointOfInterestStorage ()Lnet/minecraft/unmapped/C_uegwgivt;
+	METHOD m_ekdbgkjp addEntity (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 entity
+	METHOD m_etqgghww dump (Ljava/nio/file/Path;)V
+		ARG 1 path
+	METHOD m_fejtkupl shouldTick (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+	METHOD m_ftckrjes getRandomSequences ()Lnet/minecraft/unmapped/C_xmjhbbku;
+	METHOD m_ghlhwjgw sendToPlayerIfNearby (Lnet/minecraft/unmapped/C_mxrobsgg;ZDDDLnet/minecraft/unmapped/C_zyjtrjrl;)Z
+		ARG 1 player
+		ARG 2 force
+		ARG 3 x
+		ARG 5 y
+		ARG 7 z
+		ARG 9 packet
+	METHOD m_gpbaxfbd updateSleepingPlayers ()V
+	METHOD m_gphaaumn tickPrecipitation (Lnet/minecraft/unmapped/C_hynzadkk;)V
+	METHOD m_gqdupsiz getEnderDragonFight ()Lnet/minecraft/unmapped/C_hxzjzvro;
+	METHOD m_gqlcytza getAliveEnderDragons ()Ljava/util/List;
+	METHOD m_gtkdvbcs handleInteraction (Lnet/minecraft/unmapped/C_wdatdqcy;Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_lkvyndwd;)V
+		ARG 1 interaction
+		ARG 2 entity
+		ARG 3 observer
+	METHOD m_gvambdkl hasRaidAt (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	METHOD m_gygmxtbs removePlayer (Lnet/minecraft/unmapped/C_mxrobsgg;Lnet/minecraft/unmapped/C_astfners$C_emmohndu;)V
+		ARG 1 player
+		ARG 2 reason
+	METHOD m_hbekpthe tickSpawners (ZZ)V
+		ARG 1 spawnMonsters
+		ARG 2 spawnAnimals
+	METHOD m_hyqlpoos addPlayer (Lnet/minecraft/unmapped/C_mxrobsgg;)V
+		ARG 1 player
+	METHOD m_ibggsfql isFlat ()Z
+	METHOD m_ifmpzfaa clearUpdatesInArea (Lnet/minecraft/unmapped/C_hmqypqzz;)V
+		ARG 1 box
+	METHOD m_ilvpytac getMatchingPlayers (Ljava/util/function/Predicate;)Ljava/util/List;
+		ARG 1 predicate
+	METHOD m_immceocf shouldTick (Lnet/minecraft/unmapped/C_ynrszrtu;)Z
+		ARG 1 pos
+	METHOD m_inadgslt tickWeather ()V
+	METHOD m_inzidthk shouldCreateNewEntityWithPassenger (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 entity
+	METHOD m_jaadksjy tickFluid (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_rxhyurmy;)V
+		ARG 2 fluid
+	METHOD m_jbfuckmf save (Lnet/minecraft/unmapped/C_qzzqcncf;ZZ)V
+		ARG 1 progressListener
+		ARG 2 flush
+		ARG 3 savingDisabled
+	METHOD m_jhwkhqgo isNearOccupiedPointOfInterest (Lnet/minecraft/unmapped/C_hynzadkk;I)Z
+		ARG 1 pos
+		ARG 2 maxDistance
+	METHOD m_jyqkjiyo areChunkEntitiesLoadedAndTicking (J)Z
+		ARG 1 pos
+	METHOD m_kdrjabqu getRandomAlivePlayer ()Lnet/minecraft/unmapped/C_mxrobsgg;
+	METHOD m_khthlbpk getForcedChunks ()Lit/unimi/dsi/fastutil/longs/LongSet;
+	METHOD m_kmlkcayc getOccupiedPointOfInterestDistance (Lnet/minecraft/unmapped/C_zubvmeye;)I
+		ARG 1 pos
+	METHOD m_krunbqkn getPathNodeTypeCache ()Lnet/minecraft/unmapped/C_utuhijqr;
+	METHOD m_ldvxbeho getSurface (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 1 pos
+	METHOD m_lgjatndm getMatchingPlayers (Ljava/util/function/Predicate;I)Ljava/util/List;
+		ARG 1 predicate
+		ARG 2 maxPlayers
+	METHOD m_ltapmvkt processBlockEvent (Lnet/minecraft/unmapped/C_dnmqbjtb;)Z
+		ARG 1 event
+	METHOD m_lwzdmatx getDebugString ()Ljava/lang/String;
+	METHOD m_mcvbswui wakeSleepingPlayers ()V
+	METHOD m_mnsqmupw tickTime ()V
+	METHOD m_mvfbcepu addEntities (Ljava/util/stream/Stream;)V
+		ARG 1 entities
+	METHOD m_nolhpgre (Lnet/minecraft/unmapped/C_hrdsvlkq;)V
+		ARG 1 chunk
+	METHOD m_odekrajn spawnParticles (Lnet/minecraft/unmapped/C_nqucohct;DDDIDDDD)I
+		ARG 1 particle
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 count
+		ARG 9 deltaX
+		ARG 11 deltaY
+		ARG 13 deltaZ
+		ARG 15 speed
+	METHOD m_ofnkxfkf shouldTickEntities (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+	METHOD m_olxeedby locateBiome (Ljava/util/function/Predicate;Lnet/minecraft/unmapped/C_hynzadkk;III)Lcom/mojang/datafixers/util/Pair;
+		ARG 1 predicate
+			COMMENT checks if the current biome is one of the ones being searched for
+		ARG 2 origin
+			COMMENT the position to explore out from
+		ARG 3 radius
+			COMMENT the distance, in blocks, to continue the check. If a matching biome is not found within this, {@code null} will be returned
+		ARG 4 horizontalCheckInterval
+			COMMENT how often the biome is checked, horizontally. The lower this value is, the more accurate the result, but the method will take longer to execute
+		ARG 5 verticalCheckInterval
+			COMMENT how often the biome is checked, vertically. The lower this value is, the more accurate the result, but the method will take longer to execute
+	METHOD m_omaqqcew areChunkEntitiesLoaded (J)Z
+	METHOD m_onljykea onPlayerConnected (Lnet/minecraft/unmapped/C_mxrobsgg;)V
+		ARG 1 player
+	METHOD m_onwxboin getPersistentStateManager ()Lnet/minecraft/unmapped/C_hsdphpvz;
+	METHOD m_ornukjbu spawnParticles (Lnet/minecraft/unmapped/C_mxrobsgg;Lnet/minecraft/unmapped/C_nqucohct;ZDDDIDDDD)Z
+		ARG 1 viewer
+		ARG 2 particle
+		ARG 3 force
+		ARG 4 x
+		ARG 6 y
+		ARG 8 z
+		ARG 10 count
+		ARG 11 deltaX
+		ARG 13 deltaY
+		ARG 15 deltaZ
+		ARG 17 speed
+	METHOD m_ovijuprs loadEntities (Ljava/util/stream/Stream;)V
+		ARG 1 entities
+	METHOD m_paxyndrv tickBlock (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_mmxmpdoq;)V
+	METHOD m_pqhkfxkw tickEntity (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	METHOD m_psthoacf dumpEntities (Ljava/io/Writer;Ljava/lang/Iterable;)V
+		ARG 0 writer
+		ARG 1 entities
+	METHOD m_pvfezypn isNearOccupiedPointOfInterest (Lnet/minecraft/unmapped/C_zubvmeye;)Z
+		ARG 1 sectionPos
+	METHOD m_pznbzmcv onDimensionChanged (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	METHOD m_qlhooikc getStructureTemplateManager ()Lnet/minecraft/unmapped/C_zxhjfyir;
+	METHOD m_qpgmaggq dumpBlockEntities (Ljava/io/Writer;)V
+		ARG 1 writer
+	METHOD m_qpvqbsqx getRaidManager ()Lnet/minecraft/unmapped/C_gyltordp;
+	METHOD m_rhtvnoke tickPassenger (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 vehicle
+		ARG 2 passenger
+	METHOD m_senvvkks tickChunk (Lnet/minecraft/unmapped/C_hrdsvlkq;I)V
+		ARG 1 chunk
+		ARG 2 randomTickSpeed
+	METHOD m_sigubjbg saveWorld (Z)V
+	METHOD m_tfrswowf setWeather (IIZZ)V
+		ARG 1 clearDuration
+		ARG 2 rainDuration
+		ARG 3 raining
+		ARG 4 thundering
+	METHOD m_tkcavimr getRaidAt (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_szefbyex;
+		ARG 1 pos
+	METHOD m_tqvywirw getEntityOrDragonPart (I)Lnet/minecraft/unmapped/C_astfners;
+		ARG 1 id
+	METHOD m_tzlitazt sendSleepingStatus ()V
+	METHOD m_uwauhnel (Lnet/minecraft/unmapped/C_lwzmmmqr;)V
+		ARG 1 chunk
+	METHOD m_vgbceyje resetIdleTimeout ()V
+	METHOD m_wtlcknkv getTopFive (Ljava/lang/Iterable;Ljava/util/function/Function;)Ljava/lang/String;
+		COMMENT Categories {@code items} with the {@code classifier} and reports a message
+		COMMENT indicating the top five biggest categories.
+		ARG 0 items
+			COMMENT the items to classify
+		ARG 1 classifier
+			COMMENT the classifier that determines the category of any item
+	METHOD m_xdcituba resetWeather ()V
+	METHOD m_xjwwchqw unloadEntities (Lnet/minecraft/unmapped/C_hrdsvlkq;)V
+		ARG 1 chunk
+	METHOD m_xxybxutd setTimeOfDay (J)V
+		ARG 1 timeOfDay
+	METHOD m_ybxknyss tryLoadEntity (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 1 entity
+	METHOD m_ymtrakfc tick (Ljava/util/function/BooleanSupplier;)V
+		ARG 1 shouldKeepTicking
+	METHOD m_yovtvsud findFirstPos (Lnet/minecraft/unmapped/C_ednuhnnn;Lnet/minecraft/unmapped/C_hynzadkk;IZ)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 1 structures
+		ARG 3 range
+	METHOD m_yveqgwou setSpawnPos (Lnet/minecraft/unmapped/C_hynzadkk;F)V
+		ARG 1 pos
+		ARG 2 angle
+	CLASS C_ogzuukwb ServerEntityHandler

@@ -1,0 +1,104 @@
+CLASS net/minecraft/unmapped/C_nknvrhfn net/minecraft/entity/decoration/ArmorStandEntity
+	FIELD f_auvsnpeu HEAD_OFFSET D
+	FIELD f_bakejrew disabledSlots I
+	FIELD f_dygcmpso SMALL_FLAG I
+	FIELD f_eextqtfq ARMOR_STAND_FLAGS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_emsczhtn armorItems Lnet/minecraft/unmapped/C_rnrfftze;
+	FIELD f_eqjycsoi DEFAULT_LEFT_LEG_ROTATION Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_fbfounht rightArmRotation Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_fdzmeykq SHOW_ARMS_FLAG I
+	FIELD f_fnorkbnn headRotation Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_fzthsgci DEFAULT_RIGHT_LEG_ROTATION Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_gmbpdmej TRACKER_RIGHT_ARM_ROTATION Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_gmgkslzn TRACKER_BODY_ROTATION Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_hledmzpc TRACKER_HEAD_ROTATION Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_ibwmtcjv leftLegRotation Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_ihlpaimj HIDE_BASE_PLATE_FLAG I
+	FIELD f_jqsgttid FEET_OFFSET D
+	FIELD f_lkehdolx bodyRotation Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_lsrlfled DISABLE_ITEM_TAKE_OFFSET I
+	FIELD f_ltzkfijb WOBBLE_DURATION I
+	FIELD f_mpsgxhqr SMALL_DIMENSIONS Lnet/minecraft/unmapped/C_sszpscpo;
+	FIELD f_newsopil invisible Z
+	FIELD f_nlrjyyfp TRACKER_RIGHT_LEG_ROTATION Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_nmqkzjtq LEGS_OFFSET D
+	FIELD f_nzpnpxtw DEFAULT_LEFT_ARM_ROTATION Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_opgsiyvu TRACKER_LEFT_LEG_ROTATION Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_phnxsexj MARKER_FLAG I
+	FIELD f_qeigoyec heldItems Lnet/minecraft/unmapped/C_rnrfftze;
+	FIELD f_qnhkdyut CHEST_OFFSET D
+	FIELD f_rhrteure rightLegRotation Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_rzevixqb TRACKER_LEFT_ARM_ROTATION Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_srwmxyee RIDEABLE_MINECART_PREDICATE Ljava/util/function/Predicate;
+	FIELD f_tqjkecsv DISABLE_HOLD_ITEM_OFFSET I
+	FIELD f_ufvmrjgg DEFAULT_HEAD_ROTATION Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_ushwdxlv DEFAULT_RIGHT_ARM_ROTATION Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_uxtujheo ENABLE_ARMS Z
+	FIELD f_wjlcjana MARKER_DIMENSIONS Lnet/minecraft/unmapped/C_sszpscpo;
+	FIELD f_wlljxznk DEFAULT_BODY_ROTATION Lnet/minecraft/unmapped/C_eocijcdh;
+	FIELD f_xnsfjgdv lastHitTime J
+	FIELD f_xvpdgwzn leftArmRotation Lnet/minecraft/unmapped/C_eocijcdh;
+	METHOD <init> (Lnet/minecraft/unmapped/C_cdctfzbn;DDD)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+	METHOD m_afestysn setBodyRotation (Lnet/minecraft/unmapped/C_eocijcdh;)V
+		ARG 1 angle
+	METHOD m_amwvdxtk setHeadRotation (Lnet/minecraft/unmapped/C_eocijcdh;)V
+		ARG 1 angle
+	METHOD m_bgdcaosm getDimensions (Z)Lnet/minecraft/unmapped/C_sszpscpo;
+		ARG 1 marker
+	METHOD m_bufdjdjb isSmall ()Z
+	METHOD m_dtcdzdev breakAndDropItem (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_sbxfkpyv;)V
+		ARG 2 damageSource
+	METHOD m_dzlllkgt getRightLegRotation ()Lnet/minecraft/unmapped/C_eocijcdh;
+	METHOD m_eehxgohc setHideBasePlate (Z)V
+		ARG 1 hideBasePlate
+	METHOD m_etraljdh setBitField (BIZ)B
+		ARG 1 value
+		ARG 2 bitField
+		ARG 3 set
+	METHOD m_foqjlatj setLeftLegRotation (Lnet/minecraft/unmapped/C_eocijcdh;)V
+		ARG 1 angle
+	METHOD m_fqivefvy isMarker ()Z
+	METHOD m_guntlnwl getRightArmRotation ()Lnet/minecraft/unmapped/C_eocijcdh;
+	METHOD m_hhkudpcz updateHealth (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_sbxfkpyv;F)V
+		ARG 2 damageSource
+		ARG 3 amount
+	METHOD m_kkoccwlu setMarker (Z)V
+		ARG 1 marker
+	METHOD m_ldbykolm poseToNbt ()Lnet/minecraft/unmapped/C_hhlwcnih;
+	METHOD m_lvksyjqf isSlotDisabled (Lnet/minecraft/unmapped/C_yuycoehb;)Z
+		ARG 1 slot
+	METHOD m_nendfomc createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_npsgczto playBreakSound ()V
+	METHOD m_pgcyrpjv spawnBreakParticles ()V
+	METHOD m_phaftboj getLeftLegRotation ()Lnet/minecraft/unmapped/C_eocijcdh;
+	METHOD m_qidmuyim setShowArms (Z)V
+		ARG 1 showArms
+	METHOD m_raimcqht (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 0 entity
+	METHOD m_rwvhzdht setRightLegRotation (Lnet/minecraft/unmapped/C_eocijcdh;)V
+		ARG 1 angle
+	METHOD m_sajlumfb setLeftArmRotation (Lnet/minecraft/unmapped/C_eocijcdh;)V
+		ARG 1 angle
+	METHOD m_sblqtvnd getBodyRotation ()Lnet/minecraft/unmapped/C_eocijcdh;
+	METHOD m_soovdjvg getHeadRotation ()Lnet/minecraft/unmapped/C_eocijcdh;
+	METHOD m_tctpyvkj readPoseNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+		ARG 1 nbt
+	METHOD m_tkhyjnti canClip ()Z
+	METHOD m_vyprdbvs setRightArmRotation (Lnet/minecraft/unmapped/C_eocijcdh;)V
+		ARG 1 angle
+	METHOD m_vzqnmzow equip (Lnet/minecraft/unmapped/C_jzrpycqo;Lnet/minecraft/unmapped/C_yuycoehb;Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_laxmzoqs;)Z
+		ARG 1 player
+		ARG 2 slot
+		ARG 3 stack
+		ARG 4 hand
+	METHOD m_waihlpmc onBreak (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_sbxfkpyv;)V
+		ARG 2 damageSource
+	METHOD m_wiedmhwx setSmall (Z)V
+		ARG 1 small
+	METHOD m_yrstsnkh slotFromPosition (Lnet/minecraft/unmapped/C_vgpupfxx;)Lnet/minecraft/unmapped/C_yuycoehb;
+		ARG 1 hitPos
+	METHOD m_zqjkpqot getLeftArmRotation ()Lnet/minecraft/unmapped/C_eocijcdh;

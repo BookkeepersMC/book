@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_gtnnbmai net/minecraft/client/gui/screen/Overlay
+	METHOD m_csirnagy pausesGame ()Z

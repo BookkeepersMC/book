@@ -1,0 +1,8 @@
+CLASS net/minecraft/unmapped/C_ncggfkyk net/minecraft/server/network/DemoServerPlayerInteractionManager
+	FIELD f_nmdmunvb DEMO_DAYS I
+	FIELD f_ofeiayjh demoEnded Z
+	FIELD f_runliydh DEMO_TIME I
+	FIELD f_sbqjrulz sentHelp Z
+	FIELD f_tsugobsw tick I
+	FIELD f_xqheiufe reminderTicks I
+	METHOD m_btzlgujq sendDemoReminder ()V

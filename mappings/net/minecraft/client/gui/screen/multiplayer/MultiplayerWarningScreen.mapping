@@ -1,0 +1,8 @@
+CLASS net/minecraft/unmapped/C_lwwwumsz net/minecraft/client/gui/screen/multiplayer/MultiplayerWarningScreen
+	FIELD f_bcaxjclm PROCEED Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_lkeprbfu parent Lnet/minecraft/unmapped/C_wrmtlwqx;
+	FIELD f_sevixkkg HEADER Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_xcgcnjtm MESSAGE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_zdphmwai CHECK_MESSAGE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD <init> (Lnet/minecraft/unmapped/C_wrmtlwqx;)V
+		ARG 1 parent

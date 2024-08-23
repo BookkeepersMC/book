@@ -1,0 +1,13 @@
+CLASS net/minecraft/unmapped/C_kuuhcrzg net/minecraft/world/dimension/YLevels
+	FIELD f_hnqinska END_MIN_Y I
+	FIELD f_hzpxnjqo OVERWORLD_LOGICAL_HEIGHT I
+	FIELD f_jlditlxu OVERWORLD_HEIGHT I
+	FIELD f_jqwzsvbl END_GENERATION_HEIGHT I
+	FIELD f_kvxwitih END_HEIGHT I
+	FIELD f_mfcrkjej NETHER_MIN_Y I
+	FIELD f_oesnoocf NETHER_LOGICAL_HEIGHT I
+	FIELD f_okdkbvpc OVERWORLD_GENERATION_HEIGHT I
+	FIELD f_pzkofcli NETHER_GENERATION_HEIGHT I
+	FIELD f_rzwforrk END_LOGICAL_HEIGHT I
+	FIELD f_ukwhfayz NETHER_HEIGHT I
+	FIELD f_ylcscymk OVERWORLD_MIN_Y I

@@ -1,0 +1,34 @@
+CLASS net/minecraft/unmapped/C_vhpbjodz net/minecraft/recipe/ShapedRecipePattern
+	FIELD f_apzcmivo data Ljava/util/Optional;
+	FIELD f_cgwpfjoc symmetric Z
+	FIELD f_gmsboqxc height I
+	FIELD f_gxvszphf width I
+	FIELD f_mdscvoeu MAX_WIDTH_AND_HEIGHT I
+	FIELD f_tzzecmbw ingredientCount I
+	FIELD f_ywkjtxyf ingredients Ljava/util/List;
+	METHOD m_jlmohzhk getWidth ()I
+	METHOD m_jwyaufas getIngredients ()Ljava/util/List;
+	METHOD m_mxwtbrsc matches (Lnet/minecraft/unmapped/C_euomljmv;)Z
+	METHOD m_ndnsmflz trim (Ljava/util/List;)[Ljava/lang/String;
+		ARG 0 pattern
+	METHOD m_pkvzapnv fromData (Lnet/minecraft/unmapped/C_vhpbjodz$C_gmjqzgur;)Lcom/mojang/serialization/DataResult;
+		ARG 0 data
+	METHOD m_rskvpukr matches (Lnet/minecraft/unmapped/C_euomljmv;Z)Z
+		ARG 1 input
+		ARG 2 mirror
+	METHOD m_sdpqfess of (Ljava/util/Map;Ljava/util/List;)Lnet/minecraft/unmapped/C_vhpbjodz;
+	METHOD m_stiknasv of (Ljava/util/Map;[Ljava/lang/String;)Lnet/minecraft/unmapped/C_vhpbjodz;
+		ARG 1 pattern
+	METHOD m_tgsmprvg getHeight ()I
+	CLASS C_gmjqzgur Data
+		FIELD f_dhklrcof PATTERN_CODEC Lcom/mojang/serialization/Codec;
+		FIELD f_hxnkvfyf CODEC Lcom/mojang/serialization/MapCodec;
+		FIELD f_xbcyhauz KEY_SYMBOL_CODEC Lcom/mojang/serialization/Codec;
+		METHOD m_evegiiqi (Lnet/minecraft/unmapped/C_vhpbjodz$C_gmjqzgur;)Ljava/util/List;
+			ARG 0 data
+		METHOD m_fzwyaddf (Lnet/minecraft/unmapped/C_vhpbjodz$C_gmjqzgur;)Ljava/util/Map;
+			ARG 0 data
+		METHOD m_iyoobuws (Ljava/util/List;)Lcom/mojang/serialization/DataResult;
+			ARG 0 pattern
+		METHOD m_xgpnxrer (Ljava/lang/String;)Lcom/mojang/serialization/DataResult;
+			ARG 0 symbol

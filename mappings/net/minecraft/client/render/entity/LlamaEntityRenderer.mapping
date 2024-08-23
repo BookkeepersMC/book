@@ -1,0 +1,5 @@
+CLASS net/minecraft/unmapped/C_mnufoolm net/minecraft/client/render/entity/LlamaEntityRenderer
+	FIELD f_ahesaliv WHITE_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_nfqwsdgc CREAMY_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_tknbyabp GRAY_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_vmojaveo BROWN_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;

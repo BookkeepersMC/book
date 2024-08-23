@@ -1,0 +1,216 @@
+CLASS net/minecraft/unmapped/C_ayikuhxa com/mojang/blaze3d/texture/NativeImage
+	FIELD f_bjmzebre width I
+	FIELD f_dppjrltv WRITE_TO_FILE_OPEN_OPTIONS Ljava/util/Set;
+	FIELD f_efhfycrj isStbImage Z
+	FIELD f_fquwrzbn pointer J
+	FIELD f_heggcezm sizeBytes J
+	FIELD f_lgjuiwho format Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;
+	FIELD f_pkisvsec height I
+	FIELD f_qujwkxcf LOGGER Lorg/slf4j/Logger;
+	METHOD <init> (IIZ)V
+		ARG 1 width
+		ARG 2 height
+		ARG 3 useStb
+	METHOD <init> (Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;IIZ)V
+		ARG 1 format
+		ARG 2 width
+		ARG 3 height
+		ARG 4 useStb
+	METHOD <init> (Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;IIZJ)V
+		ARG 1 format
+		ARG 2 width
+		ARG 3 height
+		ARG 4 useStb
+		ARG 5 pointer
+	METHOD close close ()V
+	METHOD m_albcwptm getPixelOpacity (II)B
+		ARG 1 x
+		ARG 2 y
+	METHOD m_ayyycohu setTextureFilter (ZZ)V
+		ARG 0 blur
+		ARG 1 mipmap
+	METHOD m_bzftrusx resizeSubRectTo (IIIILnet/minecraft/unmapped/C_ayikuhxa;)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 width
+		ARG 4 height
+		ARG 5 targetImage
+	METHOD m_csziyqyg fillRect (IIIII)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 width
+		ARG 4 height
+		ARG 5 color
+	METHOD m_ducdocgr writeDepthBuffer (F)V
+		ARG 1 f
+	METHOD m_fctnexbk getWidth ()I
+	METHOD m_hmadgtdg copyRectangle (IIIIIIZZ)V
+		ARG 1 srcX
+		ARG 2 srcY
+		ARG 3 offsetX
+		ARG 4 offsetY
+		ARG 5 height
+		ARG 6 width
+		ARG 7 flipHorizontal
+		ARG 8 flipVertical
+	METHOD m_hqirglgj uploadInternal (IIIIIIIZZZZ)V
+		ARG 1 level
+		ARG 2 offsetX
+		ARG 3 offsetY
+		ARG 4 unpackSkipPixels
+		ARG 5 unpackSkipRows
+		ARG 6 width
+		ARG 7 height
+		ARG 8 blur
+		ARG 9 clamp
+		ARG 10 mipmap
+		ARG 11 close
+	METHOD m_iwimness upload (IIIIIIIZZ)V
+		ARG 1 level
+		ARG 2 offsetX
+		ARG 3 offsetY
+		ARG 4 unpackSkipPixels
+		ARG 5 unpackSkipRows
+		ARG 6 width
+		ARG 7 height
+		ARG 8 mipmap
+		ARG 9 close
+	METHOD m_jamgysmq makePixelArray ()[I
+	METHOD m_jwryptwt applyFunction (Ljava/util/function/IntUnaryOperator;)V
+		ARG 1 function
+	METHOD m_jxaheiam writeFile (Ljava/nio/file/Path;)V
+		ARG 1 path
+	METHOD m_llctgsaf upload (IIIIIIIZZZZ)V
+		ARG 1 level
+		ARG 2 offsetX
+		ARG 3 offsetY
+		ARG 4 unpackSkipPixels
+		ARG 5 unpackSkipRows
+		ARG 6 width
+		ARG 7 height
+		ARG 8 blur
+		ARG 9 clamp
+		ARG 10 mipmap
+		ARG 11 close
+	METHOD m_lwuuexce isOutOfBounds (II)Z
+		ARG 1 x
+		ARG 2 y
+	METHOD m_meplyfkd read (Ljava/nio/ByteBuffer;)Lnet/minecraft/unmapped/C_ayikuhxa;
+		ARG 0 input
+	METHOD m_mtdfbkkq read (Ljava/io/InputStream;)Lnet/minecraft/unmapped/C_ayikuhxa;
+		ARG 0 input
+	METHOD m_njvgksno makeGlyphBitmapSubpixel (Lorg/lwjgl/util/freetype/FT_Face;I)Z
+		ARG 1 face
+		ARG 2 glyphIndex
+	METHOD m_nseursry loadFromTextureImage (IZ)V
+		ARG 1 level
+		ARG 2 removeAlpha
+	METHOD m_nucpyhdh drawPixels ()V
+	METHOD m_obmuolrt checkAllocated ()V
+	METHOD m_oyjcjnbx untrack ()V
+	METHOD m_pmafqlsa read (Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;Ljava/io/InputStream;)Lnet/minecraft/unmapped/C_ayikuhxa;
+		ARG 0 format
+		ARG 1 input
+	METHOD m_pmrtzukt read (Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;Ljava/nio/ByteBuffer;)Lnet/minecraft/unmapped/C_ayikuhxa;
+		ARG 0 format
+		ARG 1 input
+	METHOD m_rbxodptg getFormat ()Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;
+	METHOD m_tgbwsswh applyFunctionPerPixel (Ljava/util/function/IntUnaryOperator;)Lnet/minecraft/unmapped/C_ayikuhxa;
+		ARG 1 function
+	METHOD m_thoegqhs mirrorVertically ()V
+	METHOD m_topytdjr write (Ljava/nio/channels/WritableByteChannel;)Z
+		ARG 1 output
+	METHOD m_tqikshlo upload (IIIZ)V
+		ARG 1 level
+		ARG 2 offsetX
+		ARG 3 offsetY
+		ARG 4 close
+	METHOD m_urfoahpt copyFrom (Lnet/minecraft/unmapped/C_ayikuhxa;)V
+		ARG 1 image
+	METHOD m_vmneozhc copyRectangle (Lnet/minecraft/unmapped/C_ayikuhxa;IIIIIIZZ)V
+		ARG 1 image
+		ARG 2 srcX
+		ARG 3 srcY
+		ARG 4 destX
+		ARG 5 destY
+		ARG 6 height
+		ARG 7 width
+		ARG 8 flipHorizontal
+		ARG 9 flipVertical
+	METHOD m_xqjgvqoz getHeight ()I
+	METHOD m_yellsqcy read ([B)Lnet/minecraft/unmapped/C_ayikuhxa;
+		ARG 0 input
+	METHOD m_zrxcvcju writeFile (Ljava/io/File;)V
+		ARG 1 output
+	CLASS C_pfzicqtf Format
+		FIELD f_anztetff writeable Z
+		FIELD f_awfojdcq alphaChannelOffset I
+		FIELD f_bqchhzje hasBlue Z
+		FIELD f_bzxnqfmj pixelDataFormat I
+		FIELD f_cyzmivgp greenOffset I
+		FIELD f_fdkuwhpd channelCount I
+		FIELD f_knwxaqzb hasLuminance Z
+		FIELD f_pamrjitj redOffset I
+		FIELD f_pcgdkojz hasRed Z
+		FIELD f_rhpuwtnw hasGreen Z
+		FIELD f_rqurmrwt blueOffset I
+		FIELD f_rrnnzerm luminanceChannelOffset I
+		FIELD f_tdhpzasi ABGR Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;
+		FIELD f_yelqzpzt hasAlpha Z
+		FIELD f_ymigfdep BGR Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;
+		METHOD <init> (Ljava/lang/String;IIIZZZZZIIIIIZ)V
+			ARG 3 channels
+			ARG 4 glFormat
+			ARG 5 hasRed
+			ARG 6 hasGreen
+			ARG 7 hasBlue
+			ARG 8 hasLuminance
+			ARG 9 hasAlpha
+			ARG 10 redOffset
+			ARG 11 greenOffset
+			ARG 12 blueOffset
+			ARG 13 luminanceOffset
+			ARG 14 alphaOffset
+			ARG 15 writeable
+		METHOD m_bauahcpi hasOpacityChannel ()Z
+		METHOD m_byqqvmyh setUnpackAlignment ()V
+		METHOD m_dcfrwgxb getGreenOrLuminanceOffset ()I
+		METHOD m_egngbwal getChannelCount ()I
+		METHOD m_fzjimmac isWriteable ()Z
+		METHOD m_horickcj hasLuminance ()Z
+		METHOD m_jekguhbk getFormat (I)Lnet/minecraft/unmapped/C_ayikuhxa$C_pfzicqtf;
+			ARG 0 glFormat
+		METHOD m_jpbcfbwx hasGreenChannel ()Z
+		METHOD m_kfqizywi hasRedChannel ()Z
+		METHOD m_lvmylmho hasGreen ()Z
+		METHOD m_ncsnayms hasBlue ()Z
+		METHOD m_ofdjbnji getRedOrLuminanceOffset ()I
+		METHOD m_ontxhhqg getPixelDataFormat ()I
+		METHOD m_owbqqovn getLuminanceChannelOffset ()I
+		METHOD m_ptotcjzi hasAlphaChannel ()Z
+		METHOD m_sluyexhy getOpacityOffset ()I
+		METHOD m_sosajcmt getRedOffset ()I
+		METHOD m_swyeteba hasRed ()Z
+		METHOD m_tfikoyph getBlueOrLuminanceOffset ()I
+		METHOD m_ticciiyb getAlphaChannelOffset ()I
+		METHOD m_tlatkrbe hasBlueChannel ()Z
+		METHOD m_wrktutbj getGreenOffset ()I
+		METHOD m_zimcikhy getBlueOffset ()I
+		METHOD m_zrsilyyo setPackAlignment ()V
+	CLASS C_povfxtzr GLFormat
+		FIELD f_poxsdsfl BGR Lnet/minecraft/unmapped/C_ayikuhxa$C_povfxtzr;
+		FIELD f_qveyckyr ABGR Lnet/minecraft/unmapped/C_ayikuhxa$C_povfxtzr;
+		FIELD f_zalfcdhg glConstant I
+		METHOD <init> (Ljava/lang/String;II)V
+			ARG 3 glConstant
+		METHOD m_rafhnrof getGlConstant ()I
+	CLASS C_qcwegmwp WriteCallback
+		FIELD f_flmyveai channel Ljava/nio/channels/WritableByteChannel;
+		FIELD f_qdxpzjbm exception Ljava/io/IOException;
+		METHOD <init> (Ljava/nio/channels/WritableByteChannel;)V
+			ARG 1 output
+		METHOD invoke invoke (JJI)V
+			ARG 1 context
+			ARG 3 data
+			ARG 5 size
+		METHOD m_sfavkcss throwStoredException ()V

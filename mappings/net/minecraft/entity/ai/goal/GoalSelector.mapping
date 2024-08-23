@@ -1,0 +1,49 @@
+CLASS net/minecraft/unmapped/C_qospjrjn net/minecraft/entity/ai/goal/GoalSelector
+	COMMENT Manages a set of goals, which are competing for certain controls on the mob.
+	COMMENT Multiple goals can run at the same time, so long as they are all using different controls.
+	COMMENT
+	COMMENT <p>A running goal will always be replaced with a goal with a <i>lower</i> priority, if
+	COMMENT such a goal exists, it's competing for the same control and its
+	COMMENT {@link Goal#canStart() canStart()} method returns true. (Note that some goals randomize
+	COMMENT this method.)
+	COMMENT
+	COMMENT <p>If two goals have the same priority and are competing for the same control, then one
+	COMMENT goal cannot replace the other if it's running. The goal selector tries to run goals in the order
+	COMMENT they were added.
+	FIELD f_eemsznmi profiler Ljava/util/function/Supplier;
+	FIELD f_iunuprxe goals Ljava/util/Set;
+	FIELD f_seehmxnn goalsByControl Ljava/util/Map;
+	FIELD f_sfjfyjvq REPLACEABLE_GOAL Lnet/minecraft/unmapped/C_wgswcjhs;
+	FIELD f_vmchmsdk disabledControls Ljava/util/EnumSet;
+	METHOD <init> (Ljava/util/function/Supplier;)V
+		ARG 1 profiler
+	METHOD m_akagomwl remove (Lnet/minecraft/unmapped/C_svjebams;)V
+		ARG 1 goal
+	METHOD m_ftzoeovi goalCanReplaceAll (Lnet/minecraft/unmapped/C_wgswcjhs;Ljava/util/Map;)Z
+		ARG 0 goal
+		ARG 1 goalsByControl
+	METHOD m_gnafdtic add (ILnet/minecraft/unmapped/C_svjebams;)V
+		COMMENT Adds a goal with a certain priority. Goals with <i>lower</i> priorities will replace running goals
+		COMMENT with a higher priority.
+		ARG 1 priority
+		ARG 2 goal
+	METHOD m_gqhknwvo setControlEnabled (Lnet/minecraft/unmapped/C_svjebams$C_gemybvmk;Z)V
+		ARG 1 control
+		ARG 2 enabled
+	METHOD m_gthacjtm (Ljava/util/function/Predicate;Lnet/minecraft/unmapped/C_wgswcjhs;)Z
+		ARG 1 prioritizedGoal
+	METHOD m_jgxhmcyj tickGoals (Z)V
+		ARG 1 tickAll
+	METHOD m_jgygovod tick ()V
+	METHOD m_lfaldjmu clear (Ljava/util/function/Predicate;)V
+		ARG 1 predicate
+	METHOD m_mhoeonji getGoals ()Ljava/util/Set;
+	METHOD m_ugwtceby goalUsesAnyControl (Lnet/minecraft/unmapped/C_wgswcjhs;Ljava/util/EnumSet;)Z
+		ARG 0 goal
+		ARG 1 controls
+	METHOD m_vetwjnfx (Lnet/minecraft/unmapped/C_svjebams;Lnet/minecraft/unmapped/C_wgswcjhs;)Z
+		ARG 1 prioritizedGoal
+	METHOD m_xoqhunel disableControl (Lnet/minecraft/unmapped/C_svjebams$C_gemybvmk;)V
+		ARG 1 control
+	METHOD m_ykuppgvd enableControl (Lnet/minecraft/unmapped/C_svjebams$C_gemybvmk;)V
+		ARG 1 control

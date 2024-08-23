@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_izpoxcdo net/minecraft/entity/ai/goal/SwimGoal
+	FIELD f_vehqcqjl mob Lnet/minecraft/unmapped/C_dxkfswlz;
+	METHOD <init> (Lnet/minecraft/unmapped/C_dxkfswlz;)V
+		ARG 1 mob

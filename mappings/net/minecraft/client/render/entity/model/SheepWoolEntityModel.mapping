@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_gusezkoi net/minecraft/client/render/entity/model/SheepWoolEntityModel
+	METHOD m_xhnbygpk getTexturedModelData ()Lnet/minecraft/unmapped/C_ybmhebgt;

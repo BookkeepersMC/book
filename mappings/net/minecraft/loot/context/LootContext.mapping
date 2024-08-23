@@ -1,0 +1,49 @@
+CLASS net/minecraft/unmapped/C_iakykpgh net/minecraft/loot/context/LootContext
+	FIELD f_gndtbaxx random Lnet/minecraft/unmapped/C_rlomrsco;
+	FIELD f_rcozkxpd visitedElements Ljava/util/Set;
+	FIELD f_rcybseec dataLookup Lnet/minecraft/unmapped/C_pzdchrcy$C_pbvqpmst;
+	FIELD f_urhluvna parameters Lnet/minecraft/unmapped/C_nzsnkdtl;
+	METHOD m_aetjuquw createEntry (Lnet/minecraft/unmapped/C_vqkczpuv;)Lnet/minecraft/unmapped/C_iakykpgh$C_kslhzure;
+		ARG 0 condition
+	METHOD m_bmdlitpa getDataLookup ()Lnet/minecraft/unmapped/C_pzdchrcy$C_pbvqpmst;
+	METHOD m_boycmais createEntry (Lnet/minecraft/unmapped/C_tmxhskql;)Lnet/minecraft/unmapped/C_iakykpgh$C_kslhzure;
+		ARG 0 function
+	METHOD m_htdhqpov addVisitedElement (Lnet/minecraft/unmapped/C_iakykpgh$C_kslhzure;)Z
+		ARG 1 entry
+	METHOD m_idypeamr createEntry (Lnet/minecraft/unmapped/C_inwsuliy;)Lnet/minecraft/unmapped/C_iakykpgh$C_kslhzure;
+		ARG 0 table
+	METHOD m_izzeghzt getWorld ()Lnet/minecraft/unmapped/C_bdwnwhiu;
+	METHOD m_lccwwrcz removeVisitedElement (Lnet/minecraft/unmapped/C_iakykpgh$C_kslhzure;)V
+		ARG 1 entry
+	METHOD m_tjqtsntr drop (Lnet/minecraft/unmapped/C_ncpywfca;Ljava/util/function/Consumer;)V
+		ARG 1 id
+		ARG 2 lootConsumer
+	METHOD m_ubbeilnd requireParameter (Lnet/minecraft/unmapped/C_xsaigefq;)Ljava/lang/Object;
+		ARG 1 parameter
+	METHOD m_vbxysawq hasParameter (Lnet/minecraft/unmapped/C_xsaigefq;)Z
+		ARG 1 parameter
+	METHOD m_wajkhgmd getRandom ()Lnet/minecraft/unmapped/C_rlomrsco;
+	METHOD m_whhxcymq getLuck ()F
+	METHOD m_xojwzglq hasVisitedElement (Lnet/minecraft/unmapped/C_iakykpgh$C_kslhzure;)Z
+		ARG 1 entry
+	METHOD m_xpnkgluh get (Lnet/minecraft/unmapped/C_xsaigefq;)Ljava/lang/Object;
+		ARG 1 parameter
+	CLASS C_kslhzure Entry
+	CLASS C_qtufoufh EntityTarget
+		FIELD f_mvjjhvcy parameter Lnet/minecraft/unmapped/C_xsaigefq;
+		FIELD f_uyijmmap type Ljava/lang/String;
+		METHOD <init> (Ljava/lang/String;ILjava/lang/String;Lnet/minecraft/unmapped/C_xsaigefq;)V
+			ARG 3 type
+			ARG 4 parameter
+		METHOD m_lzewnxma getParameter ()Lnet/minecraft/unmapped/C_xsaigefq;
+		METHOD m_quasqlsc fromString (Ljava/lang/String;)Lnet/minecraft/unmapped/C_iakykpgh$C_qtufoufh;
+			ARG 0 type
+	CLASS C_xdyltqvb Builder
+		FIELD f_cfeuvpzt parameters Lnet/minecraft/unmapped/C_nzsnkdtl;
+		FIELD f_cphcdszg random Lnet/minecraft/unmapped/C_rlomrsco;
+		METHOD <init> (Lnet/minecraft/unmapped/C_nzsnkdtl;)V
+			ARG 1 parameters
+		METHOD m_hoabyrky build (Ljava/util/Optional;)Lnet/minecraft/unmapped/C_iakykpgh;
+		METHOD m_jiwxjvnm getWorld ()Lnet/minecraft/unmapped/C_bdwnwhiu;
+		METHOD m_lmjmflya withRandomSeed (J)Lnet/minecraft/unmapped/C_iakykpgh$C_xdyltqvb;
+			ARG 1 seed

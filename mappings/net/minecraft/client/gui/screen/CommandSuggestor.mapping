@@ -1,0 +1,120 @@
+CLASS net/minecraft/unmapped/C_jyxtrlhr net/minecraft/client/gui/screen/CommandSuggestor
+	FIELD f_cuiqnofv pendingSuggestions Ljava/util/concurrent/CompletableFuture;
+	FIELD f_dxgrekus client Lnet/minecraft/unmapped/C_ayfeobid;
+	FIELD f_fwuzicwr x I
+	FIELD f_gjwqguye width I
+	FIELD f_ihqffcsh owner Lnet/minecraft/unmapped/C_wrmtlwqx;
+	FIELD f_ivxqcdlz completingSuggestions Z
+	FIELD f_jagsxomz maxSuggestionSize I
+	FIELD f_jltkpqjo suggestingWhenEmpty Z
+	FIELD f_lpbgyfqt parse Lcom/mojang/brigadier/ParseResults;
+	FIELD f_pdwmicbo slashOptional Z
+	FIELD f_qtrqerci windowActive Z
+	FIELD f_rfvyykqy textRenderer Lnet/minecraft/unmapped/C_mavozmpp;
+	FIELD f_rvnaguyh color I
+	FIELD f_scbwomzm textField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_sdzyqtbg ERROR_STYLE Lnet/minecraft/unmapped/C_cpwnhism;
+	FIELD f_tonbhmlp canLeave Z
+	FIELD f_urfynoeh BACKSLASH_S_PATTERN Ljava/util/regex/Pattern;
+	FIELD f_whmqjpha messages Ljava/util/List;
+	FIELD f_wuyiygne window Lnet/minecraft/unmapped/C_jyxtrlhr$C_dinreiol;
+	FIELD f_yecorboz INFO_STYLE Lnet/minecraft/unmapped/C_cpwnhism;
+	FIELD f_yjirhfwn inWindowIndexOffset I
+	FIELD f_yllxldca chatScreenSized Z
+	FIELD f_zzshrrrj HIGHLIGHT_STYLES Ljava/util/List;
+	METHOD <init> (Lnet/minecraft/unmapped/C_ayfeobid;Lnet/minecraft/unmapped/C_wrmtlwqx;Lnet/minecraft/unmapped/C_vopzcnhf;Lnet/minecraft/unmapped/C_mavozmpp;ZZIIZI)V
+		ARG 1 client
+		ARG 2 owner
+		ARG 3 textField
+		ARG 4 textRenderer
+		ARG 5 slashOptional
+		ARG 6 suggestingWhenEmpty
+		ARG 7 inWindowIndexOffset
+		ARG 8 maxSuggestionSize
+		ARG 9 chatScreenSized
+		ARG 10 color
+	METHOD m_aidxlsjb getNarration ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_bkimanqp renderWindow (Lnet/minecraft/unmapped/C_sedilmty;II)Z
+		ARG 1 graphics
+		ARG 2 mouseX
+		ARG 3 mouseY
+	METHOD m_egnvndmf mouseClicked (DDI)Z
+		ARG 1 mouseX
+		ARG 3 mouseY
+		ARG 5 button
+	METHOD m_endzaxki keyPressed (III)Z
+		ARG 1 keyCode
+		ARG 2 scanCode
+		ARG 3 modifiers
+	METHOD m_judobart setCanLeave (Z)V
+		ARG 1 canLeave
+	METHOD m_jxxkmohx showSuggestions (Z)V
+		ARG 1 narrateFirstSuggestion
+	METHOD m_lajjatmd getNarrationText ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_nkclczjf renderUsage (Lnet/minecraft/unmapped/C_sedilmty;)V
+		ARG 1 graphics
+	METHOD m_nrdzjegr provideRenderText (Ljava/lang/String;I)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 1 original
+		ARG 2 firstCharacterIndex
+	METHOD m_pjsacurt resetWindow ()V
+	METHOD m_pqfqhhvr getWindow ()Z
+	METHOD m_qceilxyd show ()V
+	METHOD m_qfhfcbzb getLastPlayerNameStart (Ljava/lang/String;)I
+		ARG 0 input
+	METHOD m_qxikpnet highlight (Lcom/mojang/brigadier/ParseResults;Ljava/lang/String;I)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 parse
+		ARG 1 original
+		ARG 2 firstCharacterIndex
+	METHOD m_rhyndxie mouseScrolled (D)Z
+		ARG 1 amount
+	METHOD m_ryjcbrxn showUsages (Lnet/minecraft/unmapped/C_tnezalvh;)Z
+		ARG 1 formatting
+	METHOD m_sbaxsgkx render (Lnet/minecraft/unmapped/C_sedilmty;II)V
+		ARG 1 graphics
+		ARG 2 mouseX
+		ARG 3 mouseY
+	METHOD m_sgedbqgq refresh ()V
+	METHOD m_tefamdyw formatException (Lcom/mojang/brigadier/exceptions/CommandSyntaxException;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 exception
+	METHOD m_thgbmlty setWindowActive (Z)V
+		ARG 1 windowActive
+	METHOD m_wgavwrmh getSuggestionSuffix (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 original
+		ARG 1 suggestion
+	METHOD m_xpiteobf sortSuggestions (Lcom/mojang/brigadier/suggestion/Suggestions;)Ljava/util/List;
+		ARG 1 suggestions
+	CLASS C_dinreiol SuggestionWindow
+		FIELD f_aimctavx selection I
+		FIELD f_frllbdfi suggestions Ljava/util/List;
+		FIELD f_icxlntso completed Z
+		FIELD f_ncobxllb lastNarrationIndex I
+		FIELD f_rdiigsmk mouse Lnet/minecraft/unmapped/C_krlwdsom;
+		FIELD f_rvtxspur inWindowIndex I
+		FIELD f_ungauxjw area Lnet/minecraft/unmapped/C_zccuaobs;
+		FIELD f_wukqeiza typedText Ljava/lang/String;
+		METHOD <init> (Lnet/minecraft/unmapped/C_jyxtrlhr;IIILjava/util/List;Z)V
+			ARG 2 x
+			ARG 3 y
+			ARG 4 width
+			ARG 5 suggestions
+			ARG 6 narrateFirstSuggestion
+		METHOD m_aggkbxzu getNarration ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+		METHOD m_apgjkarg select (I)V
+			ARG 1 index
+		METHOD m_elhhjuwm complete ()V
+		METHOD m_mobwfxjj mouseScrolled (D)Z
+			ARG 1 amount
+		METHOD m_pkxguzfq render (Lnet/minecraft/unmapped/C_sedilmty;II)V
+			ARG 1 graphics
+			ARG 2 mouseX
+			ARG 3 mouseY
+		METHOD m_qflkwncw scroll (I)V
+			ARG 1 offset
+		METHOD m_rajcisct mouseClicked (III)Z
+			ARG 1 x
+			ARG 2 y
+			ARG 3 button
+		METHOD m_zotokfan keyPressed (III)Z
+			ARG 1 keyCode
+			ARG 2 scanCode
+			ARG 3 modifiers

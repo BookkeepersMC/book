@@ -1,0 +1,17 @@
+CLASS net/minecraft/unmapped/C_ujuhvzam net/minecraft/entity/ai/goal/FollowMobGoal
+	FIELD f_dgnrqnsp oldWaterPathFindingPenalty F
+	FIELD f_hwmdyekp mob Lnet/minecraft/unmapped/C_dxkfswlz;
+	FIELD f_mmpwbkwz minDistance F
+	FIELD f_nghfjnay updateCountdownTicks I
+	FIELD f_qgemvico speed D
+	FIELD f_tzqkemsx target Lnet/minecraft/unmapped/C_dxkfswlz;
+	FIELD f_tzrmsprz targetPredicate Ljava/util/function/Predicate;
+	FIELD f_uufoncea navigation Lnet/minecraft/unmapped/C_atbvfjwi;
+	FIELD f_xrpoomuz maxDistance F
+	METHOD <init> (Lnet/minecraft/unmapped/C_dxkfswlz;DFF)V
+		ARG 1 mob
+		ARG 2 speed
+		ARG 4 minDistance
+		ARG 5 maxDistance
+	METHOD m_qwefwbhd (Lnet/minecraft/unmapped/C_dxkfswlz;Lnet/minecraft/unmapped/C_dxkfswlz;)Z
+		ARG 1 mob

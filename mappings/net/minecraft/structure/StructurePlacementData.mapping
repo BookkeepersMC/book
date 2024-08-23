@@ -1,0 +1,46 @@
+CLASS net/minecraft/unmapped/C_mhhynxof net/minecraft/structure/StructurePlacementData
+	FIELD f_apjamdee initializeMobs Z
+	FIELD f_jbdzvgmd position Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_lmbyflol updateNeighbors Z
+	FIELD f_pnnagjnn random Lnet/minecraft/unmapped/C_rlomrsco;
+	FIELD f_prcxfjdx ignoreEntities Z
+	FIELD f_ugpilact boundingBox Lnet/minecraft/unmapped/C_hmqypqzz;
+	FIELD f_uoyuymhl mirror Lnet/minecraft/unmapped/C_qomzaqud;
+	FIELD f_vnbokwey rotation Lnet/minecraft/unmapped/C_mboglirk;
+	FIELD f_yevebaca processors Ljava/util/List;
+	FIELD f_ywwtojqs palette I
+	METHOD m_aokkpmpb shouldIgnoreEntities ()Z
+	METHOD m_cfaqkbjz addProcessor (Lnet/minecraft/unmapped/C_gzgrrbxb;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 processor
+	METHOD m_fdohpsmk setRotation (Lnet/minecraft/unmapped/C_mboglirk;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 rotation
+	METHOD m_gwdmtnrb getRandom (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_rlomrsco;
+		ARG 1 pos
+	METHOD m_ixfxqydh setMirror (Lnet/minecraft/unmapped/C_qomzaqud;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 mirror
+	METHOD m_jocalsgm getRandomBlockInfos (Ljava/util/List;Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_abvlwuej$C_opzlzhwc;
+		ARG 1 blockInfo
+		ARG 2 pos
+	METHOD m_jpnnxwum shouldUpdateNeighbors ()Z
+	METHOD m_khalanjo setBoundingBox (Lnet/minecraft/unmapped/C_hmqypqzz;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 boundingBox
+	METHOD m_kyvyrwox setInitializeEntities (Z)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 initializeMobs
+	METHOD m_nsdihoai setPosition (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 position
+	METHOD m_pcpltgyv removeProcessor (Lnet/minecraft/unmapped/C_gzgrrbxb;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 processor
+	METHOD m_qaqqrxwm setUpdateNeighbors (Z)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 updateNeighbors
+	METHOD m_qbnzjgeq getPosition ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_qcpyetid setIgnoreEntities (Z)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 ignoreEntities
+	METHOD m_qptinipd getMirror ()Lnet/minecraft/unmapped/C_qomzaqud;
+	METHOD m_slierqdy shouldInitializeMobs ()Z
+	METHOD m_svvotiyc getBoundingBox ()Lnet/minecraft/unmapped/C_hmqypqzz;
+	METHOD m_ujxaditz getProcessors ()Ljava/util/List;
+	METHOD m_vwjpcmlh clearProcessors ()Lnet/minecraft/unmapped/C_mhhynxof;
+	METHOD m_wvjirmuh setRandom (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 random
+	METHOD m_xvptvawj getRotation ()Lnet/minecraft/unmapped/C_mboglirk;
+	METHOD m_yufpycll copy ()Lnet/minecraft/unmapped/C_mhhynxof;

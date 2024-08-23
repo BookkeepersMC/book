@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_joczonvg net/minecraft/world/explosion/EntityExplosionBehavior
+	FIELD f_ydobmneq entity Lnet/minecraft/unmapped/C_astfners;
+	METHOD <init> (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity

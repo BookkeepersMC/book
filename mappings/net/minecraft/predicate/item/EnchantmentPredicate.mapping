@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_mybjijbl net/minecraft/predicate/item/EnchantmentPredicate
+	FIELD f_gtfgsrms levels Lnet/minecraft/unmapped/C_nihhkamy$C_mujuochb;
+	METHOD m_ucdsbwam test (Lnet/minecraft/unmapped/C_qlclfxvn;)Z

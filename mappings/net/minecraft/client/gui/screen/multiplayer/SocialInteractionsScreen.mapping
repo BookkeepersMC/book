@@ -1,0 +1,62 @@
+CLASS net/minecraft/unmapped/C_brwvrttn net/minecraft/client/gui/screen/multiplayer/SocialInteractionsScreen
+	FIELD f_arfxwrms parent Lnet/minecraft/unmapped/C_wrmtlwqx;
+	FIELD f_cefbgilp TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_crmfxscu SEARCH_ICON_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_cxfmwlfl BLOCKING Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_dsnrjkwa blockingButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_egpwhtxf HIDDEN_TAB_TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_ehgxdpav layout Lnet/minecraft/unmapped/C_cqroimpa;
+	FIELD f_eyehtvpp EMPTY_SEARCH Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_eyoclwvf BACKGROUND_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_fyotpemy EMPTY_BLOCKED Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_gkqewfhx BLOCKED_TAB_TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_hkesyvwl blockedTabButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_jgknnays searchBox Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_kopadxmh SELECTED_BLOCKED_TAB_TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_kvdwqrvz allTabButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_lmemeyix SELECTED_HIDDEN_TAB_TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_lyzgzwuc currentSearch Ljava/lang/String;
+	FIELD f_mpgziczr Y_MARGIN I
+	FIELD f_nvvqhhfj hiddenTabButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_pnemckrv BACKGROUND_WIDTH I
+	FIELD f_prpskdcl playerList Lnet/minecraft/unmapped/C_emjtezqk;
+	FIELD f_ptkfdpuq LIST_START I
+	FIELD f_rmbuefuh serverLabel Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_rvheyeaw SEARCH Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_rwajovrv SEARCH_BAR_HEIGHT I
+	FIELD f_ssadwtxp TEXTURE_WIDTH I
+	FIELD f_stkqleor playerCount I
+	FIELD f_uasrfffq SELECTED_ALL_TAB_TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_udxxxfyn ITEM_HEIGHT I
+	FIELD f_vrsupofb currentTab Lnet/minecraft/unmapped/C_brwvrttn$C_gjmwpjqo;
+	FIELD f_xedyrxvd ALL_TAB_TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_yevfmwjl EMPTY_HIDDEN Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_yoybcmgt BUTTON_HEIGHT I
+	FIELD f_yxghdclo BACKGROUND_BORDER_SIZE I
+	FIELD f_zrynefik SEARCH_START I
+	METHOD <init> (Lnet/minecraft/unmapped/C_wrmtlwqx;)V
+		ARG 1 parent
+	METHOD m_aieuqqnx updateServerLabel (Lnet/minecraft/unmapped/C_ayfeobid;)V
+		ARG 1 client
+	METHOD m_bvcecdny (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_klplqoox (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_lhmjdxyz (Lnet/minecraft/unmapped/C_brwvrttn;Lnet/minecraft/unmapped/C_fxiqpxaf;)V
+		ARG 1 widget
+	METHOD m_loaniqzw getWindowHeight ()I
+	METHOD m_mwtmmlvd getListEnd ()I
+	METHOD m_nkvyocid setCurrentTab (Lnet/minecraft/unmapped/C_brwvrttn$C_gjmwpjqo;)V
+		ARG 1 currentTab
+	METHOD m_pcveaabm onSearchChange (Ljava/lang/String;)V
+		ARG 1 currentSearch
+	METHOD m_quinuedi setPlayerOffline (Ljava/util/UUID;)V
+		ARG 1 uuid
+	METHOD m_ufrxdsry getXMargin ()I
+	METHOD m_xtfyshoj setPlayerOnline (Lnet/minecraft/unmapped/C_rdnfmxue;)V
+		ARG 1 player
+	METHOD m_ybrbqpzt (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_zqpympwn (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	CLASS C_gjmwpjqo Tab

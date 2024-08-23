@@ -1,0 +1,29 @@
+CLASS net/minecraft/unmapped/C_uhmrlzli net/minecraft/network/listener/AbstractServerPacketHandler
+	FIELD f_akpbpalo TIMEOUT Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_alvgcmdd connection Lnet/minecraft/unmapped/C_oasmcckk;
+	FIELD f_ammkjcey latency I
+	FIELD f_bhlnxonm server Lnet/minecraft/server/MinecraftServer;
+	FIELD f_bwbafeyv KEEP_ALIVE_INTERVAL I
+	FIELD f_hraxdibk keepAliveTime J
+	FIELD f_kawkhjrz keepAlivePending Z
+	FIELD f_lfllntol transferred Z
+	FIELD f_mkxflgsm suspendFlushing Z
+	FIELD f_ncsvcoqn UNEXPECTED_QUERY_RESPONSE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_ndrzlfrm keepAliveId J
+	FIELD f_nwnfbqrv measuringTimeMs J
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/unmapped/C_oasmcckk;Lnet/minecraft/unmapped/C_eyqfalbd;)V
+		ARG 3 connectedClient
+	METHOD m_dmgbiflv send (Lnet/minecraft/unmapped/C_zyjtrjrl;)V
+		ARG 1 packet
+	METHOD m_gupiqtcq getPlayerProfile ()Lcom/mojang/authlib/GameProfile;
+	METHOD m_kecmtabn send (Lnet/minecraft/unmapped/C_zyjtrjrl;Lnet/minecraft/unmapped/C_zddpfpkk;)V
+		ARG 1 packet
+		ARG 2 listener
+	METHOD m_sbjxzvyv isHost ()Z
+	METHOD m_uxfwotfn resumeFlushing ()V
+	METHOD m_vcewfoxf getClientData (Lnet/minecraft/unmapped/C_elrtgpva;)Lnet/minecraft/unmapped/C_eyqfalbd;
+		ARG 1 clientOptions
+	METHOD m_xjfqrrig getLatency ()I
+	METHOD m_xuuwoanl suspendFlushing ()V
+	METHOD m_ykswssao keepConnectionAlive ()V
+	METHOD m_ywaezrrc getHost ()Lcom/mojang/authlib/GameProfile;

@@ -1,0 +1,53 @@
+CLASS net/minecraft/unmapped/C_hejpktqu net/minecraft/client/gui/screen/advancement/AdvancementsScreen
+	FIELD f_asqihywx PAGE_HEIGHT I
+	FIELD f_brylkhdt BACKGROUND_TILE_HEIGHT I
+	FIELD f_bsykesqc BACKGROUND_TILE_COUNT_X I
+	FIELD f_ciqvruba layout Lnet/minecraft/unmapped/C_cqroimpa;
+	FIELD f_deuzilas advancementHandler Lnet/minecraft/unmapped/C_wojlspxv;
+	FIELD f_ethrmebw EMPTY Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_hvwlvxua WINDOW_WIDTH I
+	FIELD f_ihksdlio movingTab Z
+	FIELD f_lmllbckl PAGE_WIDTH I
+	FIELD f_nxhbparu BACKGROUND_TILE_WIDTH I
+	FIELD f_oxzbcqfh SAD_LABEL Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_pytsxzcp PAGE_X_OFFSET I
+	FIELD f_qilyqfeh WINDOW_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_szqkwjov PAGE_Y_OFFSET I
+	FIELD f_ululreqo selectedTab Lnet/minecraft/unmapped/C_jijouocm;
+	FIELD f_vhllczpn BACKGROUND_TILE_COUNT_Y I
+	FIELD f_withhsec parent Lnet/minecraft/unmapped/C_wrmtlwqx;
+	FIELD f_wludnbut SCROLL_MULTIPLIER D
+	FIELD f_xetahiww ADVANCEMENTS Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_xpswrzwd TITLE_Y_OFFSET I
+	FIELD f_zdtexanz tabs Ljava/util/Map;
+	FIELD f_zuwafalh WINDOW_HEIGHT I
+	FIELD f_zvudtfwv TITLE_X_OFFSET I
+	METHOD <init> (Lnet/minecraft/unmapped/C_wojlspxv;)V
+		ARG 1 advancementHandler
+	METHOD <init> (Lnet/minecraft/unmapped/C_wojlspxv;Lnet/minecraft/unmapped/C_wrmtlwqx;)V
+		ARG 1 advancementHandler
+		ARG 2 parent
+	METHOD m_drhicdbj drawWidgets (Lnet/minecraft/unmapped/C_sedilmty;II)V
+		ARG 1 graphics
+		ARG 2 x
+		ARG 3 y
+	METHOD m_ircfxfxr getAdvancementWidget (Lnet/minecraft/unmapped/C_seqaydby;)Lnet/minecraft/unmapped/C_lmrhoxpe;
+		ARG 1 node
+	METHOD m_mswxhxpr drawWidgetTooltip (Lnet/minecraft/unmapped/C_sedilmty;IIII)V
+		ARG 1 graphics
+		ARG 2 mouseX
+		ARG 3 mouseY
+		ARG 4 x
+		ARG 5 y
+	METHOD m_oehiopku (Lnet/minecraft/unmapped/C_hejpktqu;Lnet/minecraft/unmapped/C_fxiqpxaf;)V
+		ARG 1 widget
+	METHOD m_slhykxdm (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_yzkifjcp drawAdvancementTree (Lnet/minecraft/unmapped/C_sedilmty;IIII)V
+		ARG 1 graphics
+		ARG 2 mouseX
+		ARG 3 mouseY
+		ARG 4 x
+		ARG 5 y
+	METHOD m_zrcxfwyu getTab (Lnet/minecraft/unmapped/C_seqaydby;)Lnet/minecraft/unmapped/C_jijouocm;
+		ARG 1 node

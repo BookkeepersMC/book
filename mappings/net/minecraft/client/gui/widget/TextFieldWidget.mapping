@@ -1,0 +1,131 @@
+CLASS net/minecraft/unmapped/C_vopzcnhf net/minecraft/client/gui/widget/TextFieldWidget
+	FIELD f_aaxlfqis selectionEnd I
+	FIELD f_avkvsjop changedListener Ljava/util/function/Consumer;
+	FIELD f_cmnauqqj FORWARDS I
+	FIELD f_ddgsctui lastFocusTime J
+	FIELD f_ehdqdocj INSERT_CURSOR_COLOR I
+	FIELD f_flvepgtg hint Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_gcohdxnw drawsBackground Z
+	FIELD f_gizvhnzb INSERT_CURSOR_WIDTH I
+	FIELD f_gsnwbfnr CURSOR_BLINK_MS I
+	FIELD f_gyakfjgb uneditableColor I
+	FIELD f_imtjinqy focusUnlocked Z
+	FIELD f_kwetnhqz BACKWARDS I
+	FIELD f_kwuxvwmh DEFAULT_EDITABLE_COLOR I
+	FIELD f_litpeqel UNDERSCORE Ljava/lang/String;
+	FIELD f_lvwcxqgr textPredicate Ljava/util/function/Predicate;
+	FIELD f_nntrwhcq suggestion Ljava/lang/String;
+	FIELD f_obiubcfv TEXT_FIELD_TEXTURES Lnet/minecraft/unmapped/C_fajlgudl;
+	FIELD f_phzgdoou maxLength I
+	FIELD f_qftlxopl firstCharacterIndex I
+	FIELD f_rpfmfdmz text Ljava/lang/String;
+	FIELD f_sgjqcrpx renderTextProvider Ljava/util/function/BiFunction;
+	FIELD f_txtjhjhm textRenderer Lnet/minecraft/unmapped/C_mavozmpp;
+	FIELD f_umkngaml editableColor I
+	FIELD f_yfmhkwpd selectionStart I
+	FIELD f_zsmogpnp editable Z
+	METHOD <init> (Lnet/minecraft/unmapped/C_mavozmpp;IIIILnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 textRenderer
+		ARG 2 x
+		ARG 3 y
+		ARG 4 width
+		ARG 5 height
+		ARG 6 text
+	METHOD <init> (Lnet/minecraft/unmapped/C_mavozmpp;IIIILnet/minecraft/unmapped/C_vopzcnhf;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 textRenderer
+		ARG 2 x
+		ARG 3 y
+		ARG 4 width
+		ARG 5 height
+		ARG 6 copyFrom
+		ARG 7 text
+	METHOD <init> (Lnet/minecraft/unmapped/C_mavozmpp;IILnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 textRenderer
+		ARG 2 width
+		ARG 3 height
+		ARG 4 text
+	METHOD m_afjjpukx setEditableColor (I)V
+		ARG 1 color
+	METHOD m_blncbkhz getCharacterX (I)I
+		ARG 1 index
+	METHOD m_dsrbkblb setCursor (IZ)V
+		ARG 1 cursor
+		ARG 2 isSelection
+	METHOD m_dzvzpjnb write (Ljava/lang/String;)V
+		ARG 1 text
+	METHOD m_ecqmubpw eraseAtCursorPosition (I)V
+		ARG 1 cursorPosition
+	METHOD m_emxvspka setVisible (Z)V
+		ARG 1 visible
+	METHOD m_gchqdqaw getWordSkipPosition (II)I
+		ARG 1 wordOffset
+		ARG 2 cursorPosition
+	METHOD m_gekimhwd drawSelectionHighlight (Lnet/minecraft/unmapped/C_sedilmty;IIII)V
+		ARG 1 graphics
+		ARG 2 x1
+		ARG 3 y1
+		ARG 4 x2
+		ARG 5 y2
+	METHOD m_griyofun isActive ()Z
+	METHOD m_gvkbvqth setText (Ljava/lang/String;)V
+		ARG 1 text
+	METHOD m_hpmwgamq getCursor ()I
+	METHOD m_hwgfkeoe getWordSkipPosition (IIZ)I
+		ARG 1 wordOffset
+		ARG 2 cursorPosition
+		ARG 3 skipOverSpaces
+	METHOD m_iplsenyc updateFirstCharacter (I)V
+		ARG 1 index
+	METHOD m_irwzzxjx getText ()Ljava/lang/String;
+	METHOD m_jgyuuykz setEditable (Z)V
+		ARG 1 editable
+	METHOD m_kzuozrwz setSelectionEnd (I)V
+		ARG 1 index
+	METHOD m_lisudksz getMaxLength ()I
+	METHOD m_mreopyko setSuggestion (Ljava/lang/String;)V
+		ARG 1 suggestion
+	METHOD m_mtfwlmsz eraseWords (I)V
+		ARG 1 wordOffset
+	METHOD m_nejvlvdj isVisible ()Z
+	METHOD m_nuxgcaej (Ljava/lang/String;Ljava/lang/Integer;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 string
+		ARG 1 integer
+	METHOD m_oxpezltp setChangedListener (Ljava/util/function/Consumer;)V
+		ARG 1 changedListener
+	METHOD m_pbgvkuzx onChanged (Ljava/lang/String;)V
+		ARG 1 newText
+	METHOD m_pmahxude getSelectedText ()Ljava/lang/String;
+	METHOD m_qgwbazsb drawsBackground ()Z
+	METHOD m_qksvjsnb setHint (Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 hint
+	METHOD m_rgidzzjf getInnerWidth ()I
+	METHOD m_rgmfgplh setTextPredicate (Ljava/util/function/Predicate;)V
+		ARG 1 textPredicate
+	METHOD m_rykikfaw erase (I)V
+		ARG 1 offset
+	METHOD m_tbulvwaj moveCursor (IZ)V
+		ARG 1 offset
+		ARG 2 isSelection
+	METHOD m_tjkqxkxe setUneditableColor (I)V
+		ARG 1 color
+	METHOD m_uamercht setCursorToStart (Z)V
+		ARG 1 isSelection
+	METHOD m_ujpapjrq eraseCharacters (I)V
+		ARG 1 characterOffset
+	METHOD m_wjankemy getCursorPosWithOffset (I)I
+		ARG 1 offset
+	METHOD m_wtycrnfd isEditable ()Z
+	METHOD m_wxaushxx setMaxLength (I)V
+		ARG 1 maxLength
+	METHOD m_xnoxuhhd setRenderTextProvider (Ljava/util/function/BiFunction;)V
+		ARG 1 renderTextProvider
+	METHOD m_yywjykzi setDrawsBackground (Z)V
+		ARG 1 drawsBackground
+	METHOD m_zctgvchi setFocusUnlocked (Z)V
+		ARG 1 focusUnlocked
+	METHOD m_znwffnoe setSelectionStart (I)V
+		ARG 1 cursor
+	METHOD m_zqejgyzq getWordSkipPosition (I)I
+		ARG 1 wordOffset
+	METHOD m_zxclplhg setCursorToEnd (Z)V
+		ARG 1 isSelection

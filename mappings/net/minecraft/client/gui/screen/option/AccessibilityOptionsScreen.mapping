@@ -1,0 +1,7 @@
+CLASS net/minecraft/unmapped/C_jlqncdix net/minecraft/client/gui/screen/option/AccessibilityOptionsScreen
+	FIELD f_bypcpdaw TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD <init> (Lnet/minecraft/unmapped/C_wrmtlwqx;Lnet/minecraft/unmapped/C_lscptbhn;)V
+		ARG 1 parent
+		ARG 2 gameOptions
+	METHOD m_npegeftz getOptions (Lnet/minecraft/unmapped/C_lscptbhn;)[Lnet/minecraft/unmapped/C_vbibxkxv;
+		ARG 0 options

@@ -1,0 +1,67 @@
+CLASS net/minecraft/unmapped/C_lmrhoxpe net/minecraft/client/gui/screen/advancement/AdvancementWidget
+	FIELD f_cmatayfk description Ljava/util/List;
+	FIELD f_cvchadoi children Ljava/util/List;
+	FIELD f_dfqwmhza width I
+	FIELD f_dsxxwcrn client Lnet/minecraft/unmapped/C_ayfeobid;
+	FIELD f_dzrngjja display Lnet/minecraft/unmapped/C_bvqakncm;
+	FIELD f_eacglclw title Lnet/minecraft/unmapped/C_apvkgwyi;
+	FIELD f_ehbdeigs HEIGHT I
+	FIELD f_fmshxxol progress Lnet/minecraft/unmapped/C_rpzbknxp;
+	FIELD f_fmwfweeo parent Lnet/minecraft/unmapped/C_lmrhoxpe;
+	FIELD f_gcsnmqoj TITLE_BOX Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_jpcyfjmg node Lnet/minecraft/unmapped/C_seqaydby;
+	FIELD f_mmqbmmjz FRAME_WIDTH I
+	FIELD f_mokjrvzd ICON_X_OFFSET I
+	FIELD f_mpbvozvt BOX_WIDTH I
+	FIELD f_ojjnsgwg BOX_X I
+	FIELD f_ouoxkdgw TITLE_X_OFFSET I
+	FIELD f_qiyiacpr tab Lnet/minecraft/unmapped/C_jijouocm;
+	FIELD f_qqxcossd SPLIT_OFFSET_CANDIDATES [I
+	FIELD f_rhhfudkl ICON_WIDTH I
+	FIELD f_tecxmtqe x I
+	FIELD f_tnrmhbxt TITLE_Y_OFFSET I
+	FIELD f_vtigxpaz y I
+	FIELD f_vtpqmedl MAX_TITLE_WIDTH I
+	FIELD f_vwvltlxj ICON_Y_OFFSET I
+	FIELD f_wjfjwokh TITLE_LEFT_PADDING I
+	FIELD f_zemiqgbx TITLE_RIGHT_PADDING I
+	METHOD <init> (Lnet/minecraft/unmapped/C_jijouocm;Lnet/minecraft/unmapped/C_ayfeobid;Lnet/minecraft/unmapped/C_seqaydby;Lnet/minecraft/unmapped/C_bvqakncm;)V
+		ARG 1 tab
+		ARG 2 client
+		ARG 3 node
+		ARG 4 display
+	METHOD m_dazfcowv getY ()I
+	METHOD m_dcshgvyo shouldRender (IIII)Z
+		ARG 1 originX
+		ARG 2 originY
+		ARG 3 mouseX
+		ARG 4 mouseY
+	METHOD m_fmoebebq addToTree ()V
+	METHOD m_gkzywotw getX ()I
+	METHOD m_gqjbqdet renderWidgets (Lnet/minecraft/unmapped/C_sedilmty;II)V
+		ARG 2 x
+		ARG 3 y
+	METHOD m_hmjsicbn getParent (Lnet/minecraft/unmapped/C_seqaydby;)Lnet/minecraft/unmapped/C_lmrhoxpe;
+		ARG 1 node
+	METHOD m_picsjjkh setProgress (Lnet/minecraft/unmapped/C_rpzbknxp;)V
+		ARG 1 progress
+	METHOD m_rqblqdxc addChild (Lnet/minecraft/unmapped/C_lmrhoxpe;)V
+		ARG 1 widget
+	METHOD m_tbdidjru computeProgressWidth ()I
+	METHOD m_tmcsgzsc getMaxWidth (Lnet/minecraft/unmapped/C_wtqrualh;Ljava/util/List;)F
+		ARG 0 textHandler
+		ARG 1 lines
+	METHOD m_uievfnwx wrapDescription (Lnet/minecraft/unmapped/C_rdaqiwdt;I)Ljava/util/List;
+		ARG 1 text
+		ARG 2 width
+	METHOD m_vufqsfqw drawTooltip (Lnet/minecraft/unmapped/C_sedilmty;IIFII)V
+		ARG 2 originX
+		ARG 3 originY
+		ARG 4 alpha
+		ARG 5 x
+		ARG 6 y
+	METHOD m_zkxcpxme getWidth ()I
+	METHOD m_znvszxjv renderLines (Lnet/minecraft/unmapped/C_sedilmty;IIZ)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 border

@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_juuahjvj net/minecraft/client/sound/TickableSoundInstance
+	METHOD m_gofwmwvy tick ()V
+	METHOD m_xpctfqfi isDone ()Z

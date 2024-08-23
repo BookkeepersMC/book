@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_sotlzmwb net/minecraft/client/util/ClientPlayerTickable
+	METHOD m_nvfgjosu tick ()V

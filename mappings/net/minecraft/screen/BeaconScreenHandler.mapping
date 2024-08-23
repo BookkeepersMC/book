@@ -1,0 +1,37 @@
+CLASS net/minecraft/unmapped/C_psndvwhi net/minecraft/screen/BeaconScreenHandler
+	FIELD f_adkurhts payment Lnet/minecraft/unmapped/C_pjtstjoq;
+	FIELD f_bhcltzly propertyDelegate Lnet/minecraft/unmapped/C_fwwsyhuv;
+	FIELD f_bkkcbmms SLOTS_COUNT I
+	FIELD f_dzjihxzs HOTBAR_SLOTS_END I
+	FIELD f_ggbocvqy INVENTORY_SLOTS_END I
+	FIELD f_iznecvvh HOTBAR_SLOTS_START I
+	FIELD f_kmziikpz PROPERTIES_COUNT I
+	FIELD f_osrsmhks INVENTORY_SLOTS_START I
+	FIELD f_rrzzimim context Lnet/minecraft/unmapped/C_gsmfcjha;
+	FIELD f_snhmqtap PAYMENT_SLOT I
+	FIELD f_yuhjjrvn paymentSlot Lnet/minecraft/unmapped/C_psndvwhi$C_fncnpckl;
+	METHOD <init> (ILnet/minecraft/unmapped/C_pjtstjoq;)V
+		ARG 1 syncId
+		ARG 2 inventory
+	METHOD <init> (ILnet/minecraft/unmapped/C_pjtstjoq;Lnet/minecraft/unmapped/C_fwwsyhuv;Lnet/minecraft/unmapped/C_gsmfcjha;)V
+		ARG 1 syncId
+		ARG 2 inventory
+		ARG 3 propertyDelegate
+		ARG 4 context
+	METHOD m_gbnhsqdw getProperties ()I
+	METHOD m_jwjsyqpi getSecondaryEffect ()Lnet/minecraft/unmapped/C_cjzoxshv;
+	METHOD m_lijfatly setEffects (Ljava/util/Optional;Ljava/util/Optional;)V
+		ARG 1 primaryEffect
+		ARG 2 secondaryEffect
+	METHOD m_lmwoqbpq getPrimaryEffect ()Lnet/minecraft/unmapped/C_cjzoxshv;
+	METHOD m_mymmcskr getRawIdForStatus (Lnet/minecraft/unmapped/C_cjzoxshv;)I
+		ARG 0 statusHolder
+	METHOD m_syuxmjkr hasPayment ()Z
+	METHOD m_wqcsrehz getStatusEffectForRawId (I)Lnet/minecraft/unmapped/C_cjzoxshv;
+		ARG 0 id
+	CLASS C_fncnpckl PaymentSlot
+		METHOD <init> (Lnet/minecraft/unmapped/C_psndvwhi;Lnet/minecraft/unmapped/C_pjtstjoq;III)V
+			ARG 2 inventory
+			ARG 3 index
+			ARG 4 x
+			ARG 5 y

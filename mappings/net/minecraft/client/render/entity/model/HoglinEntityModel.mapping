@@ -1,0 +1,58 @@
+CLASS net/minecraft/unmapped/C_myvjdift net/minecraft/client/render/entity/model/HoglinEntityModel
+	COMMENT Represents the model of a hoglin-like entity.
+	COMMENT
+	COMMENT <div class="quilt">
+	COMMENT <table border=1>
+	COMMENT <caption>Model parts of this model</caption>
+	COMMENT <tr>
+	COMMENT   <th>Part Name</th><th>Parent</th><th>Corresponding Field</th>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#BODY}</td><td>Root part</td><td>{@link #body}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#MANE}</td><td>{@value EntityModelPartNames#BODY}</td><td>{@link #mane}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#HEAD}</td><td>Root part</td><td>{@link #head}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#RIGHT_EAR}</td><td>{@value EntityModelPartNames#HEAD}</td><td>{@link #rightEar}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#LEFT_EAR}</td><td>{@value EntityModelPartNames#HEAD}</td><td>{@link #leftEar}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#RIGHT_HORN}</td><td>{@value EntityModelPartNames#HEAD}</td><td></td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#LEFT_HORN}</td><td>{@value EntityModelPartNames#HEAD}</td><td></td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#RIGHT_FRONT_LEG}</td><td>Root part</td><td>{@link #rightFrontLeg}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#LEFT_FRONT_LEG}</td><td>Root part</td><td>{@link #leftFrontLeg}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#RIGHT_HIND_LEG}</td><td>Root part</td><td>{@link #rightHindLeg}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT   <td>{@value EntityModelPartNames#LEFT_HIND_LEG}</td><td>Root part</td><td>{@link #leftHindLeg}</td>
+	COMMENT </tr>
+	COMMENT </table>
+	COMMENT </div>
+	FIELD f_crgpowxm HEAD_PITCH_START F
+	FIELD f_hbbxapoi rightFrontLeg Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_hnauyhgf leftHindLeg Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_ltsfpnui mane Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_lukpbbwp head Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_qnfcfrka body Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_rosaklrr leftFrontLeg Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_ujqoxttc rightEar Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_xaelhhwa rightHindLeg Lnet/minecraft/unmapped/C_rglqxnbw;
+	FIELD f_xpnmmobx HEAD_PITCH_END F
+	FIELD f_yvknnkqj leftEar Lnet/minecraft/unmapped/C_rglqxnbw;
+	METHOD <init> (Lnet/minecraft/unmapped/C_rglqxnbw;)V
+		ARG 1 root
+	METHOD m_xjlddknm getTexturedModelData ()Lnet/minecraft/unmapped/C_ybmhebgt;

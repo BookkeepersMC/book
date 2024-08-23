@@ -1,0 +1,42 @@
+CLASS net/minecraft/unmapped/C_xghtjqbw net/minecraft/entity/mob/PhantomEntity
+	FIELD f_jqseryog FLAP_DEGREES_PER_TICK F
+	FIELD f_mfsdpwvz SIZE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_mzmuicns circlingCenter Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_ninhbtbo targetPosition Lnet/minecraft/unmapped/C_vgpupfxx;
+	FIELD f_vxkfiqyo movementType Lnet/minecraft/unmapped/C_xghtjqbw$C_gzcnjufx;
+	FIELD f_yomimisq TICKS_PER_FLAP I
+	METHOD m_blndykop getFlapTickOffset ()I
+	METHOD m_qsmmbmsk onSizeChanged ()V
+	METHOD m_vbiamydm getPhantomSize ()I
+	METHOD m_xynsjfci setPhantomSize (I)V
+		ARG 1 size
+	CLASS C_bnjswqcd SwoopMovementGoal
+		FIELD f_fislqrtm catSearchTick I
+		FIELD f_fwdwqiep isScaredOfCat Z
+		FIELD f_gfokwpvi CAT_SEARCH_TICK_DELAY I
+	CLASS C_detyqekd MovementGoal
+		METHOD m_bikihhzs isNearTarget ()Z
+	CLASS C_dfehwqsg PhantomBodyControl
+		METHOD <init> (Lnet/minecraft/unmapped/C_xghtjqbw;Lnet/minecraft/unmapped/C_dxkfswlz;)V
+			ARG 2 entity
+	CLASS C_gzcnjufx PhantomMovementType
+	CLASS C_hioibyqc PhantomMoveControl
+		FIELD f_cgjbtadv targetSpeed F
+			COMMENT The movement speed that the phantom tends towards
+		METHOD <init> (Lnet/minecraft/unmapped/C_xghtjqbw;Lnet/minecraft/unmapped/C_dxkfswlz;)V
+			ARG 2 owner
+	CLASS C_hsmmgqut StartAttackGoal
+		FIELD f_rbbxfknk cooldown I
+		METHOD m_vebkrhip startSwoop ()V
+	CLASS C_otacsasy CircleMovementGoal
+		FIELD f_ayozjoas circlingDirection F
+		FIELD f_jgdlieja radius F
+		FIELD f_vqmizxka angle F
+		FIELD f_yxhlocsw yOffset F
+		METHOD m_lnngwbcn adjustDirection ()V
+	CLASS C_qmnmvyrr FindTargetGoal
+		FIELD f_mtptymjc playersInRangePredicate Lnet/minecraft/unmapped/C_cjtyhinh;
+		FIELD f_norrqxmf delay I
+	CLASS C_qonjhkxj PhantomLookControl
+		METHOD <init> (Lnet/minecraft/unmapped/C_xghtjqbw;Lnet/minecraft/unmapped/C_dxkfswlz;)V
+			ARG 2 entity

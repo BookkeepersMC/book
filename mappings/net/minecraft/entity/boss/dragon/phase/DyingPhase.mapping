@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_dbwllvzf net/minecraft/entity/boss/dragon/phase/DyingPhase
+	FIELD f_oubtjnre ticks I
+	FIELD f_xeubkyrn target Lnet/minecraft/unmapped/C_vgpupfxx;

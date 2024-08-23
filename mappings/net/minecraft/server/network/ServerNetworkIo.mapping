@@ -1,0 +1,51 @@
+CLASS net/minecraft/unmapped/C_mitbewqx net/minecraft/server/network/ServerNetworkIo
+	FIELD f_gtjrlflk DEFAULT_CHANNEL Ljava/util/function/Supplier;
+	FIELD f_nqagadkm connections Ljava/util/List;
+	FIELD f_rptjqzhp active Z
+	FIELD f_ruikvxxi channels Ljava/util/List;
+	FIELD f_uarixgnl LOGGER Lorg/slf4j/Logger;
+	FIELD f_yhvftafr server Lnet/minecraft/server/MinecraftServer;
+	FIELD f_zqapetwv EPOLL_CHANNEL Ljava/util/function/Supplier;
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
+		ARG 1 server
+	METHOD m_bkrvbdqm stop ()V
+	METHOD m_gigjmdtc bind (Ljava/net/InetAddress;I)V
+		ARG 1 address
+		ARG 2 port
+	METHOD m_lfhzqvjj getServer ()Lnet/minecraft/server/MinecraftServer;
+	METHOD m_nsoubgbt bindLocal ()Ljava/net/SocketAddress;
+	METHOD m_shzlmfgv tick ()V
+	METHOD m_thaevyvq getConnections ()Ljava/util/List;
+	CLASS C_hmgzipxx DelayingChannelInboundHandler
+		COMMENT A channel in-bound handler that only forwards received messages to the next
+		COMMENT channel in-bound handler in the channel pipeline after a random delay between
+		COMMENT {@link #baseDelay} and {@code baseDelay + }{@link #extraDelay} milliseconds.
+		COMMENT
+		COMMENT @apiNote This may be used to simulate a laggy network enviroment.
+		FIELD f_krepisga baseDelay I
+		FIELD f_qrlhgpqw TIMER Lio/netty/util/Timer;
+		FIELD f_sbopulcn extraDelay I
+		FIELD f_tyljvatf packets Ljava/util/List;
+		METHOD <init> (II)V
+			ARG 1 baseDelay
+			ARG 2 extraDelay
+		METHOD channelRead channelRead (Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V
+			ARG 1 ctx
+			ARG 2 msg
+		METHOD m_bdpqkajb forward (Lio/netty/util/Timeout;)V
+			ARG 1 timeout
+		METHOD m_ofbqdrtm delay (Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V
+			ARG 1 ctx
+			ARG 2 msg
+		CLASS C_rerrtrpr Packet
+			FIELD f_oruiddho message Ljava/lang/Object;
+			FIELD f_xosnookt context Lio/netty/channel/ChannelHandlerContext;
+			METHOD <init> (Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V
+				ARG 1 context
+				ARG 2 message
+	CLASS C_izwremgs
+		METHOD initChannel initChannel (Lio/netty/channel/Channel;)V
+			ARG 1 channel
+	CLASS C_nbluewha
+		METHOD initChannel initChannel (Lio/netty/channel/Channel;)V
+			ARG 1 channel

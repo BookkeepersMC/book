@@ -1,0 +1,79 @@
+CLASS net/minecraft/unmapped/C_duybclay net/minecraft/block/WallBlock
+	FIELD f_asmqtyre WALL_COVER_END I
+	FIELD f_bagxnabu WEST_SHAPE Lnet/minecraft/unmapped/C_cgckxfsw;
+	FIELD f_euglojbj WALL_COVER_START I
+	FIELD f_iildrtsa WATERLOGGED Lnet/minecraft/unmapped/C_xhwijdsd;
+	FIELD f_jsqywopd POST_COVER_WIDTH I
+	FIELD f_jvxfdifk SOUTH_SHAPE Lnet/minecraft/unmapped/C_cgckxfsw;
+	FIELD f_lcbrbqqy CODEC Lcom/mojang/serialization/MapCodec;
+	FIELD f_mfwaedwm POST_WIDTH I
+	FIELD f_mxflxjfq TALL_EAST_SHAPE Lnet/minecraft/unmapped/C_zscvhwbd;
+	FIELD f_oihkjtbb collisionShapeMap Ljava/util/Map;
+	FIELD f_osozlsht TALL_WEST_SHAPE Lnet/minecraft/unmapped/C_zscvhwbd;
+	FIELD f_pvverwec shapeMap Ljava/util/Map;
+	FIELD f_qkhypgkr EAST_SHAPE Lnet/minecraft/unmapped/C_cgckxfsw;
+	FIELD f_rmgxbzis WALL_WIDTH I
+	FIELD f_rqtjcogh TALL_SOUTH_SHAPE Lnet/minecraft/unmapped/C_zscvhwbd;
+	FIELD f_syithcwx TALL_NORTH_SHAPE Lnet/minecraft/unmapped/C_zscvhwbd;
+	FIELD f_uqirvzwg TALL_POST_SHAPE Lnet/minecraft/unmapped/C_zscvhwbd;
+	FIELD f_wcrdjxol NORTH_SHAPE Lnet/minecraft/unmapped/C_cgckxfsw;
+	FIELD f_wfwahvuy UP Lnet/minecraft/unmapped/C_xhwijdsd;
+	FIELD f_xdlnrllu WALL_HEIGHT I
+	METHOD m_huumgauz getWallShape (ZLnet/minecraft/unmapped/C_zscvhwbd;Lnet/minecraft/unmapped/C_zscvhwbd;)Lnet/minecraft/unmapped/C_seqcnhpn;
+		ARG 1 connected
+		ARG 2 aboveShape
+		ARG 3 tallShape
+	METHOD m_jqgdhdcw shouldRaisePost (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_zscvhwbd;)Z
+		ARG 1 state
+		ARG 2 aboveState
+		ARG 3 aboveShape
+	METHOD m_luvkvpwo updateSides (Lnet/minecraft/unmapped/C_txtbiemp;ZZZZLnet/minecraft/unmapped/C_zscvhwbd;)Lnet/minecraft/unmapped/C_txtbiemp;
+		ARG 1 state
+		ARG 2 north
+		ARG 3 east
+		ARG 4 south
+		ARG 5 west
+		ARG 6 aboveShape
+	METHOD m_odyepbif shouldConnectTo (Lnet/minecraft/unmapped/C_txtbiemp;ZLnet/minecraft/unmapped/C_xpuuihxf;)Z
+		ARG 1 state
+		ARG 2 faceFullSquare
+		ARG 3 side
+	METHOD m_pcrtmmam applyWallShape (Lnet/minecraft/unmapped/C_zscvhwbd;Lnet/minecraft/unmapped/C_seqcnhpn;Lnet/minecraft/unmapped/C_zscvhwbd;Lnet/minecraft/unmapped/C_zscvhwbd;)Lnet/minecraft/unmapped/C_zscvhwbd;
+		ARG 0 base
+		ARG 1 wallShape
+		ARG 2 tall
+		ARG 3 low
+	METHOD m_rxtmalgb getShapeMap (FFFFFF)Ljava/util/Map;
+		ARG 1 minX
+		ARG 2 minY
+		ARG 3 minZ
+		ARG 4 maxX
+		ARG 5 maxY
+		ARG 6 maxZ
+	METHOD m_uavsfxkd isConnected (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_vzlztuyw;)Z
+		ARG 0 state
+		ARG 1 property
+	METHOD m_umywbspn updateShape (Lnet/minecraft/unmapped/C_eemzphbi;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;ZZZZ)Lnet/minecraft/unmapped/C_txtbiemp;
+		ARG 1 world
+		ARG 2 state
+		ARG 3 pos
+		ARG 4 aboveState
+		ARG 5 north
+		ARG 6 east
+		ARG 7 south
+		ARG 8 west
+	METHOD m_uozbxgct updateTop (Lnet/minecraft/unmapped/C_eemzphbi;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)Lnet/minecraft/unmapped/C_txtbiemp;
+		ARG 1 world
+		ARG 2 state
+		ARG 3 pos
+		ARG 4 aboveState
+	METHOD m_uvcaikzs isCovered (Lnet/minecraft/unmapped/C_zscvhwbd;Lnet/minecraft/unmapped/C_zscvhwbd;)Z
+		ARG 0 aboveShape
+		ARG 1 tallShape
+	METHOD m_zhlhbuuk updateSide (Lnet/minecraft/unmapped/C_eemzphbi;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_xpuuihxf;)Lnet/minecraft/unmapped/C_txtbiemp;
+		ARG 1 world
+		ARG 2 pos
+		ARG 3 state
+		ARG 4 neighborPos
+		ARG 5 neighborState
+		ARG 6 direction

@@ -1,0 +1,15 @@
+CLASS net/minecraft/unmapped/C_mraldbcz net/minecraft/client/realms/SizeUnit
+	COMMENT Moved from RealmsUploadScreen.Unit in 20w10a.
+	FIELD f_kaqawdzq BASE I
+	METHOD m_hnqgsfpo humanReadableSize (JLnet/minecraft/unmapped/C_mraldbcz;)Ljava/lang/String;
+		ARG 0 bytes
+		ARG 2 unit
+	METHOD m_lyjjnadd convertToUnit (JLnet/minecraft/unmapped/C_mraldbcz;)D
+		ARG 0 bytes
+		ARG 2 unit
+	METHOD m_tzmvdfta getUserFriendlyString (J)Ljava/lang/String;
+		ARG 0 bytes
+	METHOD m_yoiqmmrp getLargestUnit (J)Lnet/minecraft/unmapped/C_mraldbcz;
+		ARG 0 bytes
+	METHOD valueOf (Ljava/lang/String;)Lnet/minecraft/unmapped/C_mraldbcz;
+		ARG 0 name

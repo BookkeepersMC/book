@@ -1,0 +1,103 @@
+CLASS net/minecraft/unmapped/C_gwivrcyr net/minecraft/client/gui/screen/ingame/HandledScreen
+	FIELD f_bhhdfbtt lastButtonClickTime J
+	FIELD f_cosvnlvl lastClickedSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_cuanbcay TOUCH_HOVERED_DELAY I
+	FIELD f_cudaruhf SLOT_ITEM_BLIT_OFFSET I
+	FIELD f_dipcbwmj y I
+	FIELD f_eboiopem touchHoveredSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_exfjdmjc backgroundHeight I
+	FIELD f_fcdkvucs handler Lnet/minecraft/unmapped/C_mkrkudpa;
+	FIELD f_fevmuhfe BACKGROUND_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_fvehpsdt x I
+	FIELD f_gbfougoi doubleClicking Z
+	FIELD f_haajolfq cancelNextRelease Z
+	FIELD f_hcgjnipj lastClickedButton I
+	FIELD f_hhaugdtq touchIsRightClickDrag Z
+	FIELD f_hsgymhvv playerInventoryTitleY I
+	FIELD f_ifcvxbjq touchDropOriginSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_jfbzrbvq playerInventoryTitleX I
+	FIELD f_kfrywqhx touchDragStack Lnet/minecraft/unmapped/C_sddaxwyk;
+	FIELD f_kzgibxpu quickMovingStack Lnet/minecraft/unmapped/C_sddaxwyk;
+	FIELD f_larkxlhn heldButtonType I
+	FIELD f_mizdkgtp touchDropTimer J
+	FIELD f_myibgkmf playerInventoryTitle Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_ngwjsvvv titleY I
+	FIELD f_nnzlngmx backgroundWidth I
+	FIELD f_onhqpiax touchDropY I
+	FIELD f_ozkbqkty cursorDragSlots Ljava/util/Set;
+	FIELD f_qdszuymx focusedSlot Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_rqeclttg HOVER_ITEM_BLIT_OFFSET I
+	FIELD f_sogupqfx touchDropX I
+	FIELD f_tdmywybh cursorDragging Z
+	FIELD f_tqcrecah touchDragSlotStart Lnet/minecraft/unmapped/C_nhvqfffd;
+	FIELD f_ungywyhx touchDropTime J
+	FIELD f_wjuosaan touchDropReturningStack Lnet/minecraft/unmapped/C_sddaxwyk;
+	FIELD f_wxpczinj heldButtonCode I
+	FIELD f_ywkpujrm TOUCH_DROP_SPEED F
+	FIELD f_yyfihbzl titleX I
+	FIELD f_zxhppytr draggedStackRemainder I
+	METHOD <init> (Lnet/minecraft/unmapped/C_mkrkudpa;Lnet/minecraft/unmapped/C_sxzqocrm;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 handler
+		ARG 2 inventory
+		ARG 3 title
+	METHOD m_alczadgs getTooltip (Lnet/minecraft/unmapped/C_sddaxwyk;)Ljava/util/List;
+	METHOD m_alegpujk handleHotbarKeyPressed (II)Z
+		ARG 1 keyCode
+		ARG 2 scanCode
+	METHOD m_cwxxnnun isPointOverSlot (Lnet/minecraft/unmapped/C_nhvqfffd;DD)Z
+		ARG 1 slot
+		ARG 2 pointX
+		ARG 4 pointY
+	METHOD m_cytvygkr onMouseClick (Lnet/minecraft/unmapped/C_nhvqfffd;IILnet/minecraft/unmapped/C_viureuve;)V
+		COMMENT @see net.minecraft.screen.ScreenHandler#onSlotClick(int, int, net.minecraft.screen.slot.SlotActionType, net.minecraft.entity.player.PlayerEntity)
+		ARG 1 slot
+		ARG 2 slotId
+		ARG 3 button
+		ARG 4 actionType
+	METHOD m_edqlkxoi drawItem (Lnet/minecraft/unmapped/C_sedilmty;Lnet/minecraft/unmapped/C_sddaxwyk;IILjava/lang/String;)V
+		ARG 2 stack
+		ARG 3 x
+		ARG 4 y
+		ARG 5 amountText
+	METHOD m_grarlstl drawMouseoverTooltip (Lnet/minecraft/unmapped/C_sedilmty;II)V
+		ARG 2 x
+		ARG 3 y
+	METHOD m_icmehgsj onSlotChangedState (IIZ)V
+		ARG 1 slotId
+		ARG 2 containerId
+		ARG 3 newState
+	METHOD m_lheogvss onMouseClick (I)V
+		ARG 1 button
+	METHOD m_lknfeixn drawSlotHighlight (Lnet/minecraft/unmapped/C_sedilmty;III)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD m_lypenorc drawForeground (Lnet/minecraft/unmapped/C_sedilmty;II)V
+		ARG 2 mouseX
+		ARG 3 mouseY
+	METHOD m_mxaxcodb handledScreenTick ()V
+	METHOD m_nemptfst isClickOutsideBounds (DDIII)Z
+		ARG 1 mouseX
+		ARG 3 mouseY
+		ARG 5 left
+		ARG 6 top
+		ARG 7 button
+	METHOD m_ocyatgfb getSlotAt (DD)Lnet/minecraft/unmapped/C_nhvqfffd;
+		ARG 1 x
+		ARG 3 y
+	METHOD m_plsdjslm drawBackground (Lnet/minecraft/unmapped/C_sedilmty;FII)V
+		ARG 1 graphics
+		ARG 2 delta
+		ARG 3 mouseX
+		ARG 4 mouseY
+	METHOD m_xpbwlfnh isPointWithinBounds (IIIIDD)Z
+		ARG 1 x
+		ARG 2 y
+		ARG 3 width
+		ARG 4 height
+		ARG 5 pointX
+		ARG 7 pointY
+	METHOD m_zfnzxtan calculateOffset ()V
+	METHOD m_zioswvnu drawSlot (Lnet/minecraft/unmapped/C_sedilmty;Lnet/minecraft/unmapped/C_nhvqfffd;)V
+		ARG 2 slot
+	METHOD m_zscypxpo resetDraggingState ()V

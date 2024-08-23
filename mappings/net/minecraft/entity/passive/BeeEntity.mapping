@@ -1,0 +1,177 @@
+CLASS net/minecraft/unmapped/C_hgfgxpql net/minecraft/entity/passive/BeeEntity
+	FIELD f_bdaqdvyx MIN_HIVE_RETURN_DISTANCE I
+		COMMENT The minimum distance that bees will immediately return to their hive at.
+	FIELD f_cjeyxcuq TICKS_SINCE_POLLINATION_KEY Ljava/lang/String;
+	FIELD f_cojgwqyn CROPS_GROWN_SINCE_POLLINATION_KEY Ljava/lang/String;
+	FIELD f_dcwmiove cropsGrownSincePollination I
+	FIELD f_ecxhjopi FLOWER_NAVIGATION_START_TICKS I
+		COMMENT A bee will start moving to a flower once this time in ticks has passed from a pollination.
+	FIELD f_emypzwxo currentPitch F
+	FIELD f_eykewkfo FLOWER_POS_KEY Ljava/lang/String;
+	FIELD f_fkuzfotd BEE_FLAGS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_heswxhvw hivePos Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_hmzyzran HIVE_CLOSE_ENOUGH_DISTANCE I
+	FIELD f_hnarqsnr ticksUntilCanPollinate I
+	FIELD f_htnzncqr FLAP_DEGREES_PER_TICK F
+	FIELD f_hvsqucqz HAS_NECTAR_FLAG I
+	FIELD f_ilshqlkm MAX_POLLINATED_CROPS I
+	FIELD f_jlzhazod pollinateGoal Lnet/minecraft/unmapped/C_hgfgxpql$C_hstezuru;
+	FIELD f_jrbdvmhv LOCATING_NEW_HIVE_COOLDOWN I
+	FIELD f_lpvsbgtm HIVE_SEARCH_RANGE I
+	FIELD f_mdrowaus HIVE_POS_KEY Ljava/lang/String;
+	FIELD f_mfeadoih ANGER Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_myxhamja HARD_DIFFICULTY_STING_POISON_DURATION I
+	FIELD f_oieuxrcc ANGER_TIME_RANGE Lnet/minecraft/unmapped/C_hvilmtvi;
+	FIELD f_pfkojmow lastPitch F
+	FIELD f_pgbnsptu TOO_FAR_DISTANCE I
+		COMMENT The minimum distance that bees lose their hive or flower position at.
+	FIELD f_prgnutyk NORMAL_DIFFICULTY_STING_POISON_DURATION I
+	FIELD f_pxhkgfpt TICKS_PER_FLAP I
+	FIELD f_qkzpxfch ticksLeftToFindHive I
+	FIELD f_qrpscvfe POLLINATION_FAIL_TICKS I
+		COMMENT The duration in ticks when a bee's pollination is considered failed.
+	FIELD f_qtgtwslc HAS_STUNG_FLAG I
+	FIELD f_qtitgart ticksSinceSting I
+	FIELD f_rgimjzcr flowerPos Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_rllxzote HAS_NECTAR_KEY Ljava/lang/String;
+	FIELD f_smwphlyv LOCATING_NEW_FLOWER_COOLDOWN I
+	FIELD f_uwirnwkg moveToHiveGoal Lnet/minecraft/unmapped/C_hgfgxpql$C_aorvosrb;
+	FIELD f_vbzxsdle NEAR_TARGET_FLAG I
+	FIELD f_vgpnrcpq ticksInsideWater I
+	FIELD f_vwwkdehr cannotEnterHiveTicks I
+	FIELD f_whtbodsz MIN_ATTACK_DISTANCE I
+	FIELD f_wuqtubpu targetUuid Ljava/util/UUID;
+	FIELD f_xjbjocrt CANNOT_ENTER_HIVE_TICKS_KEY Ljava/lang/String;
+	FIELD f_xyzgfgra HAS_STUNG_KEY Ljava/lang/String;
+	FIELD f_ycjsovuu moveToFlowerGoal Lnet/minecraft/unmapped/C_hgfgxpql$C_svuqecsc;
+	FIELD f_yqhwyhuf STING_DEATH_COUNTDOWN I
+	FIELD f_ysyjkfoe ticksSincePollination I
+	METHOD m_awlbhvcb getHivePos ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_beiolhwp setBeeFlag (IZ)V
+		ARG 1 bit
+		ARG 2 value
+	METHOD m_bypgkjae updateBodyPitch ()V
+	METHOD m_cihpsqgl setHasStung (Z)V
+		ARG 1 hasStung
+	METHOD m_glfxznpj getPossibleHives ()Ljava/util/List;
+	METHOD m_hxcrhdeh createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_ifoynezy canEnterHive ()Z
+	METHOD m_ikwzmvgi getMoveGoalTicks ()I
+	METHOD m_ixtjacit onHoneyDelivered ()V
+	METHOD m_jnvzmqwd setHasNectar (Z)V
+		ARG 1 hasNectar
+	METHOD m_jrsqpnew isWithinDistance (Lnet/minecraft/unmapped/C_hynzadkk;I)Z
+		ARG 1 pos
+		ARG 2 distance
+	METHOD m_jxhylkkd hasHive ()Z
+	METHOD m_kjuwexwk doesHiveHaveSpace (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	METHOD m_kxszurdg setCannotEnterHiveTicks (I)V
+		ARG 1 ticks
+	METHOD m_lksmfqbw setHivePos (Lnet/minecraft/unmapped/C_hynzadkk;)V
+	METHOD m_mkieglfb isTooFar (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	METHOD m_nhjjyvbc getBeeFlag (I)Z
+		ARG 1 location
+	METHOD m_oajtwicv isHiveValid ()Z
+	METHOD m_oavaeqws failedPollinatingTooLong ()Z
+	METHOD m_ozlexslr getGoalSelector ()Lnet/minecraft/unmapped/C_qospjrjn;
+	METHOD m_phyxujwz hasFlower ()Z
+	METHOD m_plqnwrzh resetPollinationTicks ()V
+	METHOD m_puhguqkq setFlowerPos (Lnet/minecraft/unmapped/C_hynzadkk;)V
+		ARG 1 pos
+	METHOD m_puqypfbo resetCropCounter ()V
+	METHOD m_purpwtls setNearTarget (Z)V
+		ARG 1 nearTarget
+	METHOD m_rcdzxefk isNearTarget ()Z
+	METHOD m_smqohlik getBodyPitch (F)F
+		ARG 1 tickDelta
+	METHOD m_tivpztsa getFlowerPos ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_vacrlcro getCropsGrownSincePollination ()I
+	METHOD m_xhljaqzb addCropCounter ()V
+	METHOD m_xrdopwjz addParticle (Lnet/minecraft/unmapped/C_cdctfzbn;DDDDDLnet/minecraft/unmapped/C_nqucohct;)V
+		ARG 1 world
+		ARG 2 lastX
+		ARG 4 x
+		ARG 6 lastZ
+		ARG 8 z
+		ARG 10 y
+		ARG 12 effect
+	METHOD m_xrvxkqxv startMovingTo (Lnet/minecraft/unmapped/C_hynzadkk;)V
+		ARG 1 pos
+	METHOD m_yoduviar hasStung ()Z
+	METHOD m_zkthdefj hasNectar ()Z
+	METHOD m_zycchyeq isHiveNearFire ()Z
+	CLASS C_aorvosrb MoveToHiveGoal
+		FIELD f_dehsectf path Lnet/minecraft/unmapped/C_motipebf;
+		FIELD f_izmqgdlo possibleHives Ljava/util/List;
+		FIELD f_jvxixckr ticksUntilLost I
+		FIELD f_kodmxrlr ticks I
+		FIELD f_msneixmd TICKS_BEFORE_HIVE_DROP I
+		FIELD f_sgkaroii MAX_BLACKLISTED_TARGETS I
+		FIELD f_shkrumjk MAX_TRAVELING_TICKS I
+		METHOD m_egledhfy isPossibleHive (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+			ARG 1 pos
+		METHOD m_kufeqpmo startMovingToFar (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+			ARG 1 pos
+		METHOD m_mneilrpr clearPossibleHives ()V
+		METHOD m_mturbdwa addPossibleHive (Lnet/minecraft/unmapped/C_hynzadkk;)V
+			ARG 1 pos
+		METHOD m_ppoipuor makeChosenHivePossibleHive ()V
+		METHOD m_tqvjzhby isCloseEnough (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+			ARG 1 pos
+	CLASS C_cfanypwf StingGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_hgfgxpql;Lnet/minecraft/unmapped/C_hqdayibh;DZ)V
+			ARG 2 mob
+			ARG 3 speed
+			ARG 5 pauseWhenMobIdle
+	CLASS C_ckzstveh BeeLookControl
+		METHOD <init> (Lnet/minecraft/unmapped/C_hgfgxpql;Lnet/minecraft/unmapped/C_dxkfswlz;)V
+			ARG 2 entity
+	CLASS C_engogepv BeeRevengeGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_hgfgxpql;Lnet/minecraft/unmapped/C_hgfgxpql;)V
+			ARG 2 bee
+	CLASS C_hstezuru PollinateGoal
+		FIELD f_bklijrhn running Z
+		FIELD f_boohtxxx nextTarget Lnet/minecraft/unmapped/C_vgpupfxx;
+		FIELD f_djxwnopq POSITION_CHANGE_PROBABILITY I
+		FIELD f_hlpjktns flowerPredicate Ljava/util/function/Predicate;
+		FIELD f_ithpcqbu ticks I
+		FIELD f_lnbcclwg HOVER_HEIGHT_WITHIN_FLOWER F
+		FIELD f_lpbxbivy HOVER_POS_OFFSET F
+		FIELD f_qdhlmnib ARRIVAL_THRESHOLD D
+		FIELD f_uciamvdk SPEED_MODIFIER F
+		FIELD f_umrooslu lastPollinationTick I
+		FIELD f_uxwaxwno pollinationTicks I
+		FIELD f_vqmimsbg MAX_POLLINATION_TICKS I
+		FIELD f_zevpzupt MIN_POLLINATION_TICKS I
+		METHOD m_enlpoqja getFlower ()Ljava/util/Optional;
+		METHOD m_ipazlnuk (Lnet/minecraft/unmapped/C_txtbiemp;)Z
+			ARG 0 state
+		METHOD m_pxxzcfsz moveToNextTarget ()V
+		METHOD m_ugkeathy isRunning ()Z
+		METHOD m_xqkpymqf completedPollination ()Z
+		METHOD m_yiolarse getRandomOffset ()F
+		METHOD m_yvufpomn cancel ()V
+	CLASS C_imqwqfjh NotAngryGoal
+		METHOD m_ltqpussf canBeeContinue ()Z
+		METHOD m_luyzthep canBeeStart ()Z
+	CLASS C_jmbatlcy BeeWanderAroundGoal
+		METHOD m_gyqotsry getRandomLocation ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	CLASS C_svuqecsc MoveToFlowerGoal
+		FIELD f_flkrlasm MAX_FLOWER_NAVIGATION_TICKS I
+		FIELD f_omakwtwb ticks I
+		METHOD m_gtqpifjr shouldMoveToFlower ()Z
+	CLASS C_sykgfjra GrowCropsGoal
+		FIELD f_bwspbibo GROW_PROBABILITY I
+	CLASS C_tqohkdvc EnterHiveGoal
+	CLASS C_uhpkgqxt FindHiveGoal
+		METHOD m_flhahcbm getNearbyFreeHives ()Ljava/util/List;
+		METHOD m_gfldbbdc (Lnet/minecraft/unmapped/C_cjzoxshv;)Z
+			ARG 0 point
+		METHOD m_iyzzqbft (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_hynzadkk;)D
+			ARG 1 pos
+	CLASS C_xgbmwzkk BeeFollowTargetGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_hgfgxpql;)V
+			ARG 1 bee
+		METHOD m_tcocmqdv canSting ()Z

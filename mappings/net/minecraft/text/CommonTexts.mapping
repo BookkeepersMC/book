@@ -1,0 +1,47 @@
+CLASS net/minecraft/unmapped/C_qveejgrk net/minecraft/text/CommonTexts
+	FIELD f_afmmtaio ON Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_bfovsbpw TO_TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_bvltkwzp NO Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_dkbtnavo OPEN_LINK Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_fdmsszpi SPACE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_feusjwrm DISCONNECT Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_gpvernlf SENTENCE_SEPARATOR Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_hvkarjxs YES Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_iyjkgwvj OFF Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_lmerbkjb PROCEED Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_mxuzhwyy COPY_LINK Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_nmawduta ACKNOWLEDGE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_nwhfbebb CONTINUE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_oeystdha CONNECT_FAILED Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_qozeclso FAILED_TRANSFER Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_tpirdeeb BACK Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_tuznmeze DONE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_vmiaxyhk OK Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_wnehxwmq LINE_BREAK Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_xswapbgg CANCEL Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_zhzkryyg TRAILING_OFF Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_zwbddpio EMPTY Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_cuokxsst days (J)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 days
+	METHOD m_dnoultco joinSentences ([Lnet/minecraft/unmapped/C_rdaqiwdt;)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 texts
+	METHOD m_jspdcopa genericOption (Lnet/minecraft/unmapped/C_rdaqiwdt;Lnet/minecraft/unmapped/C_rdaqiwdt;)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 optionText
+		ARG 1 value
+	METHOD m_mgxxtgko joinLines (Ljava/util/Collection;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 texts
+	METHOD m_nsfurkhx hours (J)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 hours
+	METHOD m_qsvbgaen toggleOption (Lnet/minecraft/unmapped/C_rdaqiwdt;Z)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 optionText
+		ARG 1 value
+	METHOD m_sarnrcsh space ()Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new literal text containing a space.
+		COMMENT
+		COMMENT @return a literal text containing a space.
+	METHOD m_spljgefr minutes (J)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 minutes
+	METHOD m_yawyozdh joinLines ([Lnet/minecraft/unmapped/C_rdaqiwdt;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 texts
+	METHOD m_ybmisxyh toggleOptionValue (Z)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 value

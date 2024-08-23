@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_aqdslogk net/minecraft/datafixer/schema/Schema700
+	METHOD <init> (ILcom/mojang/datafixers/schemas/Schema;)V
+		ARG 1 versionKey
+		ARG 2 parent

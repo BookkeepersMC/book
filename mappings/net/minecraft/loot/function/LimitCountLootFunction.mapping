@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_oluvnikk net/minecraft/loot/function/LimitCountLootFunction
+	FIELD f_czspugcs limit Lnet/minecraft/unmapped/C_rcavspxn;
+	METHOD m_atenogwe builder (Lnet/minecraft/unmapped/C_rcavspxn;)Lnet/minecraft/unmapped/C_krisseon$C_nhpzaayj;
+		ARG 0 limit

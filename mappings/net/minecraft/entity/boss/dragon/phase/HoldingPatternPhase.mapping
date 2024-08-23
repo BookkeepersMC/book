@@ -1,0 +1,9 @@
+CLASS net/minecraft/unmapped/C_gbvenaau net/minecraft/entity/boss/dragon/phase/HoldingPatternPhase
+	FIELD f_eqqmfrzi pathTarget Lnet/minecraft/unmapped/C_vgpupfxx;
+	FIELD f_oghizvqa PLAYERS_IN_RANGE_PREDICATE Lnet/minecraft/unmapped/C_cjtyhinh;
+	FIELD f_rilnfrwq shouldFindNewPath Z
+	FIELD f_vagxdgdq path Lnet/minecraft/unmapped/C_motipebf;
+	METHOD m_edwhwmzp followPath ()V
+	METHOD m_sdccdmnv tickInRange ()V
+	METHOD m_tqjwbkir strafePlayer (Lnet/minecraft/unmapped/C_jzrpycqo;)V
+		ARG 1 player

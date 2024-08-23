@@ -1,0 +1,66 @@
+CLASS net/minecraft/unmapped/C_gxqtmdxu net/minecraft/client/gui/screen/PresetsScreen
+	FIELD f_adrgfeyl customPresetField Lnet/minecraft/unmapped/C_vopzcnhf;
+	FIELD f_ahbeufuf BIOME_KEY Lnet/minecraft/unmapped/C_xhhleach;
+	FIELD f_anghjbqw ICON_OFFSET_Y I
+	FIELD f_byjqgsva shareText Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_djoghcnx listWidget Lnet/minecraft/unmapped/C_gxqtmdxu$C_tilzitfx;
+	FIELD f_fjzsflts ICON_OFFSET_X I
+	FIELD f_fuipzqxm BUTTON_HEIGHT I
+	FIELD f_fvkzqegy selectPresetButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_hgxqukix listText Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_jbwsajfm config Lnet/minecraft/unmapped/C_vacrgkna;
+	FIELD f_lxvxamun ICON_BACKGROUND_OFFSET_X I
+	FIELD f_micxqdsd UNKNOWN_PRESET Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_optmhchj LOGGER Lorg/slf4j/Logger;
+	FIELD f_vsnipnbh SLOT Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_vunblwfw ICON_BACKGROUND_SIZE I
+	FIELD f_wmqqtusp ICON_BACKGROUND_OFFSET_Y I
+	FIELD f_yhuoxeaz parent Lnet/minecraft/unmapped/C_czonpkpc;
+	METHOD <init> (Lnet/minecraft/unmapped/C_czonpkpc;)V
+		ARG 1 parent
+	METHOD m_aqnetrje getGeneratorConfigString (Lnet/minecraft/unmapped/C_vacrgkna;)Ljava/lang/String;
+		ARG 0 generatorConfig
+	METHOD m_djsajabr (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_xhhleach;
+		ARG 0 id
+	METHOD m_dxjqcfis (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_grcpnehs parseLayerString (Lnet/minecraft/unmapped/C_pzdchrcy;Ljava/lang/String;I)Lnet/minecraft/unmapped/C_mbigakvk;
+		COMMENT Parse a string like {@code "60*minecraft:stone"} to a {@link FlatChunkGeneratorLayer}.
+		ARG 0 blockProvider
+		ARG 1 layer
+		ARG 2 layerStartHeight
+	METHOD m_gyejpxcc parsePresetLayersString (Lnet/minecraft/unmapped/C_pzdchrcy;Ljava/lang/String;)Ljava/util/List;
+		COMMENT Parse a string like {@code "minecraft:bedrock,3*minecraft:dirt,minecraft:grass_block"}
+		COMMENT to a list of {@link FlatChunkGeneratorLayer}.
+		ARG 0 blockProvider
+		ARG 1 layers
+	METHOD m_nihughga (Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 5 button
+	METHOD m_nthuyyhv updateSelectButton (Z)V
+		ARG 1 hasSelected
+	METHOD m_oygdddhr parsePresetString (Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_pzdchrcy;Ljava/lang/String;Lnet/minecraft/unmapped/C_vacrgkna;)Lnet/minecraft/unmapped/C_vacrgkna;
+		ARG 0 blockProvider
+		ARG 1 biomeProvider
+		ARG 2 structureSetProvider
+		ARG 3 placedFeatureProvider
+		ARG 4 preset
+		ARG 5 generatorConfig
+	CLASS C_tilzitfx SuperflatPresetsListWidget
+		METHOD <init> (Lnet/minecraft/unmapped/C_gxqtmdxu;Lnet/minecraft/unmapped/C_wqxmvzdq;Lnet/minecraft/unmapped/C_czxxrbcp;)V
+			ARG 3 featureFlags
+		METHOD m_wcioepib (Lnet/minecraft/unmapped/C_mbigakvk;)Lnet/minecraft/unmapped/C_mmxmpdoq;
+			ARG 0 layer
+		CLASS C_lmqsurdw SuperflatPresetEntry
+			FIELD f_gcesvwut preset Lnet/minecraft/unmapped/C_nwhikqzo;
+			FIELD f_iiignmxl name Lnet/minecraft/unmapped/C_rdaqiwdt;
+			FIELD f_qbcllskg STATS_ICONS_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+			METHOD <init> (Lnet/minecraft/unmapped/C_gxqtmdxu$C_tilzitfx;Lnet/minecraft/unmapped/C_cjzoxshv;)V
+				ARG 2 preset
+			METHOD m_auafxjcm renderIcon (Lnet/minecraft/unmapped/C_sedilmty;IILnet/minecraft/unmapped/C_vorddnax;)V
+				ARG 2 x
+				ARG 3 y
+				ARG 4 iconItem
+			METHOD m_nnqyvtbn setPreset ()V
+			METHOD m_qmoltipf drawIconBackground (Lnet/minecraft/unmapped/C_sedilmty;II)V
+				ARG 2 x
+				ARG 3 y

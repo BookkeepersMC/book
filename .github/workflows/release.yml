@@ -1,0 +1,37 @@
+name: Publish
+on: [push]
+jobs:
+  publish:
+    if: ${{ github.repository_owner == 'BookkeepersMC' }}
+    runs-on: ubuntu-latest
+    container:
+      image: eclipse-temurin:21
+      options: --user root
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gradle/actions/wrapper-validation@v3
+      - uses: actions/checkout@v4
+        with:
+          repository: "BookkeepersMC/m2"
+          ref: master
+          path: "./m2/"
+          token: ${{ secrets.GIT_PAT }}
+
+      - name: Generate build number
+        uses: onyxmueller/build-tag-number@v1
+        with:
+          token: ${{ secrets.github_token }}
+          prefix: "build/${{ github.ref }}"
+
+      - run: ./gradlew build javadoc javadocJar publish --stacktrace
+        env:
+          BRANCH_NAME: ${{ github.ref }}
+
+      - name: Commit to m2
+        uses: EndBug/add-and-commit@v9.1.4
+        with:
+          add: "./com/"
+          cwd: "./m2/"
+          default_author: github_actions
+          message: "Publish book mappings"

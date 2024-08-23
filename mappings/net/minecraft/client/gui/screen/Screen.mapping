@@ -1,0 +1,198 @@
+CLASS net/minecraft/unmapped/C_wrmtlwqx net/minecraft/client/gui/screen/Screen
+	FIELD f_bjnksoor SCREEN_USAGE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_bpxgxhlg textRenderer Lnet/minecraft/unmapped/C_mavozmpp;
+	FIELD f_bvobnjsr INWORLD_MENU_BACKGROUND Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_dapowlyi initialized Z
+	FIELD f_dnkxkbyx FOOTER_SEPARATOR Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_enzwkzjs selected Lnet/minecraft/unmapped/C_womhzmwc;
+	FIELD f_erfyrjld HEADER_SEPARATOR Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ffvcxumd BACKGROUND_PANORAMA_RENDERER Lnet/minecraft/unmapped/C_jbfwoepk;
+	FIELD f_fnsnmohs LOGGER Lorg/slf4j/Logger;
+	FIELD f_htifmqlv title Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_jcgjfjni deferredTooltip Lnet/minecraft/unmapped/C_wrmtlwqx$C_umjfmsln;
+	FIELD f_kmcqeiie width I
+	FIELD f_kreiluct children Ljava/util/List;
+	FIELD f_lysrduwi BACKGROUND_PANORAMA_RENDERER_ROTATING Lnet/minecraft/unmapped/C_dmftscsi;
+	FIELD f_mvugfdtw MOUSE_MOVE_NARRATION_DELAY J
+	FIELD f_npzkmprn narratorModeButton Lnet/minecraft/unmapped/C_ikfvpkkf;
+	FIELD f_oeooblbi selectables Ljava/util/List;
+	FIELD f_ofcdwhxy NARRATOR_MODE_CHANGE_DELAY J
+	FIELD f_ojzzsrar INWORLD_FOOTER_SEPARATOR Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_psnbmvaj client Lnet/minecraft/unmapped/C_ayfeobid;
+	FIELD f_qdzbfdgb narrator Lnet/minecraft/unmapped/C_yviluxux;
+	FIELD f_qqbyyhim KEYBOARD_ACTION_NARRATION_DELAY J
+	FIELD f_quytvjxb INWORLD_HEADER_SEPARATOR Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_rjdvwvyp drawables Ljava/util/List;
+	FIELD f_rwuipbpc MOUSE_ACTION_NARRATION_DELAY J
+	FIELD f_sektkmdw MENU_BACKGROUND Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_szwvjynq elementNarrationStartTime J
+	FIELD f_vsuqlruk height I
+	FIELD f_xypkugwe screenNarrationStartTime J
+	FIELD f_ywhydtya SCREEN_INIT_NARRATION_DELAY J
+	FIELD f_zjysrtvv screenExecutor Ljava/util/concurrent/Executor;
+	METHOD <init> (Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 title
+	METHOD m_acdaclus isPauseScreen ()Z
+	METHOD m_awpofqnh removed ()V
+	METHOD m_bncrkgkz renderBlur ()V
+	METHOD m_bovegipe renderPanorama (Lnet/minecraft/unmapped/C_sedilmty;F)V
+		ARG 1 graphics
+		ARG 2 tickDelta
+	METHOD m_bplrnryk renderMenuBackground (Lnet/minecraft/unmapped/C_sedilmty;)V
+		ARG 1 graphics
+	METHOD m_ckkbzfqx createTabNavigation (Lnet/minecraft/unmapped/C_veciqgge;)Lnet/minecraft/unmapped/C_ltcpucbp$C_ypmtwpcy;
+		ARG 1 direction
+	METHOD m_diqdtrjj init (Lnet/minecraft/unmapped/C_ayfeobid;II)V
+		ARG 1 client
+		ARG 2 width
+		ARG 3 height
+	METHOD m_efvbcpbf onDisplayed ()V
+	METHOD m_erlymyto setScreenNarrationDelay (JZ)V
+		ARG 1 delayMs
+		ARG 3 restartElementNarration
+	METHOD m_ervlzltg setDeferredTooltip (Ljava/util/List;Lnet/minecraft/unmapped/C_imjripdz;Z)V
+		ARG 1 tooltip
+		ARG 2 positioner
+		ARG 3 replaceCurrentTooltip
+	METHOD m_eyzbpvak hasShiftDown ()Z
+	METHOD m_fggwkeeq getTitle ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_fogjthpz focusCurrentPath ()V
+	METHOD m_frxoqyrs resize (Lnet/minecraft/unmapped/C_ayfeobid;II)V
+		ARG 1 client
+		ARG 2 width
+		ARG 3 height
+	METHOD m_gqwpvknz getTooltipFromItem (Lnet/minecraft/unmapped/C_ayfeobid;Lnet/minecraft/unmapped/C_sddaxwyk;)Ljava/util/List;
+		ARG 0 client
+		ARG 1 stack
+	METHOD m_gseqedxv isCopy (I)Z
+		ARG 0 keyCode
+	METHOD m_guegvdae isSelectAll (I)Z
+		ARG 0 code
+	METHOD m_hjitkdkn renderMenuBackgroundTexture (Lnet/minecraft/unmapped/C_sedilmty;Lnet/minecraft/unmapped/C_ncpywfca;IIFFII)V
+		ARG 0 graphics
+		ARG 1 texture
+		ARG 2 x
+		ARG 3 y
+		ARG 4 u
+		ARG 5 v
+		ARG 6 width
+		ARG 7 height
+	METHOD m_htvzhlss repositionElements ()V
+	METHOD m_ioaopcny wrapScreenError (Ljava/lang/Runnable;Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 task
+		ARG 1 errorTitle
+		ARG 2 screenName
+	METHOD m_iugdsrhk narrateScreen (Z)V
+		ARG 1 useTranslationsCache
+	METHOD m_iytoanop applyMouseMoveNarratorDelay ()V
+	METHOD m_jxvrltxf (Ljava/net/URI;Z)V
+		ARG 2 confirmed
+	METHOD m_keapshqu shouldNarrateNavigation ()Z
+	METHOD m_klvwxtca addScreenNarrations (Lnet/minecraft/unmapped/C_pofrkllk;)V
+		ARG 1 builder
+	METHOD m_kuxewqdw isNarratorActive ()Z
+	METHOD m_kwqejrhl updateNarratorState (Z)V
+		ARG 1 narratorOff
+	METHOD m_liiadbzl insertText (Ljava/lang/String;Z)V
+		ARG 1 text
+		ARG 2 override
+	METHOD m_ljtwkmmk createArrowNavigation ()Lnet/minecraft/unmapped/C_ltcpucbp$C_gplggvaz;
+	METHOD m_lknkyvhl addElementNarrations (Lnet/minecraft/unmapped/C_pofrkllk;)V
+		ARG 1 builder
+	METHOD m_lkrokqto addSelectableElement (Lnet/minecraft/unmapped/C_fxiqpxaf;)Lnet/minecraft/unmapped/C_fxiqpxaf;
+		ARG 1 child
+	METHOD m_lnmhtyux handleTextClick (Lnet/minecraft/unmapped/C_cpwnhism;)Z
+		ARG 1 style
+	METHOD m_lnowjjjg resetDeferredTooltip ()V
+	METHOD m_mnimqwok setElementNarrationDelay (J)V
+		ARG 1 delayMs
+	METHOD m_ndigxngy tick ()V
+	METHOD m_nmctqrnu setDeferredTooltip (Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 text
+	METHOD m_nryxopfr (Ljava/lang/Runnable;)V
+		ARG 1 runnable
+	METHOD m_nuosckio hasControlDown ()Z
+	METHOD m_nvnfplud getNarratedTitle ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_owcmbtvl setInitialFocus (Lnet/minecraft/unmapped/C_fxiqpxaf;)V
+		ARG 1 element
+	METHOD m_pfjlkadm applyKeyPressNarratorDelay ()V
+	METHOD m_pfwvzdim renderWithTooltip (Lnet/minecraft/unmapped/C_sedilmty;IIF)V
+		COMMENT Renders this screen along with deferred text tooltip,
+		COMMENT ensuring the tooltip is rendered on top.
+		ARG 1 graphics
+		ARG 2 mouseX
+			COMMENT the mouse X-coordinate on the screen
+		ARG 3 mouseY
+			COMMENT the mouse Y-coordinate on the screen
+		ARG 4 delta
+			COMMENT the delta since the last tick
+	METHOD m_pgbqqklr hasAltDown ()Z
+	METHOD m_psfweybj renderWorldOverlayBackground (Lnet/minecraft/unmapped/C_sedilmty;)V
+		COMMENT Renders the fullscreen dark overlay background used when a world is loaded.
+	METHOD m_qfxudleh renderBackground (Lnet/minecraft/unmapped/C_sedilmty;IIF)V
+		ARG 1 graphics
+		ARG 2 mouseX
+		ARG 3 mouseY
+		ARG 4 delta
+	METHOD m_qrphnkdt findSelectedElementData (Ljava/util/List;Lnet/minecraft/unmapped/C_womhzmwc;)Lnet/minecraft/unmapped/C_wrmtlwqx$C_xlpahkfz;
+		ARG 0 selectables
+		ARG 1 selectable
+	METHOD m_qstvimvy getMusic ()Lnet/minecraft/unmapped/C_usodapnd;
+	METHOD m_relyixry updateNarrator ()V
+	METHOD m_rfmnuiwc setDeferredTooltip (Lnet/minecraft/unmapped/C_skehaijy;Lnet/minecraft/unmapped/C_imjripdz;Z)V
+		ARG 1 tooltip
+		ARG 2 positioner
+		ARG 3 replaceCurrentTooltip
+	METHOD m_rghzttgk isPaste (I)Z
+		ARG 0 keyCode
+	METHOD m_sktirqkj filesDragged (Ljava/util/List;)V
+		ARG 1 paths
+	METHOD m_snicuexz navigationUsageText ()Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_snvbpxot shouldCloseOnEsc ()Z
+		COMMENT Checks whether this screen should be closed when the escape key is pressed.
+	METHOD m_tevgoglb closeScreen ()V
+	METHOD m_tvprcwgv remove (Lnet/minecraft/unmapped/C_fxiqpxaf;)V
+		ARG 1 child
+	METHOD m_tvpyexnb isValidCharacterForName (Ljava/lang/String;CI)Z
+		ARG 1 name
+		ARG 2 character
+		ARG 3 cursorPos
+	METHOD m_updnfwlh isCut (I)Z
+		ARG 0 keyCode
+	METHOD m_uzikfrgi setInitialFocus ()V
+	METHOD m_vsdrypvi addDrawableSelectableElement (Lnet/minecraft/unmapped/C_fxiqpxaf;)Lnet/minecraft/unmapped/C_fxiqpxaf;
+		ARG 1 drawableElement
+	METHOD m_vsopnzlx focusCurrentPath (Lnet/minecraft/unmapped/C_ballifpu;)V
+		ARG 1 path
+	METHOD m_wcypszzy applyMousePressScrollNarratorDelay ()V
+	METHOD m_wjyrnuws addDrawable (Lnet/minecraft/unmapped/C_dtfldood;)Lnet/minecraft/unmapped/C_dtfldood;
+		ARG 1 drawable
+	METHOD m_wvbxumwq renderMenuBackground (Lnet/minecraft/unmapped/C_sedilmty;IIII)V
+		ARG 1 graphics
+		ARG 2 x
+		ARG 3 y
+		ARG 4 width
+		ARG 5 height
+	METHOD m_wzyluyjp setDeferredTooltip (Ljava/util/List;)V
+		ARG 1 tooltip
+	METHOD m_xaqeivsh init ()V
+		COMMENT Called when a screen should be initialized.
+		COMMENT
+		COMMENT <p>This method is called when this screen is {@linkplain net.minecraft.client.MinecraftClient#setScreen(Screen) opened} or resized.
+	METHOD m_yikydyxb clearAndInit ()V
+	METHOD m_zatdgejs clearChildren ()V
+	METHOD m_zycsispl narrateScreenIfNarrationEnabled (Z)V
+		ARG 1 useTranslationsCache
+	CLASS C_umjfmsln DeferredTextTooltip
+		FIELD f_cyaomqpv tooltip Ljava/util/List;
+		FIELD f_suycmvfo positioner Lnet/minecraft/unmapped/C_imjripdz;
+		METHOD m_rtujpens positioner ()Lnet/minecraft/unmapped/C_imjripdz;
+		METHOD m_yphedrka tooltip ()Ljava/util/List;
+	CLASS C_xlpahkfz SelectedElementNarrationData
+		FIELD f_eaddwvvk selectType Lnet/minecraft/unmapped/C_womhzmwc$C_gfpnbsjt;
+		FIELD f_foukflut selectable Lnet/minecraft/unmapped/C_womhzmwc;
+		FIELD f_gdwhvlqd index I
+		METHOD <init> (Lnet/minecraft/unmapped/C_womhzmwc;ILnet/minecraft/unmapped/C_womhzmwc$C_gfpnbsjt;)V
+			ARG 1 selectable
+			ARG 2 index
+			ARG 3 selectType

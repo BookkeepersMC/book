@@ -1,0 +1,34 @@
+CLASS net/minecraft/unmapped/C_asmjqorx net/minecraft/util/math/float_provider/ClampedNormalFloatProvider
+	FIELD f_bybrbusw CODEC Lcom/mojang/serialization/MapCodec;
+	FIELD f_cptlhuxf deviation F
+	FIELD f_dksfgtae min F
+	FIELD f_hlfgsvbs max F
+	FIELD f_kjwgcqcp mean F
+	METHOD <init> (FFFF)V
+		ARG 1 mean
+		ARG 2 deviation
+		ARG 3 min
+		ARG 4 max
+	METHOD m_ilcemxxl (Lnet/minecraft/unmapped/C_asmjqorx;)Ljava/lang/Float;
+		ARG 0 provider
+	METHOD m_jgynshpw (Lnet/minecraft/unmapped/C_asmjqorx;)Ljava/lang/Float;
+		ARG 0 provider
+	METHOD m_jyizyusd (Lnet/minecraft/unmapped/C_asmjqorx;)Ljava/lang/Float;
+		ARG 0 provider
+	METHOD m_kcxkxlzi (Lnet/minecraft/unmapped/C_asmjqorx;)Ljava/lang/Float;
+		ARG 0 provider
+	METHOD m_ldsbkuds (Lnet/minecraft/unmapped/C_asmjqorx;)Ljava/lang/String;
+		ARG 0 provider
+	METHOD m_teusqxrm (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+		ARG 0 instance
+	METHOD m_tqtsfibo get (Lnet/minecraft/unmapped/C_rlomrsco;FFFF)F
+		ARG 0 random
+		ARG 1 mean
+		ARG 2 deviation
+		ARG 3 min
+		ARG 4 max
+	METHOD m_yevsjwgm create (FFFF)Lnet/minecraft/unmapped/C_asmjqorx;
+		ARG 0 mean
+		ARG 1 deviation
+		ARG 2 min
+		ARG 3 max

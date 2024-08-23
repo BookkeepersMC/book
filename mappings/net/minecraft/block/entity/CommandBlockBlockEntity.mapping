@@ -1,0 +1,22 @@
+CLASS net/minecraft/unmapped/C_qpgfeghp net/minecraft/block/entity/CommandBlockBlockEntity
+	FIELD f_hrzuxcdt auto Z
+	FIELD f_xoaiocgt conditionMet Z
+	FIELD f_ynzunzvq powered Z
+	FIELD f_ypcqukwr commandExecutor Lnet/minecraft/unmapped/C_ufmydvnm;
+	METHOD <init> (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)V
+		ARG 1 pos
+		ARG 2 state
+	METHOD m_cwitaoei scheduleAutoTick ()V
+	METHOD m_dqailcjw isConditionalCommandBlock ()Z
+	METHOD m_faggkyfa getCommandBlockType ()Lnet/minecraft/unmapped/C_qpgfeghp$C_dlsaypyo;
+	METHOD m_nijilidz setPowered (Z)V
+		ARG 1 powered
+	METHOD m_qpfzyghc isConditionMet ()Z
+	METHOD m_riazfubc setAuto (Z)V
+		ARG 1 auto
+	METHOD m_ugtwjfcy updateCommandBlock ()V
+	METHOD m_uvxddano updateConditionMet ()Z
+	METHOD m_xdxxyhlh getCommandExecutor ()Lnet/minecraft/unmapped/C_ufmydvnm;
+	METHOD m_zmselatf isAuto ()Z
+	METHOD m_zwbkejcg isPowered ()Z
+	CLASS C_dlsaypyo Type

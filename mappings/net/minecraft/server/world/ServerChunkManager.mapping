@@ -1,0 +1,124 @@
+CLASS net/minecraft/unmapped/C_ebcmvjwj net/minecraft/server/world/ServerChunkManager
+	FIELD f_cbgdxedp spawnMonsters Z
+	FIELD f_gbssytzr chunkPosCache [J
+	FIELD f_hmdmznvi spawnAnimals Z
+	FIELD f_ihdjlbqp persistentStateManager Lnet/minecraft/unmapped/C_hsdphpvz;
+	FIELD f_ixxxjgez mainThreadExecutor Lnet/minecraft/unmapped/C_ebcmvjwj$C_poschgqw;
+	FIELD f_obcjuaxe world Lnet/minecraft/unmapped/C_bdwnwhiu;
+	FIELD f_ooqjqvki spawnInfo Lnet/minecraft/unmapped/C_rvfygodd$C_tsgfqxij;
+	FIELD f_qtzeurch serverThread Ljava/lang/Thread;
+	FIELD f_sxcfajbf delegate Lnet/minecraft/unmapped/C_gxrpzacc;
+	FIELD f_uopxyudo CACHE_SIZE I
+	FIELD f_wbdhtwhc chunkCache [Lnet/minecraft/unmapped/C_lwzmmmqr;
+	FIELD f_wxlbdscx lightingProvider Lnet/minecraft/unmapped/C_bdzdhzyc;
+	FIELD f_ydkjshsp ticketManager Lnet/minecraft/unmapped/C_mrjqexcd;
+	FIELD f_znyjhajj lastMobSpawningTime J
+	FIELD f_zqqnrbsq chunkStatusCache [Lnet/minecraft/unmapped/C_kogtzhzt;
+	METHOD <init> (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_bpwagnit$C_unecclfw;Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/unmapped/C_zxhjfyir;Ljava/util/concurrent/Executor;Lnet/minecraft/unmapped/C_kgfalbim;IIZLnet/minecraft/unmapped/C_jnfclwgd;Lnet/minecraft/unmapped/C_gtndfkbe;Ljava/util/function/Supplier;)V
+		ARG 1 world
+		ARG 2 saveStorageSession
+		ARG 3 dataFixer
+		ARG 4 structureTemplateManager
+		ARG 5 executor
+		ARG 6 chunkGenerator
+		ARG 7 viewDistance
+		ARG 8 simulationDistance
+		ARG 9 dsync
+		ARG 10 worldGenerationProgressListener
+		ARG 11 chunkStatusChangeListener
+		ARG 12 persistentStateManagerFactory
+	METHOD m_aoyxjkpt initChunkCaches ()V
+	METHOD m_arxeyeod getConcentricRingPlacementCalculator ()Lnet/minecraft/unmapped/C_jibygqpu;
+	METHOD m_aspyldja applyViewDistance (I)V
+		ARG 1 watchDistance
+	METHOD m_dbjrpnkk loadEntity (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	METHOD m_dyvlbydm save (Z)V
+		ARG 1 flush
+	METHOD m_epauxdtp isTickingFutureReady (J)Z
+		ARG 1 pos
+	METHOD m_fphgxitc isMissingForLevel (Lnet/minecraft/unmapped/C_gkderdjo;I)Z
+		ARG 1 holder
+		ARG 2 maxLevel
+	METHOD m_hsnsljxf getChunkFuture (IILnet/minecraft/unmapped/C_kogtzhzt;Z)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 leastStatus
+		ARG 4 create
+	METHOD m_ilfskcor getChunkHolder (J)Lnet/minecraft/unmapped/C_gkderdjo;
+		ARG 1 pos
+	METHOD m_iuemgshl getPendingTasks ()I
+	METHOD m_jgyqtgrc getChunkFutureSyncOnMainThread (IILnet/minecraft/unmapped/C_kogtzhzt;Z)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 leastStatus
+		ARG 4 create
+	METHOD m_kpypddik ifChunkLoaded (JLjava/util/function/Consumer;)V
+		ARG 1 pos
+		ARG 3 chunkConsumer
+	METHOD m_kyogxysq markForUpdate (Lnet/minecraft/unmapped/C_hynzadkk;)V
+		ARG 1 pos
+	METHOD m_kzjxxowq getPointOfInterestStorage ()Lnet/minecraft/unmapped/C_uegwgivt;
+	METHOD m_lfwksham getChunkLoadingDebugInfo (Lnet/minecraft/unmapped/C_ynrszrtu;)Ljava/lang/String;
+		ARG 1 pos
+	METHOD m_mdptitzk sendToOtherNearbyPlayers (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_zyjtrjrl;)V
+		ARG 1 entity
+		ARG 2 packet
+	METHOD m_nymxeyxj tick ()Z
+	METHOD m_oxbkyszn updatePosition (Lnet/minecraft/unmapped/C_mxrobsgg;)V
+		COMMENT Updates the chunk section position of the {@code player}. This can either be a
+		COMMENT result of the player's movement or its camera entity's movement.
+		COMMENT
+		COMMENT <p>This updates the section position player's client is currently watching and
+		COMMENT the player's position in its entity tracker.
+		ARG 1 player
+	METHOD m_pbsddogt tickChunks ()V
+	METHOD m_pcqpeovk getSpawnInfo ()Lnet/minecraft/unmapped/C_rvfygodd$C_tsgfqxij;
+	METHOD m_pqlghyyn getChunkGenerator ()Lnet/minecraft/unmapped/C_kgfalbim;
+	METHOD m_pwwgckxh getRandomState ()Lnet/minecraft/unmapped/C_edfiqifk;
+	METHOD m_qiooziqr executeQueuedTasks ()Z
+	METHOD m_reddmdwx getTotalChunksLoadedCount ()I
+	METHOD m_rhpijjnc getPersistentStateManager ()Lnet/minecraft/unmapped/C_hsdphpvz;
+	METHOD m_rmnvrkhr applySimulationDistance (I)V
+		ARG 1 simulationDistance
+	METHOD m_tklvdsiw removePersistentTickets ()V
+	METHOD m_txwjwdvi removeTicket (Lnet/minecraft/unmapped/C_cuxhrvln;Lnet/minecraft/unmapped/C_ynrszrtu;ILjava/lang/Object;)V
+		COMMENT Removes a chunk ticket from the ticket manager.
+		COMMENT
+		COMMENT <p>Removal of a ticket may unload chunk(s) at some point in the future depending on the loading levels in the ticket's vicinity after removal.
+		ARG 1 ticketType
+		ARG 2 pos
+		ARG 3 radius
+		ARG 4 argument
+	METHOD m_udxevgvw addTicket (Lnet/minecraft/unmapped/C_cuxhrvln;Lnet/minecraft/unmapped/C_ynrszrtu;ILjava/lang/Object;)V
+		COMMENT Adds a chunk ticket to the ticket manager.
+		COMMENT
+		COMMENT <p>Addition of a ticket may load chunk(s) at some point in the future depending on the loading level in the ticket's vicinity.
+		ARG 1 ticketType
+		ARG 2 pos
+		ARG 3 radius
+		ARG 4 argument
+	METHOD m_xxonvyvn getChunkNbtScanner ()Lnet/minecraft/unmapped/C_mxmjmfvn;
+	METHOD m_ygtjllyp sendToNearbyPlayers (Lnet/minecraft/unmapped/C_astfners;Lnet/minecraft/unmapped/C_zyjtrjrl;)V
+		ARG 1 entity
+		ARG 2 packet
+	METHOD m_yvjnruii putInCache (JLnet/minecraft/unmapped/C_lwzmmmqr;Lnet/minecraft/unmapped/C_kogtzhzt;)V
+		ARG 1 pos
+		ARG 3 chunk
+		ARG 4 status
+	METHOD m_ywyiiuyu spawnAndTickChunks (Lnet/minecraft/unmapped/C_eslcbfsq;JLjava/util/List;)V
+	METHOD m_yxbwpive unloadEntity (Lnet/minecraft/unmapped/C_astfners;)V
+		ARG 1 entity
+	CLASS C_ekdkttvi ChunkWithHolder
+		FIELD f_jxiiwdko holder Lnet/minecraft/unmapped/C_gkderdjo;
+		FIELD f_kuqzariv chunk Lnet/minecraft/unmapped/C_hrdsvlkq;
+		METHOD <init> (Lnet/minecraft/unmapped/C_hrdsvlkq;Lnet/minecraft/unmapped/C_gkderdjo;)V
+			ARG 1 chunk
+			ARG 2 holder
+		METHOD equals (Ljava/lang/Object;)Z
+			ARG 1 o
+		METHOD m_ryiuvsyh holder ()Lnet/minecraft/unmapped/C_gkderdjo;
+		METHOD m_vpypwdht chunk ()Lnet/minecraft/unmapped/C_hrdsvlkq;
+	CLASS C_poschgqw MainThreadExecutor
+		METHOD <init> (Lnet/minecraft/unmapped/C_ebcmvjwj;Lnet/minecraft/unmapped/C_cdctfzbn;)V
+			ARG 2 world

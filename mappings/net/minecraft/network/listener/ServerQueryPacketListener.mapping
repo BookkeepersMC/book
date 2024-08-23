@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_oiyoogah net/minecraft/network/listener/ServerQueryPacketListener
+	METHOD m_ubuewfjp onMetadata (Lnet/minecraft/unmapped/C_ntnrtbrk;)V
+		ARG 1 packet

@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_ikupvltf net/minecraft/data/report/BlockListProvider
+	FIELD f_vrhrlrim output Lnet/minecraft/unmapped/C_ugkmwocs;

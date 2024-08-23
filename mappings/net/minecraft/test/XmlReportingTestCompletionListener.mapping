@@ -1,0 +1,12 @@
+CLASS net/minecraft/unmapped/C_spnftcno net/minecraft/test/XmlReportingTestCompletionListener
+	FIELD f_dvjzaaha testSuiteElement Lorg/w3c/dom/Element;
+	FIELD f_oucjkbjh file Ljava/io/File;
+	FIELD f_pcbhwahv stopwatch Lcom/google/common/base/Stopwatch;
+	FIELD f_qralcimo document Lorg/w3c/dom/Document;
+	METHOD <init> (Ljava/io/File;)V
+		ARG 1 file
+	METHOD m_jvqzdhaf saveReport (Ljava/io/File;)V
+		ARG 1 file
+	METHOD m_krvjldnk addTestCase (Lnet/minecraft/unmapped/C_agwojffm;Ljava/lang/String;)Lorg/w3c/dom/Element;
+		ARG 1 test
+		ARG 2 name

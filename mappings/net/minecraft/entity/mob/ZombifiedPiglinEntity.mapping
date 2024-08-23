@@ -1,0 +1,29 @@
+CLASS net/minecraft/unmapped/C_vrkapiph net/minecraft/entity/mob/ZombifiedPiglinEntity
+	FIELD f_awucokou ATTACKING_SPEED_BOOST Lnet/minecraft/unmapped/C_hdbqsqsm;
+	FIELD f_bhbqrqfm ALERT_VERTICAL_RANGE I
+	FIELD f_ggkousjh angerPassingCooldown I
+	FIELD f_hftlppff ANGER_PASSING_COOLDOWN_RANGE Lnet/minecraft/unmapped/C_hvilmtvi;
+	FIELD f_ivqayszd ANGER_TIME_RANGE Lnet/minecraft/unmapped/C_hvilmtvi;
+	FIELD f_kkkmuwas targetUuid Ljava/util/UUID;
+	FIELD f_kqtgldha ANGRY_SOUND_DELAY_RANGE Lnet/minecraft/unmapped/C_hvilmtvi;
+	FIELD f_pxzkuzfk BABY_DIMENSIONS Lnet/minecraft/unmapped/C_sszpscpo;
+	FIELD f_uwmmskkf ATTACKING_SPEED_MODIFIER_ID Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_wptxkryt angerTime I
+	FIELD f_zbrtgqla angrySoundDelay I
+	METHOD m_dfhynwdh playAngrySound ()V
+	METHOD m_dkifoqzq createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_fsrftlvd (Lnet/minecraft/unmapped/C_vrkapiph;)Z
+		ARG 1 zombifiedPiglin
+	METHOD m_gruyttnz (Lnet/minecraft/unmapped/C_vrkapiph;)V
+		ARG 1 zombifiedPiglin
+	METHOD m_kwcjsgyc (Lnet/minecraft/unmapped/C_vrkapiph;)Z
+		ARG 0 zombifiedPiglin
+	METHOD m_mjtevhje angerNearbyZombifiedPiglins ()V
+	METHOD m_mjvnzwcj tickAngerPassing ()V
+	METHOD m_rhoazump (Lnet/minecraft/unmapped/C_vrkapiph;)Z
+		ARG 1 zombifiedPiglin
+	METHOD m_ruemouhc tickAngrySound ()V
+	METHOD m_zxabfwop canSpawn (Lnet/minecraft/unmapped/C_ogavsvbr;Lnet/minecraft/unmapped/C_vdvbsyle;Lnet/minecraft/unmapped/C_bhyaesep;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_rlomrsco;)Z
+		ARG 0 type
+		ARG 1 world
+		ARG 3 pos

@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_zarmmlcb net/minecraft/client/gui/AbstractParentElement
+	FIELD f_ewpvxpvu dragging Z
+	FIELD f_ktjiigfg focused Lnet/minecraft/unmapped/C_fxiqpxaf;

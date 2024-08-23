@@ -1,0 +1,38 @@
+CLASS net/minecraft/unmapped/C_zbppnqly net/minecraft/client/gui/hud/spectator/SpectatorMenu
+	FIELD f_cnrnubhr CLOSE_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_dcdtxsjo PREVIOUS_PAGE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_fquttxuf selectedSlot I
+	FIELD f_hvyokmgg SCROLL_LEFT_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ijgmqnit SCROLL_RIGHT_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_jfjfbqbh closeCallback Lnet/minecraft/unmapped/C_pjjvesqx;
+	FIELD f_kegznatf BLANK_COMMAND Lnet/minecraft/unmapped/C_gwvsqmde;
+	FIELD f_kzyggssr MAX_PER_PAGE I
+	FIELD f_mjquzrot CLOSE_COMMAND Lnet/minecraft/unmapped/C_gwvsqmde;
+	FIELD f_ogbaxiuy DISABLED_NEXT_PAGE_COMMAND Lnet/minecraft/unmapped/C_gwvsqmde;
+	FIELD f_pjfutkqj page I
+	FIELD f_pzzqfrjm NEXT_PAGE_COMMAND Lnet/minecraft/unmapped/C_gwvsqmde;
+	FIELD f_tljxdptl currentGroup Lnet/minecraft/unmapped/C_wzzjiijo;
+	FIELD f_uqkdxoob CLOSE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_zkryuwhf NEXT_PAGE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_zslplujv PREVIOUS_PAGE_COMMAND Lnet/minecraft/unmapped/C_gwvsqmde;
+	METHOD <init> (Lnet/minecraft/unmapped/C_pjjvesqx;)V
+		ARG 1 closeCallback
+	METHOD m_ccizvlmq close ()V
+	METHOD m_gqirsvln getCommand (I)Lnet/minecraft/unmapped/C_gwvsqmde;
+		ARG 1 slot
+	METHOD m_itdwpzrl selectElement (Lnet/minecraft/unmapped/C_wzzjiijo;)V
+		ARG 1 group
+	METHOD m_jacjbuwv getSelectedCommand ()Lnet/minecraft/unmapped/C_gwvsqmde;
+	METHOD m_odrrbejc getSelectedSlot ()I
+	METHOD m_razewjbw getCurrentState ()Lnet/minecraft/unmapped/C_jglruvzd;
+	METHOD m_seqyixtp useCommand (I)V
+		ARG 1 slot
+	METHOD m_sufsncfm getCurrentGroup ()Lnet/minecraft/unmapped/C_wzzjiijo;
+	METHOD m_xqhpyyyh getCommands ()Ljava/util/List;
+	CLASS C_rhqvftnu ChangePageSpectatorMenuCommand
+		FIELD f_kpmvhkvw direction I
+		FIELD f_lckuyxly enabled Z
+		METHOD <init> (IZ)V
+			ARG 1 direction
+			ARG 2 enabled
+	CLASS C_ybsdahvy CloseSpectatorMenuCommand

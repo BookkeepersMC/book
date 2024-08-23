@@ -1,0 +1,23 @@
+CLASS net/minecraft/unmapped/C_bubysyxg net/minecraft/world/chunk/ChunkManager
+	METHOD close close ()V
+	METHOD m_dnkngmin getLoadedChunkCount ()I
+	METHOD m_exhmfasm getWorldChunk (IIZ)Lnet/minecraft/unmapped/C_hrdsvlkq;
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 create
+	METHOD m_gspauptw setMobSpawnOptions (Z)V
+		ARG 1 spawnMonsters
+	METHOD m_iknbhnav setChunkForced (Lnet/minecraft/unmapped/C_ynrszrtu;Z)V
+		ARG 1 pos
+		ARG 2 forced
+	METHOD m_mhpjzrja getDebugString ()Ljava/lang/String;
+	METHOD m_rkrqvjba getLightingProvider ()Lnet/minecraft/unmapped/C_ksposksb;
+	METHOD m_taszfhsc isChunkLoaded (II)Z
+		ARG 1 x
+		ARG 2 z
+	METHOD m_vajkroic getWorldChunk (II)Lnet/minecraft/unmapped/C_hrdsvlkq;
+		ARG 1 chunkX
+		ARG 2 chunkZ
+	METHOD m_ygtguwfv tick (Ljava/util/function/BooleanSupplier;Z)V
+		ARG 1 shouldKeepTicking
+		ARG 2 tickChunks

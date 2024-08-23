@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_lrygqoww net/minecraft/client/render/entity/SalmonEntityRenderer
+	FIELD f_njslljtw TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;

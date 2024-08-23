@@ -1,0 +1,39 @@
+CLASS net/minecraft/unmapped/C_makdtijf net/minecraft/nbt/visitor/NbtOrderedStringFormatter
+	COMMENT Formats an NBT element as a multiline string where named elements inside of compound objects
+	COMMENT are sorted according to a defined ordering.
+	FIELD f_alukfqgu CURLY_OPEN_BRACKET Ljava/lang/String;
+	FIELD f_alzhywag SIMPLE_NAME Ljava/util/regex/Pattern;
+	FIELD f_dcbjjnnb IGNORED_PATHS Ljava/util/Set;
+		COMMENT Contains paths for which the indentation prefix should not be prepended to the result.
+	FIELD f_edqkvpah SQUARE_OPEN_BRACKET Ljava/lang/String;
+	FIELD f_fpvimxvz ENTRY_SEPARATOR Ljava/lang/String;
+	FIELD f_fzeicmyd SEMICOLON Ljava/lang/String;
+	FIELD f_hyclujkh NEW_LINE Ljava/lang/String;
+	FIELD f_jnfypiuh pathParts Ljava/util/List;
+	FIELD f_kcqmbomq SPACE Ljava/lang/String;
+	FIELD f_mtujjyey CURLY_CLOSE_BRACKET Ljava/lang/String;
+	FIELD f_nqzjwaxd SQUARE_CLOSE_BRACKET Ljava/lang/String;
+	FIELD f_ppucvawp KEY_VALUE_SEPARATOR Ljava/lang/String;
+	FIELD f_sncljvzt indentationLevel I
+	FIELD f_terudanm result Ljava/lang/String;
+	FIELD f_tkflfydr ENTRY_ORDER_OVERRIDES Ljava/util/Map;
+		COMMENT Contains the names of elements which should appear before any other element in a compound object, even
+		COMMENT when they would otherwise appear later lexicographically. The list of elements which should be
+		COMMENT prioritized differs depending on the path of the compound object.
+	FIELD f_xjvhldqo prefix Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;ILjava/util/List;)V
+		ARG 1 prefix
+		ARG 2 indentationLevel
+		ARG 3 pathParts
+	METHOD m_brvuqtcs popPathPart ()V
+	METHOD m_edirirem getSortedNames (Lnet/minecraft/unmapped/C_hhlwcnih;)Ljava/util/List;
+		ARG 1 compound
+	METHOD m_fhebkpdx pushPathPart (Ljava/lang/String;)V
+		ARG 1 part
+	METHOD m_icyunnqj (Ljava/util/HashMap;)V
+		ARG 0 map
+	METHOD m_rraeroio joinPath ()Ljava/lang/String;
+	METHOD m_tsnwzyew apply (Lnet/minecraft/unmapped/C_oivssbvb;)Ljava/lang/String;
+		ARG 1 nbt
+	METHOD m_xexyknse escapeName (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 name

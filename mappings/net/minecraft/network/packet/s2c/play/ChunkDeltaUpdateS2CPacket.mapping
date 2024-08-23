@@ -1,0 +1,18 @@
+CLASS net/minecraft/unmapped/C_gxacpmvt net/minecraft/network/packet/s2c/play/ChunkDeltaUpdateS2CPacket
+	FIELD f_gusguhql positions [S
+		COMMENT The packed local positions for each entry in {@link #blockStates}.
+		COMMENT
+		COMMENT @see ChunkSectionPos#packLocal(BlockPos)
+	FIELD f_izpmlsam CODEC Lnet/minecraft/unmapped/C_qsrmwluu;
+	FIELD f_rlerkalq POS_IN_SECTION_BITS I
+	FIELD f_tnlkzren blockStates [Lnet/minecraft/unmapped/C_txtbiemp;
+	FIELD f_ukdiqklo sectionPos Lnet/minecraft/unmapped/C_zubvmeye;
+	METHOD <init> (Lnet/minecraft/unmapped/C_idfydwco;)V
+		ARG 1 buf
+	METHOD <init> (Lnet/minecraft/unmapped/C_zubvmeye;Lit/unimi/dsi/fastutil/shorts/ShortSet;Lnet/minecraft/unmapped/C_aurosfgf;)V
+		ARG 2 positions
+		ARG 3 chunkSection
+	METHOD m_guvyqcph visitUpdates (Ljava/util/function/BiConsumer;)V
+		COMMENT Calls the given consumer for each pair of block position and block state contained in this packet.
+		ARG 1 consumer
+	METHOD m_pbnxhbqh write (Lnet/minecraft/unmapped/C_idfydwco;)V

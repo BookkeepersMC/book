@@ -1,0 +1,360 @@
+CLASS net/minecraft/unmapped/C_zpccxxiz net/minecraft/util/math/MathHelper
+	FIELD f_andqrvpk ARCSINE_TABLE [D
+	FIELD f_aomqjoqj RADIANS_PER_DEGREE F
+	FIELD f_bciswahe DEGREES_TO_SINE_TABLE_INDEX F
+	FIELD f_buotfbwr SINE_TABLE [F
+	FIELD f_clwgxcor UUID_VERSION_TYPE_4 J
+	FIELD f_dhioznkg DEGREES_PER_RADIAN F
+	FIELD f_dleohjgq Y_AXIS Lorg/joml/Vector3f;
+	FIELD f_fbpgauhs HALF_PI F
+	FIELD f_fuorhivx Z_AXIS Lorg/joml/Vector3f;
+	FIELD f_gbrviddp RANDOM Lnet/minecraft/unmapped/C_rlomrsco;
+	FIELD f_hqwonkbb X_AXIS Lorg/joml/Vector3f;
+	FIELD f_ijaqchhh LUT_SIZE I
+	FIELD f_klisaygo EPSILON F
+	FIELD f_lslrhbbz SQUARE_ROOT_OF_TWO F
+	FIELD f_ltvdocgt TAU F
+		COMMENT Tau is equal to {@code 2 * PI}.
+	FIELD f_pgwgqduz PI F
+	FIELD f_pmwdwjrx ONE_SIXTH D
+	FIELD f_puwfbrez MULTIPLY_DE_BRUIJN_BIT_POSITION [I
+	FIELD f_sgcksppq COSINE_TABLE [D
+	FIELD f_vdjinsbc FRAC_EXP I
+	FIELD f_vuoodfgj SMALLEST_FRACTION_FREE_DOUBLE D
+	FIELD f_xksvnzho UUID_VARIANT_2 J
+	FIELD f_zgugzeuq UUID_VERSION J
+	FIELD f_zhzapczq UUID_VARIANT J
+	METHOD m_acifvvoi inverseSqrt (F)F
+		ARG 0 x
+	METHOD m_aijanisa lerpDegrees (DDD)D
+		ARG 0 delta
+		ARG 2 start
+		ARG 4 end
+	METHOD m_aisjbmuz magnitude (DDD)D
+		ARG 0 a
+		ARG 2 b
+		ARG 4 c
+	METHOD m_attjwstj square (D)D
+		ARG 0 n
+	METHOD m_bchherbr abs (F)F
+		ARG 0 value
+	METHOD m_bwcvuaar clampedMap (FFFFF)F
+		ARG 0 value
+		ARG 1 oldStart
+		ARG 2 oldEnd
+		ARG 3 newStart
+		ARG 4 newEnd
+	METHOD m_cccveftx subtractAngles (FF)F
+		ARG 0 start
+		ARG 1 end
+	METHOD m_ckrybhkt clampedLerp (FFF)F
+		ARG 0 start
+		ARG 1 end
+		ARG 2 delta
+	METHOD m_cysuvbqm isPowerOfTwo (I)Z
+		ARG 0 value
+	METHOD m_czflaoid stepUnwrappedAngleTowards (FFF)F
+		COMMENT Steps from {@code from} degrees towards {@code to} degrees, changing the value by at most {@code step} degrees.
+		COMMENT
+		COMMENT <p>This method does not wrap the resulting angle, so {@link #stepAngleTowards(float, float, float)} should be used in preference.
+		ARG 0 from
+		ARG 1 to
+		ARG 2 step
+	METHOD m_czgbystd clampedMap (DDDDD)D
+		ARG 0 value
+		ARG 2 oldStart
+		ARG 4 oldEnd
+		ARG 6 newStart
+		ARG 8 newEnd
+	METHOD m_deypbatf hashCode (III)J
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
+	METHOD m_dxovjztn hashCode (Lnet/minecraft/unmapped/C_ceivtqhh;)J
+		ARG 0 vec
+	METHOD m_edwkdptc inverseLerp (FFF)F
+		ARG 0 value
+		ARG 1 start
+		ARG 2 end
+	METHOD m_elqmgyfu fractionalPart (F)F
+		ARG 0 value
+	METHOD m_eppzhzdl smallestEncompassingPowerOfTwo (I)I
+		ARG 0 value
+	METHOD m_erurqqrq clamp (DDD)D
+		ARG 0 value
+		ARG 2 min
+		ARG 4 max
+	METHOD m_ewxpwxnf floorMod (FF)F
+		ARG 0 dividend
+		ARG 1 divisor
+	METHOD m_fdftwqif lerp (FII)I
+		ARG 0 delta
+		ARG 1 start
+		ARG 2 end
+	METHOD m_fpdoqovb getInt (Ljava/lang/String;I)I
+		ARG 0 string
+		ARG 1 fallback
+	METHOD m_fwvsrufh rayIntersectsBox (Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_hbcjzgoe;)Z
+		ARG 0 a
+		ARG 1 b
+		ARG 2 box
+	METHOD m_ganrrbsv lerp2 (DDDDDD)D
+		COMMENT A two-dimensional lerp between values on the 4 corners of the unit square. Arbitrary values are specified for the corners and the output is interpolated between them.
+		ARG 0 deltaX
+			COMMENT the x-coordinate on the unit square
+		ARG 2 deltaY
+			COMMENT the y-coordinate on the unit square
+		ARG 4 x0y0
+			COMMENT the output if {@code deltaX} is 0 and {@code deltaY} is 0
+		ARG 6 x1y0
+			COMMENT the output if {@code deltaX} is 1 and {@code deltaY} is 0
+		ARG 8 x0y1
+			COMMENT the output if {@code deltaX} is 0 and {@code deltaY} is 1
+		ARG 10 x1y1
+			COMMENT the output if {@code deltaX} is 1 and {@code deltaY} is 1
+	METHOD m_gokzydzj nextFloat (Lnet/minecraft/unmapped/C_rlomrsco;FF)F
+		ARG 1 min
+		ARG 2 max
+	METHOD m_halhjpav clamp (FFF)F
+		ARG 0 value
+		ARG 1 min
+		ARG 2 max
+	METHOD m_hbikcxix nextGaussian (Lnet/minecraft/unmapped/C_rlomrsco;FF)F
+		ARG 1 mean
+		ARG 2 deviation
+	METHOD m_helpkzdz stepTowards (FFF)F
+		COMMENT Steps from {@code from} towards {@code to}, changing the value by at most {@code step}.
+		ARG 0 from
+		ARG 1 to
+		ARG 2 step
+	METHOD m_hshmufpt inverseLerp (DDD)D
+		ARG 0 value
+		ARG 2 start
+		ARG 4 end
+	METHOD m_icszxjam floorMod (DD)D
+		ARG 0 dividend
+		ARG 2 divisor
+	METHOD m_iknjrvfq fastInverseCbrt (F)F
+		ARG 0 x
+	METHOD m_jgqvfqdd square (I)I
+		ARG 0 n
+	METHOD m_jtzaydbq atan2 (DD)D
+		ARG 0 y
+		ARG 2 x
+	METHOD m_jwgeotfi randomUuid ()Ljava/util/UUID;
+	METHOD m_khgapmci sqrt (F)F
+		ARG 0 value
+	METHOD m_kkghdkez floorDiv (II)I
+		ARG 0 a
+		ARG 1 b
+	METHOD m_kkmhfseh square (F)F
+		ARG 0 n
+	METHOD m_ksxjenzv nextBetween (Lnet/minecraft/unmapped/C_rlomrsco;FF)F
+		ARG 1 min
+		ARG 2 max
+	METHOD m_kzcmkjdp floorMod (II)I
+		ARG 0 dividend
+		ARG 1 divisor
+	METHOD m_ldzijcrr catmullRom (FFFFF)F
+		ARG 0 delta
+		ARG 1 p0
+		ARG 2 p1
+		ARG 3 p2
+		ARG 4 p3
+	METHOD m_lkedfilz roundUpToMultiple (II)I
+		COMMENT Returns a value farther than or as far as {@code value} from zero that
+		COMMENT is a multiple of {@code divisor}.
+		ARG 0 value
+		ARG 1 divisor
+	METHOD m_lswxrubx log2 (I)I
+		ARG 0 value
+	METHOD m_mkocjppt clampedLerp (DDD)D
+		ARG 0 start
+		ARG 2 end
+		ARG 4 delta
+	METHOD m_mrxkqcrn stepAngleTowards (FFF)F
+		COMMENT Steps from {@code from} degrees towards {@code to} degrees, changing the value by at most {@code step} degrees.
+		ARG 0 from
+		ARG 1 to
+		ARG 2 step
+	METHOD m_mwyzndia fastInverseSqrt (D)D
+		ARG 0 x
+	METHOD m_nagehyiq clamp (III)I
+		ARG 0 value
+		ARG 1 min
+		ARG 2 max
+	METHOD m_nbxcesbi perlinFade (D)D
+		ARG 0 value
+	METHOD m_nigulqrr log2DeBruijn (I)I
+		ARG 0 value
+	METHOD m_nkfewbou map (DDDDD)D
+		ARG 0 value
+		ARG 2 oldStart
+		ARG 4 oldEnd
+		ARG 6 newStart
+		ARG 8 newEnd
+	METHOD m_nuymoirf lerpDegrees (FFF)F
+		ARG 0 delta
+		ARG 1 start
+		ARG 2 end
+	METHOD m_nxemyfqo fractionalPart (D)D
+		ARG 0 value
+	METHOD m_nztnzrii hsvToRgb (FFF)I
+		ARG 0 hue
+		ARG 1 saturation
+		ARG 2 value
+	METHOD m_oddpowtz map (FFFFF)F
+		ARG 0 value
+		ARG 1 oldStart
+		ARG 2 oldEnd
+		ARG 3 newStart
+		ARG 4 newEnd
+	METHOD m_owfoeorg wrapDegrees (F)F
+		COMMENT Wraps an angle in degrees to the interval {@code [-180, 180)}.
+		ARG 0 degrees
+	METHOD m_piknrbnn ceil (F)I
+		ARG 0 value
+	METHOD m_pohafelr absMax (DD)D
+		ARG 0 a
+		ARG 2 b
+	METHOD m_ppwdxnyy inverseSqrt (D)D
+		ARG 0 x
+	METHOD m_priangnp nextInt (Lnet/minecraft/unmapped/C_rlomrsco;II)I
+		COMMENT {@return a random, uniformly distributed integer value in {@code
+		COMMENT [min, max]} If the range is empty (i.e. {@code max < min}), it
+		COMMENT returns {@code min}.}
+		ARG 1 min
+			COMMENT the minimum value, inclusive
+		ARG 2 max
+			COMMENT the maximum value, inclusive
+	METHOD m_psrpddcs wrapDegrees (I)I
+		COMMENT Wraps an angle in degrees to the interval {@code [-180, 180)}.
+		ARG 0 degrees
+	METHOD m_puigbfmr approximatelyEquals (FF)Z
+		ARG 0 a
+		ARG 1 b
+	METHOD m_qkrgfbms wrapDegrees (D)D
+		COMMENT Wraps an angle in degrees to the interval {@code [-180, 180)}.
+		ARG 0 degrees
+	METHOD m_quwfhkpc angleBetween (FF)F
+		ARG 0 first
+		ARG 1 second
+	METHOD m_qvarkerd lerp3 (DDDDDDDDDDD)D
+		COMMENT A three-dimensional lerp between values on the 8 corners of the unit cube. Arbitrary values are specified for the corners and the output is interpolated between them.
+		ARG 0 deltaX
+			COMMENT the x-coordinate on the unit cube
+		ARG 2 deltaY
+			COMMENT the y-coordinate on the unit cube
+		ARG 4 deltaZ
+			COMMENT the z-coordinate on the unit cube
+		ARG 6 x0y0z0
+			COMMENT the output if {@code deltaX} is 0, {@code deltaY} is 0 and {@code deltaZ} is 0
+		ARG 8 x1y0z0
+			COMMENT the output if {@code deltaX} is 1, {@code deltaY} is 0 and {@code deltaZ} is 0
+		ARG 10 x0y1z0
+			COMMENT the output if {@code deltaX} is 0, {@code deltaY} is 1 and {@code deltaZ} is 0
+		ARG 12 x1y1z0
+			COMMENT the output if {@code deltaX} is 1, {@code deltaY} is 1 and {@code deltaZ} is 0
+		ARG 14 x0y0z1
+			COMMENT the output if {@code deltaX} is 0, {@code deltaY} is 0 and {@code deltaZ} is 1
+		ARG 16 x1y0z1
+			COMMENT the output if {@code deltaX} is 1, {@code deltaY} is 0 and {@code deltaZ} is 1
+		ARG 18 x0y1z1
+			COMMENT the output if {@code deltaX} is 0, {@code deltaY} is 1 and {@code deltaZ} is 1
+		ARG 20 x1y1z1
+			COMMENT the output if {@code deltaX} is 1, {@code deltaY} is 1 and {@code deltaZ} is 1
+	METHOD m_rqtbfslc lerp (DDD)D
+		ARG 0 delta
+		ARG 2 start
+		ARG 4 end
+	METHOD m_rzxxkxfg lengthSquared (DD)D
+		ARG 0 a
+		ARG 2 b
+	METHOD m_saszmoqp lengthSquared (FFF)F
+		ARG 0 a
+		ARG 1 b
+		ARG 2 c
+	METHOD m_sdwcgpaj hypot (FF)F
+	METHOD m_shkxmddf ([F)V
+		ARG 0 sineTable
+	METHOD m_snsjabxg abs (I)I
+		ARG 0 value
+	METHOD m_stantlsh outFromOrigin (III)Ljava/util/stream/IntStream;
+		ARG 0 seed
+		ARG 1 lowerBound
+		ARG 2 upperBound
+	METHOD m_stdismkb quantize (DI)I
+		ARG 0 a
+		ARG 2 b
+	METHOD m_suvgrxqe nextBetween (Lnet/minecraft/unmapped/C_rlomrsco;II)I
+		COMMENT {@return a random, uniformly distributed integer value in {@code
+		COMMENT [min, max]}}
+		COMMENT
+		COMMENT @throws IllegalArgumentException if the range is empty (i.e. {@code
+		COMMENT max < min})
+		ARG 1 min
+			COMMENT the minimum value, inclusive
+		ARG 2 max
+			COMMENT the maximum value, inclusive
+	METHOD m_swtsznrx lengthSquared (DDD)D
+		ARG 0 a
+		ARG 2 b
+		ARG 4 c
+	METHOD m_sysagypy sin (F)F
+		ARG 0 value
+	METHOD m_tpdwckwq hypot (DD)D
+		ARG 0 a
+		ARG 2 b
+	METHOD m_trjtkfjo cos (F)F
+		ARG 0 value
+	METHOD m_tyugjwcc binarySearch (IILjava/util/function/IntPredicate;)I
+		ARG 0 start
+		ARG 1 end
+		ARG 2 leftPredicate
+	METHOD m_uadmzezm nextDouble (Lnet/minecraft/unmapped/C_rlomrsco;DD)D
+		ARG 1 min
+		ARG 3 max
+	METHOD m_uekhkomr lfloor (D)J
+		ARG 0 value
+	METHOD m_ufomnffh murmurHash3Mixer (I)I
+		ARG 0 value
+	METHOD m_ufsrwvak wrap (FF)F
+		ARG 0 value
+		ARG 1 maxDeviation
+	METHOD m_ugjpuuym outFromOrigin (IIII)Ljava/util/stream/IntStream;
+		ARG 0 seed
+		ARG 1 lowerBound
+		ARG 2 upperBound
+		ARG 3 steps
+	METHOD m_uhjtpxjq isMultipleOf (II)Z
+		ARG 0 a
+		ARG 1 b
+	METHOD m_ukftcpxq ceilDiv (II)I
+		ARG 0 a
+		ARG 1 b
+	METHOD m_ursvkurt sign (D)I
+		ARG 0 value
+	METHOD m_vkfnsave randomUuid (Lnet/minecraft/unmapped/C_rlomrsco;)Ljava/util/UUID;
+	METHOD m_wbbterds floor (D)I
+		ARG 0 value
+	METHOD m_wtcosxui clamp (JJJ)J
+		ARG 0 value
+		ARG 2 max
+		ARG 4 min
+	METHOD m_xbovltrt wobble (D)D
+		ARG 0 a
+	METHOD m_ydfpyipe approximatelyEquals (DD)Z
+		ARG 0 a
+		ARG 2 b
+	METHOD m_zhlzhhym ceil (D)I
+		ARG 0 value
+	METHOD m_zjpkoqrb square (J)J
+		ARG 0 value
+	METHOD m_zswxoqgk floor (F)I
+		ARG 0 value
+	METHOD m_zwowvgdu perlinFadeDerivative (D)D
+		ARG 0 value
+	METHOD m_zxuwetet lerp (FFF)F
+		ARG 0 delta
+		ARG 1 start
+		ARG 2 end

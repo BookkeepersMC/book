@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_pbixiojr net/minecraft/util/crash/CrashMemoryReserve
+	FIELD f_rjseblhb reservedMemory [B
+	METHOD m_bweuehgg reserveMemory ()V
+	METHOD m_sippvehx releaseMemory ()V

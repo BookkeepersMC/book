@@ -1,0 +1,14 @@
+CLASS net/minecraft/unmapped/C_oudbnauu net/minecraft/entity/passive/TraderLlamaEntity
+	FIELD f_jyxcngqf despawnDelay I
+	METHOD m_cdkrybrf canDespawn ()Z
+	METHOD m_qbetekrq setDespawnDelay (I)V
+		ARG 1 despawnDelay
+	METHOD m_tmhtfymt tryDespawn ()V
+	METHOD m_vzvwybft leashedByPlayer ()Z
+	METHOD m_yuswinxs heldByTrader ()Z
+	CLASS C_neatklac DefendTraderGoal
+		FIELD f_bvcjgldc llama Lnet/minecraft/unmapped/C_jzrmkmyj;
+		FIELD f_csmytjfy traderLastAttackedTime I
+		FIELD f_taawmjoy offender Lnet/minecraft/unmapped/C_usxaxydn;
+		METHOD <init> (Lnet/minecraft/unmapped/C_jzrmkmyj;)V
+			ARG 1 llama

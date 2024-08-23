@@ -1,0 +1,31 @@
+CLASS net/minecraft/unmapped/C_krlwdsom net/minecraft/util/math/Vec2f
+	COMMENT An immutable vector composed of 2 floats.
+	FIELD f_aikhvfbk SOUTH_UNIT Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_bisxwlba EAST_UNIT Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_lmbnllws y F
+	FIELD f_lplbfwcr WEST_UNIT Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_npohzehm MAX_SOUTH_EAST Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_serpaukv ZERO Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_sskeuxtw NORTH_UNIT Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_wzabrtss SOUTH_EAST_UNIT Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_yrqoymfv MIN_SOUTH_EAST Lnet/minecraft/unmapped/C_krlwdsom;
+	FIELD f_zafgmwkm x F
+	METHOD <init> (FF)V
+		ARG 1 x
+		ARG 2 y
+	METHOD m_eqjpochp equals (Lnet/minecraft/unmapped/C_krlwdsom;)Z
+		ARG 1 other
+	METHOD m_gcgvdsyy add (Lnet/minecraft/unmapped/C_krlwdsom;)Lnet/minecraft/unmapped/C_krlwdsom;
+		ARG 1 vec
+	METHOD m_gxoltqtc length ()F
+	METHOD m_ijkkhrgf normalize ()Lnet/minecraft/unmapped/C_krlwdsom;
+	METHOD m_kmvsrtex dot (Lnet/minecraft/unmapped/C_krlwdsom;)F
+		ARG 1 vec
+	METHOD m_phpnwcfp distanceSquared (Lnet/minecraft/unmapped/C_krlwdsom;)F
+		ARG 1 vec
+	METHOD m_rqvkevya multiply (F)Lnet/minecraft/unmapped/C_krlwdsom;
+		ARG 1 value
+	METHOD m_uqzpbidh negate ()Lnet/minecraft/unmapped/C_krlwdsom;
+	METHOD m_xwdnqlvd lengthSquared ()F
+	METHOD m_yfxmmepf add (F)Lnet/minecraft/unmapped/C_krlwdsom;
+		ARG 1 value

@@ -1,0 +1,50 @@
+CLASS net/minecraft/unmapped/C_kicdatsi net/minecraft/entity/mob/GuardianEntity
+	FIELD f_bhcbsboy spikesExtensionRate F
+	FIELD f_bzfgeyqr beamTicks I
+	FIELD f_fudimhsf BEAM_TARGET_ID Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_nlzdkgvn WARMUP_TIME I
+	FIELD f_okkahlor flopping Z
+	FIELD f_qkvwvycp tailAngle F
+	FIELD f_qzfxfiav prevTailAngle F
+	FIELD f_uqzwwegr spikesExtension F
+	FIELD f_vaificwq SPIKES_RETRACTED Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_vcjehzxd cachedBeamTarget Lnet/minecraft/unmapped/C_usxaxydn;
+	FIELD f_vewledpc prevSpikesExtension F
+	FIELD f_wdojupio wanderGoal Lnet/minecraft/unmapped/C_kclhwcky;
+	METHOD m_bhgergua getBeamTicks ()F
+	METHOD m_cqciwimz getTailAngle (F)F
+		ARG 1 tickDelta
+	METHOD m_dqfzwykz getBeamTarget ()Lnet/minecraft/unmapped/C_usxaxydn;
+	METHOD m_jlcpmuhp getWarmupTime ()I
+	METHOD m_ltthhsde getFlopSound ()Lnet/minecraft/unmapped/C_avavozay;
+	METHOD m_lzfkagbb getSpikesExtension (F)F
+		ARG 1 tickDelta
+	METHOD m_mumoiqus createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_reigibud canSpawn (Lnet/minecraft/unmapped/C_ogavsvbr;Lnet/minecraft/unmapped/C_vdvbsyle;Lnet/minecraft/unmapped/C_bhyaesep;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_rlomrsco;)Z
+		ARG 0 type
+		ARG 1 world
+		ARG 3 pos
+	METHOD m_usuegexj setSpikesRetracted (Z)V
+		ARG 1 retracted
+	METHOD m_wczerzis hasBeamTarget ()Z
+	METHOD m_xscxmwfs areSpikesRetracted ()Z
+	METHOD m_xyfnhluw setBeamTarget (I)V
+		ARG 1 entityId
+	METHOD m_yiwgvges getBeamProgress (F)F
+		ARG 1 tickDelta
+	CLASS C_kifwnjxj GuardianMoveControl
+		FIELD f_olmcdkno guardian Lnet/minecraft/unmapped/C_kicdatsi;
+		METHOD <init> (Lnet/minecraft/unmapped/C_kicdatsi;)V
+			ARG 1 guardian
+	CLASS C_morshecb GuardianTargetPredicate
+		FIELD f_iwjjscxr owner Lnet/minecraft/unmapped/C_kicdatsi;
+		METHOD <init> (Lnet/minecraft/unmapped/C_kicdatsi;)V
+			ARG 1 owner
+		METHOD test test (Ljava/lang/Object;)Z
+			ARG 1 context
+	CLASS C_njpgvkgr FireBeamGoal
+		FIELD f_dbwbpovs beamTicks I
+		FIELD f_ooolfyil elder Z
+		FIELD f_wkpibopx guardian Lnet/minecraft/unmapped/C_kicdatsi;
+		METHOD <init> (Lnet/minecraft/unmapped/C_kicdatsi;)V
+			ARG 1 guardian

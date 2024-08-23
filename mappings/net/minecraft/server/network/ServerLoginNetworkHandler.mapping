@@ -1,0 +1,30 @@
+CLASS net/minecraft/unmapped/C_rktsiyfy net/minecraft/server/network/ServerLoginNetworkHandler
+	COMMENT The server login network handler.
+	COMMENT
+	COMMENT <p>It listens to packets on the netty event loop and is ticked on the
+	COMMENT server thread simultaneously.
+	COMMENT
+	COMMENT @implSpec The vanilla implementation is created by a handshake network
+	COMMENT handler. It first receives a hello packet from the client. If it is in
+	COMMENT {@linkplain MinecraftServer#isOnlineMode() online mode}, it goes through
+	COMMENT an additional authentication process. Then it optionally sends a network
+	COMMENT compression packet. Finally, when it can accept the player (no player
+	COMMENT UUID conflicts), it will accept the player by sending a login success
+	COMMENT packet and then transitions the connection's packet listener to a {@link
+	COMMENT ServerPlayNetworkHandler}.
+	FIELD f_ckpkjeza server Lnet/minecraft/server/MinecraftServer;
+	FIELD f_dosbbvgm loginTicks I
+	FIELD f_hypsreru nonce [B
+		COMMENT A nonce is a randomly generated id used in client and server communication to improve cryptographic security.
+	FIELD f_kankoaiw serverId Ljava/lang/String;
+	FIELD f_krozceue nextAuthenticatorThreadId Ljava/util/concurrent/atomic/AtomicInteger;
+	FIELD f_qcawoghx TIMEOUT_TICKS I
+	FIELD f_rnobeveb connection Lnet/minecraft/unmapped/C_oasmcckk;
+	FIELD f_vpcbiggs LOGGER Lorg/slf4j/Logger;
+	FIELD f_wbgiazuc state Lnet/minecraft/unmapped/C_rktsiyfy$C_bmkviojz;
+	METHOD m_mfmegsst disconnect (Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 reason
+	METHOD m_roysjhxy getConnectionInfo ()Ljava/lang/String;
+	CLASS C_bmkviojz State
+	CLASS C_rtixocex
+		METHOD m_kbrfjkkq getClientAddress ()Ljava/net/InetAddress;

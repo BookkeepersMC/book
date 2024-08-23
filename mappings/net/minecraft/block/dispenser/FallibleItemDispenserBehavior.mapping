@@ -1,0 +1,5 @@
+CLASS net/minecraft/unmapped/C_hptpezss net/minecraft/block/dispenser/FallibleItemDispenserBehavior
+	FIELD f_esneqxoh success Z
+	METHOD m_lqrzzjek setSuccess (Z)V
+		ARG 1 success
+	METHOD m_zhlxjsmy isSuccess ()Z

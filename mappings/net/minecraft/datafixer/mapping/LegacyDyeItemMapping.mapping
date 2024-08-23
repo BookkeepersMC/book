@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_luzhlwws net/minecraft/datafixer/mapping/LegacyDyeItemMapping
+	FIELD f_qqzbruuu MAP Ljava/util/Map;

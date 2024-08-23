@@ -1,0 +1,23 @@
+CLASS net/minecraft/unmapped/C_rghumcvt net/minecraft/util/profiler/ServerSamplerSource
+	FIELD f_mkejpnli LOGGER Lorg/slf4j/Logger;
+	FIELD f_xtpondcq samplers Ljava/util/Set;
+	FIELD f_xznymisv factory Lnet/minecraft/unmapped/C_baucttzt;
+	METHOD <init> (Ljava/util/function/LongSupplier;Z)V
+		ARG 1 nanoTimeSupplier
+		ARG 2 includeSystem
+	METHOD m_ivpcmvbq createTickTimeTracker (Ljava/util/function/LongSupplier;)Lnet/minecraft/unmapped/C_owhhojqn;
+		ARG 0 nanoTimeSupplier
+	METHOD m_jcfjwztf (Lnet/minecraft/unmapped/C_rghumcvt$C_hzrmmkdx;I)Lnet/minecraft/unmapped/C_owhhojqn;
+		ARG 1 index
+	METHOD m_vesjvpfr (Lcom/google/common/base/Stopwatch;)D
+		ARG 0 watch
+	METHOD m_xrbbqzph createSystemSamplers ()Ljava/util/Set;
+	CLASS C_hzrmmkdx CpuUsageFetcher
+		FIELD f_atpmbhug systemInfo Loshi/SystemInfo;
+		FIELD f_feqnwfdc logicalProcessorCount I
+		FIELD f_hzwqdhtb processor Loshi/hardware/CentralProcessor;
+		FIELD f_irmmurdj loadBetweenTicks [D
+		FIELD f_njirwjyh lastCheckTime J
+		FIELD f_wskwatrt loadTicks [[J
+		METHOD m_uitrgxfh getCpuUsage (I)D
+			ARG 1 index

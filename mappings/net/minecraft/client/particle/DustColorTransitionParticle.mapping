@@ -1,0 +1,22 @@
+CLASS net/minecraft/unmapped/C_tdvhvjwl net/minecraft/client/particle/DustColorTransitionParticle
+	FIELD f_ectoamwi startColor Lorg/joml/Vector3f;
+	FIELD f_icnegznf endColor Lorg/joml/Vector3f;
+	METHOD <init> (Lnet/minecraft/unmapped/C_ghdnlrrw;DDDDDDLnet/minecraft/unmapped/C_dimfwbzx;Lnet/minecraft/unmapped/C_audtngae;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 velocityX
+		ARG 10 velocityY
+		ARG 12 velocityZ
+		ARG 14 particleEffect
+		ARG 15 spriteProvider
+	METHOD m_joyimyyi lerpColors (F)V
+		ARG 1 tickDelta
+	METHOD m_wtsiwlad randomizeColor (Lorg/joml/Vector3f;F)Lorg/joml/Vector3f;
+		ARG 1 color
+		ARG 2 factor
+	CLASS C_rqphqejh Factory
+		FIELD f_nayhvddc spriteProvider Lnet/minecraft/unmapped/C_audtngae;
+		METHOD <init> (Lnet/minecraft/unmapped/C_audtngae;)V
+			ARG 1 spriteProvider

@@ -2,6 +2,8 @@
 *-merged.jar
 *-mapped.jar
 *-intermediary.jar
+*-hashed-unpicked.jar
+*-hashed.jar
 *.DS_Store
 out/
 mappings_official/
@@ -17,8 +19,6 @@ local.settings.gradle
 *.iws
 *.ipr
 *.jar
-!gradle-wrapper.jar
-*.DS_STORE
 
 # eclipse
 .eclipse

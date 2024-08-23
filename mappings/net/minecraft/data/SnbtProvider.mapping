@@ -1,0 +1,39 @@
+CLASS net/minecraft/unmapped/C_eqresdzy net/minecraft/data/SnbtProvider
+	FIELD f_hiqrrxch inputFolders Ljava/lang/Iterable;
+	FIELD f_qrnjjosw write Ljava/util/List;
+	FIELD f_quzrmcwi LOGGER Lorg/slf4j/Logger;
+	FIELD f_yphvitfu output Lnet/minecraft/unmapped/C_ugkmwocs;
+	METHOD <init> (Lnet/minecraft/unmapped/C_ugkmwocs;Ljava/lang/Iterable;)V
+		ARG 1 output
+		ARG 2 inputFolders
+	METHOD m_ctzmnbiu getFileName (Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/lang/String;
+		ARG 1 root
+		ARG 2 file
+	METHOD m_ggcdwpbs addWriter (Lnet/minecraft/unmapped/C_eqresdzy$C_oylcgojp;)Lnet/minecraft/unmapped/C_eqresdzy;
+		ARG 1 tweaker
+	METHOD m_kbgopifq write (Lnet/minecraft/unmapped/C_temnquoh;Lnet/minecraft/unmapped/C_eqresdzy$C_ftxlodxx;Ljava/nio/file/Path;)V
+		ARG 1 writer
+		ARG 2 data
+		ARG 3 root
+	METHOD m_uwkpraeu toCompressedNbt (Ljava/nio/file/Path;Ljava/lang/String;)Lnet/minecraft/unmapped/C_eqresdzy$C_ftxlodxx;
+		ARG 1 path
+		ARG 2 name
+	METHOD m_vqhnqgbr write (Ljava/lang/String;Lnet/minecraft/unmapped/C_hhlwcnih;)Lnet/minecraft/unmapped/C_hhlwcnih;
+		ARG 1 key
+		ARG 2 compound
+	METHOD m_wgwynjxu (Ljava/nio/file/Path;Lnet/minecraft/unmapped/C_temnquoh;Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 path
+	METHOD m_wreoanxe (Ljava/nio/file/Path;)Z
+		ARG 0 path
+	CLASS C_ftxlodxx CompressedData
+		FIELD f_jdczglow sha1 Lcom/google/common/hash/HashCode;
+		FIELD f_lkjrmciq bytes [B
+		FIELD f_wekxrmdc name Ljava/lang/String;
+	CLASS C_oylcgojp Tweaker
+		METHOD apply write (Ljava/lang/String;Lnet/minecraft/unmapped/C_hhlwcnih;)Lnet/minecraft/unmapped/C_hhlwcnih;
+			ARG 1 name
+			ARG 2 nbt
+	CLASS C_xfefjfgh CompressionException
+		METHOD <init> (Ljava/nio/file/Path;Ljava/lang/Throwable;)V
+			ARG 1 path
+			ARG 2 cause

@@ -1,0 +1,13 @@
+CLASS net/minecraft/unmapped/C_qvaeczgg net/minecraft/client/tutorial/FindTreeTutorialStepHandler
+	FIELD f_bdhztijs DESCRIPTION Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_edthkmub toast Lnet/minecraft/unmapped/C_fbzposnd;
+	FIELD f_huwlweck TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_xddganyu ticks I
+	FIELD f_xnovycqa DELAY I
+	FIELD f_zgvachhj manager Lnet/minecraft/unmapped/C_eqosojcf;
+	METHOD <init> (Lnet/minecraft/unmapped/C_eqosojcf;)V
+		ARG 1 manager
+	METHOD m_bizgrbna hasCompletionItem (Lnet/minecraft/unmapped/C_jlopmfei;)Z
+		ARG 0 player
+	METHOD m_vkidetxo hasBrokenTreeBlocks (Lnet/minecraft/unmapped/C_jlopmfei;)Z
+		ARG 0 player

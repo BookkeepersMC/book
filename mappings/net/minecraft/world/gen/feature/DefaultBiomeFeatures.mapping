@@ -1,0 +1,189 @@
+CLASS net/minecraft/unmapped/C_febidlri net/minecraft/world/gen/feature/DefaultBiomeFeatures
+	METHOD m_aisaryda addSwampFeatures (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_bapytldh addForestTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_cjehmwzz addUndergroundVariety (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_cjnbffbl addEmeraldOre (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_cskgsgkv addPlainsMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_cyclhaei addFrozenSprings (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_dbsbcvwr addJungleTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_dgtkqisz addBatsAndMonsters (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_djtujavt addVines (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_dlcdfzka addWarmOceanMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;II)V
+		ARG 0 builder
+		ARG 1 squidWeight
+		ARG 2 squidMinGroupSize
+	METHOD m_dvaxbdac addPlainsFeatures (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_dyprofaj addCherryGroveFeatures (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ecydqoso addSculk (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_egxxyibs addExtraDefaultFlowers (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ersygcqf addSparseJungleTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_esqxveiz addBatsAndMonstersWithSkeletonWeight (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;I)V
+		ARG 0 builder
+	METHOD m_ewtspicy addSwampVegetation (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_gehpsxxu addFrozenTopLayer (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_gidizyhi addTaigaGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_gmkrqava addDesertFeatures (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_hymvkwms addPlainsTallGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_iaqmdfeu addLessKelp (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ilagxizo addDefaultMushrooms (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ilecpzmz addMountainTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_jcfmhruq addBadlandsPlateauTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_jqbftclk addDefaultGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_jwbdjtvo addBirchTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_kdvuewph addDefaultFlowers (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_kvuhiavc addWaterBiomeOakTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_kzmbayoq addAncientDebris (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_llxdfkuq addMonsters (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;IIIZ)V
+		ARG 0 builder
+		ARG 1 zombieWeight
+		ARG 2 zombieVillagerWeight
+		ARG 3 skeletonWeight
+		ARG 4 drowned
+	METHOD m_lpnamdja addMossyRocks (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_lvpdqlqh addDripstone (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_lxsrrdnx addIcebergs (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_makwvpxl addMangroveSwampFeatures (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_mbidjpri addDungeons (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_mbxxlewb addSavannaTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_mgkcfslo addClayOre (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_mretsoij addMushroomFieldsFeatures (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_mtjlkwxj addWindsweptSavannaGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_mtmrcdnc addDefaultVegetation (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_mxdpdorv addClayDisk (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ncjnfevk addSnowyMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_ndfrnqyi addDesertVegetation (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_nicwoaxq addTallBirchTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_nsvuvryt addWindsweptForestTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_nwdmtfvg addBadlandsGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_obfgaxam addSavannaGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ofdywdsu addMeadowVegetation (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ohaerhok addSparseMelons (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ohokrkwb addTaigaTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_oitxfusc addSnowySpruceTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_orhwxqxc addOceanMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;III)V
+		ARG 0 builder
+		ARG 1 squidWeight
+		ARG 2 squidMaxGroupSize
+		ARG 3 codWeight
+	METHOD m_pbvtakcf addGroveVegetation (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_pedqqubr addJungleGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_pgznkeue addInfestedStone (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_qwzwkflm addKelp (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_riivacrq addSprings (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_rsbnixzk addMelons (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_rtuixrao addForestGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_sfbjzpyt addBadlandsVegetation (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_slovhkoh addDesertMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_snowxsxl addLushCavesDecoration (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_sumabpsi addDefaultOres (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_tavexmwk addFarmAnimals (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_uazizplo addGrassAndClayDisks (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ueeacsrj addAmethystGeodes (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_uehixppu addDripstoneCaveMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_ufcqxofu addLargeFerns (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_uhaqdfwi addJungleMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_uhzrojmo addNetherMineables (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_uxqiquny addForestFlowers (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_wbmpdfdm addDesertDeadBushes (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_wfmmnlxl addBlueIce (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_whwxyagv addBamboo (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_wktclzuv addFossils (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_wnphggux addCaveMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_wtdcqjbk addRareBerries (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_xurphuzd addEndMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_xywmfmod addMushroomMobs (Lnet/minecraft/unmapped/C_ypgfhxmz$C_ooyakwqo;)V
+		ARG 0 builder
+	METHOD m_xznhizjz addDefaultOres (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;Z)V
+		ARG 0 builder
+		ARG 1 largeCopperOreBlob
+	METHOD m_yaylwmch addGiantTaigaGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ygedhoom addCommonBerries (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ylhjlrmh addDefaultDisks (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_ylopjnhg addBambooJungleTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_zcyqfhso addExtraSavannaTrees (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_zozeqoef addExtraGoldOre (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_zvybsvqc addLandCarvers (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder
+	METHOD m_zyjhkopm addSavannaTallGrass (Lnet/minecraft/unmapped/C_qbjpvmph$C_bwxzcdhs;)V
+		ARG 0 builder

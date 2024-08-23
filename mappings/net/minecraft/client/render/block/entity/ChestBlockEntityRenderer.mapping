@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_bpftaxgr net/minecraft/client/render/block/entity/ChestBlockEntityRenderer
+	FIELD f_dgltnqed christmas Z
+	METHOD <init> (Lnet/minecraft/unmapped/C_zeyvbzzx$C_rdyueyua;)V
+		ARG 1 ctx

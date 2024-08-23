@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_kkafruck net/minecraft/loot/function/SetWrittenBookPagesLootFunction
+	FIELD f_gbmpftis CODEC Lcom/mojang/serialization/MapCodec;

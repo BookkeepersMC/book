@@ -1,0 +1,68 @@
+CLASS net/minecraft/unmapped/C_wauhtoaq net/minecraft/world/BlockLocating
+	COMMENT A few utilities to find block positions matching certain conditions.
+	METHOD m_aujefaie findColumnEnd (Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_mmxmpdoq;Lnet/minecraft/unmapped/C_xpuuihxf;Lnet/minecraft/unmapped/C_mmxmpdoq;)Ljava/util/Optional;
+		COMMENT Finds an end to a block column starting from {@code pos} extending in {@code
+		COMMENT direction}. Within the column, the block states must be of {@code intermediateBlock}
+		COMMENT and the ending block state, whose position is returned, must be of {@code endBlock}.
+		COMMENT
+		COMMENT @return the end position of the block column where a {@code endBlock} lays, or
+		COMMENT an empty optional if no such column exists
+		ARG 0 world
+			COMMENT the world the column is in
+		ARG 1 pos
+			COMMENT the starting position of the column
+		ARG 2 intermediateBlock
+			COMMENT the blocks that the column must be of, excluding the end
+		ARG 3 direction
+			COMMENT the direction which the column extends to
+		ARG 4 endBlock
+			COMMENT the ending block of the column
+	METHOD m_dncjskmz findLargestRectangle ([I)Lcom/mojang/datafixers/util/Pair;
+		COMMENT Finds the largest rectangle within a histogram, where the vertical bars each have
+		COMMENT width 1 and height specified in {@code heights}.
+		COMMENT
+		COMMENT @implNote This implementation solves the problem using a stack. The
+		COMMENT stack maintains a collection of height limits of rectangles that may grow as the
+		COMMENT array iteration continues. When a new height is encountered, each position {@code p}
+		COMMENT in the stack would be popped if the rectangle with height limit at position {@code
+		COMMENT p} can no longer extend right. The popped rectangle becomes the return value if it
+		COMMENT has a larger area than the current candidate.
+		COMMENT
+		COMMENT <p>When the rectangle area is calculated, the range is between {@code p0 + 1}, where
+		COMMENT {@code p0} is the current top of stack after popping rectangles that can no longer
+		COMMENT extend, and the current iterated position {@code i}.
+		COMMENT
+		COMMENT @return the base of the rectangle as an inclusive range and the height of the
+		COMMENT rectangle packed in a pair
+		COMMENT @see <a href="https://leetcode.com/problems/largest-rectangle-in-histogram">Largest
+		COMMENT Rectangle in Histogram - LeetCode</a>
+		ARG 0 heights
+			COMMENT the heights of bars in the histogram
+	METHOD m_rzivpene getLargestRectangle (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;ILnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;ILjava/util/function/Predicate;)Lnet/minecraft/unmapped/C_wauhtoaq$C_tqypnjit;
+		COMMENT Gets the largest rectangle of blocks along two axes for which all blocks meet a predicate.
+		COMMENT Used for getting rectangles of Nether portal blocks.
+		ARG 0 center
+		ARG 1 primaryAxis
+		ARG 2 primaryMaxBlocks
+		ARG 3 secondaryAxis
+		ARG 4 secondaryMaxBlocks
+		ARG 5 predicate
+	METHOD m_ziltyjtf moveWhile (Ljava/util/function/Predicate;Lnet/minecraft/unmapped/C_hynzadkk$C_egqitdjk;Lnet/minecraft/unmapped/C_xpuuihxf;I)I
+		ARG 0 predicate
+		ARG 1 pos
+		ARG 2 direction
+		ARG 3 max
+	CLASS C_lpfcytva IntBounds
+		FIELD f_gpaqkbpb max I
+		FIELD f_vqvysswq min I
+		METHOD <init> (II)V
+			ARG 1 min
+			ARG 2 max
+	CLASS C_tqypnjit Rectangle
+		FIELD f_itfaivds lowerLeft Lnet/minecraft/unmapped/C_hynzadkk;
+		FIELD f_uebjsbxf height I
+		FIELD f_wqkzrryd width I
+		METHOD <init> (Lnet/minecraft/unmapped/C_hynzadkk;II)V
+			ARG 1 lowerLeft
+			ARG 2 width
+			ARG 3 height

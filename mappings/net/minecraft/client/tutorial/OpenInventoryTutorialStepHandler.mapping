@@ -1,0 +1,9 @@
+CLASS net/minecraft/unmapped/C_nfzisqda net/minecraft/client/tutorial/OpenInventoryTutorialStepHandler
+	FIELD f_apqugces DESCRIPTION Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_grodnsqj manager Lnet/minecraft/unmapped/C_eqosojcf;
+	FIELD f_ohonuffv ticks I
+	FIELD f_ohyqascx TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_scxftkkg DELAY I
+	FIELD f_zcptynuv toast Lnet/minecraft/unmapped/C_fbzposnd;
+	METHOD <init> (Lnet/minecraft/unmapped/C_eqosojcf;)V
+		ARG 1 manager

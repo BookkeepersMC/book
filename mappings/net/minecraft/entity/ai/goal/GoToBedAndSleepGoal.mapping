@@ -1,0 +1,7 @@
+CLASS net/minecraft/unmapped/C_rwsgpezw net/minecraft/entity/ai/goal/GoToBedAndSleepGoal
+	COMMENT Makes a {@link CatEntity} go to a bed and sleep.
+	FIELD f_rebxejzz cat Lnet/minecraft/unmapped/C_rxtmregr;
+	METHOD <init> (Lnet/minecraft/unmapped/C_rxtmregr;DI)V
+		ARG 1 cat
+		ARG 2 speed
+		ARG 4 range

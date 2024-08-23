@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_vuwuwmyv net/minecraft/entity/ai/goal/LookAtCustomerGoal
+	FIELD f_xnwsryph merchant Lnet/minecraft/unmapped/C_vyfsmbcg;
+	METHOD <init> (Lnet/minecraft/unmapped/C_vyfsmbcg;)V
+		ARG 1 merchant

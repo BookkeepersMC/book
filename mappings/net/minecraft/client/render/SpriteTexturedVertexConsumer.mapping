@@ -1,0 +1,6 @@
+CLASS net/minecraft/unmapped/C_rylksfzf net/minecraft/client/render/SpriteTexturedVertexConsumer
+	FIELD f_gtwcnoog sprite Lnet/minecraft/unmapped/C_uflrwbwt;
+	FIELD f_jayqjpwr parent Lnet/minecraft/unmapped/C_igthdzux;
+	METHOD <init> (Lnet/minecraft/unmapped/C_igthdzux;Lnet/minecraft/unmapped/C_uflrwbwt;)V
+		ARG 1 parent
+		ARG 2 sprite

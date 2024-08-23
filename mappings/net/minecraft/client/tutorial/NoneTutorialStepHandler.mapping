@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_ubcvbymc net/minecraft/client/tutorial/NoneTutorialStepHandler
+	METHOD <init> (Lnet/minecraft/unmapped/C_eqosojcf;)V
+		ARG 1 manager

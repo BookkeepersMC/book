@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_afrevlxb net/minecraft/entity/projectile/thrown/EggEntity
+	FIELD f_yshetbat DIMENSIONS Lnet/minecraft/unmapped/C_sszpscpo;

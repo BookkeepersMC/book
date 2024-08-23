@@ -1,0 +1,20 @@
+CLASS net/minecraft/unmapped/C_hvilmtvi net/minecraft/util/math/int_provider/UniformIntProvider
+	FIELD f_etijcthw min I
+	FIELD f_fbbhichs max I
+	FIELD f_oyqrsfsz CODEC Lcom/mojang/serialization/MapCodec;
+	METHOD <init> (II)V
+		ARG 1 min
+		ARG 2 max
+	METHOD m_dncltqem (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+		ARG 0 instance
+	METHOD m_fxvtcupm (Lnet/minecraft/unmapped/C_hvilmtvi;)Ljava/lang/Integer;
+		ARG 0 provider
+	METHOD m_glbqiomv (Lnet/minecraft/unmapped/C_hvilmtvi;)Ljava/lang/Integer;
+		ARG 0 provider
+	METHOD m_icsbnsop (Lnet/minecraft/unmapped/C_hvilmtvi;)Ljava/lang/String;
+		ARG 0 provider
+	METHOD m_xgdahokp create (II)Lnet/minecraft/unmapped/C_hvilmtvi;
+		ARG 0 min
+			COMMENT the minimum value, inclusive
+		ARG 1 max
+			COMMENT the maximum value, inclusive

@@ -1,0 +1,18 @@
+CLASS net/minecraft/unmapped/C_oibiknor net/minecraft/client/gui/screen/multiplayer/report/ChatAbuseReportScreen
+	FIELD f_dgljxyga SELECT_CHAT Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_dkbznpjn selectChatMessagesButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_kphgrtaa selectCategoryButton Lnet/minecraft/unmapped/C_buwziidm;
+	FIELD f_pahddnqz TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_xscgockw commentBox Lnet/minecraft/unmapped/C_uqwspvtd;
+	METHOD <init> (Lnet/minecraft/unmapped/C_wrmtlwqx;Lnet/minecraft/unmapped/C_oxpapezz;Ljava/util/UUID;)V
+		ARG 1 parent
+		ARG 2 context
+		ARG 3 offenderUuid
+	METHOD <init> (Lnet/minecraft/unmapped/C_wrmtlwqx;Lnet/minecraft/unmapped/C_oxpapezz;Lnet/minecraft/unmapped/C_nfpruzew$C_fuqefhhd;)V
+		ARG 1 parent
+		ARG 2 context
+		ARG 3 draftBuilder
+	METHOD <init> (Lnet/minecraft/unmapped/C_wrmtlwqx;Lnet/minecraft/unmapped/C_oxpapezz;Lnet/minecraft/unmapped/C_nfpruzew;)V
+		ARG 1 parent
+		ARG 2 context
+		ARG 3 draftReport

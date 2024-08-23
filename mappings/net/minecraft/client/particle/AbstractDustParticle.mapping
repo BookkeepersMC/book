@@ -1,0 +1,5 @@
+CLASS net/minecraft/unmapped/C_fdbngqft net/minecraft/client/particle/AbstractDustParticle
+	FIELD f_zqxzbofg spriteProvider Lnet/minecraft/unmapped/C_audtngae;
+	METHOD m_ukdarogu randomizeColor (FF)F
+		ARG 1 colorComponent
+		ARG 2 factor

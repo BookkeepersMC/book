@@ -1,0 +1,174 @@
+CLASS net/minecraft/unmapped/C_axinhusn net/minecraft/entity/passive/FoxEntity
+	FIELD f_amqhoayi NOTICEABLE_PLAYER_FILTER Ljava/util/function/Predicate;
+	FIELD f_asglsdnu SLEEPING_FLAG I
+	FIELD f_bthcsxek followBabyTurtleGoal Lnet/minecraft/unmapped/C_svjebams;
+	FIELD f_codnhfpm PICKABLE_DROP_FILTER Ljava/util/function/Predicate;
+	FIELD f_dggtxvaq CHICKEN_AND_RABBIT_FILTER Ljava/util/function/Predicate;
+	FIELD f_djegkpak JUST_ATTACKED_SOMETHING_FILTER Ljava/util/function/Predicate;
+	FIELD f_fgkoqkhm headRollProgress F
+	FIELD f_geqalzye AGGRESSIVE_FLAG I
+	FIELD f_gvpwdnqm BABY_DIMENSIONS Lnet/minecraft/unmapped/C_sszpscpo;
+	FIELD f_hqimehqj CROUCHING_FLAG I
+	FIELD f_hrbsnbst TYPE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_lkqzfnlu WALKING_FLAG I
+	FIELD f_lmfkncww lastHeadRollProgress F
+	FIELD f_nmhvuowd eatingTime I
+	FIELD f_pnamnksn CHASING_FLAG I
+	FIELD f_tajwrmin extraRollingHeight F
+	FIELD f_upcmpkhx followFishGoal Lnet/minecraft/unmapped/C_svjebams;
+	FIELD f_vkugpcrl followChickenAndRabbitGoal Lnet/minecraft/unmapped/C_svjebams;
+	FIELD f_wshlzrjm OWNER Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_xuhsuger ROLLING_HEAD_FLAG I
+	FIELD f_ycsmhxsv OTHER_TRUSTED Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_ymqfryvu SITTING_FLAG I
+	FIELD f_ysgxoajz MIN_TICKS_BEFORE_EATING I
+	FIELD f_zbozchcc FOX_FLAGS Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_zxjrhxjw lastExtraRollingHeight F
+	METHOD m_apoyvjmi setCrouching (Z)V
+		ARG 1 crouching
+	METHOD m_bxzmyivn isWalking ()Z
+	METHOD m_ckfmrssi addTypeSpecificGoals ()V
+	METHOD m_clkjuklc (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 0 entity
+	METHOD m_dbqgppkh getBodyRotationHeightOffset (F)F
+		ARG 1 tickDelta
+	METHOD m_deelmhsk (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 entity
+	METHOD m_dgdyhgoz getTrustedUuids ()Ljava/util/List;
+	METHOD m_entdqhly getHeadRoll (F)F
+		ARG 1 tickDelta
+	METHOD m_feziscvb canSpawn (Lnet/minecraft/unmapped/C_ogavsvbr;Lnet/minecraft/unmapped/C_vdvbsyle;Lnet/minecraft/unmapped/C_bhyaesep;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_rlomrsco;)Z
+		ARG 0 entityType
+		ARG 1 world
+	METHOD m_hgjltjvv isFullyCrouched ()Z
+	METHOD m_hklcoapa (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 entity
+	METHOD m_hpkjnupp isJumping ()Z
+	METHOD m_iqrgnkdw spit (Lnet/minecraft/unmapped/C_sddaxwyk;)V
+		ARG 1 stack
+	METHOD m_jirgigzw createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_jznhijuk stopActions ()V
+	METHOD m_kmmmlmss isChasing ()Z
+	METHOD m_kugevoen (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 1 entity
+	METHOD m_lflxuqel setSleeping (Z)V
+		ARG 1 sleeping
+	METHOD m_ljsbiiim setSitting (Z)V
+		ARG 1 sitting
+	METHOD m_nkcqsqrd (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 1 entity
+	METHOD m_nuviczfv canJumpChase (Lnet/minecraft/unmapped/C_axinhusn;Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 0 fox
+		ARG 1 chasedEntity
+	METHOD m_onrungke canTrust (Ljava/util/UUID;)Z
+		ARG 1 uuid
+	METHOD m_pckbszlp addTrustedUuid (Ljava/util/UUID;)V
+		ARG 1 uuid
+	METHOD m_ptzfkeez dropItem (Lnet/minecraft/unmapped/C_sddaxwyk;)V
+		ARG 1 stack
+	METHOD m_rlytqius setAggressive (Z)V
+		ARG 1 aggressive
+	METHOD m_titrjoae (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 1 entity
+	METHOD m_tklrsolc (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 0 entity
+	METHOD m_uesdupqb isSitting ()Z
+	METHOD m_umwbpcmy stopSleeping ()V
+	METHOD m_uphzwtbt setWalking (Z)V
+		ARG 1 walking
+	METHOD m_vdepdtwn setChasing (Z)V
+		ARG 1 chasing
+	METHOD m_vixqmdnj (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+		ARG 1 entity
+	METHOD m_vplswkcx isAggressive ()Z
+	METHOD m_vumnkwpn getFoxFlag (I)Z
+		ARG 1 bitmask
+	METHOD m_vwosazqj (Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 0 entity
+	METHOD m_wvzovpqx (Lnet/minecraft/unmapped/C_uqpzijng;)Z
+		ARG 0 item
+	METHOD m_xkpkacqa setRollingHead (Z)V
+		ARG 1 rollingHead
+	METHOD m_xvobopah setFoxFlag (IZ)V
+		ARG 1 mask
+		ARG 2 value
+	METHOD m_yhanyshv isRollingHead ()Z
+	METHOD m_znqnotjf wantsToPickupItem ()Z
+	METHOD m_zosfjimu canEat (Lnet/minecraft/unmapped/C_sddaxwyk;)Z
+		ARG 1 stack
+	CLASS C_aakhyhdo AvoidDaylightGoal
+		FIELD f_dtgblxgc timer I
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;D)V
+			ARG 2 speed
+	CLASS C_adjjpwui CalmDownGoal
+		FIELD f_plknyjwi worriableEntityPredicate Lnet/minecraft/unmapped/C_cjtyhinh;
+		METHOD m_fuimoqqy canCalmDown ()Z
+		METHOD m_hzdxsxyl isAtFavoredLocation ()Z
+	CLASS C_clucitvs FoxLookControl
+	CLASS C_cwkbtmvo FoxMoveControl
+	CLASS C_eclzhatf StopWanderingGoal
+		FIELD f_hydiykel timer I
+	CLASS C_ffhqzlak LookAtEntityGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;Lnet/minecraft/unmapped/C_dxkfswlz;Ljava/lang/Class;F)V
+			ARG 2 fox
+			ARG 3 targetType
+			ARG 4 range
+	CLASS C_gxstbxth MoveToHuntGoal
+	CLASS C_igimvwxj SitDownAndLookAroundGoal
+		FIELD f_cfujkpgl timer I
+		FIELD f_euuijspw lookX D
+		FIELD f_fzjocwam counter I
+		FIELD f_mwctevcu lookZ D
+		METHOD m_vctwvwhq chooseNewAngle ()V
+	CLASS C_iksflemu FoxData
+	CLASS C_jdyjcdzs PickBerriesGoal
+		FIELD f_cfkermxf PICKING_TIME I
+		FIELD f_sojxnnoc timer I
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;DII)V
+			ARG 2 speed
+			ARG 4 range
+			ARG 5 maxYDifference
+		METHOD m_kqvohfdd pickSweetBerries (Lnet/minecraft/unmapped/C_txtbiemp;)V
+			ARG 1 state
+		METHOD m_olxxahnm pickFromTargetPos ()V
+		METHOD m_reorjyif pickGlowBerries (Lnet/minecraft/unmapped/C_txtbiemp;)V
+			ARG 1 state
+	CLASS C_kskljxuh GoToVillageGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;II)V
+			ARG 2 unused
+			ARG 3 searchRange
+		METHOD m_ybdndknh canGoToVillage ()Z
+	CLASS C_ltmnwswv PickupItemGoal
+	CLASS C_mktkzdsx WorriableEntityFilter
+		METHOD test test (Ljava/lang/Object;)Z
+			ARG 1 entity
+	CLASS C_mxvacxrr FollowParentGoal
+		FIELD f_xugptyzv fox Lnet/minecraft/unmapped/C_axinhusn;
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;Lnet/minecraft/unmapped/C_axinhusn;D)V
+			ARG 2 fox
+			ARG 3 speed
+	CLASS C_nmtdsyun DelayedCalmDownGoal
+		FIELD f_hwyxfxje MAX_CALM_DOWN_TIME I
+		FIELD f_wyordxwx timer I
+		METHOD m_hkhrxbst canNotCalmDown ()Z
+	CLASS C_oqqulucz MateGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;D)V
+			ARG 2 chance
+	CLASS C_qzrtkgez AttackGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;DZ)V
+			ARG 2 speed
+			ARG 4 pauseWhenIdle
+	CLASS C_svjjmusz EscapeWhenNotAggressiveGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;D)V
+			ARG 2 speed
+	CLASS C_uvxwkckj JumpChasingGoal
+	CLASS C_xspknwps DefendFriendGoal
+		FIELD f_cxrgoteq offender Lnet/minecraft/unmapped/C_usxaxydn;
+		FIELD f_yqkhdwnm friend Lnet/minecraft/unmapped/C_usxaxydn;
+		FIELD f_zxicdtwr lastAttackedTime I
+		METHOD <init> (Lnet/minecraft/unmapped/C_axinhusn;Ljava/lang/Class;ZZLjava/util/function/Predicate;)V
+			ARG 2 targetEntityClass
+			ARG 3 checkVisibility
+			ARG 4 checkCanNavigate
+			ARG 5 targetPredicate
+	CLASS C_ykvuwckl FoxSwimGoal

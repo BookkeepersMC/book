@@ -1,0 +1,17 @@
+CLASS net/minecraft/unmapped/C_berirjmt net/minecraft/entity/ai/goal/CrossbowAttackGoal
+	FIELD f_aewvowpv stage Lnet/minecraft/unmapped/C_berirjmt$C_rvyqludm;
+	FIELD f_brzozven actor Lnet/minecraft/unmapped/C_hlqarogo;
+	FIELD f_cjgkddsw chargedTicksLeft I
+	FIELD f_djzjvrcd speed D
+	FIELD f_grwxlkhh cooldown I
+	FIELD f_kfbjbldx seeingTargetTicker I
+	FIELD f_rhechjkh squaredRange F
+	FIELD f_ssmwixym COOLDOWN_RANGE Lnet/minecraft/unmapped/C_hvilmtvi;
+	METHOD <init> (Lnet/minecraft/unmapped/C_hlqarogo;DF)V
+		ARG 1 actor
+		ARG 2 speed
+		ARG 4 range
+	METHOD m_kudvpuha isUncharged ()Z
+	METHOD m_lylzuiwv isEntityHoldingCrossbow ()Z
+	METHOD m_qlwnprpp hasAliveTarget ()Z
+	CLASS C_rvyqludm Stage

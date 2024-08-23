@@ -1,0 +1,97 @@
+CLASS net/minecraft/unmapped/C_csjwlqja net/minecraft/command/TranslatableBuiltInExceptions
+	FIELD f_btidtrna DISPATCHER_UNKNOWN_COMMAND Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_cygqxcfs READER_INVALID_INT Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_daeibreu DOUBLE_TOO_HIGH Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_dbztpxlm READER_EXPECTED_INT Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_gsejhxpz INTEGER_TOO_HIGH Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_hcozuavq LITERAL_INCORRECT Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_ixtlqneu DISPATCHER_PARSE_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_jemupkcd READER_INVALID_BOOL Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_jibxrhhn FLOAT_TOO_LOW Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_knqeaack READER_INVALID_FLOAT Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_kwkojrqf LONG_TOO_HIGH Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_kxdrqmzq READER_EXPECTED_DOUBLE Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_oprsrohu FLOAT_TOO_HIGH Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_piwzegrr DISPATCHER_EXPECTED_ARGUMENT_SEPARATOR Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_pjmxcdmr DISPATCHER_UNKNOWN_ARGUMENT Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_ppobkelu READER_EXPECTED_LONG Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_qhlrbfug READER_EXPECTED_FLOAT Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_qvmxyvie READER_EXPECTED_START_QUOTE Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_szcfmxye READER_EXPECTED_SYMBOL Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_tebawrpz READER_EXPECTED_END_QUOTE Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_tkgkiiyd DOUBLE_TOO_LOW Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_tnbummby READER_EXPECTED_BOOL Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_tveopmqx LONG_TOO_LOW Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_uythivxj INTEGER_TOO_LOW Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_xuvvciiw READER_INVALID_ESCAPE Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_yihgtfrk READER_INVALID_LONG Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_ymsspwlt READER_INVALID_DOUBLE Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD dispatcherExpectedArgumentSeparator dispatcherExpectedArgumentSeparator ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD dispatcherParseException dispatcherParseException ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD dispatcherUnknownArgument dispatcherUnknownArgument ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD dispatcherUnknownCommand dispatcherUnknownCommand ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD doubleTooHigh doubleTooHigh ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD doubleTooLow doubleTooLow ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD floatTooHigh floatTooHigh ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD floatTooLow floatTooLow ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD integerTooHigh integerTooHigh ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD integerTooLow integerTooLow ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD literalIncorrect literalIncorrect ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD longTooHigh longTooHigh ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD longTooLow longTooLow ()Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	METHOD m_acepvjom (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 expected
+	METHOD m_atcctruk (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 min
+	METHOD m_bdwamnrq (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 min
+	METHOD m_gjcbytpc (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 value
+	METHOD m_gzwkqmzb (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 min
+	METHOD m_ilmpmlew (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 max
+	METHOD m_jlkotdja (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 max
+	METHOD m_jxsuupjp (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 symbol
+	METHOD m_kebgncvd (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 max
+	METHOD m_llpuyroo (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 max
+	METHOD m_ojjsjunn (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 character
+	METHOD m_okjetrwd (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 value
+	METHOD m_ovntubky (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 value
+	METHOD m_phngopgh (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 value
+	METHOD m_svkliwrx (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 message
+	METHOD m_syldvhxx (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 value
+	METHOD m_vbsthvsq (Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 found
+		ARG 1 min
+	METHOD readerExpectedBool readerExpectedBool ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD readerExpectedDouble readerExpectedDouble ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD readerExpectedEndOfQuote readerExpectedEndOfQuote ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD readerExpectedFloat readerExpectedFloat ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD readerExpectedInt readerExpectedInt ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD readerExpectedLong readerExpectedLong ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD readerExpectedStartOfQuote readerExpectedStartOfQuote ()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD readerExpectedSymbol readerExpectedSymbol ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD readerInvalidBool readerInvalidBool ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD readerInvalidDouble readerInvalidDouble ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD readerInvalidEscape readerInvalidEscape ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD readerInvalidFloat readerInvalidFloat ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD readerInvalidInt readerInvalidInt ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	METHOD readerInvalidLong readerInvalidLong ()Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;

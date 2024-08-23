@@ -1,0 +1,45 @@
+CLASS net/minecraft/unmapped/C_krpwsfph net/minecraft/recipe/book/RecipeBookOptions
+	FIELD f_njcmqnpr categoryOptions Ljava/util/Map;
+	FIELD f_poeuzclv CATEGORY_OPTION_NAMES Ljava/util/Map;
+	METHOD <init> (Ljava/util/Map;)V
+		ARG 1 categoryOptions
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 o
+	METHOD m_ajpxqznn copyFrom (Lnet/minecraft/unmapped/C_krpwsfph;)V
+		ARG 1 other
+	METHOD m_bzrcupjc copy ()Lnet/minecraft/unmapped/C_krpwsfph;
+	METHOD m_dzigyanj isGuiOpen (Lnet/minecraft/unmapped/C_mrybqpjh;)Z
+		ARG 1 category
+	METHOD m_fcqervdh setFilteringCraftable (Lnet/minecraft/unmapped/C_mrybqpjh;Z)V
+		ARG 1 category
+		ARG 2 filtering
+	METHOD m_hczbocxd (Ljava/util/EnumMap;)V
+		ARG 0 categories
+	METHOD m_lcagcrlp isFilteringCraftable (Lnet/minecraft/unmapped/C_mrybqpjh;)Z
+		ARG 1 category
+	METHOD m_negegmrg (Lnet/minecraft/unmapped/C_hhlwcnih;Lnet/minecraft/unmapped/C_mrybqpjh;Lcom/mojang/datafixers/util/Pair;)V
+		ARG 2 category
+		ARG 3 optionName
+	METHOD m_ngtqehdg fromPacket (Lnet/minecraft/unmapped/C_idfydwco;)Lnet/minecraft/unmapped/C_krpwsfph;
+		ARG 0 buf
+	METHOD m_onqqialn writeNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)V
+		ARG 1 nbt
+	METHOD m_rptsylcm setGuiOpen (Lnet/minecraft/unmapped/C_mrybqpjh;Z)V
+		ARG 1 category
+		ARG 2 open
+	METHOD m_xkgndgfy toPacket (Lnet/minecraft/unmapped/C_idfydwco;)V
+		ARG 1 buf
+	METHOD m_xqcerlpp fromNbt (Lnet/minecraft/unmapped/C_hhlwcnih;)Lnet/minecraft/unmapped/C_krpwsfph;
+		ARG 0 nbt
+	METHOD m_ztswgrjg (Lnet/minecraft/unmapped/C_hhlwcnih;Ljava/util/Map;Lnet/minecraft/unmapped/C_mrybqpjh;Lcom/mojang/datafixers/util/Pair;)V
+		ARG 2 category
+		ARG 3 optionName
+	CLASS C_rkomjauh CategoryOption
+		FIELD f_glutztkc guiOpen Z
+		FIELD f_sdlacksr filteringCraftable Z
+		METHOD <init> (ZZ)V
+			ARG 1 guiOpen
+			ARG 2 filteringCraftable
+		METHOD equals (Ljava/lang/Object;)Z
+			ARG 1 o
+		METHOD m_opqsdkjc copy ()Lnet/minecraft/unmapped/C_krpwsfph$C_rkomjauh;

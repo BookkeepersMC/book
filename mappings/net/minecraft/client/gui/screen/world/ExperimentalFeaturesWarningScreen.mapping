@@ -1,0 +1,39 @@
+CLASS net/minecraft/unmapped/C_izmmmufl net/minecraft/client/gui/screen/world/ExperimentalFeaturesWarningScreen
+	FIELD f_apndztre DETAILS_BUTTON_WIDTH I
+	FIELD f_ekmphubq enabledProfiles Ljava/util/Collection;
+	FIELD f_hhwjhlro DETAILS Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_hvcxujdc grid Lnet/minecraft/unmapped/C_qykucwmu;
+	FIELD f_tvjqwvsj MESSAGE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_ylprwrzy COLUMN_SPACING I
+	FIELD f_zkxnzcui proceedConsumer Lit/unimi/dsi/fastutil/booleans/BooleanConsumer;
+	FIELD f_zsttfguy TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD <init> (Ljava/util/Collection;Lit/unimi/dsi/fastutil/booleans/BooleanConsumer;)V
+		ARG 1 enabledProfiles
+		ARG 2 proceedConsumer
+	METHOD m_apiskvws (Lnet/minecraft/unmapped/C_izmmmufl;Lnet/minecraft/unmapped/C_fxiqpxaf;)V
+		ARG 1 widget
+	METHOD m_dmesyigj (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_rzlwdqle (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_xhjsnkms (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	CLASS C_dfoshvlj DetailsScreen
+		FIELD f_isfotgxv requirementList Lnet/minecraft/unmapped/C_izmmmufl$C_dfoshvlj$C_zqevpxbc;
+		FIELD f_kgednjuh TITLE Lnet/minecraft/unmapped/C_rdaqiwdt;
+		FIELD f_mzbzedkv layout Lnet/minecraft/unmapped/C_cqroimpa;
+		METHOD m_pmemfnqq (Lnet/minecraft/unmapped/C_buwziidm;)V
+			ARG 1 button
+		METHOD m_qgedemlw (Lnet/minecraft/unmapped/C_izmmmufl$C_dfoshvlj;Lnet/minecraft/unmapped/C_fxiqpxaf;)V
+			ARG 1 widgets
+		CLASS C_tvsrziaq RequirementEntry
+			FIELD f_iiayjonx profileName Lnet/minecraft/unmapped/C_rdaqiwdt;
+			FIELD f_lvteccvd message Lnet/minecraft/unmapped/C_ogfbkizf;
+			FIELD f_wqgxqbta requirementsDescriptionText Lnet/minecraft/unmapped/C_rdaqiwdt;
+			METHOD <init> (Lnet/minecraft/unmapped/C_izmmmufl$C_dfoshvlj;Lnet/minecraft/unmapped/C_rdaqiwdt;Lnet/minecraft/unmapped/C_rdaqiwdt;Lnet/minecraft/unmapped/C_ogfbkizf;)V
+				ARG 2 profileName
+				ARG 3 requirementsDescriptionText
+				ARG 4 message
+		CLASS C_zqevpxbc RequirementListWidget
+			METHOD <init> (Lnet/minecraft/unmapped/C_izmmmufl$C_dfoshvlj;Lnet/minecraft/unmapped/C_ayfeobid;Ljava/util/Collection;)V
+				ARG 3 enabledFeatures

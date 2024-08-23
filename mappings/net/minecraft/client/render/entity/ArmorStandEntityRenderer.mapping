@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_smwqqwls net/minecraft/client/render/entity/ArmorStandEntityRenderer
+	FIELD f_yemqlmmo TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;

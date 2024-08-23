@@ -1,0 +1,18 @@
+CLASS net/minecraft/unmapped/C_zacowvjg net/minecraft/entity/ai/goal/MoveThroughVillageGoal
+	FIELD f_bgcqomst mob Lnet/minecraft/unmapped/C_hqdayibh;
+	FIELD f_filvpiou requiresNighttime Z
+	FIELD f_fsiyuwoc doorPassingThroughGetter Ljava/util/function/BooleanSupplier;
+	FIELD f_jntcxszl distance I
+	FIELD f_lcruinxe targetPath Lnet/minecraft/unmapped/C_motipebf;
+	FIELD f_mrchswac visitedTargets Ljava/util/List;
+	FIELD f_nwnooxdy target Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_waxbljze speed D
+	METHOD <init> (Lnet/minecraft/unmapped/C_hqdayibh;DZILjava/util/function/BooleanSupplier;)V
+		ARG 1 entity
+		ARG 2 speed
+		ARG 4 requiresNighttime
+		ARG 5 distance
+		ARG 6 doorPassingThroughGetter
+	METHOD m_yyuvplhd forgetOldTarget ()V
+	METHOD m_zisqnpld shouldVisit (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos

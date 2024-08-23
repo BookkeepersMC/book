@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_vdekpmep net/minecraft/client/sound/MovingSoundInstance
+	FIELD f_tdmxcqcz done Z
+	METHOD m_nwzflmmw setDone ()V

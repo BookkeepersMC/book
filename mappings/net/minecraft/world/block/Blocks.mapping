@@ -1,5 +1,0 @@
-CLASS net/minecraft/unmapped/C_jricjyva net/minecraft/world/block/Blocks
-	METHOD m_ghajpyfj register (Lnet/minecraft/unmapped/C_xhhleach;Lnet/minecraft/unmapped/C_mmxmpdoq;)Lnet/minecraft/unmapped/C_mmxmpdoq;
-		ARG 0 resourceKey
-		ARG 1 block
-	METHOD m_mjiljkwg register (Ljava/lang/String;Lnet/minecraft/unmapped/C_mmxmpdoq;)Lnet/minecraft/unmapped/C_mmxmpdoq;

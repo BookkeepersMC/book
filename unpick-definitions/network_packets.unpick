@@ -1,0 +1,43 @@
+v2
+
+constant s2c_animation_id net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket SWING_MAIN_HAND
+# constant s2c_animation_id net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket DAMAGE
+constant s2c_animation_id net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket WAKE_UP
+constant s2c_animation_id net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket SWING_OFF_HAND
+constant s2c_animation_id net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket CRIT
+constant s2c_animation_id net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket ENCHANTED_HIT
+
+target_method net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket <init> (Lnet/minecraft/entity/Entity;I)V
+	param 1 s2c_animation_id
+target_method net/minecraft/network/packet/s2c/play/EntityAnimationS2CPacket getAnimationId ()I
+	return s2c_animation_id
+
+constant s2c_scoreboard_objective_update_mode net/minecraft/network/packet/s2c/play/ScoreboardObjectiveUpdateS2CPacket ADD_MODE
+constant s2c_scoreboard_objective_update_mode net/minecraft/network/packet/s2c/play/ScoreboardObjectiveUpdateS2CPacket REMOVE_MODE
+constant s2c_scoreboard_objective_update_mode net/minecraft/network/packet/s2c/play/ScoreboardObjectiveUpdateS2CPacket UPDATE_MODE
+
+target_method net/minecraft/network/packet/s2c/play/ScoreboardObjectiveUpdateS2CPacket <init> (Lnet/minecraft/scoreboard/ScoreboardObjective;I)V
+	param 1 s2c_scoreboard_objective_update_mode
+target_method net/minecraft/network/packet/s2c/play/ScoreboardObjectiveUpdateS2CPacket getMode ()I
+	return s2c_scoreboard_objective_update_mode
+
+constant s2c_team_packet_type net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket ADD
+constant s2c_team_packet_type net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket REMOVE
+constant s2c_team_packet_type net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket UPDATE
+constant s2c_team_packet_type net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket ADD_PLAYERS
+constant s2c_team_packet_type net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket REMOVE_PLAYERS
+
+target_method net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket <init> (Ljava/lang/String;ILjava/util/Optional;Ljava/util/Collection;)V
+	param 1 s2c_team_packet_type
+target_method net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket containsPlayers (I)Z
+	param 0 s2c_team_packet_type
+target_method net/minecraft/network/packet/s2c/play/TeamUpdateS2CPacket containsTeamInfo (I)Z
+	param 0 s2c_team_packet_type
+
+constant s2c_player_respawn_packet_type net/minecraft/network/packet/s2c/play/PlayerRespawnS2CPacket KEEP_TRACKED_DATA
+constant s2c_player_respawn_packet_type net/minecraft/network/packet/s2c/play/PlayerRespawnS2CPacket KEEP_ALL_DATA
+
+target_method net/minecraft/network/packet/s2c/play/PlayerRespawnS2CPacket <init> (Lnet/minecraft/registry/RegistryKey;Lnet/minecraft/registry/RegistryKey;JLnet/minecraft/world/GameMode;Lnet/minecraft/world/GameMode;ZZBLjava/util/Optional;)V
+	param 8 s2c_player_respawn_packet_type
+target_method net/minecraft/network/packet/s2c/play/PlayerRespawnS2CPacket shouldKeep (B)Z
+	param 0 s2c_player_respawn_packet_type

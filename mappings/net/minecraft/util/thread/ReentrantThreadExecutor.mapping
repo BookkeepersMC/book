@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_ouxsrczi net/minecraft/util/thread/ReentrantThreadExecutor
+	FIELD f_uadymwow runningTasks I
+	METHOD m_kvmbnuwk hasRunningTasks ()Z

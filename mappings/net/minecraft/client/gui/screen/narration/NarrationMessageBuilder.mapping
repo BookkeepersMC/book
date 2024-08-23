@@ -1,0 +1,14 @@
+CLASS net/minecraft/unmapped/C_pofrkllk net/minecraft/client/gui/screen/narration/NarrationMessageBuilder
+	METHOD m_akhvrbyz nextMessage ()Lnet/minecraft/unmapped/C_pofrkllk;
+	METHOD m_djdkfjkm put (Lnet/minecraft/unmapped/C_obsnauqw;[Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 part
+		ARG 2 texts
+	METHOD m_fvaqnbuj put (Lnet/minecraft/unmapped/C_obsnauqw;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 part
+		ARG 2 text
+	METHOD m_koftoxst put (Lnet/minecraft/unmapped/C_obsnauqw;Lnet/minecraft/unmapped/C_gblvuxst;)V
+		ARG 1 part
+		ARG 2 narration
+	METHOD m_zrssibld put (Lnet/minecraft/unmapped/C_obsnauqw;Ljava/lang/String;)V
+		ARG 1 part
+		ARG 2 string

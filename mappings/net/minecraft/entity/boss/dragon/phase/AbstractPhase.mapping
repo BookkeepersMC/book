@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_tvjrjzhk net/minecraft/entity/boss/dragon/phase/AbstractPhase
+	FIELD f_ebqqiwtl dragon Lnet/minecraft/unmapped/C_bsmypcfq;
+	METHOD <init> (Lnet/minecraft/unmapped/C_bsmypcfq;)V
+		ARG 1 dragon

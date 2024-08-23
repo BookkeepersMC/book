@@ -1,0 +1,64 @@
+CLASS net/minecraft/unmapped/C_bgmbcwaf net/minecraft/block/entity/EndGatewayBlockEntity
+	FIELD f_clvbweur COOLDOWN_TIME I
+	FIELD f_hbueogow age J
+	FIELD f_lyxdrqew exactTeleport Z
+	FIELD f_qbzfuobf COOLDOWN_EVENT I
+	FIELD f_qtxslrtb SPAWN_TIME I
+	FIELD f_rrsolgpd LOGGER Lorg/slf4j/Logger;
+	FIELD f_tpapkeob HEIGHT_ABOVE_SURFACE I
+	FIELD f_ugqemgmn ATTENTION_INTERVAL I
+	FIELD f_wdxicond teleportCooldown I
+	FIELD f_znnzlcll exitPortalPos Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_aewxjlqe findPortalPosition (Lnet/minecraft/unmapped/C_hrdsvlkq;)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 0 chunk
+	METHOD m_cccmfxop getDrawnSidesCount ()I
+	METHOD m_dsqgudra clientTick (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_bgmbcwaf;)V
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 blockEntity
+	METHOD m_fmaveoqp needsCooldownBeforeTeleporting ()Z
+	METHOD m_hazuhcrl findBestPortalExitPos (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 0 world
+		ARG 1 pos
+	METHOD m_htdftwth findTeleportLocation (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 world
+		ARG 1 pos
+	METHOD m_iwnaxgez getCooldownBeamHeight (F)F
+		ARG 1 tickDelta
+	METHOD m_ptgiamju getRecentlyGeneratedBeamHeight (F)F
+		ARG 1 tickDelta
+	METHOD m_qgfzwwrv findExitPortalPos (Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;IZ)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 searchRadius
+		ARG 3 force
+	METHOD m_rmqpnxol setExitPortalPos (Lnet/minecraft/unmapped/C_hynzadkk;Z)V
+		ARG 1 pos
+		ARG 2 exactTeleport
+	METHOD m_ryvrsnee serverTick (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_bgmbcwaf;)V
+	METHOD m_shfarbmg createExitPortalIfAbsent (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_tkkmaceb setupExitPortalLocation (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_hynzadkk;
+		COMMENT Finds teleport location and creates an island to teleport to (if there is none).
+		COMMENT
+		COMMENT <p>This does not create an exit portal.
+		COMMENT
+		COMMENT @return the position of the exit portal
+		ARG 0 world
+		ARG 1 pos
+	METHOD m_wsrvmxvm createPortal (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_vdnsyoda;)V
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 config
+	METHOD m_yqvjfxsl getChunk (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_vgpupfxx;)Lnet/minecraft/unmapped/C_hrdsvlkq;
+		ARG 0 world
+		ARG 1 pos
+	METHOD m_yxhsfmzd startTeleportCooldown (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_bgmbcwaf;)V
+		ARG 0 world
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 blockEntity
+	METHOD m_ztjapuok isRecentlyGenerated ()Z
+	METHOD m_zubceewm isChunkEmpty (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_vgpupfxx;)Z
+		ARG 0 world
+		ARG 1 pos

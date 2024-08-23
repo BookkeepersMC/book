@@ -1,0 +1,70 @@
+CLASS net/minecraft/unmapped/C_wepsgefi net/minecraft/entity/mob/ShulkerEntity
+	FIELD f_cezsikwb prevOpenProgress F
+	FIELD f_faxfphpy NO_COLOR B
+	FIELD f_fwpmtaxc MAX_TELEPORT_DISTANCE I
+	FIELD f_gvaaancy PEEK_CHANCE_PER_TICK F
+	FIELD f_hlyfzsza teleportLerpTimer I
+	FIELD f_hxfmsvrp TELEPORT_STEPS I
+	FIELD f_kdytjkmi ATTACHED_FACE Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_mcgjemru MAX_SCALE F
+	FIELD f_nhqhcoaz NEARBY_SHULKER_SCAN_RADIUS I
+	FIELD f_odaehnvp prevAttachedBlock Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_ouwpbtua COVERED_ARMOR_MODIFIER_ID Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_qyhdlubn PEEK_AMOUNT Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_rhlsurhw FORWARD Lorg/joml/Vector3f;
+	FIELD f_sxhxgvpw DEFAULT_COLOR B
+	FIELD f_tdqqxmxs openProgress F
+	FIELD f_twtbkvow COLOR Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_yecffwtx COVERED_ARMOR_BONUS Lnet/minecraft/unmapped/C_hdbqsqsm;
+	FIELD f_yejiwmfa MAX_NEARBY_SHULKERS_FOR_REPRODUCTION I
+	FIELD f_zdllrwfz MAX_SHELL_OPEN_DISTANCE F
+	METHOD m_agmrwfit createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_aipehzdv getOpeningDeltaBoundingBox (FLnet/minecraft/unmapped/C_xpuuihxf;FF)Lnet/minecraft/unmapped/C_hbcjzgoe;
+		ARG 0 scale
+		ARG 1 direction
+		ARG 2 prevExtraLength
+		ARG 3 extraLength
+	METHOD m_bcbqzxod getAttachedFace ()Lnet/minecraft/unmapped/C_xpuuihxf;
+	METHOD m_bzwsabfi spawnNewShulker ()V
+	METHOD m_cuftthil findAttachSide (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 1 pos
+	METHOD m_ghizitzm getPhysicalPeak (F)F
+		ARG 0 openProgress
+	METHOD m_hqsastbf getOpeningBoundingBox (FLnet/minecraft/unmapped/C_xpuuihxf;F)Lnet/minecraft/unmapped/C_hbcjzgoe;
+		ARG 1 direction
+	METHOD m_jcmqjrtu setAttachedFace (Lnet/minecraft/unmapped/C_xpuuihxf;)V
+		ARG 1 face
+	METHOD m_kuzlyboe setPeekAmount (I)V
+		ARG 1 peekAmount
+	METHOD m_lmhywaga tryAttachOrTeleport ()V
+	METHOD m_munteupc tickOpenProgress ()Z
+	METHOD m_nbdtojoo getRenderPosition (F)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 1 tickDelta
+	METHOD m_nnaejkue getColor ()Lnet/minecraft/unmapped/C_arllgqae;
+	METHOD m_nqxiwxry isPosBlocked (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	METHOD m_rmuameyg canStay (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_xpuuihxf;)Z
+		ARG 1 pos
+		ARG 2 direction
+	METHOD m_rrdultpy isClosed ()Z
+	METHOD m_rufuhovj moveEntities ()V
+	METHOD m_ujepgyyt getOpenProgress (F)F
+		ARG 1 delta
+	METHOD m_xqlguhxm getPeekAmount ()I
+	METHOD m_yjhdxjbh tryTeleport ()Z
+	CLASS C_chkjxtwk SearchForTargetGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_wepsgefi;)V
+			ARG 1 shulker
+		METHOD m_dwifyyhk (Lnet/minecraft/unmapped/C_usxaxydn;)Z
+			ARG 0 entity
+	CLASS C_eyklszke ShootBulletGoal
+		FIELD f_kepzslpk counter I
+	CLASS C_mprelmxf PeekGoal
+		FIELD f_fyicljkm counter I
+	CLASS C_mtkuqvnr ShulkerLookControl
+		METHOD <init> (Lnet/minecraft/unmapped/C_wepsgefi;Lnet/minecraft/unmapped/C_dxkfswlz;)V
+			ARG 2 shulker
+	CLASS C_wfmkqzyh ShulkerBodyControl
+	CLASS C_xjygsmdl SearchForPlayerGoal
+		METHOD <init> (Lnet/minecraft/unmapped/C_wepsgefi;Lnet/minecraft/unmapped/C_wepsgefi;)V
+			ARG 2 shulker

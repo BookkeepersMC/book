@@ -1,0 +1,17 @@
+CLASS net/minecraft/unmapped/C_kecucmvl net/minecraft/entity/ai/pathing/BirdPathNodeMaker
+	FIELD f_tcepxjuk pathNodes Lit/unimi/dsi/fastutil/longs/Long2ObjectMap;
+	FIELD f_tlrxvkdu MAX_START_NODE_CANDIDATES I
+	FIELD f_wayteepi START_NODE_BOUNDING_BOX F
+	FIELD f_wztobvqo SMALL_MOB_SIZE F
+	METHOD m_jloioycg unvisited (Lnet/minecraft/unmapped/C_dfzwsdmo;)Z
+		ARG 1 node
+	METHOD m_nhekcwle getSuccessorNode (III)Lnet/minecraft/unmapped/C_dfzwsdmo;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD m_tuuwxhth isPassable (Lnet/minecraft/unmapped/C_dfzwsdmo;)Z
+		ARG 1 node
+	METHOD m_ugfyngjc getStartNodeCandidatePositions (Lnet/minecraft/unmapped/C_dxkfswlz;)Ljava/lang/Iterable;
+		ARG 1 entity
+	METHOD m_vlfzxafq (IIIJ)Lnet/minecraft/unmapped/C_hahxxnjs;
+		ARG 4 l

@@ -1,0 +1,31 @@
+CLASS net/minecraft/unmapped/C_fiyglykq net/minecraft/entity/mob/SpellcastingIllagerEntity
+	FIELD f_fukdxhio spellTicks I
+	FIELD f_gkkjpjwa spell Lnet/minecraft/unmapped/C_fiyglykq$C_rjdfyixx;
+	FIELD f_vkvffaot SPELL Lnet/minecraft/unmapped/C_rinmcaxy;
+	METHOD m_dashmqip isSpellcasting ()Z
+	METHOD m_foojocrc setSpell (Lnet/minecraft/unmapped/C_fiyglykq$C_rjdfyixx;)V
+		ARG 1 spell
+	METHOD m_mdixyail getCastSpellSound ()Lnet/minecraft/unmapped/C_avavozay;
+	METHOD m_pxtmaehq getSpellTicks ()I
+	METHOD m_qmkqamaq getSpell ()Lnet/minecraft/unmapped/C_fiyglykq$C_rjdfyixx;
+	CLASS C_qqhxalfq LookAtTargetGoal
+	CLASS C_reeqgcqi CastSpellGoal
+		FIELD f_btzvkzxe spellCooldown I
+		FIELD f_rphgyqil startTime I
+		METHOD m_hfhyylhz getSoundPrepare ()Lnet/minecraft/unmapped/C_avavozay;
+		METHOD m_kvgmeikr startTimeDelay ()I
+		METHOD m_pztkrrhy castSpell ()V
+		METHOD m_rqijbxdk getSpellTicks ()I
+		METHOD m_yyktoojy getInitialCooldown ()I
+		METHOD m_zttbpiyu getSpell ()Lnet/minecraft/unmapped/C_fiyglykq$C_rjdfyixx;
+	CLASS C_rjdfyixx Spell
+		FIELD f_aosxruav id I
+		FIELD f_wpzgaove FROM_ID Ljava/util/function/IntFunction;
+		FIELD f_yhkyqorl particleVelocity [D
+		METHOD <init> (Ljava/lang/String;IIDDD)V
+			ARG 3 id
+			ARG 4 particleVelocityX
+			ARG 6 particleVelocityY
+			ARG 8 particleVelocityZ
+		METHOD m_fligwgjx byId (I)Lnet/minecraft/unmapped/C_fiyglykq$C_rjdfyixx;
+			ARG 0 id

@@ -1,0 +1,34 @@
+CLASS net/minecraft/unmapped/C_edcdjeqn net/minecraft/command/argument/CommandFunctionArgumentType
+	FIELD f_sanuxxbi UNKNOWN_FUNCTION_TAG_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_tlwxirvq UNKNOWN_FUNCTION_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_zpokhnid EXAMPLES Ljava/util/Collection;
+	METHOD getExamples getExamples ()Ljava/util/Collection;
+	METHOD m_adfggijo (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 id
+	METHOD m_dydfklcm getIdentifiedFunctions (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Lcom/mojang/datafixers/util/Pair;
+		ARG 0 context
+		ARG 1 name
+	METHOD m_edputmih getFunctionOrTag (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Lcom/mojang/datafixers/util/Pair;
+		ARG 0 context
+		ARG 1 name
+	METHOD m_fksxjghe getFunction (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_soipoenw;
+		ARG 0 context
+		ARG 1 id
+	METHOD m_idzfzyph commandFunction ()Lnet/minecraft/unmapped/C_edcdjeqn;
+	METHOD m_vkvebkcj (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 id
+	METHOD m_wekgytks getFunctionTag (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/unmapped/C_ncpywfca;)Ljava/util/Collection;
+		ARG 0 context
+		ARG 1 id
+	METHOD m_zdnpjjch getFunctions (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Ljava/util/Collection;
+		ARG 0 context
+		ARG 1 name
+	METHOD parse parse (Lcom/mojang/brigadier/StringReader;)Ljava/lang/Object;
+		ARG 1 reader
+	CLASS C_lqmqiqch FunctionArgument
+		METHOD m_cdmtlebm getIdentifiedFunctions (Lcom/mojang/brigadier/context/CommandContext;)Lcom/mojang/datafixers/util/Pair;
+			ARG 1 context
+		METHOD m_lbzyeryi getFunctionOrTag (Lcom/mojang/brigadier/context/CommandContext;)Lcom/mojang/datafixers/util/Pair;
+			ARG 1 context
+		METHOD m_uwpimiob getFunctions (Lcom/mojang/brigadier/context/CommandContext;)Ljava/util/Collection;
+			ARG 1 context

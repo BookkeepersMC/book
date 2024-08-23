@@ -1,0 +1,127 @@
+CLASS net/minecraft/unmapped/C_pgmsoxco net/minecraft/command/EntitySelectorOptions
+	FIELD f_acdixmuk UNKNOWN_OPTION_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_apafqqmp INAPPLICABLE_OPTION_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_crvcxfqs INVALID_MODE_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_gdlgagad INVALID_TYPE_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_hvngimsh NEGATIVE_DISTANCE_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_jhmpdogm OPTIONS Ljava/util/Map;
+	FIELD f_pvdeinih IRREVERSIBLE_SORT_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_vojdaxiy TOO_SMALL_LEVEL_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	FIELD f_vqhwgyhk NEGATIVE_LEVEL_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+	METHOD m_aewphxsx (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_agmfvniw getHandler (Lnet/minecraft/unmapped/C_iejqjrhb;Ljava/lang/String;I)Lnet/minecraft/unmapped/C_pgmsoxco$C_ozwreois;
+		ARG 0 reader
+		ARG 1 option
+		ARG 2 restoreCursor
+	METHOD m_ahbfhmyw (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_bcgywwiv (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 mode
+	METHOD m_cjpymhkl (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_cjqywqhk (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_ckfjpkna (Lnet/minecraft/unmapped/C_iejqjrhb;ILnet/minecraft/unmapped/C_ncpywfca;)Lcom/mojang/brigadier/exceptions/CommandSyntaxException;
+		ARG 0 reader
+	METHOD m_czngvyvq (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_dezklwav (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_dmjyokth (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_dpczktle (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_efmznqqv (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_esvagzpo (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_fczubhto (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_fjapdeyy (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_gofasmfn (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_gwclfboi (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_gyhtklsb (Ljava/lang/String;ZLnet/minecraft/unmapped/C_astfners;)Z
+		ARG 2 entity
+	METHOD m_hmwqirqm (Lnet/minecraft/unmapped/C_ednuhnnn;ZLnet/minecraft/unmapped/C_astfners;)Z
+		ARG 2 entity
+	METHOD m_hvjcancj (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_iepncrsd (Ljava/lang/String;ZLnet/minecraft/unmapped/C_astfners;)Z
+		ARG 2 entity
+	METHOD m_jjatjvfv (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_jxfhcaho (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_kkytxxpu (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_lgbduafa putOption (Ljava/lang/String;Lnet/minecraft/unmapped/C_pgmsoxco$C_ozwreois;Ljava/util/function/Predicate;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 0 id
+		ARG 1 handler
+		ARG 2 condition
+		ARG 3 description
+	METHOD m_meupozcp (ZLnet/minecraft/unmapped/C_lghcpyvl;Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 2 entity
+	METHOD m_nejpxqlm (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_njavkkfx (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_nrkdexph (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_onjxcyst (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_otjwzrqy register ()V
+	METHOD m_pcivztzq (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_ptvtrdeo (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_pudaeyiw (Lnet/minecraft/unmapped/C_iejqjrhb;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/util/function/Consumer;)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 builder
+		ARG 2 consumer
+	METHOD m_puijwrjl (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_pxzbdjlg (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_qktlleek (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_qoxgspwq (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 type
+	METHOD m_rhlgsnhx (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_spmraxpj (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 type
+	METHOD m_tubfhdst (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/util/function/Consumer;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 builder
+		ARG 1 consumer
+	METHOD m_tvjmzihb (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_uolsxqfo (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_vaeffihg (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+		ARG 0 reader
+	METHOD m_vxarluyz (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_wextukms (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_xgzujrvw (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 option
+	METHOD m_xwtrkfmk (Lnet/minecraft/unmapped/C_iejqjrhb;)Z
+		ARG 0 reader
+	METHOD m_zeiaahnw (Ljava/lang/Object;)Lcom/mojang/brigadier/Message;
+		ARG 0 type
+	METHOD m_zrflenmz suggestOptions (Lnet/minecraft/unmapped/C_iejqjrhb;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)V
+		ARG 0 reader
+		ARG 1 suggestionBuilder
+	CLASS C_gvdmqrmv SelectorOption
+		FIELD f_kmktmpcz handler Lnet/minecraft/unmapped/C_pgmsoxco$C_ozwreois;
+		FIELD f_mgwebpfl description Lnet/minecraft/unmapped/C_rdaqiwdt;
+		METHOD <init> (Lnet/minecraft/unmapped/C_pgmsoxco$C_ozwreois;Ljava/util/function/Predicate;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+			ARG 1 handler
+			ARG 2 condition
+			ARG 3 description
+	CLASS C_ozwreois SelectorHandler
+		METHOD handle handle (Lnet/minecraft/unmapped/C_iejqjrhb;)V
+			ARG 1 reader

@@ -1,0 +1,22 @@
+CLASS net/minecraft/unmapped/C_upefzkek net/minecraft/item/HoeItem
+	FIELD f_mnilufug TILLING_ACTIONS Ljava/util/Map;
+		COMMENT A map of input blocks to predicate-consumer action pairs.
+		COMMENT
+		COMMENT <p>Tilling works so that if the predicate succeeds, the consumer (the real action)
+		COMMENT is executed, and the hoe is damaged.
+	METHOD m_bbjqicft createTillAction (Lnet/minecraft/unmapped/C_txtbiemp;)Ljava/util/function/Consumer;
+		COMMENT {@return a tilling action that sets a block state}
+		ARG 0 result
+			COMMENT the tilled block state
+	METHOD m_ogrvdwyk canTillFarmland (Lnet/minecraft/unmapped/C_yyklzime;)Z
+		COMMENT {@return whether the used block can be tilled into farmland}
+		COMMENT This method is used as the tilling predicate for most vanilla blocks except rooted dirt.
+		ARG 0 context
+	METHOD m_repymziz createTillAndDropAction (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_gmbqjnle;)Ljava/util/function/Consumer;
+		COMMENT {@return a tilling action that sets a block state and drops an item}
+		ARG 0 result
+			COMMENT the tilled block state
+		ARG 1 droppedItem
+			COMMENT the item to drop
+	METHOD m_rmtlkghm (Lnet/minecraft/unmapped/C_yyklzime;)Z
+		ARG 0 arg

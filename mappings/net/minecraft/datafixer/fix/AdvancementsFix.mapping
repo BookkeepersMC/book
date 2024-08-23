@@ -1,0 +1,5 @@
+CLASS net/minecraft/unmapped/C_qkajxvqq net/minecraft/datafixer/fix/AdvancementsFix
+	FIELD f_bjpledph RENAMED_ADVANCEMENTS Ljava/util/Map;
+	METHOD <init> (Lcom/mojang/datafixers/schemas/Schema;Z)V
+		ARG 1 outputSchema
+		ARG 2 changesType

@@ -1,0 +1,9 @@
+CLASS net/minecraft/unmapped/C_xggjmpup net/minecraft/util/random/SingleThreadedRandom
+	FIELD f_hziluvws MODULUS_BITS I
+	FIELD f_lrnpjitn seed J
+	FIELD f_ortouflg MULTIPLIER J
+	FIELD f_oszpiwxt INCREMENT J
+	FIELD f_svcthsbu gaussianGenerator Lnet/minecraft/unmapped/C_wteivtqp;
+	FIELD f_xhfarhfe MODULUS_MASK J
+	METHOD <init> (J)V
+		ARG 1 seed

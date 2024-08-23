@@ -1,0 +1,32 @@
+CLASS net/minecraft/unmapped/C_ccrrfaqj net/minecraft/datafixer/DataFixTypes
+	FIELD f_rjkkeelt REQUIRED_TYPES Ljava/util/Set;
+	FIELD f_uduekggm typeReference Lcom/mojang/datafixers/DSL$TypeReference;
+	METHOD <init> (Ljava/lang/String;ILcom/mojang/datafixers/DSL$TypeReference;)V
+		ARG 3 typeReference
+	METHOD m_fuddyziw getDataVersion ()I
+	METHOD m_ittsrsoa updateDataFixer (Lcom/mojang/datafixers/DataFixer;Lcom/mojang/serialization/Dynamic;I)Lcom/mojang/serialization/Dynamic;
+		ARG 1 fixer
+		ARG 3 oldDataVersion
+	METHOD m_mwypnhzt updateDataFixer (Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/unmapped/C_hhlwcnih;I)Lnet/minecraft/unmapped/C_hhlwcnih;
+		ARG 1 fixer
+		ARG 2 nbt
+		ARG 3 oldDataVersion
+	METHOD m_ogaoseqx updateDataFixer (Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/unmapped/C_hhlwcnih;II)Lnet/minecraft/unmapped/C_hhlwcnih;
+		ARG 1 fixer
+		ARG 2 nbt
+		ARG 3 oldDataVersion
+		ARG 4 newDataVersion
+	METHOD m_uaejgwae createDatafixCodec (Lcom/mojang/serialization/Codec;Lcom/mojang/datafixers/DataFixer;I)Lcom/mojang/serialization/Codec;
+		ARG 3 currentDataVersion
+	METHOD m_uhqygcnr updateDataFixer (Lcom/mojang/datafixers/DataFixer;Lcom/mojang/serialization/Dynamic;II)Lcom/mojang/serialization/Dynamic;
+		ARG 1 fixer
+		ARG 3 oldDataVersion
+		ARG 4 newDataVersion
+	CLASS C_alqyygvn
+		METHOD decode decode (Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;
+			ARG 1 ops
+			ARG 2 input
+		METHOD encode encode (Ljava/lang/Object;Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;
+			ARG 1 input
+			ARG 2 ops
+			ARG 3 prefix

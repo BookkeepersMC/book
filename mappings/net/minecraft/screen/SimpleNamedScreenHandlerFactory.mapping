@@ -1,0 +1,6 @@
+CLASS net/minecraft/unmapped/C_qxydlcys net/minecraft/screen/SimpleNamedScreenHandlerFactory
+	FIELD f_fkrvonvb name Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_ntsyddxw baseFactory Lnet/minecraft/unmapped/C_qmyopirr;
+	METHOD <init> (Lnet/minecraft/unmapped/C_qmyopirr;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 baseFactory
+		ARG 2 name

@@ -1,0 +1,4 @@
+CLASS net/minecraft/unmapped/C_dogcxkxz net/minecraft/loot/context/LootContextAware
+	METHOD m_jdmehacf validate (Lnet/minecraft/unmapped/C_eumtgsbp;)V
+		ARG 1 reporter
+	METHOD m_oozesizv getRequiredParameters ()Ljava/util/Set;

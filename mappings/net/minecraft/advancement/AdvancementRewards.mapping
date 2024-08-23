@@ -1,0 +1,28 @@
+CLASS net/minecraft/unmapped/C_wptigggq net/minecraft/advancement/AdvancementRewards
+	FIELD f_kdswklfz NONE Lnet/minecraft/unmapped/C_wptigggq;
+	FIELD f_prunhryf recipes Ljava/util/List;
+	FIELD f_qyixcehl function Ljava/util/Optional;
+	FIELD f_yughnixi loot Ljava/util/List;
+	FIELD f_zbievvtn experience I
+	METHOD m_pmfgvkwm apply (Lnet/minecraft/unmapped/C_mxrobsgg;)V
+		ARG 1 player
+	CLASS C_wbctdknv Builder
+		FIELD f_ikuefgmg loot Lcom/google/common/collect/ImmutableList$Builder;
+		FIELD f_nsjszmyn recipes Lcom/google/common/collect/ImmutableList$Builder;
+		FIELD f_sthmdtrs experience I
+		FIELD f_wpqibspn function Ljava/util/Optional;
+		METHOD m_comwhrux experience (I)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;
+			ARG 0 experience
+		METHOD m_dooyiisa build ()Lnet/minecraft/unmapped/C_wptigggq;
+		METHOD m_kcbmnmlt recipe (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;
+			ARG 0 recipe
+		METHOD m_qfziciny setFunction (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;
+			ARG 1 function
+		METHOD m_qnlsiipc setExperience (I)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;
+			ARG 1 experience
+		METHOD m_rkbrzuwh addRecipe (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;
+			ARG 1 recipe
+		METHOD m_sbnvjevi loot (Lnet/minecraft/unmapped/C_xhhleach;)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;
+		METHOD m_xgembxfc function (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;
+			ARG 0 function
+		METHOD m_xltlznvb addLoot (Lnet/minecraft/unmapped/C_xhhleach;)Lnet/minecraft/unmapped/C_wptigggq$C_wbctdknv;

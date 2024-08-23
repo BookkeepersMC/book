@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_nglhzohe net/minecraft/entity/projectile/DragonFireballEntity
+	FIELD f_tksordzu SPLASH_RANGE F

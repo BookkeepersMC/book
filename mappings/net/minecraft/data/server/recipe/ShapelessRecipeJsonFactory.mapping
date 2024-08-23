@@ -1,0 +1,20 @@
+CLASS net/minecraft/unmapped/C_bddxvulm net/minecraft/data/server/recipe/ShapelessRecipeJsonFactory
+	FIELD f_bknwuhsm group Ljava/lang/String;
+	FIELD f_cukvzeph category Lnet/minecraft/unmapped/C_ehjomvtz;
+	FIELD f_dbfnhazj result Lnet/minecraft/unmapped/C_sddaxwyk;
+	FIELD f_oihqvjgx ingredients Ljava/util/List;
+	FIELD f_ujpijrlk criteria Ljava/util/Map;
+	METHOD m_hhqvjyov ingredient (Lnet/minecraft/unmapped/C_tcpsydrv;I)Lnet/minecraft/unmapped/C_bddxvulm;
+		ARG 1 ingredient
+		ARG 2 amount
+	METHOD m_hojlkeku ingredient (Lnet/minecraft/unmapped/C_gmbqjnle;)Lnet/minecraft/unmapped/C_bddxvulm;
+		ARG 1 item
+	METHOD m_jrksubfg ingredient (Lnet/minecraft/unmapped/C_ednuhnnn;)Lnet/minecraft/unmapped/C_bddxvulm;
+		ARG 1 tag
+	METHOD m_pxpafxsv validate (Lnet/minecraft/unmapped/C_ncpywfca;)V
+		ARG 1 recipeId
+	METHOD m_qfdfjbrj ingredient (Lnet/minecraft/unmapped/C_tcpsydrv;)Lnet/minecraft/unmapped/C_bddxvulm;
+		ARG 1 ingredient
+	METHOD m_vcpjjqxy ingredient (Lnet/minecraft/unmapped/C_gmbqjnle;I)Lnet/minecraft/unmapped/C_bddxvulm;
+		ARG 1 item
+		ARG 2 amount

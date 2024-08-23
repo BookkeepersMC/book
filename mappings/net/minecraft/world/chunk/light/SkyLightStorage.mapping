@@ -1,0 +1,22 @@
+CLASS net/minecraft/unmapped/C_rlaljihp net/minecraft/world/chunk/light/SkyLightStorage
+	METHOD <init> (Lnet/minecraft/unmapped/C_jhssvvvy;)V
+		ARG 1 chunkProvider
+	METHOD m_bapsymdd copy (Lnet/minecraft/unmapped/C_cneaxdxg;)Lnet/minecraft/unmapped/C_cneaxdxg;
+		ARG 0 source
+	METHOD m_bnoewhej getLight (JZ)I
+		ARG 1 blockPos
+		ARG 3 cached
+	METHOD m_hlkejitm isAtOrAboveTopmostSection (J)Z
+		ARG 1 sectionPos
+	METHOD m_ltheuegr getTopSectionForColumn (J)I
+		ARG 1 columnPos
+	METHOD m_ogdqasif isAboveMinSectionY (I)Z
+		ARG 1 sectionY
+	METHOD m_vwwbggyq getMinSectionY ()I
+	CLASS C_ruqcmsku Data
+		FIELD f_dixjawif columnToTopSection Lit/unimi/dsi/fastutil/longs/Long2IntOpenHashMap;
+		FIELD f_dvidliyi minSectionY I
+		METHOD <init> (Lit/unimi/dsi/fastutil/longs/Long2ObjectOpenHashMap;Lit/unimi/dsi/fastutil/longs/Long2IntOpenHashMap;I)V
+			ARG 1 arrays
+			ARG 2 columnToTopSection
+			ARG 3 minSectionY

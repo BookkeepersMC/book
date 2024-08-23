@@ -1,0 +1,68 @@
+CLASS net/minecraft/unmapped/C_jrmnitnf net/minecraft/util/profiler/ProfileResultImpl
+	FIELD f_aodcpdpg COMPARATOR Ljava/util/Comparator;
+	FIELD f_ascvybgc startTime J
+	FIELD f_gfxbnyom locationInfos Ljava/util/Map;
+	FIELD f_iaxfjqyu SPLITTER Lcom/google/common/base/Splitter;
+	FIELD f_iwambdhn tickDuration I
+	FIELD f_jowvcvjh startTick I
+	FIELD f_mavhaael LOGGER Lorg/slf4j/Logger;
+	FIELD f_nrhckbun endTime J
+	FIELD f_rdlzmuqs endTick I
+	FIELD f_xjeemhkw EMPTY_INFO Lnet/minecraft/unmapped/C_jfixsjks;
+	METHOD <init> (Ljava/util/Map;JIJI)V
+		ARG 1 locationInfos
+		ARG 2 startTime
+		ARG 4 startTick
+		ARG 5 endTime
+		ARG 7 endTick
+	METHOD m_amoypspj (Ljava/util/Map;Ljava/util/List;Ljava/lang/String;Ljava/lang/Long;)V
+		ARG 2 marker
+		ARG 3 count
+	METHOD m_aywdfrkn (Ljava/lang/StringBuilder;ILjava/lang/String;Lnet/minecraft/unmapped/C_jrmnitnf$C_palaewqu;)V
+		ARG 3 name
+		ARG 4 info
+	METHOD m_dcqglmgt setupCounters ()Ljava/util/Map;
+	METHOD m_deozpiub appendCounterDump (Ljava/util/Map;Ljava/lang/StringBuilder;I)V
+		ARG 1 counters
+		ARG 2 sb
+		ARG 3 tickSpan
+	METHOD m_eivmbmiz (Ljava/lang/String;)Lnet/minecraft/unmapped/C_jrmnitnf$C_palaewqu;
+		ARG 0 k
+	METHOD m_gvvvzolz getInfo (Ljava/lang/String;)Lnet/minecraft/unmapped/C_jfixsjks;
+		ARG 1 path
+	METHOD m_hcprjvjv (Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Long;)V
+		ARG 3 marker
+		ARG 4 count
+	METHOD m_mhlrptmj indent (Ljava/lang/StringBuilder;I)Ljava/lang/StringBuilder;
+		ARG 0 sb
+		ARG 1 size
+	METHOD m_nmhzimry (IILjava/lang/StringBuilder;Ljava/util/Map$Entry;)V
+		ARG 4 entry
+	METHOD m_nzdtmews appendCounter (ILjava/lang/String;Lnet/minecraft/unmapped/C_jrmnitnf$C_palaewqu;ILjava/lang/StringBuilder;)V
+		ARG 1 depth
+		ARG 2 name
+		ARG 3 info
+		ARG 4 tickSpan
+		ARG 5 sb
+	METHOD m_pmmjwdsj appendTiming (ILjava/lang/String;Ljava/lang/StringBuilder;)V
+		ARG 1 level
+		ARG 2 name
+		ARG 3 sb
+	METHOD m_tuugbxfy (Ljava/util/Map;Ljava/lang/String;Lnet/minecraft/unmapped/C_jfixsjks;)V
+		ARG 1 location
+		ARG 2 info
+	METHOD m_xsrgpjsq isSubpath (Ljava/lang/String;Ljava/lang/String;)Z
+		ARG 0 parent
+		ARG 1 path
+	METHOD m_yxpwkqxu asString (JI)Ljava/lang/String;
+		ARG 1 timeSpan
+		ARG 3 tickSpan
+	CLASS C_palaewqu CounterInfo
+		FIELD f_dhjmvzua totalTime J
+		FIELD f_kjcuzgaw selfTime J
+		FIELD f_wsqpokdk subCounters Ljava/util/Map;
+		METHOD m_jaiwruax add (Ljava/util/Iterator;J)V
+			ARG 1 pathIterator
+			ARG 2 time
+		METHOD m_lrvjoocb (Ljava/lang/String;)Lnet/minecraft/unmapped/C_jrmnitnf$C_palaewqu;
+			ARG 0 k

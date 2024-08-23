@@ -1,0 +1,9 @@
+CLASS net/minecraft/unmapped/C_yzxvabbe net/minecraft/nbt/NbtTypes
+	FIELD f_fdrqludr VALUES [Lnet/minecraft/unmapped/C_ueidorcc;
+	METHOD m_cmvsuleb byId (I)Lnet/minecraft/unmapped/C_ueidorcc;
+		COMMENT Gets the associated {@linkplain NbtType NBT type} for a given {@code id}.
+		COMMENT <p>
+		COMMENT This method does not support id aliases.
+		COMMENT
+		COMMENT @return the NBT type, or {@linkplain NbtType#createInvalid an invalid type} if there is no type with the given {@code id}
+		ARG 0 id

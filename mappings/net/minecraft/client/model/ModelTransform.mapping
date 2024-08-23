@@ -1,0 +1,23 @@
+CLASS net/minecraft/unmapped/C_dhebgdtu net/minecraft/client/model/ModelTransform
+	FIELD f_bvjaohjw pivotZ F
+	FIELD f_eoomqdxl NONE Lnet/minecraft/unmapped/C_dhebgdtu;
+	FIELD f_iobrophl roll F
+	FIELD f_ovlgdrhg pivotX F
+	FIELD f_ssbdjouu pitch F
+	FIELD f_wckqterj yaw F
+	FIELD f_xnwbdfsa pivotY F
+	METHOD m_qxhvkpqr pivot (FFF)Lnet/minecraft/unmapped/C_dhebgdtu;
+		ARG 0 pivotX
+		ARG 1 pivotY
+		ARG 2 pivotZ
+	METHOD m_smgdslxg rotation (FFF)Lnet/minecraft/unmapped/C_dhebgdtu;
+		ARG 0 pitch
+		ARG 1 yaw
+		ARG 2 roll
+	METHOD m_spunjinu of (FFFFFF)Lnet/minecraft/unmapped/C_dhebgdtu;
+		ARG 0 pivotX
+		ARG 1 pivotY
+		ARG 2 pivotZ
+		ARG 3 pitch
+		ARG 4 yaw
+		ARG 5 roll

@@ -1,0 +1,37 @@
+CLASS net/minecraft/unmapped/C_yviluxux net/minecraft/client/gui/screen/narration/ScreenNarrator
+	FIELD f_kvdymwob currentMessageIndex I
+	FIELD f_lsplxjss narrations Ljava/util/Map;
+	METHOD m_jbxgydtq (Lnet/minecraft/unmapped/C_yviluxux$C_hfwlkejt;)Lnet/minecraft/unmapped/C_obsnauqw;
+		ARG 0 partIndex
+	METHOD m_mxvhimmn buildNarratorText (Z)Ljava/lang/String;
+		ARG 1 forceTransform
+	METHOD m_qroorukr (Lnet/minecraft/unmapped/C_yviluxux$C_hfwlkejt;)Ljava/lang/Integer;
+		ARG 0 partIndex
+	METHOD m_tdxpatjq (ZLjava/util/function/Consumer;Lnet/minecraft/unmapped/C_yviluxux$C_hfwlkejt;Lnet/minecraft/unmapped/C_yviluxux$C_rqihskyd;)V
+		ARG 3 partIndex
+		ARG 4 message
+	METHOD m_ugxbjsky buildNarrations (Ljava/util/function/Consumer;)V
+		ARG 1 builderConsumer
+	CLASS C_elhhqgnj
+		FIELD f_vawviplq first Z
+		METHOD accept accept (Ljava/lang/Object;)V
+			ARG 1 string
+	CLASS C_hfwlkejt PartIndex
+		FIELD f_ffzmqudk messageIndex I
+		FIELD f_odakhafa part Lnet/minecraft/unmapped/C_obsnauqw;
+		METHOD <init> (Lnet/minecraft/unmapped/C_obsnauqw;I)V
+			ARG 1 part
+			ARG 2 messageIndex
+	CLASS C_rqihskyd Message
+		FIELD f_kfoqroqp index I
+		FIELD f_pnrtirhc transformed Z
+		FIELD f_yhvbhxdm narration Lnet/minecraft/unmapped/C_gblvuxst;
+		METHOD m_ksywgfmj setNarration (ILnet/minecraft/unmapped/C_gblvuxst;)Lnet/minecraft/unmapped/C_yviluxux$C_rqihskyd;
+			ARG 1 index
+			ARG 2 narration
+	CLASS C_xgkpuzac MessageBuilder
+		FIELD f_egdsvdwb messageIndex I
+		METHOD <init> (Lnet/minecraft/unmapped/C_yviluxux;I)V
+			ARG 2 startIndex
+		METHOD m_kbskeome (Lnet/minecraft/unmapped/C_yviluxux$C_hfwlkejt;)Lnet/minecraft/unmapped/C_yviluxux$C_rqihskyd;
+			ARG 0 partIndex

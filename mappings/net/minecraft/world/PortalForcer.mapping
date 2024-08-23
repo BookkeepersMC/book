@@ -1,0 +1,23 @@
+CLASS net/minecraft/unmapped/C_daetwwvm net/minecraft/world/PortalForcer
+	FIELD f_andzxmam NOTHING_FOUND I
+	FIELD f_cfgozgah FRAME_WIDTH_START I
+	FIELD f_ddnhdkso FRAME_HEIGHT_END I
+	FIELD f_fsiiwwqv TICKET_RADIUS I
+	FIELD f_ghqcyckr FRAME_BOX I
+	FIELD f_gwzsnime FRAME_BOX_START I
+	FIELD f_owztfbsr FRAME_HEIGHT I
+	FIELD f_rcqxkdpj world Lnet/minecraft/unmapped/C_bdwnwhiu;
+	FIELD f_tnhegrcz FRAME_HEIGHT_START I
+	FIELD f_trhqpuxx FRAME_BOX_END I
+	FIELD f_upkdmynt FRAME_WIDTH_END I
+	FIELD f_xtnccksz FRAME_WIDTH I
+	METHOD <init> (Lnet/minecraft/unmapped/C_bdwnwhiu;)V
+		ARG 1 world
+	METHOD m_njpchemu canPortalReplaceBlock (Lnet/minecraft/unmapped/C_hynzadkk$C_egqitdjk;)Z
+	METHOD m_pwwqkclt isValidPortalPos (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_hynzadkk$C_egqitdjk;Lnet/minecraft/unmapped/C_xpuuihxf;I)Z
+		ARG 1 pos
+		ARG 2 temp
+		ARG 3 portalDirection
+		ARG 4 distanceOrthogonalToPortal
+	METHOD m_welpxckj createPortal (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_xpuuihxf$C_rmpfouoz;)Ljava/util/Optional;
+		ARG 2 axis

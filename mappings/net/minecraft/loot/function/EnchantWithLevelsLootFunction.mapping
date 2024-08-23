@@ -1,0 +1,6 @@
+CLASS net/minecraft/unmapped/C_hujvlqyo net/minecraft/loot/function/EnchantWithLevelsLootFunction
+	FIELD f_uznihzkv range Lnet/minecraft/unmapped/C_iajmfyig;
+	CLASS C_ukmrinhh Builder
+		FIELD f_lbjnpjmb range Lnet/minecraft/unmapped/C_iajmfyig;
+		METHOD <init> (Lnet/minecraft/unmapped/C_iajmfyig;)V
+			ARG 1 range

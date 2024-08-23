@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_uqpmjvdt net/minecraft/util/thread/SampleableExecutor
+	METHOD m_xvatidod createSamplers ()Ljava/util/List;

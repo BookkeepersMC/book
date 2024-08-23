@@ -1,0 +1,7 @@
+CLASS net/minecraft/unmapped/C_zsajlxev net/minecraft/client/util/TextCollector
+	FIELD f_mqrsoywd texts Ljava/util/List;
+	METHOD m_gulnmlhb getRawCombined ()Lnet/minecraft/unmapped/C_xzalvetc;
+	METHOD m_tjayryyp getCombined ()Lnet/minecraft/unmapped/C_xzalvetc;
+	METHOD m_wfdtwmub add (Lnet/minecraft/unmapped/C_xzalvetc;)V
+		ARG 1 text
+	METHOD m_xigjzimn clear ()V

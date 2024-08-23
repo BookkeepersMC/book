@@ -1,0 +1,106 @@
+CLASS net/minecraft/unmapped/C_sasfholk net/minecraft/command/CommandSource
+	METHOD m_ausobane suggestIdentifiers (Ljava/lang/Iterable;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 candidates
+		ARG 1 builder
+	METHOD m_btzrwcvs getBlockPositionSuggestions ()Ljava/util/Collection;
+	METHOD m_edjrtbpe suggestFromIdentifier (Ljava/lang/Iterable;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 candidates
+		ARG 1 builder
+		ARG 2 identifier
+		ARG 3 tooltip
+	METHOD m_fjnhrcro getEnabledFlags ()Lnet/minecraft/unmapped/C_czxxrbcp;
+	METHOD m_gmcggpep suggestMatching (Ljava/util/stream/Stream;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 stream
+		ARG 1 builder
+	METHOD m_hfcwokxp matchesSubString (Ljava/lang/String;Ljava/lang/String;)Z
+		ARG 0 string
+		ARG 1 string2
+	METHOD m_ifeviymy getEntitySuggestions ()Ljava/util/Collection;
+	METHOD m_ifzcfard suggestRegistryElements (Lnet/minecraft/unmapped/C_tqxyjqsk;Lnet/minecraft/unmapped/C_sasfholk$C_yjlyniph;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)V
+		ARG 1 registry
+		ARG 2 suggestionType
+		ARG 3 builder
+	METHOD m_iyjdkcki suggestPositions (Ljava/lang/String;Ljava/util/Collection;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/util/function/Predicate;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 string
+		ARG 1 candidates
+		ARG 2 builder
+		ARG 3 isPosition
+	METHOD m_jgssjzjq suggestColumnPositions (Ljava/lang/String;Ljava/util/Collection;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/util/function/Predicate;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 string
+		ARG 1 relativePosition
+		ARG 2 builder
+		ARG 3 isPosition
+	METHOD m_jhcwjule suggestIdentifiers (Ljava/util/stream/Stream;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 identifierStream
+		ARG 1 builder
+	METHOD m_kduuyfdv getWorldKeys ()Ljava/util/Set;
+	METHOD m_klqveibw getPositionSuggestions ()Ljava/util/Collection;
+	METHOD m_kvcssxlr getRegistryManager ()Lnet/minecraft/unmapped/C_wqxmvzdq;
+	METHOD m_lrvfyszo getSoundIds ()Ljava/util/stream/Stream;
+	METHOD m_lxknyota (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 id
+	METHOD m_nkqmfzvf suggest (Ljava/lang/Iterable;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 iterable
+		ARG 1 builder
+		ARG 2 function
+		ARG 3 function2
+	METHOD m_nzxcyotq getNames ()Ljava/util/Collection;
+	METHOD m_olfoiegk (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/lang/String;Lnet/minecraft/unmapped/C_ncpywfca;)V
+		ARG 2 id
+	METHOD m_omkmdvfu (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_ncpywfca;
+		ARG 0 id
+	METHOD m_phyilooa suggestIdentifiers (Ljava/lang/Iterable;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 candidates
+		ARG 1 builder
+		ARG 2 string
+	METHOD m_qnjhbpej suggestMatching ([Ljava/lang/String;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 strings
+		ARG 1 builder
+	METHOD m_sdmegyog getPlayerNames ()Ljava/util/Collection;
+	METHOD m_sibutfci getRecipeIds ()Ljava/util/stream/Stream;
+	METHOD m_tfqivekf suggestMatching (Ljava/lang/Iterable;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 iterable
+		ARG 1 builder
+	METHOD m_ucxbakal getCompletions (Lcom/mojang/brigadier/context/CommandContext;)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 context
+	METHOD m_upznzolz hasPermission (I)Z
+		ARG 1 level
+	METHOD m_uzuaopkd suggestRegistryElements (Lnet/minecraft/unmapped/C_xhhleach;Lnet/minecraft/unmapped/C_sasfholk$C_yjlyniph;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Lcom/mojang/brigadier/context/CommandContext;)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 key
+		ARG 2 suggestionType
+		ARG 3 builder
+		ARG 4 context
+	METHOD m_wltbprvr forEachMatching (Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Consumer;)V
+		ARG 0 candidates
+		ARG 1 string
+		ARG 2 string2
+		ARG 3 identifier
+		ARG 4 action
+	METHOD m_xphjtijn suggestResource (Ljava/util/stream/Stream;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 identifierStream
+		ARG 1 builder
+		ARG 2 string
+	METHOD m_xsjcixri forEachMatching (Ljava/lang/Iterable;Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Consumer;)V
+		ARG 0 candidates
+		ARG 1 string
+		ARG 2 identifier
+		ARG 3 action
+	METHOD m_zslipvel getTeamNames ()Ljava/util/Collection;
+	METHOD m_ztibipvv suggestFromIdentifier (Ljava/util/stream/Stream;Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;
+		ARG 0 candidates
+		ARG 1 builder
+		ARG 2 identifier
+		ARG 3 tooltip
+	CLASS C_yjlyniph ElementSuggestionType
+		METHOD m_blmcpeuz shouldSuggestTags ()Z
+		METHOD m_ifehmbdy shouldSuggestElements ()Z
+	CLASS C_zrjfqkne RelativePosition
+		FIELD f_fdotutal ZERO_LOCAL Lnet/minecraft/unmapped/C_sasfholk$C_zrjfqkne;
+		FIELD f_gnzzynda x Ljava/lang/String;
+		FIELD f_hkfdpthh y Ljava/lang/String;
+		FIELD f_nrrgcmix ZERO_WORLD Lnet/minecraft/unmapped/C_sasfholk$C_zrjfqkne;
+		FIELD f_uvdnejyr z Ljava/lang/String;
+		METHOD <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+			ARG 1 x
+			ARG 2 y
+			ARG 3 z

@@ -1,0 +1,166 @@
+CLASS net/minecraft/unmapped/C_rdaqiwdt net/minecraft/text/Text
+	COMMENT A text. Can be converted to and from JSON format.
+	COMMENT <p>
+	COMMENT Each text has a tree structure, embodying all its {@link
+	COMMENT #getSiblings() siblings}. To iterate contents in the text and all
+	COMMENT its siblings, call {@code visit} methods.
+	COMMENT <p>
+	COMMENT This interface does not expose mutation operations. For mutation,
+	COMMENT refer to {@link MutableText}.
+	COMMENT
+	COMMENT @see MutableText
+	COMMENT @see Text#literal(String)
+	COMMENT @see Text#empty()
+	COMMENT @see Text#of(String)
+	COMMENT @see Text#translatable(String)
+	COMMENT @see Text#translatable(String, Object...)
+	COMMENT @see Text#keyBind(String)
+	COMMENT @see Text#nbt(String, boolean, Optional, TextData)
+	COMMENT @see Text#score(String, String)
+	COMMENT @see Text#selector(ParsedSelector, Optional)
+	METHOD m_aegnzamz of (Lcom/mojang/brigadier/Message;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 message
+	METHOD m_afsbcqnh of (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 id
+	METHOD m_dbsuxeye translatableWithFallback (Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 translationKey
+		ARG 1 fallback
+	METHOD m_ddewoxnu of (Ljava/util/Date;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 date
+	METHOD m_dldwoyzs getLiteralString ()Ljava/lang/String;
+	METHOD m_dmavlphp asOrderedText ()Lnet/minecraft/unmapped/C_apvkgwyi;
+	METHOD m_dmazxvzh (ILjava/lang/StringBuilder;Ljava/lang/String;)Ljava/util/Optional;
+		ARG 2 string
+	METHOD m_dztmuipa translatable (Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new mutable translatable text.
+		COMMENT
+		COMMENT @return the new mutable translatable text
+		COMMENT @see #translatable(String)
+		COMMENT @see #stringifiedTranslatable(String, Object...)
+		ARG 0 translationKey
+			COMMENT the translation key
+		ARG 1 args
+			COMMENT the arguments the translation may take
+	METHOD m_eiqxivnk getSiblings ()Ljava/util/List;
+		COMMENT {@return the siblings of this text}
+	METHOD m_hrmtapxn setStyle (Lnet/minecraft/unmapped/C_cpwnhism;)Ljava/util/List;
+		ARG 1 style
+	METHOD m_iktyeyef translatable (Ljava/lang/String;)Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new mutable translatable text.
+		COMMENT
+		COMMENT @return the new mutable translatable text
+		COMMENT @see #translatable(String, Object...)
+		COMMENT @see #stringifiedTranslatable(String, Object...)
+		ARG 0 translationKey
+			COMMENT the translation key
+	METHOD m_khnrdqlh clearStyle ()Ljava/util/List;
+	METHOD m_kuqyhsxe selector (Lnet/minecraft/unmapped/C_guiotivj;Ljava/util/Optional;)Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new mutable text of a resolvable entity selector.
+		COMMENT
+		COMMENT @return the new mutable selector text
+		ARG 0 selector
+		ARG 1 separator
+			COMMENT the optional separator if there's multiple matches issued from the selector
+	METHOD m_lmliagpk of (Ljava/util/UUID;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+	METHOD m_ncuuaewg of (Ljava/net/URI;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 uri
+	METHOD m_necqejxs score (Lnet/minecraft/unmapped/C_guiotivj;Ljava/lang/String;)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 selector
+	METHOD m_newxckss score (Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 name
+	METHOD m_nxgujqbg keyBind (Ljava/lang/String;)Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new mutable text of a key bind.
+		COMMENT
+		COMMENT @return the new mutable key bind text
+		ARG 0 key
+			COMMENT the key of the key bind
+	METHOD m_oamaavje empty ()Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new mutable empty text.
+		COMMENT
+		COMMENT @return the new mutable empty text
+		COMMENT @see net.minecraft.text.CommonTexts#EMPTY for a constant equivalent
+	METHOD m_oyjmhrxe getStyle ()Lnet/minecraft/unmapped/C_cpwnhism;
+		COMMENT {@return the style of this text}
+	METHOD m_pgfflmov contains (Lnet/minecraft/unmapped/C_rdaqiwdt;)Z
+		ARG 1 text
+	METHOD m_phszeyji stringifiedTranslatable (Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new mutable translatable text, with the non-primitive args represented as
+		COMMENT strings.
+		COMMENT
+		COMMENT @return the new mutable translatable text
+		COMMENT @see #translatable(String)
+		COMMENT @see #translatable(String, Object...)
+		ARG 0 translationKey
+			COMMENT the translation key
+		ARG 1 args
+			COMMENT the arguments the translation may take
+	METHOD m_pwvegngp asComponent ()Lnet/minecraft/unmapped/C_hhxmszuy;
+		COMMENT {@return a component representation of this text}
+	METHOD m_rxxicskz copy ()Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Copies the text's content, the style, and the siblings.
+		COMMENT <p>
+		COMMENT The same copy is made for the siblings.
+		COMMENT
+		COMMENT @see #copyContentOnly()
+	METHOD m_tsfcehif copyContentOnly ()Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Copies the text's content only, excluding the styles or siblings.
+		COMMENT
+		COMMENT @see #copy()
+	METHOD m_tzcqohhx of (Ljava/lang/String;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		COMMENT Creates a new immutable literal text with the given string as content.
+		COMMENT <p>
+		COMMENT The given string may be {@code null}, in this case a constant empty text will be returned.
+		COMMENT
+		COMMENT @return the new immutable literal text
+		ARG 0 text
+			COMMENT the content of the text, may be {@code null}
+	METHOD m_ucpxjqgq (Ljava/util/List;Lnet/minecraft/unmapped/C_cpwnhism;Ljava/lang/String;)Ljava/util/Optional;
+		ARG 1 styleOverride
+		ARG 2 text
+	METHOD m_uysfrnzl literal (Ljava/lang/String;)Lnet/minecraft/unmapped/C_npqneive;
+		COMMENT Creates a new mutable literal text.
+		COMMENT
+		COMMENT @return the new mutable literal text
+		ARG 0 text
+			COMMENT the content of the text
+	METHOD m_vwzgcgyh nbt (Ljava/lang/String;ZLjava/util/Optional;Lnet/minecraft/unmapped/C_pfocmsrt;)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 pathPattern
+		ARG 1 interpreting
+		ARG 2 separator
+		ARG 3 nbt
+	METHOD m_yhnuxmwl id (Lnet/minecraft/unmapped/C_ynrszrtu;)Lnet/minecraft/unmapped/C_rdaqiwdt;
+		ARG 0 pos
+	METHOD m_ywwehcem translatableWithFallback (Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/unmapped/C_npqneive;
+		ARG 0 translationKey
+		ARG 1 fallback
+		ARG 2 args
+	METHOD m_zbmgisvb asTruncatedString (I)Ljava/lang/String;
+		COMMENT Returns the full string representation of this text, truncated beyond
+		COMMENT the supplied {@code length}.
+		ARG 1 length
+			COMMENT the max length allowed for the string representation of the text
+	CLASS C_iyijrxyu SerializationUtil
+		FIELD f_avuxccfb GSON Lcom/google/gson/Gson;
+		METHOD m_avvlujlm fromLenientJson (Ljava/lang/String;Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)Lnet/minecraft/unmapped/C_npqneive;
+			ARG 0 json
+		METHOD m_caetnclp fromJsonNullable (Lcom/google/gson/JsonElement;Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)Lnet/minecraft/unmapped/C_npqneive;
+		METHOD m_eorwnzsk toJson (Lnet/minecraft/unmapped/C_rdaqiwdt;Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)Ljava/lang/String;
+			ARG 0 text
+		METHOD m_fsepqjma toJsonElement (Lnet/minecraft/unmapped/C_rdaqiwdt;Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)Lcom/google/gson/JsonElement;
+			ARG 0 text
+			ARG 1 lookupProvider
+		METHOD m_npeyudcr fromJson (Ljava/lang/String;Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)Lnet/minecraft/unmapped/C_npqneive;
+		METHOD m_rjdnjbxy fromJson (Lcom/google/gson/JsonElement;Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)Lnet/minecraft/unmapped/C_npqneive;
+			ARG 0 json
+			ARG 1 lookupProvider
+	CLASS C_poyaemhx Serializer
+		COMMENT Represents a JSON serializer for {@link Text}.
+		FIELD f_utvsiwsp lookupProvider Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;
+		METHOD deserialize deserialize (Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Ljava/lang/Object;
+			ARG 1 jsonElement
+			ARG 2 type
+			ARG 3 context
+		METHOD serialize serialize (Ljava/lang/Object;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
+			ARG 1 text
+			ARG 2 type
+			ARG 3 context

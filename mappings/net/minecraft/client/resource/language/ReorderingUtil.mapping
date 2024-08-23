@@ -1,0 +1,6 @@
+CLASS net/minecraft/unmapped/C_ifyocnex net/minecraft/client/resource/language/ReorderingUtil
+	METHOD m_bbjdfvch shapeArabic (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 string
+	METHOD m_ylcqvscn reorder (Lnet/minecraft/unmapped/C_xzalvetc;Z)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 text
+		ARG 1 rightToLeft

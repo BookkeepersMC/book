@@ -1,0 +1,62 @@
+CLASS net/minecraft/unmapped/C_apvkgwyi net/minecraft/text/OrderedText
+	COMMENT An object that can supply character code points
+	COMMENT to a visitor, with a style context.
+	FIELD f_mkxrbtds EMPTY Lnet/minecraft/unmapped/C_apvkgwyi;
+		COMMENT An empty text that does not call the visitors.
+	METHOD accept accept (Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 1 visitor
+	METHOD backward styledBackwardsVisitedString (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 string
+		ARG 1 style
+	METHOD backward styledBackwardsVisitedString (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 string
+		ARG 1 style
+		ARG 2 codePointMapper
+	METHOD codepoint styled (ILnet/minecraft/unmapped/C_cpwnhism;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 codePoint
+		ARG 1 style
+	METHOD composite empty ()Lnet/minecraft/unmapped/C_apvkgwyi;
+	METHOD composite concat (Ljava/util/List;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 texts
+	METHOD composite of (Lnet/minecraft/unmapped/C_apvkgwyi;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 text
+	METHOD composite concat (Lnet/minecraft/unmapped/C_apvkgwyi;Lnet/minecraft/unmapped/C_apvkgwyi;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 first
+		ARG 1 second
+	METHOD composite concat ([Lnet/minecraft/unmapped/C_apvkgwyi;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 texts
+	METHOD decorateOutput map (Lnet/minecraft/unmapped/C_kexvwzdm;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)Lnet/minecraft/unmapped/C_kexvwzdm;
+		ARG 0 visitor
+		ARG 1 codePointMapper
+	METHOD forward styledForwardsVisitedString (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 string
+		ARG 1 style
+	METHOD forward styledForwardsVisitedString (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 string
+		ARG 1 style
+		ARG 2 codePointMapper
+	METHOD fromList innerConcat (Ljava/util/List;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 texts
+	METHOD fromPair innerConcat (Lnet/minecraft/unmapped/C_apvkgwyi;Lnet/minecraft/unmapped/C_apvkgwyi;)Lnet/minecraft/unmapped/C_apvkgwyi;
+		ARG 0 text1
+		ARG 1 text2
+	METHOD m_albiseht (Lnet/minecraft/unmapped/C_kexvwzdm;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;ILnet/minecraft/unmapped/C_cpwnhism;I)Z
+		ARG 2 charIndex
+		ARG 3 style
+		ARG 4 charPoint
+	METHOD m_begixdvp (Lnet/minecraft/unmapped/C_cpwnhism;ILnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 2 visitor
+	METHOD m_cagctrmr (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 2 visitor
+	METHOD m_giwwcaeu (Lnet/minecraft/unmapped/C_apvkgwyi;Lnet/minecraft/unmapped/C_apvkgwyi;Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 2 visitor
+	METHOD m_kbpzwhfl (Ljava/util/List;Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 1 visitor
+	METHOD m_mvwcyotl (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 3 visitor
+	METHOD m_myqenrun (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 2 visitor
+	METHOD m_tdaahdqf (Ljava/lang/String;Lnet/minecraft/unmapped/C_cpwnhism;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 3 visitor
+	METHOD m_wloymyex (Lnet/minecraft/unmapped/C_kexvwzdm;)Z
+		ARG 0 visitor

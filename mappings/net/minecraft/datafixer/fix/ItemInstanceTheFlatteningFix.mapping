@@ -1,0 +1,12 @@
+CLASS net/minecraft/unmapped/C_wnambdqd net/minecraft/datafixer/fix/ItemInstanceTheFlatteningFix
+	FIELD f_bmkamlnt ORIGINAL_ITEM_NAMES Ljava/util/Set;
+	FIELD f_deatpihn FLATTENING_MAP Ljava/util/Map;
+	FIELD f_rwbeymvi DAMAGEABLE_ITEMS Ljava/util/Set;
+	METHOD <init> (Lcom/mojang/datafixers/schemas/Schema;Z)V
+		ARG 1 outputSchema
+		ARG 2 changesType
+	METHOD m_cddgeevx getItem (Ljava/lang/String;I)Ljava/lang/String;
+		ARG 0 originalName
+		ARG 1 damage
+	METHOD m_enjbnqxv (Ljava/util/HashMap;)V
+		ARG 0 map

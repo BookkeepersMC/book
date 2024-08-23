@@ -1,0 +1,24 @@
+CLASS net/minecraft/unmapped/C_hqccoyeq net/minecraft/client/gui/screen/ingame/CartographyTableScreen
+	FIELD f_mcatknht TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_sfkketuy MAP Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ugqbcczl DUPLICATED_MAP Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_xdlypaxp SCALED_MAP Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_ybhadfiz LOCKED Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_yhrlneie ERROR Lnet/minecraft/unmapped/C_ncpywfca;
+	METHOD <init> (Lnet/minecraft/unmapped/C_petqnsgn;Lnet/minecraft/unmapped/C_sxzqocrm;Lnet/minecraft/unmapped/C_rdaqiwdt;)V
+		ARG 1 handler
+		ARG 2 inventory
+		ARG 3 title
+	METHOD m_ijxrpkxf drawMap (Lnet/minecraft/unmapped/C_sedilmty;Lnet/minecraft/unmapped/C_qqxyyzzm;Lnet/minecraft/unmapped/C_nvpllgmg;IIF)V
+		ARG 2 mapId
+		ARG 3 mapState
+		ARG 4 x
+		ARG 5 y
+		ARG 6 scale
+	METHOD m_lgkculxb drawMap (Lnet/minecraft/unmapped/C_sedilmty;Lnet/minecraft/unmapped/C_qqxyyzzm;Lnet/minecraft/unmapped/C_nvpllgmg;ZZZZ)V
+		ARG 2 mapId
+		ARG 3 mapState
+		ARG 4 cloneMode
+		ARG 5 expandMode
+		ARG 6 lockMode
+		ARG 7 cannotExpand

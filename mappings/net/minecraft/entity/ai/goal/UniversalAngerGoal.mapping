@@ -1,0 +1,14 @@
+CLASS net/minecraft/unmapped/C_ybztzcca net/minecraft/entity/ai/goal/UniversalAngerGoal
+	FIELD f_byyofntt lastAttackedTime I
+	FIELD f_rwfbobgo mob Lnet/minecraft/unmapped/C_dxkfswlz;
+	FIELD f_uusmuwnx triggerOthers Z
+	FIELD f_waehrnup BOX_VERTICAL_EXPANSION I
+	METHOD <init> (Lnet/minecraft/unmapped/C_dxkfswlz;Z)V
+		ARG 1 mob
+		ARG 2 triggerOthers
+	METHOD m_esdqetei (Lnet/minecraft/unmapped/C_dxkfswlz;)Z
+		ARG 1 entity
+	METHOD m_riuchlhv getOthersInRange ()Ljava/util/List;
+	METHOD m_tchzxehk canStartUniversalAnger ()Z
+	METHOD m_vyujqlnz (Lnet/minecraft/unmapped/C_dxkfswlz;)Lnet/minecraft/unmapped/C_ceqittzp;
+		ARG 0 entity

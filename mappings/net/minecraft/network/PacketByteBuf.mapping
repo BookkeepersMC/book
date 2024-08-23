@@ -1,0 +1,1102 @@
+CLASS net/minecraft/unmapped/C_idfydwco net/minecraft/network/PacketByteBuf
+	COMMENT A packet byte buf is a specialized byte buf with utility methods adapted
+	COMMENT to Minecraft's protocol. It has serialization and deserialization of
+	COMMENT custom objects.
+	COMMENT
+	COMMENT <div class="quilt"><table border=1>
+	COMMENT <caption>Custom object handling</caption>
+	COMMENT <tr>
+	COMMENT  <th><b>Object Type</b></th> <th><b>read method</b></th> <th><b>write method</b></th>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>Codec-based</td><td>{@link #decode(DynamicOps, Codec)}</td><td>{@link #encode(DynamicOps, Codec, Object)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Collection}</td><td>{@link #readCollection(IntFunction, Reader)}</td><td>{@link #writeCollection(Collection, Writer)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link IntList}</td><td>{@link #readIntList()}</td><td>{@link #writeIntList(IntList)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Optional}</td><td>{@link #readOptional(Reader)}</td><td>{@link #writeOptional(Optional, Writer)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@code byte[]}</td><td>{@link #readByteArray()}</td><td></td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@code int[]}</td><td>{@link #readIntArray()}</td><td>{@link #writeIntArray(int[])}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@code long[]}</td><td>{@link #readLongArray()}</td><td>{@link #writeLongArray(long[])}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link BlockPos}</td><td>{@link #readPos()}</td><td>{@link #writePos(BlockPos)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link ChunkPos}</td><td>{@link #readChunkPos()}</td><td>{@link #writeChunkPos(ChunkPos)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link ChunkSectionPos}</td><td>{@link #readChunkSectionPos()}</td><td>{@link #writeChunkSectionPos(ChunkSectionPos)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link GlobalPos}</td><td>{@link #readGlobalPos()}</td><td>{@link #writeGlobalPos(GlobalPos)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Vector3f}</td><td>{@link #readVector3f()}</td><td>{@link #writeVector3f(Vector3f)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Quaternionf}</td><td>{@link #readQuaternion()}</td><td>{@link #writeQuaternion(Quaternionf)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Vec3d}</td><td>{@link #readVec3d()}</td><td>{@link #writeVec3d(Vec3d)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Enum}</td><td>{@link #readEnumConstant(Class)}</td><td>{@link #writeEnumConstant(Enum)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@index VarInt}</td><td>{@link #readVarInt()}</td><td>{@link #writeVarInt(int)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@index VarLong}</td><td>{@link #readVarLong()}</td><td>{@link #writeVarLong(long)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@index UUID}</td><td>{@link #readUuid()}</td><td>{@link #writeUuid(UUID)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link String}</td><td>{@link #readString()}</td><td>{@link #writeString(String)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Identifier}</td><td>{@link #readIdentifier()}</td><td>{@link #writeIdentifier(Identifier)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link RegistryKey}</td><td>{@link #readRegistryKey(RegistryKey)}</td><td>{@link #writeRegistryKey(RegistryKey)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Date}</td><td>{@link #readDate()}</td><td>{@link #writeDate(Date)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link Instant}</td><td>{@link #readInstant()}</td><td>{@link #writeInstant(Instant)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link PublicKey}</td><td>{@link #readPublicKey()}</td><td>{@link #writePublicKey(PublicKey)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link BlockHitResult}</td><td>{@link #readBlockHitResult()}</td><td>{@link #writeBlockHitResult(BlockHitResult)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT  <td>{@link BitSet}</td><td>{@link #readBitSet()}</td><td>{@link #writeBitSet(BitSet)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT <td>{@link Optional}</td><td>{@link #readOptional(PacketByteBuf.PacketReader)}</td><td>{@link #writeOptional(Optional, PacketByteBuf.PacketWriter)}</td>
+	COMMENT </tr>
+	COMMENT <tr>
+	COMMENT <td>Nullable value</td><td>{@link #readNullable(PacketByteBuf.PacketReader)}</td><td>{@link #writeNullable(Object, PacketByteBuf.PacketWriter)}</td>
+	COMMENT </tr>
+	COMMENT </table></div>
+	COMMENT
+	COMMENT <p>All {@code read} and {@code write} methods throw {@link
+	COMMENT IndexOutOfBoundsException} if there is not enough bytes to be read or
+	COMMENT not enough space to write.
+	FIELD f_lxbttahk parent Lio/netty/buffer/ByteBuf;
+	FIELD f_nvrxdcvr MAX_READ_NBT_SIZE I
+		COMMENT The maximum size, in number of bytes, allowed of the NBT compound read by
+		COMMENT {@link #readNbt(NbtTagSizeTracker)}.
+	FIELD f_rwogtoly MAX_PUBLIC_KEY_HEADER_SIZE I
+	FIELD f_tpvysicg MAX_PUBLIC_KEY_LENGTH I
+	FIELD f_uxuuoakx GSON Lcom/google/gson/Gson;
+	FIELD f_vzwzxjqd DEFAULT_MAX_STRING_LENGTH S
+		COMMENT The default max length of strings {@linkplain #readString() read} or {@linkplain
+		COMMENT #writeString(String) written}. This is also the max length of identifiers
+		COMMENT {@linkplain #readIdentifier() read} or {@linkplain #writeIdentifier(Identifier)
+		COMMENT written} in their string form.
+	FIELD f_xjiasaqf PUBLIC_KEY_SIZE I
+	FIELD f_zaehbsii MAX_TEXT_LENGTH I
+	METHOD <init> (Lio/netty/buffer/ByteBuf;)V
+		COMMENT Creates a packet byte buf that delegates its operations to the {@code
+		COMMENT parent} buf.
+		ARG 1 parent
+			COMMENT the parent, or delegate, buf
+	METHOD alloc alloc ()Lio/netty/buffer/ByteBufAllocator;
+	METHOD array array ()[B
+	METHOD arrayOffset arrayOffset ()I
+	METHOD asReadOnly asReadOnly ()Lio/netty/buffer/ByteBuf;
+	METHOD bytesBefore bytesBefore (B)I
+		ARG 1 value
+	METHOD bytesBefore bytesBefore (IB)I
+		ARG 1 index
+		ARG 2 value
+	METHOD bytesBefore bytesBefore (IIB)I
+		ARG 1 index
+		ARG 2 length
+		ARG 3 value
+	METHOD capacity capacity ()I
+	METHOD capacity capacity (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 capacity
+	METHOD clear clear ()Lio/netty/buffer/ByteBuf;
+	METHOD compareTo compareTo (Ljava/lang/Object;)I
+		ARG 1 buffer
+	METHOD copy copy ()Lio/netty/buffer/ByteBuf;
+	METHOD copy copy (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 length
+	METHOD discardReadBytes discardReadBytes ()Lio/netty/buffer/ByteBuf;
+	METHOD discardSomeReadBytes discardSomeReadBytes ()Lio/netty/buffer/ByteBuf;
+	METHOD duplicate duplicate ()Lio/netty/buffer/ByteBuf;
+	METHOD ensureWritable ensureWritable (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+	METHOD ensureWritable ensureWritable (IZ)I
+		ARG 1 index
+		ARG 2 force
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 o
+	METHOD forEachByte forEachByte (IILio/netty/util/ByteProcessor;)I
+		ARG 1 index
+		ARG 2 length
+		ARG 3 byteProcessor
+	METHOD forEachByte forEachByte (Lio/netty/util/ByteProcessor;)I
+		ARG 1 byteProcessor
+	METHOD forEachByteDesc forEachByteDesc (IILio/netty/util/ByteProcessor;)I
+		ARG 1 index
+		ARG 2 length
+		ARG 3 byteProcessor
+	METHOD forEachByteDesc forEachByteDesc (Lio/netty/util/ByteProcessor;)I
+		ARG 1 byteProcessor
+	METHOD getBoolean getBoolean (I)Z
+		ARG 1 index
+	METHOD getByte getByte (I)B
+		ARG 1 index
+	METHOD getBytes getBytes (ILio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+	METHOD getBytes getBytes (ILio/netty/buffer/ByteBuf;I)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+		ARG 3 length
+	METHOD getBytes getBytes (ILio/netty/buffer/ByteBuf;II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+		ARG 3 destinationIndex
+		ARG 4 length
+	METHOD getBytes getBytes (ILjava/io/OutputStream;I)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 outputStream
+		ARG 3 length
+	METHOD getBytes getBytes (ILjava/nio/ByteBuffer;)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+	METHOD getBytes getBytes (ILjava/nio/channels/FileChannel;JI)I
+		ARG 1 index
+		ARG 2 fileChannel
+		ARG 3 position
+		ARG 5 length
+	METHOD getBytes getBytes (ILjava/nio/channels/GatheringByteChannel;I)I
+		ARG 1 index
+		ARG 2 gatheringByteChannel
+		ARG 3 length
+	METHOD getBytes getBytes (I[B)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 destination
+	METHOD getBytes getBytes (I[BII)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 destination
+		ARG 3 destinationIndex
+		ARG 4 length
+	METHOD getChar getChar (I)C
+		ARG 1 index
+	METHOD getCharSequence getCharSequence (IILjava/nio/charset/Charset;)Ljava/lang/CharSequence;
+		ARG 1 index
+		ARG 2 length
+		ARG 3 charset
+	METHOD getDouble getDouble (I)D
+		ARG 1 index
+	METHOD getFloat getFloat (I)F
+		ARG 1 index
+	METHOD getInt getInt (I)I
+		ARG 1 index
+	METHOD getIntLE getIntLE (I)I
+		ARG 1 index
+	METHOD getLong getLong (I)J
+		ARG 1 index
+	METHOD getLongLE getLongLE (I)J
+		ARG 1 index
+	METHOD getMedium getMedium (I)I
+		ARG 1 index
+	METHOD getMediumLE getMediumLE (I)I
+		ARG 1 index
+	METHOD getShort getShort (I)S
+		ARG 1 index
+	METHOD getShortLE getShortLE (I)S
+		ARG 1 index
+	METHOD getUnsignedByte getUnsignedByte (I)S
+		ARG 1 index
+	METHOD getUnsignedInt getUnsignedInt (I)J
+		ARG 1 index
+	METHOD getUnsignedIntLE getUnsignedIntLE (I)J
+		ARG 1 index
+	METHOD getUnsignedMedium getUnsignedMedium (I)I
+		ARG 1 index
+	METHOD getUnsignedMediumLE getUnsignedMediumLE (I)I
+		ARG 1 index
+	METHOD getUnsignedShort getUnsignedShort (I)I
+		ARG 1 index
+	METHOD getUnsignedShortLE getUnsignedShortLE (I)I
+		ARG 1 index
+	METHOD hasArray hasArray ()Z
+	METHOD hasMemoryAddress hasMemoryAddress ()Z
+	METHOD indexOf indexOf (IIB)I
+		ARG 1 fromIndex
+		ARG 2 toIndex
+		ARG 3 value
+	METHOD internalNioBuffer internalNioBuffer (II)Ljava/nio/ByteBuffer;
+		ARG 1 index
+		ARG 2 length
+	METHOD isContiguous isContiguous ()Z
+	METHOD isDirect isDirect ()Z
+	METHOD isReadOnly isReadOnly ()Z
+	METHOD isReadable isReadable ()Z
+	METHOD isReadable isReadable (I)Z
+		ARG 1 index
+	METHOD isWritable isWritable ()Z
+	METHOD isWritable isWritable (I)Z
+		ARG 1 size
+	METHOD m_aiozlifw readRegistryKey ()Lnet/minecraft/unmapped/C_xhhleach;
+	METHOD m_alotuvgi writeOptional (Ljava/util/Optional;Lnet/minecraft/unmapped/C_hiksfskl;)V
+		COMMENT Writes an optional value to this buf. An optional value is represented by
+		COMMENT a boolean indicating if the value is present, followed by the value only if
+		COMMENT the value is present.
+		COMMENT
+		COMMENT @see #readOptional(Reader)
+		ARG 1 value
+		ARG 2 encoder
+	METHOD m_appecnpy readQuaternion (Lio/netty/buffer/ByteBuf;)Lorg/joml/Quaternionf;
+		ARG 0 buf
+	METHOD m_bczcqhop writeString (Ljava/lang/String;I)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes a string to this buf. A string is represented by a byte array of
+		COMMENT its UTF-8 data. That byte array can have a maximum length of
+		COMMENT {@code maxLength}.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @throws io.netty.handler.codec.EncoderException if the byte array of the
+		COMMENT string to write is longer than {@code maxLength}
+		COMMENT @see #readString()
+		COMMENT @see #readString(int)
+		COMMENT @see #writeString(String)
+		ARG 1 string
+			COMMENT the string to write
+		ARG 2 maxLength
+			COMMENT the max length of the byte array
+	METHOD m_cozckjjh writeVector3f (Lio/netty/buffer/ByteBuf;Lorg/joml/Vector3f;)V
+		ARG 0 buf
+		ARG 1 vector
+	METHOD m_cqyrnsig readJson (Lcom/mojang/serialization/Codec;)Ljava/lang/Object;
+		ARG 1 codec
+	METHOD m_cynxfniu (Ljava/lang/String;)Lio/netty/handler/codec/DecoderException;
+		ARG 0 errorMessage
+	METHOD m_czlbxezf writeChunkPos (Lnet/minecraft/unmapped/C_ynrszrtu;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes a chunk position to this buf. A chunk position is represented by
+		COMMENT a regular long.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @see #readChunkPos()
+		ARG 1 pos
+			COMMENT the chunk position to write
+	METHOD m_delcxvna writeIntArray ([I)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes an array of primitive ints to this buf. The array first has a
+		COMMENT var int indicating its length, followed by the var int entries.
+		COMMENT
+		COMMENT @implNote An int array has the same format as a list of ints.
+		COMMENT
+		COMMENT @see #readIntArray(int)
+		COMMENT @see #writeIntArray(int[])
+		COMMENT @see #writeIntList(IntList)
+		COMMENT @return this buf, for chaining
+		ARG 1 array
+			COMMENT the array to write
+	METHOD m_dhyxvfyk readList (Lnet/minecraft/unmapped/C_ajdohfrc;)Ljava/util/List;
+		COMMENT Reads a collection from this buf as an array list.
+		COMMENT
+		COMMENT @param <T> the list's entry type
+		COMMENT @return the read list
+		COMMENT @see #readCollection(IntFunction, Reader)
+	METHOD m_eaxeezjl writeNbt (Lnet/minecraft/unmapped/C_oivssbvb;)Lnet/minecraft/unmapped/C_idfydwco;
+		ARG 1 nbt
+	METHOD m_ebprrcum encode (Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/Codec;Ljava/lang/Object;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes an object to this buf as a compound NBT with the given codec.
+		COMMENT
+		COMMENT @param <T> the encoded object's type
+		COMMENT @throws io.netty.handler.codec.EncoderException if the {@code codec} fails
+		COMMENT to encode the compound NBT
+		COMMENT @see #decode(DynamicOps, Codec)
+		ARG 2 codec
+			COMMENT the codec to encode the object
+		ARG 3 object
+			COMMENT the object to write to this buf
+	METHOD m_elpmwnes writeByteArray (Lio/netty/buffer/ByteBuf;[B)V
+		ARG 0 buf
+		ARG 1 bytes
+	METHOD m_eppgezam writeGlobalPos (Lnet/minecraft/unmapped/C_ovcqqyqp;)V
+		COMMENT Writes a global pos to this buf. A global pos is represented by a registry key
+		COMMENT indicating the world, followed by a block pos, indicating the position within
+		COMMENT the world.
+		COMMENT
+		COMMENT @see #readGlobalPos()
+		ARG 1 pos
+	METHOD m_etakehnh readBitSet ()Ljava/util/BitSet;
+		COMMENT Reads a bit set from this buf. A bit set is represented by a long array.
+		COMMENT
+		COMMENT @return the read bit set
+		COMMENT @see #writeBitSet(BitSet)
+	METHOD m_etdtxgpv readMap (Ljava/util/function/IntFunction;Lnet/minecraft/unmapped/C_ajdohfrc;Lnet/minecraft/unmapped/C_ajdohfrc;)Ljava/util/Map;
+		ARG 1 mapFactory
+		ARG 2 keyDecoder
+		ARG 3 valueDecoder
+	METHOD m_eznoskdd readMap (Lnet/minecraft/unmapped/C_ajdohfrc;Lnet/minecraft/unmapped/C_ajdohfrc;)Ljava/util/Map;
+	METHOD m_fjcnjxnm readString (I)Ljava/lang/String;
+		COMMENT Reads a string from this buf. A string is represented by a byte array of
+		COMMENT its UTF-8 data. The string can have a maximum length of {@code maxLength}.
+		COMMENT
+		COMMENT @return the string read
+		COMMENT @throws io.netty.handler.codec.DecoderException if the string read
+		COMMENT is longer than {@code maxLength}
+		COMMENT @see #readString()
+		COMMENT @see #writeString(String)
+		COMMENT @see #writeString(String, int)
+		ARG 1 maxLength
+			COMMENT the maximum length of the string read
+	METHOD m_fjolbvuh readNullable (Lnet/minecraft/unmapped/C_ajdohfrc;)Ljava/lang/Object;
+		ARG 1 decoder
+	METHOD m_ftclzqhi readChunkSectionPos ()Lnet/minecraft/unmapped/C_zubvmeye;
+		COMMENT Reads a chunk section position from this buf. A chunk section position is
+		COMMENT represented by a regular long.
+		COMMENT
+		COMMENT @return the read chunk section pos
+		COMMENT @see #writeChunkSectionPos(ChunkSectionPos)
+	METHOD m_fztuomot readPos ()Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_gnnqafau writeEnumConstant (Ljava/lang/Enum;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes an enum constant to this buf. An enum constant is represented
+		COMMENT by a var int indicating its ordinal.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @see #readEnumConstant(Class)
+		ARG 1 instance
+			COMMENT the enum constant to write
+	METHOD m_gudchrze readPublicKey ()Ljava/security/PublicKey;
+		COMMENT Reads a public key from this buf.
+		COMMENT A public key is represented by at most 512 primitive bytes.
+		COMMENT
+		COMMENT @see #writePublicKey(PublicKey)
+		COMMENT @see net.minecraft.network.encryption.NetworkEncryptionUtils#decodeEncodedRsaPublicKey(byte[])
+	METHOD m_hcfbquez readGlobalPos ()Lnet/minecraft/unmapped/C_ovcqqyqp;
+		COMMENT Reads a global pos from this buf. A global pos is represented by a registry key
+		COMMENT indicating the world, followed by a block pos, indicating the position within
+		COMMENT the world.
+		COMMENT
+		COMMENT @see #writeGlobalPos(GlobalPos)
+	METHOD m_heazasgl readString ()Ljava/lang/String;
+		COMMENT Reads a string from this buf. A string is represented by a byte array of
+		COMMENT its UTF-8 data. The string can have a maximum length of {@value
+		COMMENT #DEFAULT_MAX_STRING_LENGTH}.
+		COMMENT
+		COMMENT @return the string read
+		COMMENT @throws io.netty.handler.codec.DecoderException if the string read
+		COMMENT exceeds the maximum length
+		COMMENT @see #readString(int)
+		COMMENT @see #writeString(String)
+		COMMENT @see #writeString(String, int)
+	METHOD m_hlqduwys readIdentifier ()Lnet/minecraft/unmapped/C_ncpywfca;
+		COMMENT Reads an identifier from this buf. An identifier is represented by its
+		COMMENT string form. The read identifier's string form can have a max length of
+		COMMENT {@value #DEFAULT_MAX_STRING_LENGTH}.
+		COMMENT
+		COMMENT @return the read identifier
+		COMMENT @throws io.netty.handler.codec.DecoderException if the identifier's
+		COMMENT string form is longer than {@value #DEFAULT_MAX_STRING_LENGTH}
+		COMMENT @see #writeIdentifier(Identifier)
+	METHOD m_hpbnyaqq writeQuaternion (Lio/netty/buffer/ByteBuf;Lorg/joml/Quaternionf;)V
+		ARG 0 buf
+		ARG 1 quaternion
+	METHOD m_htwizfmu readVarInt (Ljava/util/function/IntFunction;)Ljava/lang/Object;
+		ARG 1 intFunction
+	METHOD m_hudsjtrd writeVarLong (J)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes a single var long to this buf.
+		COMMENT
+		COMMENT <p>Compared to regular longs, var longs may use less bytes when
+		COMMENT representing smaller positive numbers.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @see #readVarLong()
+		ARG 1 value
+			COMMENT the value to write
+	METHOD m_hwjipexh writeIntList (Lit/unimi/dsi/fastutil/ints/IntList;)V
+		COMMENT Writes a list of primitive ints from this buf. The ints are stored as var
+		COMMENT ints, with an extra var int in the beginning indicating the size.
+		COMMENT
+		COMMENT @implNote A list of ints has the same format as an int array.
+		COMMENT
+		COMMENT @see #readIntList()
+		COMMENT @see #writeIntArray(int[])
+		ARG 1 list
+			COMMENT the list to write
+	METHOD m_icznxsji (Ljava/lang/Object;Ljava/lang/String;)Lio/netty/handler/codec/EncoderException;
+		ARG 1 errorMessage
+	METHOD m_irlunvcd readVec3d ()Lnet/minecraft/unmapped/C_vgpupfxx;
+	METHOD m_izfwnywx readUuid ()Ljava/util/UUID;
+	METHOD m_jntaktqt (Ljava/lang/Object;Ljava/lang/String;)Lio/netty/handler/codec/EncoderException;
+		ARG 1 errorMessage
+	METHOD m_jqypukxt readByteArray (Lio/netty/buffer/ByteBuf;I)[B
+		ARG 0 buf
+		ARG 1 maxSize
+	METHOD m_jrgknvio decode (Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/Codec;Lnet/minecraft/unmapped/C_fozrrtcx;)Ljava/lang/Object;
+		COMMENT Reads an object from this buf as a compound NBT with the given codec.
+		COMMENT
+		COMMENT @param <T> the decoded object's type
+		COMMENT @return the read object
+		COMMENT @throws io.netty.handler.codec.EncoderException if the {@code codec} fails
+		COMMENT to decode the compound NBT
+		COMMENT @see #encode(DynamicOps, Codec, Object)
+		ARG 2 codec
+			COMMENT the codec to decode the object
+		ARG 3 sizeTracker
+	METHOD m_jtoadldk writeNbt (Lio/netty/buffer/ByteBuf;Lnet/minecraft/unmapped/C_oivssbvb;)V
+		ARG 0 buf
+		ARG 1 nbt
+	METHOD m_jyxjrtet writeDate (Ljava/util/Date;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes a date to this buf. A date is represented by its time, a regular
+		COMMENT long.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @see #readDate()
+		ARG 1 date
+			COMMENT the date to write
+	METHOD m_kggdjvdd writeVarInt (I)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes a single var int to this buf.
+		COMMENT
+		COMMENT <p>Compared to regular ints, var ints may use less bytes (ranging from 1
+		COMMENT to 5, where regular ints use 4) when representing smaller positive
+		COMMENT numbers.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @see #readVarInt()
+		ARG 1 value
+			COMMENT the value to write
+	METHOD m_kgkdgazl readByteArray (Lio/netty/buffer/ByteBuf;)[B
+		ARG 0 buf
+	METHOD m_kjijcwgo readNbtCompound (Lio/netty/buffer/ByteBuf;)Lnet/minecraft/unmapped/C_hhlwcnih;
+		ARG 0 buf
+	METHOD m_kjywmbol writeVec3d (Lio/netty/buffer/ByteBuf;Lnet/minecraft/unmapped/C_vgpupfxx;)V
+		ARG 0 buf
+		ARG 1 vec
+	METHOD m_kooigoir readInstant ()Ljava/time/Instant;
+		COMMENT Reads an instant from this buf. An instant is represented by a long indicating
+		COMMENT the instant epoch milliseconds.
+		COMMENT
+		COMMENT @see #writeInstant(Instant)
+	METHOD m_kynpbmfl readIntArray ()[I
+		COMMENT Reads an array of primitive ints from this buf. The array first has a
+		COMMENT var int indicating its length, followed by the var int entries. The array
+		COMMENT does not have a length limit.
+		COMMENT
+		COMMENT @implNote An int array has the same format as a list of ints.
+		COMMENT
+		COMMENT @see #readIntArray(int)
+		COMMENT @see #writeIntArray(int[])
+		COMMENT @see #readIntList()
+		COMMENT @return the read byte array
+	METHOD m_lbjyfuqf readDate ()Ljava/util/Date;
+		COMMENT Reads a date from this buf. A date is represented by its time, a regular
+		COMMENT long.
+		COMMENT
+		COMMENT @return the read date
+		COMMENT @see #writeDate(Date)
+	METHOD m_lfwlrnnj readBlockHitResult ()Lnet/minecraft/unmapped/C_jdakttms;
+		COMMENT Reads a block hit result from this buf. A block hit result is represented
+		COMMENT by a block position, a direction enum constant, 3 floats for the hit
+		COMMENT offset position, and a boolean for whether the hit was inside a block.
+		COMMENT
+		COMMENT @return the read block hit result
+		COMMENT @see #writeBlockHitResult(BlockHitResult)
+	METHOD m_lkszaayv writeQuaternion (Lorg/joml/Quaternionf;)V
+		ARG 1 quaternion
+	METHOD m_lnjgpfbn (Lnet/minecraft/unmapped/C_hiksfskl;Lnet/minecraft/unmapped/C_hiksfskl;Ljava/lang/Object;Ljava/lang/Object;)V
+		ARG 3 key
+		ARG 4 value
+	METHOD m_mafeqoqe readNbt (Lio/netty/buffer/ByteBuf;Lnet/minecraft/unmapped/C_fozrrtcx;)Lnet/minecraft/unmapped/C_oivssbvb;
+		ARG 0 buf
+		ARG 1 nbtTagSizeTracker
+	METHOD m_mdkhzffo readNullable (Lio/netty/buffer/ByteBuf;Lnet/minecraft/unmapped/C_ajdohfrc;)Ljava/lang/Object;
+		ARG 0 buf
+		ARG 1 decoder
+	METHOD m_mhlenoxy readPos (Lio/netty/buffer/ByteBuf;)Lnet/minecraft/unmapped/C_hynzadkk;
+		ARG 0 buf
+	METHOD m_mlaqlvff writeInstant (Ljava/time/Instant;)V
+		COMMENT Writes an instant to this buf. An instant is represented by a long indicating
+		COMMENT the instant epoch milliseconds.
+		COMMENT
+		COMMENT @see #readInstant()
+		ARG 1 instant
+	METHOD m_mvznudvi writeLongArray ([J)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes an array of primitive longs to this buf. The array first has a
+		COMMENT var int indicating its length, followed by the regular long (not var
+		COMMENT long) values.
+		COMMENT
+		COMMENT @see #readLongArray()
+		COMMENT @return this buf, for chaining
+		ARG 1 array
+			COMMENT the array to write
+	METHOD m_ngzrehtb writeUuid (Lio/netty/buffer/ByteBuf;Ljava/util/UUID;)V
+		ARG 0 buf
+	METHOD m_nhmhnzug readBitSet (I)Ljava/util/BitSet;
+		ARG 1 bitSet
+	METHOD m_nhqatmjh writeJson (Lcom/mojang/serialization/Codec;Ljava/lang/Object;)V
+		ARG 1 codec
+		ARG 2 object
+	METHOD m_nxtbhhsr readVec3d (Lio/netty/buffer/ByteBuf;)Lnet/minecraft/unmapped/C_vgpupfxx;
+		ARG 0 buf
+	METHOD m_odlpvkyf writePublicKey (Ljava/security/PublicKey;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes a public key to this buf.
+		COMMENT A public key is represented by at most 512 primitive bytes.
+		COMMENT
+		COMMENT @see #readPublicKey()
+		COMMENT @see net.minecraft.network.encryption.NetworkEncryptionUtils#decodeEncodedRsaPublicKey(byte[])
+		ARG 1 key
+	METHOD m_okjhfado (ILjava/util/function/IntFunction;I)Ljava/lang/Object;
+		ARG 2 value
+	METHOD m_olpsrdqq getMaxValidator (Ljava/util/function/IntFunction;I)Ljava/util/function/IntFunction;
+		ARG 0 applier
+		ARG 1 max
+	METHOD m_omssfaex writeNullable (Lio/netty/buffer/ByteBuf;Ljava/lang/Object;Lnet/minecraft/unmapped/C_hiksfskl;)V
+		ARG 0 buf
+		ARG 2 encoder
+	METHOD m_pihymbdn readQuaternion ()Lorg/joml/Quaternionf;
+	METHOD m_plevnncf writeRegistryKey (Lnet/minecraft/unmapped/C_xhhleach;)V
+		COMMENT Writes a registry key to this buf. A registry key is represented by an
+		COMMENT identifier.
+		COMMENT
+		COMMENT @see #readRegistryKey(RegistryKey)
+		ARG 1 key
+	METHOD m_qpcrbjwf readIntArray (I)[I
+		COMMENT Reads an array of primitive ints from this buf. The array first has a
+		COMMENT var int indicating its length, followed by the var int entries. The array
+		COMMENT has a length limit given by {@code maxSize}.
+		COMMENT
+		COMMENT @implNote An int array has the same format as a list of ints.
+		COMMENT
+		COMMENT @see #readIntArray()
+		COMMENT @see #writeIntArray(int[])
+		COMMENT @return the read byte array
+		COMMENT @throws io.netty.handler.codec.DecoderException if the read array has a
+		COMMENT length over {@code maxSize}
+		ARG 1 maxSize
+			COMMENT the max length of the read array
+	METHOD m_qpkidnts writeBitSet (Ljava/util/BitSet;I)V
+		ARG 1 bitSet
+		ARG 2 expectedSize
+	METHOD m_qulceral writeBitSet (Ljava/util/BitSet;)V
+		COMMENT Writes a bit set to this buf. A bit set is represented by a long array.
+		COMMENT
+		COMMENT @see #readBitSet()
+		ARG 1 bitSet
+			COMMENT the bit set to write
+	METHOD m_rhfpxyxp readVector3f ()Lorg/joml/Vector3f;
+	METHOD m_rtpohocp writePos (Lio/netty/buffer/ByteBuf;Lnet/minecraft/unmapped/C_hynzadkk;)V
+		COMMENT Writes a position to this buf. A position is represented by a regular long.
+		COMMENT
+		COMMENT @see #writePos(BlockPos)
+		ARG 0 buf
+	METHOD m_sevbbzdm readCollection (Ljava/util/function/IntFunction;Lnet/minecraft/unmapped/C_ajdohfrc;)Ljava/util/Collection;
+		COMMENT Reads a collection from this buf. The collection is stored as a leading
+		COMMENT {@linkplain #readVarInt() var int} size followed by the entries
+		COMMENT sequentially.
+		COMMENT
+		COMMENT @param <T> the collection's entry type
+		COMMENT @param <C> the collection's type
+		COMMENT @return the read collection
+		COMMENT @see #writeCollection(Collection, Writer)
+		COMMENT @see #readList(Reader)
+		ARG 1 collectionFactory
+			COMMENT a factory that creates a collection with a given size
+		ARG 2 decoder
+	METHOD m_smxlihso readLongArray ()[J
+		COMMENT Reads an array of primitive longs from this buf. The array first has a
+		COMMENT var int indicating its length, followed by the regular long (not var
+		COMMENT long) values. The array does not have a length limit.
+		COMMENT
+		COMMENT @see #writeLongArray(long[])
+		COMMENT @see #readLongArray(long[])
+		COMMENT @see #readLongArray(long[], int)
+		COMMENT @return the read long array
+	METHOD m_smzphvvy writeChunkSectionPos (Lnet/minecraft/unmapped/C_zubvmeye;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Reads a chunk section position from this buf. A chunk section position is
+		COMMENT represented by a regular long.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @see #readChunkSectionPos()
+		ARG 1 pos
+			COMMENT the section position to write
+	METHOD m_ssdfjwgw writePos (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_idfydwco;
+	METHOD m_sulfwdjf readNbtCompound ()Lnet/minecraft/unmapped/C_hhlwcnih;
+		COMMENT Reads an NBT compound from this buf. The binary representation of NBT is
+		COMMENT handled by {@link net.minecraft.nbt.NbtIo}. If an NBT null is encountered,
+		COMMENT this method returns {@code null}. The compound can have a maximum size of
+		COMMENT {@value #MAX_READ_NBT_SIZE} bytes.
+		COMMENT
+		COMMENT @return the read compound, may be {@code null}
+		COMMENT @throws io.netty.handler.codec.EncoderException if the NBT cannot be read
+		COMMENT @throws RuntimeException if the compound exceeds the allowed maximum size
+		COMMENT @see #readNbt(NbtTagSizeTracker)
+		COMMENT @see #MAX_READ_NBT_SIZE
+	METHOD m_sxbdiyar readOptional (Lnet/minecraft/unmapped/C_ajdohfrc;)Ljava/util/Optional;
+		COMMENT Reads an optional value from this buf. An optional value is represented by
+		COMMENT a boolean indicating if the value is present, followed by the value only if
+		COMMENT the value is present.
+		COMMENT
+		COMMENT @return the read optional value
+		COMMENT @see #writeOptional(Optional, Writer)
+		ARG 1 decoder
+	METHOD m_tbiclwdt forEachInCollection (Ljava/util/function/Consumer;)V
+		COMMENT Iterates a collection from this buf. The collection is stored as a leading
+		COMMENT {@linkplain #readVarInt() var int} {@code size} followed by the entries
+		COMMENT sequentially. The {@code consumer} will be called {@code size} times.
+		COMMENT
+		COMMENT @see #readCollection(IntFunction, Reader)
+		ARG 1 consumer
+			COMMENT the consumer to read entries
+	METHOD m_thygvpmm readEnumConstant (Ljava/lang/Class;)Ljava/lang/Enum;
+		COMMENT Reads an enum constant from this buf. An enum constant is represented
+		COMMENT by a var int indicating its ordinal.
+		COMMENT
+		COMMENT @return the read enum constant
+		COMMENT @see #writeEnumConstant(Enum)
+		ARG 1 enumClass
+			COMMENT the enum class, for constant lookup
+	METHOD m_tlkcsnsm writeBlockHitResult (Lnet/minecraft/unmapped/C_jdakttms;)V
+		COMMENT Writes a block hit result to this buf. A block hit result is represented
+		COMMENT by a block position, a direction enum constant, 3 floats for the hit
+		COMMENT offset position, and a boolean for whether the hit was inside a block.
+		COMMENT
+		COMMENT @see #readBlockHitResult()
+		ARG 1 hitResult
+			COMMENT the block hit result to write
+	METHOD m_tpmwdhmz writeById (Ljava/util/function/ToIntFunction;Ljava/lang/Object;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Runs {@code valueToId} on {@code value} to generate an id,
+		COMMENT and then writes it as a {@linkplain #readVarInt var int} to this buf.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		ARG 1 valueToId
+		ARG 2 value
+	METHOD m_ucosefkt decode (Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/Codec;)Ljava/lang/Object;
+	METHOD m_ueausfqv writeByteArray ([B)Lnet/minecraft/unmapped/C_idfydwco;
+		ARG 1 bytes
+	METHOD m_uedohhct readNbt (Lnet/minecraft/unmapped/C_fozrrtcx;)Lnet/minecraft/unmapped/C_oivssbvb;
+		ARG 1 tagSizeTracker
+	METHOD m_utowfkel writeVec3d (Lnet/minecraft/unmapped/C_vgpupfxx;)V
+	METHOD m_uvlqpwrk readLongArray ([J)[J
+		COMMENT Reads an array of primitive longs from this buf. The array first has a
+		COMMENT var int indicating its length, followed by the regular long (not var
+		COMMENT long) values. The array does not have a length limit.
+		COMMENT
+		COMMENT <p>Only when {@code toArray} is not {@code null} and {@code
+		COMMENT toArray.length} equals to the length var int read will the {@code
+		COMMENT toArray} be reused and returned; otherwise, a new array
+		COMMENT of proper size is created.
+		COMMENT
+		COMMENT @see #writeLongArray(long[])
+		COMMENT @see #readLongArray()
+		COMMENT @see #readLongArray(long[], int)
+		COMMENT @return the read long array
+		ARG 1 toArray
+			COMMENT the array to reuse
+	METHOD m_vbjdgyoz readVector3f (Lio/netty/buffer/ByteBuf;)Lorg/joml/Vector3f;
+		ARG 0 buf
+	METHOD m_vceclpms readUuid (Lio/netty/buffer/ByteBuf;)Ljava/util/UUID;
+		ARG 0 buf
+	METHOD m_vhgdjglx writeVector3f (Lorg/joml/Vector3f;)V
+		ARG 1 vector
+	METHOD m_vihbcqeq readIntList ()Lit/unimi/dsi/fastutil/ints/IntList;
+		COMMENT Reads a list of primitive ints from this buf. The ints are stored as var
+		COMMENT ints, with an extra var int in the beginning indicating the size.
+		COMMENT
+		COMMENT @apiNote To limit the length of the list or array read, use
+		COMMENT {@link #readIntArray(int)}.
+		COMMENT
+		COMMENT @implNote A list of ints has the same format as an int array.
+		COMMENT
+		COMMENT @return the read list
+		COMMENT @see #writeIntList(IntList)
+		COMMENT @see #readIntArray()
+	METHOD m_virvpqyo readVarLong ()J
+		COMMENT Reads a single var long from this buf.
+		COMMENT
+		COMMENT @return the value read
+		COMMENT @see #writeVarLong(long)
+	METHOD m_vqdikdfq readLongArray ([JI)[J
+		COMMENT Reads an array of primitive longs from this buf. The array first has a
+		COMMENT var int indicating its length, followed by the regular long (not var
+		COMMENT long) values. The array has a length limit of {@code maxSize}.
+		COMMENT
+		COMMENT <p>Only when {@code toArray} is not {@code null} and {@code
+		COMMENT toArray.length} equals to the length var int read will the {@code
+		COMMENT toArray} be reused and returned; otherwise, a new array
+		COMMENT of proper size is created.
+		COMMENT
+		COMMENT @see #writeLongArray(long[])
+		COMMENT @see #readLongArray()
+		COMMENT @see #readLongArray(long[])
+		COMMENT @return the read long array
+		COMMENT @throws io.netty.handler.codec.DecoderException if the read array has a
+		COMMENT length over {@code maxSize}
+		ARG 1 toArray
+			COMMENT the array to reuse
+		ARG 2 maxSize
+			COMMENT the max length of the read array
+	METHOD m_vquxgdau writeIdentifier (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes an identifier to this buf. An identifier is represented by its
+		COMMENT string form. The written identifier's byte array can have a max length of
+		COMMENT {@value #DEFAULT_MAX_STRING_LENGTH}.
+		COMMENT
+		COMMENT @return the read identifier
+		COMMENT @throws io.netty.handler.codec.EncoderException if the {@code id}'s
+		COMMENT byte array is longer than {@value #DEFAULT_MAX_STRING_LENGTH}
+		COMMENT @see #readIdentifier()
+		ARG 1 id
+			COMMENT the identifier to write
+	METHOD m_waiabpsw writeEnumSet (Ljava/util/EnumSet;Ljava/lang/Class;)V
+		ARG 1 set
+		ARG 2 enumClass
+	METHOD m_wqgdmkjs writeUuid (Ljava/util/UUID;)Lnet/minecraft/unmapped/C_idfydwco;
+	METHOD m_wqpnnsca writeCollection (Ljava/util/Collection;Lnet/minecraft/unmapped/C_hiksfskl;)V
+		COMMENT Writes a collection to this buf. The collection is stored as a leading
+		COMMENT {@linkplain #readVarInt() var int} size followed by the entries
+		COMMENT sequentially.
+		COMMENT
+		COMMENT @param <T> the list's entry type
+		COMMENT @see #readCollection(IntFunction, Reader)
+		ARG 1 collection
+			COMMENT the collection to write
+		ARG 2 valueEncoder
+	METHOD m_wxfnqbwh readVarInt ()I
+		COMMENT Reads a single var int from this buf.
+		COMMENT
+		COMMENT @return the value read
+		COMMENT @see #writeVarInt(int)
+	METHOD m_xfwjnxlt readEnumSet (Ljava/lang/Class;)Ljava/util/EnumSet;
+		ARG 1 enumClass
+	METHOD m_xzxnbdko writeMap (Ljava/util/Map;Lnet/minecraft/unmapped/C_hiksfskl;Lnet/minecraft/unmapped/C_hiksfskl;)V
+		COMMENT Writes a map to this buf. The map is stored as a leading
+		COMMENT {@linkplain #readVarInt() var int} size followed by each key and value
+		COMMENT pair.
+		COMMENT
+		COMMENT @param <K> the key type
+		COMMENT @param <V> the value type
+		COMMENT @see #readMap(IntFunction, Reader, Reader)
+		ARG 1 map
+			COMMENT the map to write
+		ARG 2 keyEncoder
+		ARG 3 valueEncoder
+	METHOD m_ybnsdtco readRegistryKey (Lnet/minecraft/unmapped/C_xhhleach;)Lnet/minecraft/unmapped/C_xhhleach;
+		COMMENT Reads a registry key from this buf. A registry key is represented by an
+		COMMENT identifier.
+		COMMENT
+		COMMENT @see #writeRegistryKey(RegistryKey)
+		ARG 1 registry
+			COMMENT a reference to the registry the key belongs to
+	METHOD m_ywhbyyvb readChunkPos ()Lnet/minecraft/unmapped/C_ynrszrtu;
+		COMMENT Reads a chunk position from this buf. A chunk position is represented by
+		COMMENT a regular long.
+		COMMENT
+		COMMENT @return the read chunk position
+		COMMENT @see #writeChunkPos(ChunkPos)
+	METHOD m_zacrlfcn readByteArray (I)[B
+		COMMENT Reads an array of primitive bytes from this buf. The array first has a
+		COMMENT var int indicating its length, followed by the actual bytes. The array
+		COMMENT has a length limit given by {@code maxSize}.
+		COMMENT
+		COMMENT @see #readByteArray()
+		COMMENT @return the read byte array
+		COMMENT @throws io.netty.handler.codec.DecoderException if the read array has a
+		COMMENT length over {@code maxSize}
+		ARG 1 maxSize
+			COMMENT the max length of the read array
+	METHOD m_zcmiuaxl writeNullable (Ljava/lang/Object;Lnet/minecraft/unmapped/C_hiksfskl;)V
+		ARG 2 encoder
+	METHOD m_zflhnxwv writeString (Ljava/lang/String;)Lnet/minecraft/unmapped/C_idfydwco;
+		COMMENT Writes a string to this buf. A string is represented by a byte array of
+		COMMENT its UTF-8 data. That byte array can have a maximum length of
+		COMMENT {@value #DEFAULT_MAX_STRING_LENGTH}.
+		COMMENT
+		COMMENT @return this buf, for chaining
+		COMMENT @throws io.netty.handler.codec.EncoderException if the byte array of the
+		COMMENT string to write is longer than {@value #DEFAULT_MAX_STRING_LENGTH}
+		COMMENT @see #readString()
+		COMMENT @see #readString(int)
+		COMMENT @see #writeString(String, int)
+		ARG 1 string
+			COMMENT the string to write
+	METHOD m_zpmeltuk readByteArray ()[B
+		COMMENT Reads an array of primitive bytes from this buf. The array first has a
+		COMMENT var int indicating its length, followed by the actual bytes. The array
+		COMMENT does not have a length limit.
+		COMMENT
+		COMMENT @see #readByteArray(int)
+		COMMENT @return the read byte array
+	METHOD m_zwzghkkq (Lnet/minecraft/unmapped/C_oivssbvb;Ljava/lang/String;)Lio/netty/handler/codec/DecoderException;
+		ARG 1 errorMessage
+	METHOD markReaderIndex markReaderIndex ()Lio/netty/buffer/ByteBuf;
+	METHOD markWriterIndex markWriterIndex ()Lio/netty/buffer/ByteBuf;
+	METHOD maxCapacity maxCapacity ()I
+	METHOD maxFastWritableBytes maxFastWritableBytes ()I
+	METHOD maxWritableBytes maxWritableBytes ()I
+	METHOD memoryAddress memoryAddress ()J
+	METHOD nioBuffer nioBuffer ()Ljava/nio/ByteBuffer;
+	METHOD nioBuffer nioBuffer (II)Ljava/nio/ByteBuffer;
+		ARG 1 index
+		ARG 2 length
+	METHOD nioBufferCount nioBufferCount ()I
+	METHOD nioBuffers nioBuffers ()[Ljava/nio/ByteBuffer;
+	METHOD nioBuffers nioBuffers (II)[Ljava/nio/ByteBuffer;
+		ARG 1 index
+		ARG 2 length
+	METHOD order order ()Ljava/nio/ByteOrder;
+	METHOD order order (Ljava/nio/ByteOrder;)Lio/netty/buffer/ByteBuf;
+		ARG 1 byteOrder
+	METHOD readBoolean readBoolean ()Z
+	METHOD readByte readByte ()B
+	METHOD readBytes readBytes (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 length
+	METHOD readBytes readBytes (Lio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+		ARG 1 buffer
+	METHOD readBytes readBytes (Lio/netty/buffer/ByteBuf;I)Lio/netty/buffer/ByteBuf;
+		ARG 1 buffer
+		ARG 2 length
+	METHOD readBytes readBytes (Lio/netty/buffer/ByteBuf;II)Lio/netty/buffer/ByteBuf;
+		ARG 1 buffer
+		ARG 2 index
+		ARG 3 length
+	METHOD readBytes readBytes (Ljava/io/OutputStream;I)Lio/netty/buffer/ByteBuf;
+		ARG 1 outputStream
+		ARG 2 length
+	METHOD readBytes readBytes (Ljava/nio/ByteBuffer;)Lio/netty/buffer/ByteBuf;
+		ARG 1 buffer
+	METHOD readBytes readBytes (Ljava/nio/channels/FileChannel;JI)I
+		ARG 1 fileChannel
+		ARG 2 index
+		ARG 4 length
+	METHOD readBytes readBytes (Ljava/nio/channels/GatheringByteChannel;I)I
+		ARG 1 gatheringByteChannel
+		ARG 2 length
+	METHOD readBytes readBytes ([B)Lio/netty/buffer/ByteBuf;
+		ARG 1 bytes
+	METHOD readBytes readBytes ([BII)Lio/netty/buffer/ByteBuf;
+		ARG 1 bytes
+		ARG 2 index
+		ARG 3 length
+	METHOD readChar readChar ()C
+	METHOD readCharSequence readCharSequence (ILjava/nio/charset/Charset;)Ljava/lang/CharSequence;
+		ARG 1 length
+		ARG 2 charset
+	METHOD readDouble readDouble ()D
+	METHOD readFloat readFloat ()F
+	METHOD readInt readInt ()I
+	METHOD readIntLE readIntLE ()I
+	METHOD readLong readLong ()J
+	METHOD readLongLE readLongLE ()J
+	METHOD readMedium readMedium ()I
+	METHOD readMediumLE readMediumLE ()I
+	METHOD readRetainedSlice readRetainedSlice (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 length
+	METHOD readShort readShort ()S
+	METHOD readShortLE readShortLE ()S
+	METHOD readSlice readSlice (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 length
+	METHOD readUnsignedByte readUnsignedByte ()S
+	METHOD readUnsignedInt readUnsignedInt ()J
+	METHOD readUnsignedIntLE readUnsignedIntLE ()J
+	METHOD readUnsignedMedium readUnsignedMedium ()I
+	METHOD readUnsignedMediumLE readUnsignedMediumLE ()I
+	METHOD readUnsignedShort readUnsignedShort ()I
+	METHOD readUnsignedShortLE readUnsignedShortLE ()I
+	METHOD readableBytes readableBytes ()I
+	METHOD readerIndex readerIndex ()I
+	METHOD readerIndex readerIndex (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 i
+	METHOD refCnt refCnt ()I
+	METHOD release release ()Z
+	METHOD release release (I)Z
+		ARG 1 decrement
+	METHOD resetReaderIndex resetReaderIndex ()Lio/netty/buffer/ByteBuf;
+	METHOD resetWriterIndex resetWriterIndex ()Lio/netty/buffer/ByteBuf;
+	METHOD retain retain ()Lio/netty/util/ReferenceCounted;
+	METHOD retain (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 i
+	METHOD retain retain (I)Lio/netty/util/ReferenceCounted;
+		ARG 1 increment
+	METHOD retainedDuplicate retainedDuplicate ()Lio/netty/buffer/ByteBuf;
+	METHOD retainedSlice retainedSlice ()Lio/netty/buffer/ByteBuf;
+	METHOD retainedSlice retainedSlice (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 length
+	METHOD setBoolean setBoolean (IZ)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setByte setByte (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setBytes setBytes (ILio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+	METHOD setBytes setBytes (ILio/netty/buffer/ByteBuf;I)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+		ARG 3 length
+	METHOD setBytes setBytes (ILio/netty/buffer/ByteBuf;II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+		ARG 3 sourceIndex
+		ARG 4 length
+	METHOD setBytes setBytes (ILjava/io/InputStream;I)I
+		ARG 1 index
+		ARG 2 inputStream
+		ARG 3 length
+	METHOD setBytes setBytes (ILjava/nio/ByteBuffer;)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 buffer
+	METHOD setBytes setBytes (ILjava/nio/channels/FileChannel;JI)I
+		ARG 1 index
+		ARG 2 fileChannel
+		ARG 3 position
+		ARG 5 length
+	METHOD setBytes setBytes (ILjava/nio/channels/ScatteringByteChannel;I)I
+		ARG 1 index
+		ARG 2 scatteringByteChannel
+		ARG 3 length
+	METHOD setBytes setBytes (I[B)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 bytes
+	METHOD setBytes setBytes (I[BII)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 bytes
+		ARG 3 sourceIndex
+		ARG 4 length
+	METHOD setChar setChar (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setCharSequence setCharSequence (ILjava/lang/CharSequence;Ljava/nio/charset/Charset;)I
+		ARG 1 index
+		ARG 2 charSequence
+		ARG 3 charset
+	METHOD setDouble setDouble (ID)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setFloat setFloat (IF)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setIndex setIndex (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 oldIndex
+		ARG 2 index
+	METHOD setInt setInt (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setIntLE setIntLE (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setLong setLong (IJ)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setLongLE setLongLE (IJ)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setMedium setMedium (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setMediumLE setMediumLE (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setShort setShort (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setShortLE setShortLE (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 value
+	METHOD setZero setZero (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 length
+	METHOD skipBytes skipBytes (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 length
+	METHOD slice slice ()Lio/netty/buffer/ByteBuf;
+	METHOD slice slice (II)Lio/netty/buffer/ByteBuf;
+		ARG 1 index
+		ARG 2 length
+	METHOD toString toString (IILjava/nio/charset/Charset;)Ljava/lang/String;
+		ARG 1 index
+		ARG 2 length
+		ARG 3 charset
+	METHOD toString toString (Ljava/nio/charset/Charset;)Ljava/lang/String;
+		ARG 1 charset
+	METHOD touch touch ()Lio/netty/util/ReferenceCounted;
+	METHOD touch (Ljava/lang/Object;)Lio/netty/buffer/ByteBuf;
+		ARG 1 o
+	METHOD touch touch (Ljava/lang/Object;)Lio/netty/util/ReferenceCounted;
+		ARG 1 o
+	METHOD unwrap unwrap ()Lio/netty/buffer/ByteBuf;
+	METHOD writableBytes writableBytes ()I
+	METHOD writeBoolean writeBoolean (Z)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeByte writeByte (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeBytes writeBytes (Lio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeBytes writeBytes (Lio/netty/buffer/ByteBuf;I)Lio/netty/buffer/ByteBuf;
+		ARG 1 buffer
+		ARG 2 value
+	METHOD writeBytes writeBytes (Lio/netty/buffer/ByteBuf;II)Lio/netty/buffer/ByteBuf;
+		ARG 1 buffer
+		ARG 2 sourceIndex
+		ARG 3 length
+	METHOD writeBytes writeBytes (Ljava/io/InputStream;I)I
+		ARG 1 inputStream
+		ARG 2 length
+	METHOD writeBytes writeBytes (Ljava/nio/ByteBuffer;)Lio/netty/buffer/ByteBuf;
+		ARG 1 buffer
+	METHOD writeBytes writeBytes (Ljava/nio/channels/FileChannel;JI)I
+		ARG 1 fileChannel
+		ARG 2 position
+		ARG 4 length
+	METHOD writeBytes writeBytes (Ljava/nio/channels/ScatteringByteChannel;I)I
+		ARG 1 scatteringByteChannel
+		ARG 2 length
+	METHOD writeBytes writeBytes ([B)Lio/netty/buffer/ByteBuf;
+		ARG 1 bytes
+	METHOD writeBytes writeBytes ([BII)Lio/netty/buffer/ByteBuf;
+		ARG 1 bytes
+		ARG 2 sourceIndex
+		ARG 3 length
+	METHOD writeChar writeChar (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeCharSequence writeCharSequence (Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)I
+		ARG 1 charSequence
+		ARG 2 charset
+	METHOD writeDouble writeDouble (D)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeFloat writeFloat (F)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeInt writeInt (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeIntLE writeIntLE (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeLong writeLong (J)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeLongLE writeLongLE (J)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeMedium writeMedium (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeMediumLE writeMediumLE (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeShort writeShort (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeShortLE writeShortLE (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 value
+	METHOD writeZero writeZero (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 zero
+	METHOD writerIndex writerIndex ()I
+	METHOD writerIndex writerIndex (I)Lio/netty/buffer/ByteBuf;
+		ARG 1 i

@@ -1,2 +1,0 @@
-CLASS net/minecraft/unmapped/C_jpnewgxf
-	METHOD m_zssecxkb getFeatures ()Ljava/util/stream/Stream;

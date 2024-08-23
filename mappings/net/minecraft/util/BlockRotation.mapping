@@ -1,0 +1,17 @@
+CLASS net/minecraft/unmapped/C_mboglirk net/minecraft/util/BlockRotation
+	FIELD f_cqyrscgb directionTransformation Lnet/minecraft/unmapped/C_yipxoxer;
+	FIELD f_ojkekrbe name Ljava/lang/String;
+	FIELD f_urgoxszy CODEC Lcom/mojang/serialization/Codec;
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;Lnet/minecraft/unmapped/C_yipxoxer;)V
+		ARG 3 name
+		ARG 4 directionTransformation
+	METHOD m_aktxsoll getDirectionTransformation ()Lnet/minecraft/unmapped/C_yipxoxer;
+	METHOD m_anfgpjja rotate (Lnet/minecraft/unmapped/C_xpuuihxf;)Lnet/minecraft/unmapped/C_xpuuihxf;
+		ARG 1 direction
+	METHOD m_oynhctdm rotate (II)I
+		ARG 1 rotation
+		ARG 2 fullTurn
+	METHOD m_sxcuevie randomRotationOrder (Lnet/minecraft/unmapped/C_rlomrsco;)Ljava/util/List;
+	METHOD m_wcosdjwm rotate (Lnet/minecraft/unmapped/C_mboglirk;)Lnet/minecraft/unmapped/C_mboglirk;
+		ARG 1 rotation
+	METHOD m_wsehisas random (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_mboglirk;

@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_rzxgzfcf net/minecraft/client/render/entity/model/PandaEntityModel
+	METHOD m_yyrmdkyu getTexturedModelData ()Lnet/minecraft/unmapped/C_ybmhebgt;

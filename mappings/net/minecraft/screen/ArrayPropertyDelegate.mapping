@@ -1,0 +1,5 @@
+CLASS net/minecraft/unmapped/C_pmarsmhw net/minecraft/screen/ArrayPropertyDelegate
+	COMMENT A {@link PropertyDelegate} that is implemented using an int array.
+	FIELD f_mpvlpqoh data [I
+	METHOD <init> (I)V
+		ARG 1 size

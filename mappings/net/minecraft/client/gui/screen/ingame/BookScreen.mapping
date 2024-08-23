@@ -1,0 +1,51 @@
+CLASS net/minecraft/unmapped/C_riknfhrm net/minecraft/client/gui/screen/ingame/BookScreen
+	FIELD f_dpjcwrba EMPTY_PROVIDER Lnet/minecraft/unmapped/C_riknfhrm$C_klkfizte;
+	FIELD f_dthkxlri PAGE_TEXT_X_OFFSET I
+	FIELD f_fbbkckkh WIDTH I
+	FIELD f_fdlqksso contents Lnet/minecraft/unmapped/C_riknfhrm$C_klkfizte;
+	FIELD f_iupzkssi pageIndexText Lnet/minecraft/unmapped/C_rdaqiwdt;
+	FIELD f_kbownjxu MAX_TEXT_HEIGHT I
+	FIELD f_lwujqbfe HEIGHT I
+	FIELD f_naysrsct pageIndex I
+	FIELD f_nheasbit BOOK_TEXTURE Lnet/minecraft/unmapped/C_ncpywfca;
+	FIELD f_pfxqyxch pageTurnSound Z
+	FIELD f_tzwubxsl cachedPage Ljava/util/List;
+	FIELD f_uioinqrr cachedPageIndex I
+	FIELD f_uttpuvcl PAGE_TEXT_Y_OFFSET I
+	FIELD f_wcinkmsu MAX_TEXT_WIDTH I
+	FIELD f_wcxxntpr nextPageButton Lnet/minecraft/unmapped/C_zirbhteg;
+	FIELD f_xelkpuht PAGE_INDICATOR_TEXT_Y_OFFSET I
+	FIELD f_yjforukk previousPageButton Lnet/minecraft/unmapped/C_zirbhteg;
+	METHOD <init> (Lnet/minecraft/unmapped/C_riknfhrm$C_klkfizte;)V
+		ARG 1 pageProvider
+	METHOD <init> (Lnet/minecraft/unmapped/C_riknfhrm$C_klkfizte;Z)V
+		ARG 1 contents
+		ARG 2 playPageTurnSound
+	METHOD m_jvufzcwy (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_jxoypsmg goToPreviousPage ()V
+	METHOD m_ljhjxqik closeBookScreen ()V
+	METHOD m_obpeyrqj getPageCount ()I
+	METHOD m_ovlixmow jumpToPage (I)Z
+		ARG 1 page
+	METHOD m_qhkthfaj setPage (I)Z
+		ARG 1 index
+	METHOD m_qsnvbheh getTextStyleAt (DD)Lnet/minecraft/unmapped/C_cpwnhism;
+		ARG 1 x
+		ARG 3 y
+	METHOD m_sqzwbxqa addPageButtons ()V
+	METHOD m_tsikqscz addCloseButton ()V
+	METHOD m_ustboylj (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	METHOD m_utngvpdl setPageProvider (Lnet/minecraft/unmapped/C_riknfhrm$C_klkfizte;)V
+		ARG 1 pageProvider
+	METHOD m_vlxltnql updatePageButtons ()V
+	METHOD m_xjxvwigd goToNextPage ()V
+	METHOD m_xmpkmckf (Lnet/minecraft/unmapped/C_buwziidm;)V
+		ARG 1 button
+	CLASS C_klkfizte Contents
+		METHOD m_huaipiyd getPageCount ()I
+		METHOD m_myykitoc create (Lnet/minecraft/unmapped/C_sddaxwyk;)Lnet/minecraft/unmapped/C_riknfhrm$C_klkfizte;
+			ARG 0 stack
+		METHOD m_ohwgyzty getPage (I)Lnet/minecraft/unmapped/C_xzalvetc;
+			ARG 1 index

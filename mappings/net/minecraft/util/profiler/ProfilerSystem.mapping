@@ -1,0 +1,28 @@
+CLASS net/minecraft/unmapped/C_dmgffhnu net/minecraft/util/profiler/ProfilerSystem
+	FIELD f_ayobskvm TIMEOUT_NANOSECONDS J
+	FIELD f_eoyabfsa tickStarted Z
+	FIELD f_gqtqaqyw startTick I
+	FIELD f_mvwpamxl fullPath Ljava/lang/String;
+	FIELD f_plitbsxo checkTimeout Z
+	FIELD f_sntamizz endTickGetter Ljava/util/function/IntSupplier;
+	FIELD f_tfiyrpsc timeGetter Ljava/util/function/LongSupplier;
+	FIELD f_tjithkue path Ljava/util/List;
+	FIELD f_utwoddyl locationInfos Ljava/util/Map;
+	FIELD f_uwelzwwa LOGGER Lorg/slf4j/Logger;
+	FIELD f_wismkrbm sampleTypes Ljava/util/Set;
+	FIELD f_wzrcqdln startTime J
+	FIELD f_xhhhbhrt currentInfo Lnet/minecraft/unmapped/C_dmgffhnu$C_mlnwkhwt;
+	FIELD f_ybeabktv timeList Lit/unimi/dsi/fastutil/longs/LongList;
+	METHOD <init> (Ljava/util/function/LongSupplier;Ljava/util/function/IntSupplier;Z)V
+		ARG 1 timeGetter
+		ARG 2 tickGetter
+		ARG 3 checkTimeout
+	METHOD m_egupxovr getCurrentInfo ()Lnet/minecraft/unmapped/C_dmgffhnu$C_mlnwkhwt;
+	METHOD m_jkprrukx (Ljava/lang/String;)Lnet/minecraft/unmapped/C_dmgffhnu$C_mlnwkhwt;
+		ARG 0 k
+	CLASS C_mlnwkhwt LocatedInfo
+		FIELD f_bixuxrxd visits J
+		FIELD f_kluuskfm minTime J
+		FIELD f_nxuijppp maxTime J
+		FIELD f_qiwwgdul counts Lit/unimi/dsi/fastutil/objects/Object2LongOpenHashMap;
+		FIELD f_ujbmbgal totalTime J

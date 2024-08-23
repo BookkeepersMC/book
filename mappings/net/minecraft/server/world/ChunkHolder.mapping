@@ -1,0 +1,84 @@
+CLASS net/minecraft/unmapped/C_gkderdjo net/minecraft/server/world/ChunkHolder
+	FIELD f_ecmqijre entityTickingFuture Ljava/util/concurrent/CompletableFuture;
+	FIELD f_elnsgicl skyLightUpdateBits Ljava/util/BitSet;
+	FIELD f_gxxqfxop UNLOADED_WORLD_CHUNK_FUTURE Ljava/util/concurrent/CompletableFuture;
+	FIELD f_lbtnztml tickingFuture Ljava/util/concurrent/CompletableFuture;
+	FIELD f_lilcuhvx levelUpdateListener Lnet/minecraft/unmapped/C_gkderdjo$C_itlmpllv;
+	FIELD f_nfzawtue completedLevel I
+	FIELD f_omdiodzh level I
+	FIELD f_peybckli lightingProvider Lnet/minecraft/unmapped/C_ksposksb;
+	FIELD f_pudkanic accessibleFuture Ljava/util/concurrent/CompletableFuture;
+	FIELD f_qfmkgtss blockLightUpdateBits Ljava/util/BitSet;
+	FIELD f_sftixqgk UNLOADED_WORLD_CHUNK Lnet/minecraft/unmapped/C_byseqigh;
+	FIELD f_sgkyxjdx blockUpdatesBySection [Lit/unimi/dsi/fastutil/shorts/ShortSet;
+		COMMENT Contains the packed chunk-local positions that have been marked for update
+		COMMENT by {@link #markForBlockUpdate}, grouped by their vertical chunk section.
+		COMMENT <p>
+		COMMENT Entries for a section are null if the section has no positions marked for update.
+	FIELD f_tbnmoxhy accessible Z
+	FIELD f_tyworwzc lastTickLevel I
+	FIELD f_wuawgnhv pendingLoadStatusConfirmation Ljava/util/concurrent/CompletableFuture;
+	FIELD f_xbnfbbja pendingBlockUpdates Z
+		COMMENT Indicates that {@link #blockUpdatesBySection} contains at least one entry.
+	FIELD f_ynuhroyt playersWatchingChunkProvider Lnet/minecraft/unmapped/C_gkderdjo$C_iqautbcj;
+	FIELD f_yygzmouw world Lnet/minecraft/unmapped/C_qpninoyb;
+	METHOD <init> (Lnet/minecraft/unmapped/C_ynrszrtu;ILnet/minecraft/unmapped/C_qpninoyb;Lnet/minecraft/unmapped/C_ksposksb;Lnet/minecraft/unmapped/C_gkderdjo$C_itlmpllv;Lnet/minecraft/unmapped/C_gkderdjo$C_iqautbcj;)V
+		ARG 1 pos
+		ARG 2 level
+		ARG 3 world
+		ARG 4 lightingProvider
+		ARG 5 levelUpdateListener
+		ARG 6 playersWatchingChunkProvider
+	METHOD m_cjbyykuq setLevel (I)V
+		ARG 1 level
+	METHOD m_djkbnszk scheduleLoadStatusPromotion (Lnet/minecraft/unmapped/C_gxrpzacc;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Executor;Lnet/minecraft/unmapped/C_whqcauvq;)V
+		ARG 1 chunkManager
+		ARG 2 postRun
+		ARG 3 executor
+		ARG 4 status
+	METHOD m_fnpxnlqk addSaveAction (Ljava/util/concurrent/CompletableFuture;)V
+		ARG 1 action
+	METHOD m_gjochkby getAccessibleFuture ()Ljava/util/concurrent/CompletableFuture;
+	METHOD m_hjqqoeij tick (Lnet/minecraft/unmapped/C_gxrpzacc;Ljava/util/concurrent/Executor;)V
+		ARG 1 chunkManager
+		ARG 2 executor
+	METHOD m_hqvrbhfi sendPacketToPlayersWatching (Ljava/util/List;Lnet/minecraft/unmapped/C_zyjtrjrl;)V
+		ARG 1 players
+		ARG 2 packet
+	METHOD m_kgzokvvv getTickingFuture ()Ljava/util/concurrent/CompletableFuture;
+	METHOD m_ksnbkgsf setCompletedLevel (I)V
+		ARG 1 level
+	METHOD m_lqtjurpe getEntityTickingFuture ()Ljava/util/concurrent/CompletableFuture;
+	METHOD m_mlibztsg markForLightUpdate (Lnet/minecraft/unmapped/C_fhvlmqtw;I)Z
+		ARG 1 lightType
+		ARG 2 y
+			COMMENT chunk section y coordinate
+	METHOD m_qjjuiqjg updateStatus (Lnet/minecraft/unmapped/C_gxrpzacc;Lnet/minecraft/unmapped/C_whqcauvq;)V
+		ARG 1 chunkManager
+		ARG 2 status
+	METHOD m_rllpjhva getWorldChunk ()Lnet/minecraft/unmapped/C_hrdsvlkq;
+	METHOD m_rpqawkcj sendBlockEntityUpdatePacket (Ljava/util/List;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;)V
+		ARG 1 players
+		ARG 2 world
+		ARG 3 pos
+	METHOD m_ucfsyfpl flushUpdates (Lnet/minecraft/unmapped/C_hrdsvlkq;)V
+		ARG 1 chunk
+	METHOD m_upbtkato tryUpdateBlockEntityAt (Ljava/util/List;Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)V
+		ARG 1 players
+		ARG 2 world
+		ARG 3 pos
+		ARG 4 state
+	METHOD m_wimfsfkf isAccessible ()Z
+	METHOD m_zmvaaivo updateAccessibleStatus ()V
+	METHOD m_zuqnnazp markForBlockUpdate (Lnet/minecraft/unmapped/C_hynzadkk;)Z
+		ARG 1 pos
+	CLASS C_iqautbcj PlayersWatchingChunkProvider
+		METHOD m_xoihgpxx getPlayersWatchingChunk (Lnet/minecraft/unmapped/C_ynrszrtu;Z)Ljava/util/List;
+			ARG 1 chunkPos
+			ARG 2 onlyOnWatchDistanceEdge
+	CLASS C_itlmpllv LevelUpdateListener
+		METHOD onLevelChange updateLevel (Lnet/minecraft/unmapped/C_ynrszrtu;Ljava/util/function/IntSupplier;ILjava/util/function/IntConsumer;)V
+			ARG 1 pos
+			ARG 2 levelGetter
+			ARG 3 targetLevel
+			ARG 4 levelSetter

@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_whwmgojg net/minecraft/network/encryption/NetworkEncryptionException
+	METHOD <init> (Ljava/lang/Throwable;)V
+		ARG 1 throwable

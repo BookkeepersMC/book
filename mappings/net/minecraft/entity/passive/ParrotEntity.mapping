@@ -1,0 +1,45 @@
+CLASS net/minecraft/unmapped/C_ombdzkxc net/minecraft/entity/passive/ParrotEntity
+	FIELD f_akrpggmo prevMaxWingDeviation F
+	FIELD f_bdicpzqd VARIANT Lnet/minecraft/unmapped/C_rinmcaxy;
+	FIELD f_brydhsyf nextFlap F
+	FIELD f_daqskego songPlaying Z
+	FIELD f_eiphtoys prevFlapProgress F
+	FIELD f_grzlgvvg CAN_IMITATE Ljava/util/function/Predicate;
+	FIELD f_jnckecrd flapProgress F
+	FIELD f_yjlqktei MOB_SOUNDS Ljava/util/Map;
+	FIELD f_zaagezcc songSource Lnet/minecraft/unmapped/C_hynzadkk;
+	FIELD f_zqawwnea maxWingDeviation F
+	FIELD f_zrhgskzn flapSpeed F
+	METHOD m_airtrftk canSpawn (Lnet/minecraft/unmapped/C_ogavsvbr;Lnet/minecraft/unmapped/C_vdvbsyle;Lnet/minecraft/unmapped/C_bhyaesep;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_rlomrsco;)Z
+		ARG 0 type
+		ARG 1 world
+		ARG 3 pos
+	METHOD m_bxqlwhey flapWings ()V
+	METHOD m_gtokjgxe (Ljava/util/HashMap;)V
+		ARG 0 map
+	METHOD m_kqehkkkh getSound (Lnet/minecraft/unmapped/C_ogavsvbr;)Lnet/minecraft/unmapped/C_avavozay;
+		ARG 0 imitate
+	METHOD m_ksjuioxb getRandomSound (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_avavozay;
+		ARG 0 world
+	METHOD m_mqvmxoxz createAttributes ()Lnet/minecraft/unmapped/C_sdjuuzrz$C_tehwrjus;
+	METHOD m_orcwjsma isSongPlaying ()Z
+	METHOD m_qsqaztkt getSoundPitch (Lnet/minecraft/unmapped/C_rlomrsco;)F
+	METHOD m_yeswsuun imitateNearbyMob (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_astfners;)Z
+		ARG 0 world
+		ARG 1 parrot
+	CLASS C_otwutkqf
+		METHOD test test (Ljava/lang/Object;)Z
+			ARG 1 entity
+	CLASS C_vrrzomrk Variant
+		FIELD f_ionelagg VARIANTS Ljava/util/function/IntFunction;
+		FIELD f_lyjclikp key Ljava/lang/String;
+		FIELD f_plgymzwe id I
+		FIELD f_vgfcuyii CODEC Lcom/mojang/serialization/Codec;
+		METHOD <init> (Ljava/lang/String;IILjava/lang/String;)V
+			ARG 3 id
+			ARG 4 key
+		METHOD m_jquwagcv get (I)Lnet/minecraft/unmapped/C_ombdzkxc$C_vrrzomrk;
+			ARG 0 id
+		METHOD m_mhaphmct id ()I
+	CLASS C_zeiqwbga ParrotWanderGoal
+		METHOD m_ablbecac getTreePos ()Lnet/minecraft/unmapped/C_vgpupfxx;

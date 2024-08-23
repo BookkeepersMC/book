@@ -1,0 +1,14 @@
+CLASS net/minecraft/unmapped/C_rpqasaht net/minecraft/item/BrushItem
+	FIELD f_dldtzlkc USE_DURATION I
+	FIELD f_tpysdxny ANIMATION_DURATION I
+	METHOD m_cqkmbenj spawnDustParticles (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_jdakttms;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_njjnizsa;)V
+		ARG 2 blockHitResult
+		ARG 4 pos
+		ARG 5 arm
+	METHOD m_wyxghxco getHitResult (Lnet/minecraft/unmapped/C_jzrpycqo;)Lnet/minecraft/unmapped/C_eetoegzn;
+		ARG 1 player
+	CLASS C_lmzfybgn DustParticleDelta
+		FIELD f_kigkgxpj ALONG_SIDE_DELTA D
+		FIELD f_wjkblpfr OUT_FROM_SIDE_DELTA D
+		METHOD m_toamwoeh create (Lnet/minecraft/unmapped/C_vgpupfxx;Lnet/minecraft/unmapped/C_xpuuihxf;)Lnet/minecraft/unmapped/C_rpqasaht$C_lmzfybgn;
+			ARG 0 pos
