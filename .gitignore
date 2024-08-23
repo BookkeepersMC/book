@@ -4,6 +4,7 @@
 *-intermediary.jar
 *-hashed-unpicked.jar
 *-hashed.jar
+m2/*
 *.DS_Store
 out/
 mappings_official/
