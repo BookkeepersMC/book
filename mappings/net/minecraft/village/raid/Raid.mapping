@@ -105,6 +105,7 @@ CLASS net/minecraft/unmapped/C_szefbyex net/minecraft/village/raid/Raid
 		ARG 1 nbt
 	METHOD m_pajuwpzg setCenter (Lnet/minecraft/unmapped/C_hynzadkk;)V
 		ARG 1 center
+	METHOD m_pbwmgtdj createOminousBannerInstance (Lnet/minecraft/unmapped/C_pzdchrcy;)Lnet/minecraft/unmapped/C_sddaxwyk;
 	METHOD m_pcjjizjn getGroupsSpawned ()I
 	METHOD m_prgonsry addRaider (ILnet/minecraft/unmapped/C_iaguvmwh;Lnet/minecraft/unmapped/C_hynzadkk;Z)V
 		ARG 1 wave

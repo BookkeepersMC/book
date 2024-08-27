@@ -1,0 +1,10 @@
+CLASS net/minecraft/unmapped/C_wvzzfswm net/minecraft/resource/pack/KnownPackManager
+	FIELD f_seigvdnp manager Lnet/minecraft/unmapped/C_dqfyacfy;
+	FIELD f_xvddqnwe knownPacks Ljava/util/Map;
+	METHOD m_freezzfp selectPacks (Ljava/util/List;)Ljava/util/List;
+		ARG 1 knownPacks
+	METHOD m_tgigfimw createAutoResourceManager ()Lnet/minecraft/unmapped/C_carvbxzj;
+	METHOD m_wlsomwmv (Lcom/google/common/collect/ImmutableMap$Builder;Lnet/minecraft/unmapped/C_yebcvztn;Lnet/minecraft/unmapped/C_kebqmtbz;)V
+		ARG 2 knownPack
+	METHOD m_xrgpgmdq (Lcom/google/common/collect/ImmutableMap$Builder;Lnet/minecraft/unmapped/C_lvnjxuwi;)V
+		ARG 1 profile

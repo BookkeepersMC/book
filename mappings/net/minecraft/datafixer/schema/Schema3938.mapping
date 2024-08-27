@@ -1,2 +1,3 @@
 CLASS net/minecraft/unmapped/C_hwfxjmrq net/minecraft/datafixer/schema/Schema3938
+	METHOD m_dodsvbar abstractArrow (Lcom/mojang/datafixers/schemas/Schema;)Lcom/mojang/datafixers/types/templates/TypeTemplate;
 	METHOD registerEntities registerEntities (Lcom/mojang/datafixers/schemas/Schema;)Ljava/util/Map;

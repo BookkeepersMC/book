@@ -1,8 +1,11 @@
 CLASS net/minecraft/unmapped/C_zelyotsz net/minecraft/command/argument/ItemPredicateArgumentType
 	FIELD f_bezmrynk ITEM_PREDICATE_MALFORMED_EXCEPTION Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
+	FIELD f_bljoiblj PSUEDO_PREDICATES_CHECKS Ljava/util/Map;
+	FIELD f_gticmpkj parser Lnet/minecraft/unmapped/C_melyyado;
 	FIELD f_idwkgjot COUNT Lnet/minecraft/unmapped/C_ncpywfca;
 	FIELD f_jobwnunr EXAMPLES Ljava/util/Collection;
 	FIELD f_mcjybgrl ITEM_TAG_UNKNOWN_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
+	FIELD f_toutwicj PSUEDO_COMPONENTS_CHECKS Ljava/util/Map;
 	FIELD f_vjmneygw ITEM_COMPONENT_UNKNOWN_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
 	FIELD f_yrhmyaou ITEM_COMPONENT_MALFORMED_EXCEPTION Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;
 	FIELD f_ytoqnfuh ITEM_PREDICATE_UNKNOWN_EXCEPTION Lcom/mojang/brigadier/exceptions/DynamicCommandExceptionType;
@@ -38,26 +41,35 @@ CLASS net/minecraft/unmapped/C_zelyotsz net/minecraft/command/argument/ItemPredi
 		ARG 0 id
 	METHOD parse parse (Lcom/mojang/brigadier/StringReader;)Ljava/lang/Object;
 		ARG 1 reader
-	CLASS C_vvlghner
+	CLASS C_vvlghner PredicateCheck
+		METHOD <init> (Lnet/minecraft/unmapped/C_cjzoxshv$C_rjzpeyec;)V
+			ARG 1 type
 		METHOD m_avzhhely (Lcom/mojang/brigadier/ImmutableStringReader;Ljava/lang/String;)Lcom/mojang/brigadier/exceptions/CommandSyntaxException;
 			ARG 2 error
-		METHOD m_zyhgqydt (Lcom/mojang/brigadier/ImmutableStringReader;Lnet/minecraft/unmapped/C_piadqmzm;Lnet/minecraft/unmapped/C_oivssbvb;)Ljava/util/function/Predicate;
+		METHOD m_zyhgqydt createPredicate (Lcom/mojang/brigadier/ImmutableStringReader;Lnet/minecraft/unmapped/C_piadqmzm;Lnet/minecraft/unmapped/C_oivssbvb;)Ljava/util/function/Predicate;
 			ARG 1 reader
+			ARG 2 nbtRegistryOps
 			ARG 3 nbt
-	CLASS C_wadhfwgl
+	CLASS C_wadhfwgl Context
+		FIELD f_jcaowuwh dataComponentLookup Lnet/minecraft/unmapped/C_vtbxyypo$C_drwjtlvl;
+		FIELD f_jubyyvxm itemSubPredicateLookup Lnet/minecraft/unmapped/C_vtbxyypo$C_drwjtlvl;
+		FIELD f_xwwieyfc itemLookup Lnet/minecraft/unmapped/C_vtbxyypo$C_drwjtlvl;
+		FIELD f_yhiihohl nbtRegistryOps Lnet/minecraft/unmapped/C_piadqmzm;
 		METHOD <init> (Lnet/minecraft/unmapped/C_vtbxyypo$C_etmlgbig;)V
 			ARG 1 provider
 		METHOD m_bpisirfg (Lnet/minecraft/unmapped/C_cjzoxshv$C_rjzpeyec;)Z
 			ARG 0 reference
 		METHOD m_mogezwjm (Lnet/minecraft/unmapped/C_cjzoxshv$C_rjzpeyec;)Lnet/minecraft/unmapped/C_ncpywfca;
 			ARG 0 reference
-	CLASS C_weudnhcg
+	CLASS C_weudnhcg ComponentWrapper
 		METHOD m_cgociuhf (Lcom/mojang/brigadier/ImmutableStringReader;Ljava/lang/String;)Lcom/mojang/brigadier/exceptions/CommandSyntaxException;
 			ARG 2 error
-		METHOD m_fqtyhngv (Lcom/mojang/brigadier/ImmutableStringReader;Lnet/minecraft/unmapped/C_piadqmzm;Lnet/minecraft/unmapped/C_oivssbvb;)Ljava/util/function/Predicate;
+		METHOD m_fqtyhngv decode (Lcom/mojang/brigadier/ImmutableStringReader;Lnet/minecraft/unmapped/C_piadqmzm;Lnet/minecraft/unmapped/C_oivssbvb;)Ljava/util/function/Predicate;
 			ARG 1 reader
+			ARG 2 nbtRegistryOps
 			ARG 3 nbt
-		METHOD m_rkstoiss (Lcom/mojang/brigadier/ImmutableStringReader;Lnet/minecraft/unmapped/C_ncpywfca;Lnet/minecraft/unmapped/C_pscqxfcs;)Lnet/minecraft/unmapped/C_zelyotsz$C_weudnhcg;
+		METHOD m_rkstoiss read (Lcom/mojang/brigadier/ImmutableStringReader;Lnet/minecraft/unmapped/C_ncpywfca;Lnet/minecraft/unmapped/C_pscqxfcs;)Lnet/minecraft/unmapped/C_zelyotsz$C_weudnhcg;
 			ARG 0 reader
 			ARG 1 id
+			ARG 2 componentType
 	CLASS C_xgcdwuzg ItemPredicateArgument

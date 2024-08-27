@@ -7,6 +7,8 @@ CLASS net/minecraft/unmapped/C_maikngon net/minecraft/advancement/criterion/Loca
 		METHOD m_cgdxuneb (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 			ARG 0 instance
 		METHOD m_eyeihplq checkFootwearAndBlock (Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_pzdchrcy;Lnet/minecraft/unmapped/C_mmxmpdoq;Lnet/minecraft/unmapped/C_vorddnax;)Lnet/minecraft/unmapped/C_rzypsigz;
+			ARG 0 blockProvider
+			ARG 1 itemProvider
 			ARG 2 block
 			ARG 3 item
 		METHOD m_flipnctj createAvoidVibration ()Lnet/minecraft/unmapped/C_rzypsigz;

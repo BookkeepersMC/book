@@ -17,10 +17,13 @@ CLASS net/minecraft/unmapped/C_vneqepda net/minecraft/fluid/FlowableFluid
 	METHOD m_arspckzu getFlowing (IZ)Lnet/minecraft/unmapped/C_xqketiuf;
 		ARG 1 level
 		ARG 2 falling
+	METHOD m_bzifeyxn canHoldFluid (Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_rxhyurmy;)Z
 	METHOD m_ddqoqbni receivesFlow (Lnet/minecraft/unmapped/C_xpuuihxf;Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)Z
 		ARG 1 face
-		ARG 4 state
-		ARG 5 fromPos
+		ARG 2 pos
+		ARG 3 state
+		ARG 4 fromPos
+		ARG 5 fromState
 		ARG 6 fromState
 	METHOD m_easmhmhd getStill ()Lnet/minecraft/unmapped/C_rxhyurmy;
 	METHOD m_ejtzmuvf getUpdatedState (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)Lnet/minecraft/unmapped/C_xqketiuf;
@@ -33,6 +36,9 @@ CLASS net/minecraft/unmapped/C_vneqepda net/minecraft/fluid/FlowableFluid
 		ARG 3 downFlowSpeed
 		ARG 4 direction
 		ARG 5 state
+		ARG 6 context
+	METHOD m_epmjwigk canPassThrough (Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_xpuuihxf;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_xqketiuf;)Z
+		ARG 6 fromState
 	METHOD m_flkcyrdx isMatchingAndStill (Lnet/minecraft/unmapped/C_xqketiuf;)Z
 		ARG 1 state
 	METHOD m_gnukxuqv tryFlow (Lnet/minecraft/unmapped/C_cdctfzbn;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_xqketiuf;)V
@@ -88,6 +94,7 @@ CLASS net/minecraft/unmapped/C_vneqepda net/minecraft/fluid/FlowableFluid
 		ARG 0 state
 		ARG 1 world
 		ARG 2 pos
+	METHOD m_vogtmsni canHold (Lnet/minecraft/unmapped/C_txtbiemp;)Z
 	METHOD m_vpoeivwu isEmptyOrThis (Lnet/minecraft/unmapped/C_xqketiuf;)Z
 		ARG 1 state
 	METHOD m_yyzlptcq canFlowDownTo (Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_txtbiemp;)Z
@@ -96,5 +103,13 @@ CLASS net/minecraft/unmapped/C_vneqepda net/minecraft/fluid/FlowableFluid
 		ARG 3 state
 		ARG 4 fromPos
 		ARG 5 fromState
+	CLASS C_pbwmzsui SpreadContext
+		FIELD f_ivbbscxw flowDownCache Lit/unimi/dsi/fastutil/shorts/Short2BooleanMap;
+		FIELD f_xajeqlhp stateCache Lit/unimi/dsi/fastutil/shorts/Short2ObjectMap;
+		METHOD m_beioptzk getBlockState (Lnet/minecraft/unmapped/C_hynzadkk;S)Lnet/minecraft/unmapped/C_txtbiemp;
+			ARG 2 packed
+		METHOD m_kqslwepa getBlockState (Lnet/minecraft/unmapped/C_hynzadkk;)Lnet/minecraft/unmapped/C_txtbiemp;
+		METHOD m_nnlgqqbg getPackCacheKey (Lnet/minecraft/unmapped/C_hynzadkk;)S
+		METHOD m_swnccerv canFlowDown (Lnet/minecraft/unmapped/C_hynzadkk;)Z
 	CLASS C_rblmlrzb
 		METHOD rehash rehash (I)V

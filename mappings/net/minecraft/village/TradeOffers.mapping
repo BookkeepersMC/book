@@ -80,12 +80,18 @@ CLASS net/minecraft/unmapped/C_hqrlptsj net/minecraft/village/TradeOffers
 			ARG 4 experience
 			ARG 5 priceMultiplier
 	CLASS C_lrpwofjn ProcessItemFactory
+		FIELD f_ejmritbz enchantmentKey Ljava/util/Optional;
 		FIELD f_fjgkvjkd maxUses I
 		FIELD f_kdtzftpi sell Lnet/minecraft/unmapped/C_sddaxwyk;
 		FIELD f_tgtrersi experience I
 		FIELD f_tzmnlyxu priceMultiplier F
 		FIELD f_vrezjoqy price I
 		FIELD f_xriqnzpf secondBuy Lnet/minecraft/unmapped/C_gqfxurno;
+		METHOD <init> (Lnet/minecraft/unmapped/C_gmbqjnle;IILnet/minecraft/unmapped/C_gmbqjnle;IIIFLnet/minecraft/unmapped/C_xhhleach;)V
+			ARG 1 convertible
+			ARG 2 count
+			ARG 4 processed
+			ARG 5 processedCount
 		METHOD <init> (Lnet/minecraft/unmapped/C_gmbqjnle;IILnet/minecraft/unmapped/C_sddaxwyk;IIIF)V
 			ARG 1 item
 			ARG 2 count
@@ -108,10 +114,16 @@ CLASS net/minecraft/unmapped/C_hqrlptsj net/minecraft/village/TradeOffers
 	CLASS C_oigljzdw EnchantBookFactory
 		FIELD f_ergftuze minLevel I
 		FIELD f_ewyrltat maxLevel I
+		FIELD f_fykexdki enchantmentTag Lnet/minecraft/unmapped/C_ednuhnnn;
 		FIELD f_jzuznifm experience I
+		METHOD <init> (IIILnet/minecraft/unmapped/C_ednuhnnn;)V
+			ARG 4 enchantmentTag
+		METHOD <init> (ILnet/minecraft/unmapped/C_ednuhnnn;)V
+			ARG 2 enchantmentTag
 	CLASS C_qgveffhr BuyForOneEmeraldFactory
 		FIELD f_eyddoaua experience I
 		FIELD f_kricdfec price I
+		FIELD f_mghsbwuc stack Lnet/minecraft/unmapped/C_gqfxurno;
 		FIELD f_tkfkyzcv priceMultiplier F
 		FIELD f_uzbukszc maxUses I
 		METHOD <init> (Lnet/minecraft/unmapped/C_gmbqjnle;III)V
@@ -152,6 +164,7 @@ CLASS net/minecraft/unmapped/C_hqrlptsj net/minecraft/village/TradeOffers
 	CLASS C_sgimohkx SellItemFactory
 		FIELD f_cyskhcmw maxUses I
 		FIELD f_etwwexea sell Lnet/minecraft/unmapped/C_sddaxwyk;
+		FIELD f_jsxjznwq enchantmentProviderKey Ljava/util/Optional;
 		FIELD f_mvgznpla priceMultiplier F
 		FIELD f_ouofvtss price I
 		FIELD f_vvhouvvg experience I
@@ -174,6 +187,8 @@ CLASS net/minecraft/unmapped/C_hqrlptsj net/minecraft/village/TradeOffers
 			ARG 4 maxUses
 			ARG 5 experience
 			ARG 6 priceMultiplier
+		METHOD <init> (Lnet/minecraft/unmapped/C_sddaxwyk;IIIIFLjava/util/Optional;)V
+			ARG 7 enchantmentProviderKey
 		METHOD <init> (Lnet/minecraft/unmapped/C_vorddnax;III)V
 			ARG 1 item
 			ARG 2 price

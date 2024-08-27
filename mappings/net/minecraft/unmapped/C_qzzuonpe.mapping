@@ -1,0 +1,10 @@
+CLASS net/minecraft/unmapped/C_qzzuonpe
+	CLASS C_eaxqmglw
+		METHOD m_cfbxicbg streamElementIds ()Ljava/util/stream/Stream;
+		METHOD m_fpaokcka streamTags ()Ljava/util/stream/Stream;
+		METHOD m_guigokpv streamPsuedoPredicateTypes ()Ljava/util/stream/Stream;
+		METHOD m_ubnxdddq streamComponentTypes ()Ljava/util/stream/Stream;
+		METHOD m_uqiyvusz anyOf (Ljava/util/List;)Ljava/lang/Object;
+			ARG 1 stack
+		METHOD m_vaonhdly negate (Ljava/lang/Object;)Ljava/lang/Object;
+			ARG 1 stack
