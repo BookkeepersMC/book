@@ -12,6 +12,8 @@ CLASS net/minecraft/unmapped/C_vnfbczzp net/minecraft/network/message/MessageSty
 	METHOD m_jryqivhw parameters ()Ljava/util/List;
 	METHOD m_kxvswqiz withSender (Ljava/lang/String;)Lnet/minecraft/unmapped/C_vnfbczzp;
 		ARG 0 translationKey
+	METHOD m_lmdbyekj (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+		ARG 0 instance
 	METHOD m_oqvzxrrz createText (Lnet/minecraft/unmapped/C_rdaqiwdt;Lnet/minecraft/unmapped/C_hasnsypd$C_iocvgdxe;)Lnet/minecraft/unmapped/C_rdaqiwdt;
 		ARG 1 text
 		ARG 2 parameters
@@ -25,11 +27,13 @@ CLASS net/minecraft/unmapped/C_vnfbczzp net/minecraft/network/message/MessageSty
 		ARG 1 text
 		ARG 2 parameters
 	CLASS C_tcjcksgx Parameter
+		FIELD f_jaewdbkf id I
 		FIELD f_ovhpbapm text Lnet/minecraft/unmapped/C_vnfbczzp$C_tcjcksgx$C_koukivxq;
 		FIELD f_rfputqgt CODEC Lcom/mojang/serialization/Codec;
 		FIELD f_skgevxyc name Ljava/lang/String;
 		FIELD f_slcberqz CONTENT Lnet/minecraft/unmapped/C_vnfbczzp$C_tcjcksgx;
 		FIELD f_vfvwypla SENDER Lnet/minecraft/unmapped/C_vnfbczzp$C_tcjcksgx;
+		FIELD f_wddfkckq BY_ID Ljava/util/function/IntFunction;
 		FIELD f_zzvzguen TARGET Lnet/minecraft/unmapped/C_vnfbczzp$C_tcjcksgx;
 		METHOD m_jyepfdgv (Lnet/minecraft/unmapped/C_rdaqiwdt;Lnet/minecraft/unmapped/C_hasnsypd$C_iocvgdxe;)Lnet/minecraft/unmapped/C_rdaqiwdt;
 			ARG 0 text

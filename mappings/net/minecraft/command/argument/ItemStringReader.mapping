@@ -27,11 +27,44 @@ CLASS net/minecraft/unmapped/C_aggscjva net/minecraft/command/argument/ItemStrin
 		ARG 0 id
 	METHOD m_seifydji getSuggestions (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 builder
+	METHOD m_soczdarj parse (Lcom/mojang/brigadier/StringReader;Lnet/minecraft/unmapped/C_aggscjva$C_uvpoavmx;)V
+	METHOD m_teqbcvvp validate (Lcom/mojang/brigadier/StringReader;Lnet/minecraft/unmapped/C_cjzoxshv;Lnet/minecraft/unmapped/C_jqyoylib;)V
+		ARG 1 itemHolder
 	CLASS C_rktfpfda ItemResult
 		FIELD f_vwmvrpsk item Lnet/minecraft/unmapped/C_cjzoxshv;
 		METHOD equals (Ljava/lang/Object;)Z
 			ARG 1 o
 		METHOD m_feznkgdg item ()Lnet/minecraft/unmapped/C_cjzoxshv;
-	CLASS C_vvlkkwvb
+	CLASS C_tgvloggv SuggestionVisitor
+		FIELD f_dqwswbut suggestor Ljava/util/function/Function;
+		METHOD m_jzmakvwu getSuggestions (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Lcom/mojang/brigadier/StringReader;)Ljava/util/concurrent/CompletableFuture;
+	CLASS C_uvpoavmx Visitor
+		METHOD m_bksxjjpe setSuggestor (Ljava/util/function/Function;)V
+			ARG 1 suggestionFunction
+		METHOD m_gbddekgx onComponentRemoved (Lnet/minecraft/unmapped/C_pscqxfcs;)V
+			ARG 1 type
+		METHOD m_javzcgqv onItem (Lnet/minecraft/unmapped/C_cjzoxshv;)V
+			ARG 1 item
+		METHOD m_nbgbsswo onComponentAdded (Lnet/minecraft/unmapped/C_pscqxfcs;Ljava/lang/Object;)V
+			ARG 1 type
+			ARG 2 value
+	CLASS C_vvlkkwvb Reader
+		FIELD f_xazpmfcs visitor Lnet/minecraft/unmapped/C_aggscjva$C_uvpoavmx;
+		METHOD <init> (Lnet/minecraft/unmapped/C_aggscjva;Lcom/mojang/brigadier/StringReader;Lnet/minecraft/unmapped/C_aggscjva$C_uvpoavmx;)V
+			ARG 3 visitor
+		METHOD m_djgrzoxo suggestEqual (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		METHOD m_dsqxclpk suggestComponents (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture;
+			ARG 2 suffix
+		METHOD m_ebyindnr suggestComponentsToRemove (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		METHOD m_fzfpqdkm suggestComponents (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		METHOD m_ggwajjyt suggestBracket (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		METHOD m_ilxkhmkl suggestEndOfComponent (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		METHOD m_krrbjycd readComponents ()V
+		METHOD m_lzksdrct suggestItems (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
+		METHOD m_mpviigld read ()V
 		METHOD m_tpivlbau (ILnet/minecraft/unmapped/C_pscqxfcs;Ljava/lang/String;)Lcom/mojang/brigadier/exceptions/CommandSyntaxException;
 			ARG 3 error
+		METHOD m_uxhrstbp readComponentType (Lnet/minecraft/unmapped/C_pscqxfcs;)V
+			ARG 1 type
+		METHOD m_yrdanivb readComponentType (Lcom/mojang/brigadier/StringReader;)Lnet/minecraft/unmapped/C_pscqxfcs;
+		METHOD m_zhrfpmvf readItem ()V

@@ -1,0 +1,7 @@
+CLASS net/minecraft/unmapped/C_qrsmnkgy net/minecraft/client/gl/CoreShaders
+	FIELD f_xepmxfld ALL Ljava/util/List;
+	METHOD m_dilwehcn register (Ljava/lang/String;Lnet/minecraft/unmapped/C_rnldvdpe;Lnet/minecraft/unmapped/C_wechclhy;)Lnet/minecraft/unmapped/C_amxeyjrr;
+		ARG 0 id
+	METHOD m_dowkxkwu getAll ()Ljava/util/List;
+	METHOD m_syfnapdh register (Ljava/lang/String;Lnet/minecraft/unmapped/C_rnldvdpe;)Lnet/minecraft/unmapped/C_amxeyjrr;
+		ARG 0 id

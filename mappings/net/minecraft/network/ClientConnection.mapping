@@ -73,6 +73,7 @@ CLASS net/minecraft/unmapped/C_oasmcckk net/minecraft/network/ClientConnection
 	METHOD m_ejdecnhl addHandlers (Lio/netty/channel/ChannelPipeline;Lnet/minecraft/unmapped/C_exeqxqdd;ZLnet/minecraft/unmapped/C_gxhfclcm;)V
 		ARG 0 pipeline
 		ARG 1 side
+		ARG 2 local
 		ARG 3 packetSizeHandler
 	METHOD m_faopouol flushInternal ()V
 	METHOD m_fqnxiapg submit (Ljava/util/function/Consumer;)V
@@ -106,6 +107,8 @@ CLASS net/minecraft/unmapped/C_oasmcckk net/minecraft/network/ClientConnection
 	METHOD m_luuskhlm initPerformanceSampleLog (Lnet/minecraft/unmapped/C_pwpucsml;)V
 	METHOD m_lyptmghi connectLocal (Ljava/net/SocketAddress;)Lnet/minecraft/unmapped/C_oasmcckk;
 		ARG 0 address
+	METHOD m_mbsmnzkr getPrepender (Z)Lio/netty/channel/ChannelOutboundHandler;
+		ARG 0 local
 	METHOD m_mnslofbm validateInboundProtocol (Lnet/minecraft/unmapped/C_ppzmqyxe;Lnet/minecraft/unmapped/C_tkgdawqw;)V
 		ARG 1 phase
 		ARG 2 listener
@@ -132,6 +135,9 @@ CLASS net/minecraft/unmapped/C_oasmcckk net/minecraft/network/ClientConnection
 	METHOD m_sprgohsj flush ()V
 	METHOD m_tckzsnsu setupOutboundProtocol (Lnet/minecraft/unmapped/C_ppzmqyxe;)V
 		ARG 1 protocol
+	METHOD m_tnzecwyk getSplitter (Lnet/minecraft/unmapped/C_gxhfclcm;Z)Lio/netty/channel/ChannelInboundHandler;
+		ARG 0 packetSize
+		ARG 1 local
 	METHOD m_tpxokfsb (Lnet/minecraft/unmapped/C_ppzmqyxe;Lnet/minecraft/unmapped/C_ifnchbtj;Ljava/lang/String;ILnet/minecraft/unmapped/C_uxoyljpb;Lnet/minecraft/unmapped/C_ppzmqyxe;Lnet/minecraft/unmapped/C_oasmcckk;)V
 		ARG 7 connection
 	METHOD m_ttkdcwpg getOutboundHandlerConfig (Z)Ljava/lang/String;

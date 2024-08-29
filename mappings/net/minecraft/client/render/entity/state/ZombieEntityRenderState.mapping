@@ -1,0 +1,3 @@
+CLASS net/minecraft/unmapped/C_aaksstrq net/minecraft/client/render/entity/state/ZombieEntityRenderState
+	FIELD f_osdcukyv attacking Z
+	FIELD f_rbplgkdr convertingInWater Z

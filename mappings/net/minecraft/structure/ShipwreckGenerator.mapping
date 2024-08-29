@@ -1,8 +1,14 @@
 CLASS net/minecraft/unmapped/C_mtqabbsj net/minecraft/structure/ShipwreckGenerator
 	FIELD f_bvfgqjhg LOOT_TABLES Ljava/util/Map;
+	FIELD f_mmixbycs LARGE_SIZE_LIMIT I
 	FIELD f_tfpivhqd REGULAR_TEMPLATES [Lnet/minecraft/unmapped/C_ncpywfca;
 	FIELD f_xsalpgsk BEACHED_TEMPLATES [Lnet/minecraft/unmapped/C_ncpywfca;
 	FIELD f_zjrbkelj DEFAULT_POSITION Lnet/minecraft/unmapped/C_hynzadkk;
+	METHOD m_adkmxynm addParts (Lnet/minecraft/unmapped/C_zxhjfyir;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_mboglirk;Lnet/minecraft/unmapped/C_vwpykcrw;Lnet/minecraft/unmapped/C_rlomrsco;Z)Lnet/minecraft/unmapped/C_mtqabbsj$C_dgyxqwnv;
+		ARG 0 templateManager
+		ARG 2 rotation
+		ARG 3 piecesHolder
+		ARG 5 beached
 	CLASS C_dgyxqwnv Piece
 		FIELD f_hnyyzlvg beached Z
 		METHOD <init> (Lnet/minecraft/unmapped/C_zxhjfyir;Lnet/minecraft/unmapped/C_hhlwcnih;)V
@@ -14,7 +20,12 @@ CLASS net/minecraft/unmapped/C_mtqabbsj net/minecraft/structure/ShipwreckGenerat
 			ARG 3 pos
 			ARG 4 rotation
 			ARG 5 beached
+		METHOD m_hgaxnnpg isTooLargeForNormalGeneration ()Z
 		METHOD m_ipbkbfft createPlacementData (Lnet/minecraft/unmapped/C_mboglirk;)Lnet/minecraft/unmapped/C_mhhynxof;
 			ARG 0 rotation
+		METHOD m_qlerahfm setY (I)V
+			ARG 1 y
 		METHOD m_vshnymlu (Lnet/minecraft/unmapped/C_hhlwcnih;Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_mhhynxof;
 			ARG 1 id
+		METHOD m_yhdynbxz findGroundedY (ILnet/minecraft/unmapped/C_rlomrsco;)I
+			ARG 1 y

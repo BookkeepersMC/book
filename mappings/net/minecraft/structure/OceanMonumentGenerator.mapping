@@ -60,6 +60,7 @@ CLASS net/minecraft/unmapped/C_rbvfwmfa net/minecraft/structure/OceanMonumentGen
 			ARG 2 random
 			ARG 3 box
 		METHOD m_qgpcbfef generateWing (ZILnet/minecraft/unmapped/C_ldkphtbr;Lnet/minecraft/unmapped/C_rlomrsco;Lnet/minecraft/unmapped/C_hmqypqzz;)V
+			ARG 1 side
 			ARG 2 startX
 			ARG 3 world
 			ARG 4 random

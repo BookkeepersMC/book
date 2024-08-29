@@ -1,6 +1,7 @@
 CLASS net/minecraft/unmapped/C_dglscyab net/minecraft/structure/pool/StructurePool
 	FIELD f_bmrvgqng elementCounts Ljava/util/List;
 	FIELD f_cddforgi highestY I
+	FIELD f_ctjnnkfw CODEC_REFERENCE Lorg/apache/commons/lang3/mutable/MutableObject;
 	FIELD f_cylurdsg CODEC Lcom/mojang/serialization/Codec;
 	FIELD f_gjtypbhg UNSET_SIZE I
 	FIELD f_icpglovc terminatorsId Lnet/minecraft/unmapped/C_cjzoxshv;

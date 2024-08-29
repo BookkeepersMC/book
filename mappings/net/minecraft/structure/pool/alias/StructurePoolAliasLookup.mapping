@@ -1,4 +1,5 @@
 CLASS net/minecraft/unmapped/C_klopvdsw net/minecraft/structure/pool/alias/StructurePoolAliasLookup
+	FIELD f_ycsrssgx EMPTY Lnet/minecraft/unmapped/C_klopvdsw;
 	METHOD create (Ljava/util/List;Lnet/minecraft/unmapped/C_hynzadkk;J)Lnet/minecraft/unmapped/C_klopvdsw;
 		ARG 0 aliasBindings
 		ARG 2 seed

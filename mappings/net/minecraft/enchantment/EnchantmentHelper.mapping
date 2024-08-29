@@ -10,6 +10,8 @@ CLASS net/minecraft/unmapped/C_jakrppis net/minecraft/enchantment/EnchantmentHel
 	METHOD m_cjzxcjvw applyAttributeModifiers (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_qfoqahef;Ljava/util/function/BiConsumer;)V
 		ARG 1 group
 		ARG 2 applicator
+	METHOD m_cnuszkat getEnchantedBook (Lnet/minecraft/unmapped/C_gsnkkurc;)Lnet/minecraft/unmapped/C_sddaxwyk;
+		ARG 0 enchantmentEntry
 	METHOD m_ecxgwxiu isCompatible (Ljava/util/Collection;Lnet/minecraft/unmapped/C_cjzoxshv;)Z
 		ARG 0 currentEnchantments
 		ARG 1 newEnchantment
@@ -134,6 +136,7 @@ CLASS net/minecraft/unmapped/C_jakrppis net/minecraft/enchantment/EnchantmentHel
 		COMMENT stored enchantments than regular enchantments.
 		ARG 0 stack
 	METHOD m_yolmdyfp onProjectileSpawned (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_ltpsyvhj;Ljava/util/function/Consumer;)V
+		ARG 2 projectileEntity
 		ARG 3 onBreak
 	METHOD m_zkmvjzhi applyAttributeModifiers (Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_yuycoehb;Ljava/util/function/BiConsumer;)V
 		ARG 1 slot

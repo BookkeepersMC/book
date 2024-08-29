@@ -10,6 +10,8 @@ CLASS net/minecraft/unmapped/C_eetcdhxt net/minecraft/network/listener/ServerPla
 		ARG 1 packet
 	METHOD m_coplkcrg onJigsawGeneration (Lnet/minecraft/unmapped/C_gthfdcyj;)V
 		ARG 1 packet
+	METHOD m_cwzmhgry onClientTickEnd (Lnet/minecraft/unmapped/C_wjalbado;)V
+		ARG 1 packet
 	METHOD m_dpxxwjjn onSpectatorTeleportation (Lnet/minecraft/unmapped/C_drskvged;)V
 		ARG 1 packet
 	METHOD m_eejuzutb onPlayerInteractionWithEntity (Lnet/minecraft/unmapped/C_ckudzhjz;)V
@@ -21,6 +23,8 @@ CLASS net/minecraft/unmapped/C_eetcdhxt net/minecraft/network/listener/ServerPla
 	METHOD m_gszpxyny onBookUpdate (Lnet/minecraft/unmapped/C_qojpogdb;)V
 		ARG 1 packet
 	METHOD m_gtswtkro onCommandCompletionRequest (Lnet/minecraft/unmapped/C_cybfkmbt;)V
+		ARG 1 packet
+	METHOD m_iepswqrv onBundleItemSelected (Lnet/minecraft/unmapped/C_wzidlrji;)V
 		ARG 1 packet
 	METHOD m_itulgqyi onHandSwing (Lnet/minecraft/unmapped/C_xtteillh;)V
 		ARG 1 packet

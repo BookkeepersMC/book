@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_wzidlrji net/minecraft/network/packet/c2s/play/BundleItemSelectedC2SPacket
+	METHOD m_njbyuidl write (Lnet/minecraft/unmapped/C_idfydwco;)V

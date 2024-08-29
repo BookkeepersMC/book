@@ -1,4 +1,5 @@
 CLASS net/minecraft/unmapped/C_hasnsypd net/minecraft/network/message/MessageType
+	FIELD f_bbeeoupe PACKET_CODEC Lnet/minecraft/unmapped/C_qsrmwluu;
 	FIELD f_bfjqlkxs SAY_COMMAND Lnet/minecraft/unmapped/C_xhhleach;
 	FIELD f_cjrwpnkw TEAM_COMMAND_INCOMING Lnet/minecraft/unmapped/C_xhhleach;
 	FIELD f_gskgmlde WITH_SENDER Lnet/minecraft/unmapped/C_vnfbczzp;
@@ -7,6 +8,7 @@ CLASS net/minecraft/unmapped/C_hasnsypd net/minecraft/network/message/MessageTyp
 	FIELD f_mhphwukm COMMAND_INCOMING Lnet/minecraft/unmapped/C_xhhleach;
 	FIELD f_niqyljad COMMAND_OUTGOING Lnet/minecraft/unmapped/C_xhhleach;
 	FIELD f_sclxoyal CHAT Lnet/minecraft/unmapped/C_xhhleach;
+	FIELD f_vazcbwqk ENTRY_PACKET_CODEC Lnet/minecraft/unmapped/C_qsrmwluu;
 	FIELD f_zebjxgzd EMOTE_COMMAND Lnet/minecraft/unmapped/C_xhhleach;
 	FIELD f_zvcwhmuw TEAM_COMMAND_OUTGOING Lnet/minecraft/unmapped/C_xhhleach;
 	METHOD <init> (Lnet/minecraft/unmapped/C_vnfbczzp;Lnet/minecraft/unmapped/C_vnfbczzp;)V
@@ -24,6 +26,8 @@ CLASS net/minecraft/unmapped/C_hasnsypd net/minecraft/network/message/MessageTyp
 		ARG 0 path
 	METHOD m_ndtnzjcd bootstrap (Lnet/minecraft/unmapped/C_hqoyyfco;)V
 		ARG 0 messageTypes
+	METHOD m_ukpeqppc (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+		ARG 0 instance
 	METHOD m_vhffvxth createParameters (Lnet/minecraft/unmapped/C_xhhleach;Lnet/minecraft/unmapped/C_wqxmvzdq;Lnet/minecraft/unmapped/C_rdaqiwdt;)Lnet/minecraft/unmapped/C_hasnsypd$C_iocvgdxe;
 		ARG 0 messageType
 		ARG 1 registryManager

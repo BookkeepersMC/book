@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_wjalbado net/minecraft/network/packet/c2s/play/ClientTickEndC2SPacket
+	FIELD f_ejxqztrq INSTANCE Lnet/minecraft/unmapped/C_wjalbado;

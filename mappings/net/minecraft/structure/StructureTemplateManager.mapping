@@ -1,10 +1,13 @@
 CLASS net/minecraft/unmapped/C_zxhjfyir net/minecraft/structure/StructureTemplateManager
 	FIELD f_bczykawb resourceManager Lnet/minecraft/unmapped/C_tmnrpasf;
 	FIELD f_efihizhm structures Ljava/util/Map;
+	FIELD f_eozhyyrv STRUCTURE_NBT_RESOURCE_FINDER Lnet/minecraft/unmapped/C_iiomeaxy;
 	FIELD f_gnjifoli LOGGER Lorg/slf4j/Logger;
 	FIELD f_hkeiyfvl SNBT_FILE_EXTENSION Ljava/lang/String;
 	FIELD f_ikzakmeb NBT_FILE_EXTENSION Ljava/lang/String;
 	FIELD f_itzarjva blockLookup Lnet/minecraft/unmapped/C_pzdchrcy;
+	FIELD f_jfcdqeia STRUCTURE_DESTROY Ljava/lang/String;
+	FIELD f_khaqxukj STRUCTURES_DIRECTORY Ljava/lang/String;
 	FIELD f_phazahjc generatedPath Ljava/nio/file/Path;
 	FIELD f_vumnuxpf sources Ljava/util/List;
 	FIELD f_wcochalo dataFixer Lcom/mojang/datafixers/DataFixer;
@@ -15,6 +18,7 @@ CLASS net/minecraft/unmapped/C_zxhjfyir net/minecraft/structure/StructureTemplat
 		ARG 1 nbt
 	METHOD m_bisjucta (Lnet/minecraft/unmapped/C_ncpywfca;Ljava/lang/Throwable;)V
 		ARG 1 throwable
+	METHOD m_crqnadcw getTemplatePath (Lnet/minecraft/unmapped/C_ncpywfca;Ljava/lang/String;)Ljava/nio/file/Path;
 	METHOD m_dtdhfcuj (Ljava/nio/file/Path;)Z
 		ARG 0 path
 	METHOD m_ehejovkt saveStructure (Lnet/minecraft/unmapped/C_ncpywfca;)Z
@@ -24,6 +28,7 @@ CLASS net/minecraft/unmapped/C_zxhjfyir net/minecraft/structure/StructureTemplat
 		ARG 1 directory
 		ARG 2 idNamespace
 		ARG 3 extension
+		ARG 4 idConsumer
 	METHOD m_ghddvuph removeStructure (Lnet/minecraft/unmapped/C_ncpywfca;)V
 		ARG 1 id
 	METHOD m_jlaprynr getStructureOrBlank (Lnet/minecraft/unmapped/C_ncpywfca;)Lnet/minecraft/unmapped/C_abvlwuej;

@@ -4,6 +4,7 @@ CLASS net/minecraft/unmapped/C_mhhynxof net/minecraft/structure/StructurePlaceme
 	FIELD f_lmbyflol updateNeighbors Z
 	FIELD f_pnnagjnn random Lnet/minecraft/unmapped/C_rlomrsco;
 	FIELD f_prcxfjdx ignoreEntities Z
+	FIELD f_qeknjaur liquidSettings Lnet/minecraft/unmapped/C_wgjkyhfd;
 	FIELD f_ugpilact boundingBox Lnet/minecraft/unmapped/C_hmqypqzz;
 	FIELD f_uoyuymhl mirror Lnet/minecraft/unmapped/C_qomzaqud;
 	FIELD f_vnbokwey rotation Lnet/minecraft/unmapped/C_mboglirk;
@@ -36,8 +37,11 @@ CLASS net/minecraft/unmapped/C_mhhynxof net/minecraft/structure/StructurePlaceme
 	METHOD m_qcpyetid setIgnoreEntities (Z)Lnet/minecraft/unmapped/C_mhhynxof;
 		ARG 1 ignoreEntities
 	METHOD m_qptinipd getMirror ()Lnet/minecraft/unmapped/C_qomzaqud;
+	METHOD m_rqhgdfnp shouldApplyWaterlogging ()Z
 	METHOD m_slierqdy shouldInitializeMobs ()Z
 	METHOD m_svvotiyc getBoundingBox ()Lnet/minecraft/unmapped/C_hmqypqzz;
+	METHOD m_tizehamn setLiquidSettings (Lnet/minecraft/unmapped/C_wgjkyhfd;)Lnet/minecraft/unmapped/C_mhhynxof;
+		ARG 1 liquidSettings
 	METHOD m_ujxaditz getProcessors ()Ljava/util/List;
 	METHOD m_vwjpcmlh clearProcessors ()Lnet/minecraft/unmapped/C_mhhynxof;
 	METHOD m_wvjirmuh setRandom (Lnet/minecraft/unmapped/C_rlomrsco;)Lnet/minecraft/unmapped/C_mhhynxof;
