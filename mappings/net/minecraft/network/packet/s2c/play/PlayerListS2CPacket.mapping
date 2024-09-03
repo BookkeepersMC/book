@@ -67,6 +67,7 @@ CLASS net/minecraft/unmapped/C_lmoadlft net/minecraft/network/packet/s2c/play/Pl
 		FIELD f_fvfsxnhl uuid Ljava/util/UUID;
 		FIELD f_lqifphaj listed Z
 		FIELD f_nswipqus latency I
+		FIELD f_qinhpodp listOrder I
 		FIELD f_wbgwmhcd profile Lcom/mojang/authlib/GameProfile;
 		METHOD <init> (Ljava/util/UUID;)V
 			ARG 1 uuid

@@ -11,6 +11,7 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 	FIELD f_nsbwwaru DIRECTIONS [Lnet/minecraft/unmapped/C_xpuuihxf;
 	FIELD f_pqndzdga collidable Z
 	FIELD f_uxluwspt resistance F
+	FIELD f_zawgabdk translationKey Ljava/lang/String;
 	METHOD <init> (Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;)V
 		ARG 1 settings
 	METHOD m_bhohbmwk getWeakRedstonePower (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_xpuuihxf;)I
@@ -48,6 +49,7 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 	METHOD m_enfnjurp (Ljava/util/function/Function;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 1 codecBuilder
 	METHOD m_ewcsdntg asBlock ()Lnet/minecraft/unmapped/C_mmxmpdoq;
+	METHOD m_fegczxns getTranslationKey ()Ljava/lang/String;
 	METHOD m_fjkbizwn isRedstonePowerSource (Lnet/minecraft/unmapped/C_txtbiemp;)Z
 		ARG 1 state
 	METHOD m_flnjgkno isTransparent (Lnet/minecraft/unmapped/C_txtbiemp;)Z
@@ -565,6 +567,7 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 		FIELD f_dfulysva toolRequired Z
 		FIELD f_gepbjyhg nonSolid Z
 		FIELD f_gljcimhm emissiveLightingPredicate Lnet/minecraft/unmapped/C_triydqro$C_izsedryc;
+		FIELD f_gxswpnob descriptionKey Lnet/minecraft/unmapped/C_jquyxssk;
 		FIELD f_hgzeyqby randomTicks Z
 		FIELD f_hzpexiar mapColorGetter Ljava/util/function/Function;
 		FIELD f_ivzlotoq replaceable Z
@@ -591,6 +594,7 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 		METHOD m_bcasjlrn variantOf (Lnet/minecraft/unmapped/C_triydqro;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
 			ARG 0 block
 		METHOD m_bwwgnswz solid ()Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
+		METHOD m_bybxvckr effectiveDrops ()Ljava/util/Optional;
 		METHOD m_bzhfzklk emissiveLighting (Lnet/minecraft/unmapped/C_triydqro$C_izsedryc;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
 			ARG 1 predicate
 		METHOD m_cfcitqhx requiredFlags ([Lnet/minecraft/unmapped/C_kksdgidr;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
@@ -629,6 +633,8 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 		METHOD m_mkiacirn air ()Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
 		METHOD m_mylnzrvw mapColor (Lnet/minecraft/unmapped/C_mlrprqox;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
 			ARG 1 mapColor
+		METHOD m_nbpsnvhc overrideLootTable (Ljava/util/Optional;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
+			ARG 1 lootTableKey
 		METHOD m_nfvnphha allowsSpawning (Lnet/minecraft/unmapped/C_triydqro$C_knnwryez;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
 			COMMENT Specifies logic that calculates whether an entity can spawn on a block.
 			ARG 1 predicate
@@ -642,6 +648,8 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 			COMMENT Specifies the light level emitted by a block.
 			ARG 1 luminance
 				COMMENT a per block state light level, with values between 0 and 15
+		METHOD m_oileiccy overrideDescription (Ljava/lang/String;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
+			ARG 1 translationKey
 		METHOD m_pbfkvwez strength (F)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
 			ARG 1 strength
 		METHOD m_riwmybec instrument (Lnet/minecraft/unmapped/C_onjtjtsi;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
@@ -655,6 +663,7 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 			ARG 1 world
 			ARG 2 pos
 		METHOD m_shyyftwz toolRequired ()Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
+		METHOD m_telcghnd effectiveDescriptionKey ()Ljava/lang/String;
 		METHOD m_tzpskyoo (Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;)Z
 			ARG 0 state
 			ARG 1 world
@@ -673,6 +682,8 @@ CLASS net/minecraft/unmapped/C_triydqro net/minecraft/block/AbstractBlock
 			COMMENT @return this
 		METHOD m_vuhrtmql (Lnet/minecraft/unmapped/C_txtbiemp;)Lnet/minecraft/unmapped/C_mlrprqox;
 			ARG 0 state
+		METHOD m_vuvrdzlb setId (Lnet/minecraft/unmapped/C_xhhleach;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
+			ARG 1 blockResourceKey
 		METHOD m_wlqavdtn mapColor (Lnet/minecraft/unmapped/C_arllgqae;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;
 			ARG 1 dyeColor
 		METHOD m_wrutkowk blockVision (Lnet/minecraft/unmapped/C_triydqro$C_izsedryc;)Lnet/minecraft/unmapped/C_triydqro$C_xnkxsdfy;

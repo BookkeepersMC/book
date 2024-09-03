@@ -1,2 +1,6 @@
 CLASS net/minecraft/unmapped/C_zaxzpkwd net/minecraft/network/packet/s2c/common/CustomReportDetailsS2CPacket
+	FIELD f_ahxsogdh MAX_KEY_LENGTH I
 	FIELD f_crtzyjmr PACKET_CODEC Lnet/minecraft/unmapped/C_qsrmwluu;
+	FIELD f_dqynkkwu MAX_VALUE_LENGTH I
+	FIELD f_hgixrqsl DETAILS_CODEC Lnet/minecraft/unmapped/C_qsrmwluu;
+	FIELD f_nwvsrblo MAX_DETAILS_SIZE I

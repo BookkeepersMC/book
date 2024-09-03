@@ -1,1 +1,4 @@
 CLASS net/minecraft/unmapped/C_uqhumrao net/minecraft/network/packet/s2c/play/UpdateSelectedSlotS2CPacket
+	FIELD f_meeyxuwd slot I
+	METHOD m_ojvdbfav getSlot ()I
+	METHOD m_sygdkktr write (Lnet/minecraft/unmapped/C_idfydwco;)V

@@ -1,1 +1,2 @@
 CLASS net/minecraft/unmapped/C_poljqryj net/minecraft/network/packet/s2c/play/MoveMinecartAlongTracksS2CPacket
+	METHOD m_jflrgbhx getEntity (Lnet/minecraft/unmapped/C_cdctfzbn;)Lnet/minecraft/unmapped/C_astfners;
