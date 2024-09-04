@@ -89,6 +89,8 @@ CLASS net/minecraft/unmapped/C_tyjpezxh net/minecraft/util/dynamic/Codecs
 		ARG 0 list
 	METHOD m_mfpnjepb (Lorg/joml/Vector3f;)Ljava/util/List;
 		ARG 0 vector
+	METHOD m_mgvopkql (Lcom/mojang/authlib/properties/PropertyMap;Ljava/util/Map;)V
+		ARG 0 propertyMap
 	METHOD m_njoxfqbl sizeLimitedMap (Lcom/mojang/serialization/Codec;I)Lcom/mojang/serialization/Codec;
 		ARG 1 maxSize
 	METHOD m_nsiytucc withNonEmptyList (Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;
