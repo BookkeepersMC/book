@@ -17,7 +17,7 @@ CLASS net/minecraft/unmapped/C_hyurdhty net/minecraft/util/profiling/jfr/JfrStat
 	FIELD f_xjphwbyf packetSent Ljava/util/Map;
 	METHOD <init> (Ljava/util/stream/Stream;)V
 		ARG 1 eventStream
-	METHOD m_crsowpah (Ljava/time/Duration;Ljava/util/Map;)Lnet/minecraft/unmapped/C_kmmgeuyo;
+	METHOD m_crsowpah createIoStats (Ljava/time/Duration;Ljava/util/Map;)Lnet/minecraft/unmapped/C_kmmgeuyo;
 		ARG 0 duration
 		ARG 1 counters
 	METHOD m_dfsfobyc toStatsResult ()Lnet/minecraft/unmapped/C_ohlgrsme;

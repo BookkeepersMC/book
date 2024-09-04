@@ -1,0 +1,2 @@
+CLASS net/minecraft/unmapped/C_vptppxob net/minecraft/client/render/entity/state/EntityRenderState
+	CLASS C_twyrpfqb LeashData
