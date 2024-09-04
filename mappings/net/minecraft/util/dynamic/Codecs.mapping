@@ -35,12 +35,6 @@ CLASS net/minecraft/unmapped/C_tyjpezxh net/minecraft/util/dynamic/Codecs
 	METHOD m_ahlasxan withLifecycle (Lcom/mojang/serialization/Codec;Ljava/util/function/Function;Ljava/util/function/Function;)Lcom/mojang/serialization/Codec;
 		ARG 1 entryLifecycleGetter
 		ARG 2 lifecycleGetter
-	METHOD m_azagsdch (Ljava/lang/String;Ljava/lang/String;Ljava/util/Optional;)Lcom/mojang/authlib/properties/Property;
-		ARG 0 string
-		ARG 1 string2
-		ARG 2 optional
-	METHOD m_bbclwurz (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-		ARG 0 instance
 	METHOD m_bylmenao withLifecycle (Lcom/mojang/serialization/Codec;Ljava/util/function/Function;)Lcom/mojang/serialization/Codec;
 		ARG 1 lifecycleGetter
 	METHOD m_cjkdnnjx (Ljava/util/List;)Lorg/joml/Vector3f;
@@ -95,8 +89,6 @@ CLASS net/minecraft/unmapped/C_tyjpezxh net/minecraft/util/dynamic/Codecs
 		ARG 0 list
 	METHOD m_mfpnjepb (Lorg/joml/Vector3f;)Ljava/util/List;
 		ARG 0 vector
-	METHOD m_mgvopkql (Lcom/mojang/authlib/properties/PropertyMap;)Lcom/mojang/datafixers/util/Either;
-		ARG 0 propertyMap
 	METHOD m_njoxfqbl sizeLimitedMap (Lcom/mojang/serialization/Codec;I)Lcom/mojang/serialization/Codec;
 		ARG 1 maxSize
 	METHOD m_nsiytucc withNonEmptyList (Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;
@@ -104,8 +96,6 @@ CLASS net/minecraft/unmapped/C_tyjpezxh net/minecraft/util/dynamic/Codecs
 	METHOD m_nuxvjbjt createRangedInt (II)Lcom/mojang/serialization/Codec;
 		ARG 0 min
 		ARG 1 max
-	METHOD m_paojkcnu (Ljava/lang/String;)Lcom/mojang/serialization/DataResult;
-		ARG 0 string
 	METHOD m_pbrvpbbc (Lorg/joml/Quaternionf;)Ljava/util/List;
 		ARG 0 quaternionf
 	METHOD m_pknstmhl createCodecForPairObject (Lcom/mojang/serialization/Codec;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/Function;Ljava/util/function/Function;)Lcom/mojang/serialization/Codec;
@@ -121,12 +111,8 @@ CLASS net/minecraft/unmapped/C_tyjpezxh net/minecraft/util/dynamic/Codecs
 		ARG 0 min
 		ARG 1 max
 		ARG 2 messageFactory
-	METHOD m_spzosery (Lcom/mojang/authlib/properties/PropertyMap;Ljava/util/Map;)V
-		ARG 1 map
 	METHOD m_traryqmn (Lorg/joml/Vector4f;)Ljava/util/List;
 		ARG 0 vector4f
-	METHOD m_uecgbzal (Lcom/mojang/datafixers/util/Either;)Lcom/mojang/authlib/properties/PropertyMap;
-		ARG 0 either
 	METHOD m_uyhsvlud orCompressed (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;
 		ARG 0 uncompressed
 		ARG 1 compressed
@@ -135,8 +121,6 @@ CLASS net/minecraft/unmapped/C_tyjpezxh net/minecraft/util/dynamic/Codecs
 	METHOD m_wifswwjp object2BooleanMap (Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;
 	METHOD m_wnlfxiwt (Ljava/util/List;)Lcom/mojang/serialization/DataResult;
 		ARG 0 list
-	METHOD m_wyxpcupd (Ljava/util/function/Function;Ljava/util/function/Function;Ljava/lang/Object;)Ljava/util/List;
-		ARG 2 object
 	CLASS C_cuqomsnk ContextRetrievalCodec
 		METHOD decode decode (Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/MapLike;)Lcom/mojang/serialization/DataResult;
 			ARG 1 ops
