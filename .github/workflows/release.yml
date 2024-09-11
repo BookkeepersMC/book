@@ -1,4 +1,4 @@
-name: Publish
+name: Build and Publish
 on: [push]
 jobs:
   publish:
@@ -26,7 +26,14 @@ jobs:
           token: ${{ secrets.github_token }}
           prefix: "build/${{ github.ref }}"
 
-      - run: ./gradlew build javadoc javadocJar publish --stacktrace
+      - run: ./gradlew build javadocJar
+      - name: Build artifacts
+        continue-on-error: true
+        uses: actions/upload-artifact@v3
+        with:
+          - name: Artifacts
+          - path: build/libs/
+      - run: ./gradlew javadoc publish --stacktrace
         env:
           BRANCH_NAME: ${{ github.ref }}
 
