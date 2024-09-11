@@ -87,8 +87,6 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 	METHOD enableCull enableCull ()V
 	METHOD enablePolygonOffset enablePolygonOffset ()V
 	METHOD finishInitialization finishInitialization ()V
-	METHOD flipFrame flipFrame (J)V
-		ARG 0 window
 	METHOD getApiDescription getApiDescription ()Ljava/lang/String;
 	METHOD getBackendDescription getBackendDescription ()Ljava/lang/String;
 	METHOD getCapsString getCapsString ()Ljava/lang/String;
