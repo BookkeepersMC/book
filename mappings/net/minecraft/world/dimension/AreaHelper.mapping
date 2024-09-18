@@ -46,7 +46,7 @@ CLASS net/minecraft/unmapped/C_roraysyx net/minecraft/world/dimension/AreaHelper
 		ARG 1 portalAxis
 		ARG 2 entityPos
 		ARG 3 entityDimensions
-	METHOD m_wkxzsnxo getWidth (Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_xpuuihxf;)I
+	METHOD m_wkxzsnxo calculateWidth (Lnet/minecraft/unmapped/C_peaveboq;Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_xpuuihxf;)I
 	METHOD m_wnxyoptt (DLnet/minecraft/unmapped/C_vgpupfxx;)Lnet/minecraft/unmapped/C_vgpupfxx;
 		ARG 2 pos
 	METHOD m_xqpbepjy (Lnet/minecraft/unmapped/C_roraysyx;)Z
