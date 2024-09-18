@@ -337,9 +337,7 @@ task decompileTargetVineflower(type: DecompileTask, dependsOn: [remapTargetMinec
 		methodJavadocProvider(javadocProvider)
 	}
 
-	onlyIf {
-		checkUnpickVersionsMatch.match
-	}
+
 }
 
 javadoc {
