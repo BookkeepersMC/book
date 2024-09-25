@@ -1,7 +1,7 @@
 package book.mappings;
 
 public class Constants {
-    public static final String MINECRAFT_VERSION = "24w38a";
+    public static final String MINECRAFT_VERSION = "24w39a";
 
     public static final String MAPPINGS_NAME = "book-mappings";
 
