@@ -3,7 +3,7 @@ CLASS net/minecraft/unmapped/C_feaetnaz net/minecraft/util/collection/IndexedIte
 	METHOD m_hjasljfw getRawIdOrThrow (Ljava/lang/Object;)I
 		ARG 1 object
 	METHOD m_jmjsmdoh get (I)Ljava/lang/Object;
-		ARG 1 index
+		ARG 1 rawId
 	METHOD m_lwumvtoo getOrThrow (I)Ljava/lang/Object;
 		COMMENT {@return the value at {@code index}}
 		COMMENT
