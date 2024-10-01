@@ -15,8 +15,6 @@ javadoc_draftsman = "1.2.3"
 loader = "0.3.2"
 jetbrains_annotations = "23.0.0"
 jsr305 = "3.0.2"
-gson = "2.10.1"
-netty = "4.1"
 
 vineflower = "1.10.1"
 

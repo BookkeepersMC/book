@@ -1,6 +1,6 @@
 package book.mappings.tasks.build;
 
-import book.mappings.util.PropertyUtil;
+import book.mappings.util.ProviderUtil;
 import net.fabricmc.mappingio.MappingReader;
 import net.fabricmc.mappingio.adapter.MappingDstNsReorder;
 import net.fabricmc.mappingio.adapter.MappingSourceNsSwitch;
@@ -43,8 +43,8 @@ public abstract class RemoveIntermediaryTask extends DefaultMappingsTask {
 
     @TaskAction
     public void removeIntermediary() throws Exception {
-        final Path mappingsTinyInput = PropertyUtil.getPath(this.getInput());
-        final Path output = PropertyUtil.getPath(this.getOutputMappings());
+        final Path mappingsTinyInput = ProviderUtil.getPath(this.getInput());
+        final Path output = ProviderUtil.getPath(this.getOutputMappings());
 
         this.getLogger().lifecycle(":removing intermediary");
         removeIntermediary(mappingsTinyInput, output);

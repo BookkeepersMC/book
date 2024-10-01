@@ -7,6 +7,8 @@ public class Constants {
 
     public static final String PER_VERSION_MAPPINGS_NAME = "hashed";
 
+    public static final String INTERMEDIARY_MAPPINGS_NAME = "intermediary";
+
     public static final String MAPPINGS_VERSION = MINECRAFT_VERSION + "+build." + System.getenv().getOrDefault("BUILD_NUMBER", "local");
 
     public static final class Groups {

@@ -14,7 +14,7 @@ import java.util.Objects;
 
 import book.mappings.Constants;
 import book.mappings.tasks.EnigmaProfileConsumingTask;
-import book.mappings.util.PropertyUtil;
+import book.mappings.util.ProviderUtil;
 import org.gradle.api.file.RegularFileProperty;
 import org.quiltmc.enigma.api.Enigma;
 import org.quiltmc.enigma.api.EnigmaProfile;
@@ -41,27 +41,26 @@ import org.gradle.api.tasks.TaskAction;
 import org.jetbrains.annotations.VisibleForTesting;
 
 public abstract class AddProposedMappingsTask extends EnigmaProfileConsumingTask {
-    @OutputFile
-    public abstract RegularFileProperty getOutputMappings();
-
     @InputFile
     public abstract RegularFileProperty getInputJar();
 
     @InputFile
     public abstract RegularFileProperty getInputMappings();
 
+    @OutputFile
+    public abstract RegularFileProperty getOutputMappings();
+
     public AddProposedMappingsTask() {
         super(Constants.Groups.BUILD_MAPPINGS_GROUP);
-        this.getOutputMappings().convention(() -> new File(this.fileConstants.buildDir, this.getName() + ".tiny"));
     }
 
     @TaskAction
     public void addProposedMappings() throws Exception {
         this.getLogger().lifecycle(":seeking auto-mappable entries");
 
-        final Path input = PropertyUtil.getPath(this.getInputMappings());
-        final Path output = PropertyUtil.getPath(this.getOutputMappings());
-        final Path jar = PropertyUtil.getPath(this.getInputJar());
+        final Path input = ProviderUtil.getPath(this.getInputMappings());
+        final Path output = ProviderUtil.getPath(this.getOutputMappings());
+        final Path jar = ProviderUtil.getPath(this.getInputJar());
 
         addProposedMappings(input, output, this.fileConstants.tempDir.toPath(), jar, this.getEnigmaProfile().get());
     }

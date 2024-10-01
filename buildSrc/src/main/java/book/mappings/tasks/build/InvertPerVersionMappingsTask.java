@@ -2,6 +2,8 @@ package book.mappings.tasks.build;
 
 import java.io.File;
 
+import book.mappings.MappingsPlugin;
+import book.mappings.tasks.setup.ExtractTinyMappingsTask;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.OutputFile;
@@ -9,7 +11,6 @@ import org.gradle.api.tasks.TaskAction;
 import org.jetbrains.annotations.VisibleForTesting;
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
-import book.mappings.tasks.setup.DownloadPerVersionMappingsTask;
 
 import net.fabricmc.stitch.commands.tinyv2.CommandReorderTinyV2;
 
@@ -24,7 +25,7 @@ public abstract class InvertPerVersionMappingsTask extends DefaultMappingsTask {
 
     public InvertPerVersionMappingsTask() {
         super(Constants.Groups.BUILD_MAPPINGS_GROUP);
-        this.dependsOn(DownloadPerVersionMappingsTask.TASK_NAME);
+        this.dependsOn(MappingsPlugin.DOWNLOAD_PER_VERSION_MAPPINGS_TASK_NAME);
 
         this.getInvertedTinyFile().convention(() -> new File(
                 this.fileConstants.cacheFilesMinecraft,
@@ -32,7 +33,7 @@ public abstract class InvertPerVersionMappingsTask extends DefaultMappingsTask {
         ));
 
         this.getInput().convention(
-                this.getTaskNamed(DownloadPerVersionMappingsTask.TASK_NAME, DownloadPerVersionMappingsTask.class)
+                this.getTaskNamed(MappingsPlugin.EXTRACT_TINY_PER_VERSION_MAPPINGS_TASK_NAME, ExtractTinyMappingsTask.class)
                         .getTinyFile()
         );
     }

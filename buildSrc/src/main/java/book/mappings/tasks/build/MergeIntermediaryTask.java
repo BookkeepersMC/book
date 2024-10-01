@@ -1,7 +1,11 @@
 package book.mappings.tasks.build;
 
+import book.mappings.MappingsPlugin;
+import book.mappings.tasks.setup.ExtractTinyMappingsTask;
 import net.fabricmc.mappingio.MappingVisitor;
 import net.fabricmc.mappingio.adapter.MappingDstNsReorder;
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.tasks.InputFile;
 import org.jetbrains.annotations.VisibleForTesting;
 import book.mappings.Constants;
 import book.mappings.mappingio.DoubleNsCompleterVisitor;
@@ -17,32 +21,19 @@ import java.util.List;
 public abstract class MergeIntermediaryTask extends AbstractTinyMergeTask {
     public static final String TASK_NAME = "mergeIntermediary";
 
+    @InputFile
+    public abstract RegularFileProperty getMergedTinyMappings();
+
     public MergeIntermediaryTask() {
         super(
-                "mappings-intermediaryMerged.tiny",
-                "intermediary",
+                Constants.INTERMEDIARY_MAPPINGS_NAME,
                 Constants.PER_VERSION_MAPPINGS_NAME
-        );
-        this.dependsOn(
-                CheckIntermediaryMappingsTask.TASK_NAME,
-                DownloadIntermediaryMappingsTask.TASK_NAME,
-                MergeTinyV2Task.TASK_NAME
-        );
-        this.onlyIf(task ->
-                this.getTaskNamed(CheckIntermediaryMappingsTask.TASK_NAME, CheckIntermediaryMappingsTask.class).isPresent()
-        );
-
-        this.getInput().convention(
-                this.getTaskNamed(DownloadIntermediaryMappingsTask.TASK_NAME, DownloadIntermediaryMappingsTask.class)
-                        .getTinyFile()
         );
     }
 
     @Override
     public void mergeMappings() throws Exception {
-        final File tinyInput = this.getTaskNamed(MergeTinyV2Task.TASK_NAME, MergeTinyV2Task.class)
-                .getOutputMappings().get().getAsFile();
-        this.mergeMappings(tinyInput);
+        this.mergeMappings(this.getMergedTinyMappings().get().getAsFile());
     }
 
     @Override

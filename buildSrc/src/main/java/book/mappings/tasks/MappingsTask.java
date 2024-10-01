@@ -4,7 +4,6 @@ import org.gradle.api.Task;
 import org.gradle.api.artifacts.VersionCatalog;
 import org.gradle.api.artifacts.VersionCatalogsExtension;
 import book.mappings.MappingsExtension;
-import book.mappings.MappingsPlugin;
 import book.mappings.util.DownloadImmediate;
 import org.gradle.api.file.Directory;
 import org.gradle.api.file.RegularFile;
@@ -23,11 +22,11 @@ public interface MappingsTask extends Task {
         return this.getProject().getTasks().named(name, taskClass).get();
     }
 
-    default RegularFile createRegularProjectFile(String path) {
+    default RegularFile regularProjectFileOf(String path) {
         return this.getProjectDirectory().file(path);
     }
 
-    default Provider<RegularFile> createRegularProjectFile(Provider<? extends CharSequence> path) {
+    default Provider<RegularFile> regularProjectFileOf(Provider<? extends CharSequence> path) {
         return this.getProjectDirectory().file(path);
     }
 
@@ -40,7 +39,7 @@ public interface MappingsTask extends Task {
     }
 
     default MappingsExtension mappingsExt() {
-        return MappingsPlugin.getExtension(this.getProject());
+        return MappingsExtension.get(this.getProject());
     }
 
     default VersionCatalogsExtension versionCatalogs() {

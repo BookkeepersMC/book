@@ -15,18 +15,14 @@ public abstract class MappingsExtension {
 
     private final FileConstants fileConstants;
 
+    public static MappingsExtension get(Project project) {
+        return project.getExtensions().getByType(MappingsExtension.class);
+    }
+
     protected abstract RegularFileProperty getEnigmaProfileFile();
 
     public MappingsExtension(Project project) {
         this.fileConstants = new FileConstants(project);
-
-        // provide an informative error message if no profile is specified
-        this.getEnigmaProfileFile().convention(() -> {
-            throw new GradleException(
-                    "No enigma profile specified. " +
-                            "A profile must be specified to use an EnigmaProfileConsumingTask."
-            );
-        });
 
         this.enigmaProfile = this.getEnigmaProfileFile()
                 .map(RegularFile::getAsFile)
@@ -46,13 +42,5 @@ public abstract class MappingsExtension {
 
     public void setEnigmaProfile(File file) {
         this.getEnigmaProfileFile().set(file);
-    }
-
-    public void setEnigmaProfile(RegularFile file) {
-        this.getEnigmaProfileFile().set(file);
-    }
-
-    public void setEnigmaProfile(Provider<? extends RegularFile> fileProvider) {
-        this.getEnigmaProfileFile().set(fileProvider);
     }
 }

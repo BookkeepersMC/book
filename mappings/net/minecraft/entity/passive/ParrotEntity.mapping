@@ -31,11 +31,10 @@ CLASS net/minecraft/unmapped/C_ombdzkxc net/minecraft/entity/passive/ParrotEntit
 		METHOD test test (Ljava/lang/Object;)Z
 			ARG 1 entity
 	CLASS C_vrrzomrk Variant
-		FIELD f_ionelagg GET_BY_ID Ljava/util/function/IntFunction;
+		FIELD f_ionelagg BY_ID Ljava/util/function/IntFunction;
 		FIELD f_lyjclikp name Ljava/lang/String;
 		FIELD f_plgymzwe id I
 		FIELD f_vgfcuyii CODEC Lcom/mojang/serialization/Codec;
-		METHOD <init> (Ljava/lang/String;IILjava/lang/String;)V
 		METHOD m_jquwagcv byId (I)Lnet/minecraft/unmapped/C_ombdzkxc$C_vrrzomrk;
 			ARG 0 id
 		METHOD m_mhaphmct getId ()I

@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
-import book.mappings.util.PropertyUtil;
+import book.mappings.util.ProviderUtil;
 import org.quiltmc.enigma.command.MapSpecializedMethodsCommand;
 import org.quiltmc.enigma.api.translation.mapping.serde.MappingParseException;
 import org.gradle.api.file.RegularFileProperty;
@@ -40,7 +40,7 @@ public abstract class BuildMappingsTinyTask extends DefaultMappingsTask {
         buildMappingsTiny(
                 this.fileConstants.perVersionMappingsJar.toPath(),
                 this.getMappings().get().getAsFile().toPath(),
-                PropertyUtil.getPath(this.getOutputMappings())
+                ProviderUtil.getPath(this.getOutputMappings())
         );
     }
 
