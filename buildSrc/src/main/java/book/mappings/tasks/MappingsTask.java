@@ -6,19 +6,33 @@ import org.gradle.api.artifacts.VersionCatalogsExtension;
 import book.mappings.MappingsExtension;
 import book.mappings.MappingsPlugin;
 import book.mappings.util.DownloadImmediate;
+import org.gradle.api.file.Directory;
+import org.gradle.api.file.RegularFile;
+import org.gradle.api.provider.Provider;
 
 public interface MappingsTask extends Task {
     default DownloadImmediate.Builder startDownload() {
         return new DownloadImmediate.Builder(this);
     }
 
-    @SuppressWarnings("unchecked")
-    default <T extends Task> T getTaskByName(String taskName) {
-        return (T) getProject().getTasks().getByName(taskName);
+    default Task getTaskNamed(String taskName) {
+        return this.getProject().getTasks().getByName(taskName);
     }
 
-    default <T extends Task> T getTaskByType(Class<T> taskClass) {
-        return getProject().getTasks().stream().filter(task -> taskClass.isAssignableFrom(task.getClass())).map(taskClass::cast).findAny().orElseThrow();
+    default <T extends Task> T getTaskNamed(String name, Class<T> taskClass) {
+        return this.getProject().getTasks().named(name, taskClass).get();
+    }
+
+    default RegularFile createRegularProjectFile(String path) {
+        return this.getProjectDirectory().file(path);
+    }
+
+    default Provider<RegularFile> createRegularProjectFile(Provider<? extends CharSequence> path) {
+        return this.getProjectDirectory().file(path);
+    }
+
+    private Directory getProjectDirectory() {
+        return this.getProject().getLayout().getProjectDirectory();
     }
 
     default void outputsNeverUpToDate() {
@@ -26,14 +40,14 @@ public interface MappingsTask extends Task {
     }
 
     default MappingsExtension mappingsExt() {
-        return MappingsPlugin.getExtension(getProject());
+        return MappingsPlugin.getExtension(this.getProject());
     }
 
     default VersionCatalogsExtension versionCatalogs() {
-        return getProject().getExtensions().getByType(VersionCatalogsExtension.class);
+        return this.getProject().getExtensions().getByType(VersionCatalogsExtension.class);
     }
 
     default VersionCatalog libs() {
-        return versionCatalogs().named("libs");
+        return this.versionCatalogs().named("libs");
     }
 }
