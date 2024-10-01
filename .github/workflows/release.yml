@@ -1,16 +1,14 @@
-name: Build and Publish
+name: Release
 on: [push]
 jobs:
   publish:
     if: ${{ github.repository_owner == 'BookkeepersMC' }}
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/openjdk/jdk:21-ubuntu
+      image: eclipse-temurin:21
       options: --user root
 
     steps:
-      - run: apt update && apt install git -y && git --version
-      - run: git config --global --add safe.directory /__w/book/book
       - uses: actions/checkout@v4
       - uses: gradle/actions/wrapper-validation@v3
       - uses: actions/checkout@v4
@@ -26,14 +24,7 @@ jobs:
           token: ${{ secrets.github_token }}
           prefix: "build/${{ github.ref }}"
 
-      - run: ./gradlew build javadocJar
-      - name: Build artifacts
-        continue-on-error: true
-        uses: actions/upload-artifact@v3
-        with:
-          name: Artifacts
-          path: build/libs/
-      - run: ./gradlew javadoc publish --stacktrace
+      - run: ./gradlew build javadoc javadocJar publish --stacktrace
         env:
           BRANCH_NAME: ${{ github.ref }}
 
