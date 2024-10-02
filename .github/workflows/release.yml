@@ -5,10 +5,12 @@ jobs:
     if: ${{ github.repository_owner == 'BookkeepersMC' }}
     runs-on: ubuntu-latest
     container:
-      image: eclipse-temurin:21
+      image: mcr.microsoft.com/openjdk/jdk:21-ubuntu
       options: --user root
 
     steps:
+      - run: apt update && apt install git -y && git --version
+      - run: git config --global --add safe.directory /__w/book/book
       - uses: actions/checkout@v4
       - uses: gradle/actions/wrapper-validation@v3
       - uses: actions/checkout@v4
