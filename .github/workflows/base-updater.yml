@@ -1,0 +1,55 @@
+name: Update Base Branch
+
+on:
+  pull_request_target:
+    types: [ labeled ]
+
+jobs:
+  update:
+    if: ${{ github.event.label.name == 'update-base' }}
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.update-base.outputs.result }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/update-base/
+        id: update-base
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pull-number: ${{ github.event.number }}
+
+  drop-invalid-mappings:
+    needs: update
+    if: ${{ needs.update.outputs.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      # The container image openjdk:21 doesn't have git installed
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Drop invalid mappings
+        run: ./gradlew dropInvalidMappings --stacktrace
+      - name: Check for changes in the mappings directory
+        id: check-mappings-dir
+        run: |
+          if output=$(git status --porcelain) && [ -z "$output" ]; then
+            echo "No changes in the mappings directory"
+            echo "::set-output name=result::clean"
+          else
+            echo "There are changes in the mappings directory"
+            echo "::set-output name=result::dirty"
+          fi
+
+      - name: Commit changes
+        if: ${{ steps.check-mappings-dir.outputs.result == 'dirty' }}
+        run: |
+          git config user.name "actions-user"
+          git config user.email "action@github.com"
+          git add mappings/
+          git commit -m "Drop invalid mappings"
+          git push

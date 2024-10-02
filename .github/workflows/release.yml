@@ -1,30 +1,4 @@
 name: Release
-on: [push, pull_request]
-jobs:
-  build:
-    strategy:
-      matrix:
-        java: [21]
-    runs-on: ubuntu-latest
-    container:
-      image: eclipse-temurin:${{ matrix.java }}
-      options: --user root
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup JDK
-        uses: actions/setup-java@v4
-        with:
-          java-version: ${{ matrix.java }}
-          distribution: temurin
-      - uses: gradle/actions/wrapper-validation@v3
-      - run: ./gradlew build javadocJar --stacktrace
-      - name: Build artifacts
-        if: ${{ matrix.java == 21 }}
-        continue-on-error: true
-        uses: actions/upload-artifact@v3
-        with:
-          name: Artifacts
-          path: build/libs/
   publish:
     if: ${{ github.repository_owner == 'BookkeepersMC' }}
     runs-on: ubuntu-latest
