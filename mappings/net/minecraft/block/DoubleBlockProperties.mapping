@@ -3,6 +3,7 @@ CLASS net/minecraft/unmapped/C_empmxbdt net/minecraft/block/DoubleBlockPropertie
 		ARG 0 blockEntityType
 		ARG 1 typeMapper
 		ARG 2 posOffsetGetter
+		ARG 3 direction
 		ARG 4 state
 		ARG 5 world
 		ARG 6 pos

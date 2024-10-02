@@ -85,8 +85,6 @@ CLASS net/minecraft/unmapped/C_anfarvhg net/minecraft/network/codec/PacketCodecs
 		ARG 0 element
 	METHOD m_yypssatp toCollection (Ljava/util/function/IntFunction;)Lnet/minecraft/unmapped/C_qsrmwluu$C_afmwjpzk;
 		ARG 0 factory
-	CLASS C_dhtumjvv
-	CLASS C_hvrqkwdr
 	CLASS C_kafuxsar
 		METHOD m_sqbtyjcv getEntries (Lnet/minecraft/unmapped/C_bngyzsts;)Lnet/minecraft/unmapped/C_feaetnaz;
 			ARG 1 buf

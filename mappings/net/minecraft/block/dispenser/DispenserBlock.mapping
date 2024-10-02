@@ -16,6 +16,7 @@ CLASS net/minecraft/unmapped/C_sridforj net/minecraft/block/dispenser/DispenserB
 		ARG 3 offset
 	METHOD m_omkokomw registerBehavior (Lnet/minecraft/unmapped/C_gmbqjnle;)V
 		ARG 0 item
+	METHOD m_pktcfwfi getBehaviorForItem (Lnet/minecraft/unmapped/C_sddaxwyk;)Lnet/minecraft/unmapped/C_ooeeaffg;
 	METHOD m_tfzksanp getDispensePos (Lnet/minecraft/unmapped/C_wzdnszcs;)Lnet/minecraft/unmapped/C_ogbhoqwb;
 		ARG 0 block
 	METHOD m_xmkonidr dispense (Lnet/minecraft/unmapped/C_bdwnwhiu;Lnet/minecraft/unmapped/C_txtbiemp;Lnet/minecraft/unmapped/C_hynzadkk;)V
