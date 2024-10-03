@@ -8,3 +8,12 @@ CLASS net/minecraft/unmapped/C_ooeeaffg net/minecraft/block/dispenser/DispenserB
 		ARG 0 pointer
 		ARG 1 stack
 	METHOD m_ummkrstn registerDefaults ()V
+	CLASS C_genfnnji
+		FIELD f_rnenkqvi fallback Lnet/minecraft/unmapped/C_dnfsxzwl;
+	CLASS C_ivungvuf
+		FIELD f_guppwqen fallback Lnet/minecraft/unmapped/C_dnfsxzwl;
+	CLASS C_wocbrvrh
+		METHOD m_eihslyjq replace (Lnet/minecraft/unmapped/C_wzdnszcs;Lnet/minecraft/unmapped/C_sddaxwyk;Lnet/minecraft/unmapped/C_sddaxwyk;)Lnet/minecraft/unmapped/C_sddaxwyk;
+			ARG 1 pointer
+			ARG 2 oldStack
+			ARG 3 newStack
