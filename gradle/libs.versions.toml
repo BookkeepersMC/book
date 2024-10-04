@@ -12,7 +12,7 @@ unpick = "3.0.8"
 mapping_io = "0.6.1"
 javadoc_draftsman = "1.2.3"
 
-loader = "0.3.2"
+loader = "0.26.1"
 jetbrains_annotations = "23.0.0"
 jsr305 = "3.0.2"
 
@@ -40,7 +40,7 @@ unpick_format_utils = { module = "org.quiltmc.unpick:unpick-format-utils", versi
 mapping_io = { module = "net.fabricmc:mapping-io", version.ref = "mapping_io" }
 javadoc_draftsman = { module = "org.quiltmc:javadoc-draftsman", version.ref = "javadoc_draftsman" }
 
-notebook_loader = { module = "com.bookkeepersmc:notebook-loader", version.ref = "loader" }
+quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "loader" }
 jetbrains_annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains_annotations" }
 jsr305 = { module = "com.google.code.findbugs:jsr305", version.ref = "jsr305" }
 

@@ -53,7 +53,7 @@ public abstract class DecompileTask extends DefaultMappingsTask {
 
     @TaskAction
     public void decompile() {
-        final Map<String, Object> options = this.getDecompilerOptions().getOrElse(new HashMap<>());
+        final Map<String, Object> options = this.getDecompilerOptions().map(HashMap::new).getOrElse(new HashMap<>());
 
         final Collection<File> libraries = this.getLibraries().<Collection<File>>map(FileCollection::getFiles)
                 .getOrElse(Collections.emptyList());

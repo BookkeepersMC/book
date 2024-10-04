@@ -32,14 +32,6 @@ import book.mappings.tasks.DefaultMappingsTask;
 public abstract class DownloadMinecraftLibrariesTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "downloadMinecraftLibraries";
 
-    /**
-     * This is only populated after the task has run.
-     * <p>
-     * It should only be accessed from other {@linkplain  TaskAction tasks' actions} and via
-     * {@linkplain MapProperty lazy} {@linkplain org.gradle.api.tasks.Input input}.
-     */
-    public final Provider<Map<String, File>> artifactsByUrl;
-
     @InputFile
     public abstract RegularFileProperty getVersionFile();
 
@@ -50,7 +42,7 @@ public abstract class DownloadMinecraftLibrariesTask extends DefaultMappingsTask
     public abstract DirectoryProperty getLibrariesDir();
 
     @Internal("Fingerprinting is handled by getLibrariesDir")
-    protected abstract MapProperty<String, File> getArtifactsByUrl();
+    protected abstract MapProperty<String, File> getArtifactsByUrlImpl();
 
     public DownloadMinecraftLibrariesTask() {
         super(Constants.Groups.SETUP_GROUP);
@@ -66,14 +58,12 @@ public abstract class DownloadMinecraftLibrariesTask extends DefaultMappingsTask
         }));
 
         // provide an informative error message if this property is accessed incorrectly
-        this.getArtifactsByUrl().convention(this.getProject().provider(() -> {
+        this.getArtifactsByUrlImpl().convention(this.getProject().provider(() -> {
             throw new GradleException(
                     "artifactsByUrl has not been populated. " +
                             "It should only be accessed from other tasks' actions and via lazy input."
             );
         }));
-
-        this.artifactsByUrl = this.getArtifactsByUrl();
     }
 
     @TaskAction
@@ -133,7 +123,18 @@ public abstract class DownloadMinecraftLibrariesTask extends DefaultMappingsTask
             throw new RuntimeException("Unable to download libraries for specified minecraft version.");
         }
 
-        this.getArtifactsByUrl().set(artifactsByUrl);
+        this.getArtifactsByUrlImpl().set(artifactsByUrl);
+    }
+
+    /**
+     * This is only populated after the task has run.
+     * <p>
+     * It should only be accessed from other tasks' {@linkplain  TaskAction actions} and via
+     * {@linkplain MapProperty lazy} {@linkplain org.gradle.api.tasks.Input input}.
+     */
+    @Internal
+    public Provider<Map<String, File>> getArtifactsByUrl() {
+        return this.getArtifactsByUrlImpl();
     }
 
     private File artifactOf(String url) {

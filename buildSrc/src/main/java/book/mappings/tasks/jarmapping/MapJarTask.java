@@ -2,11 +2,9 @@ package book.mappings.tasks.jarmapping;
 
 import java.util.Map;
 
+import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.tasks.InputFile;
-import org.gradle.api.tasks.Internal;
-import org.gradle.api.tasks.OutputFile;
-import org.gradle.api.tasks.TaskAction;
+import org.gradle.api.tasks.*;
 import book.mappings.tasks.DefaultMappingsTask;
 import book.mappings.util.JarRemapper;
 
@@ -20,7 +18,10 @@ public abstract class MapJarTask extends DefaultMappingsTask {
     public abstract RegularFileProperty getInputJar();
 
     @InputFile
-    protected abstract RegularFileProperty getMappingsFile();
+    public abstract RegularFileProperty getMappingsFile();
+
+    @InputDirectory
+    public abstract DirectoryProperty getLibrariesDir();
 
     @OutputFile
     public abstract RegularFileProperty getOutputJar();
@@ -38,10 +39,10 @@ public abstract class MapJarTask extends DefaultMappingsTask {
         this.getLogger().lifecycle(":mapping minecraft from " + this.from + " to " + this.to);
         final Map<String, String> additionalMappings = this.getAdditionalMappings();
         JarRemapper.mapJar(
-                this.getOutputJar().getAsFile().get(),
-                this.getInputJar().getAsFile().get(),
+                this.getOutputJar().get().getAsFile(),
+                this.getInputJar().get().getAsFile(),
                 this.getMappingsFile().get().getAsFile(),
-                this.fileConstants.libraries,
+                this.getLibrariesDir().get().getAsFile(),
                 this.from, this.to,
                 builder -> builder.withMappings(out -> additionalMappings.forEach(out::acceptClass))
         );

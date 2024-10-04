@@ -9,7 +9,10 @@ import java.util.stream.StreamSupport;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import org.gradle.api.GradleException;
 import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.provider.Property;
+import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
@@ -20,15 +23,20 @@ public abstract class CheckTargetVersionExistsTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "checkTargetVersionExists";
 
     @Internal
-    private Optional<String> targetVersion = Optional.empty();
+    protected abstract Property<String> getTargetVersionImpl();
 
     @OutputFile
     public abstract RegularFileProperty getMetaFile();
 
     public CheckTargetVersionExistsTask() {
         super("diff");
-        this.outputsNeverUpToDate();
-        this.getMetaFile().convention(() -> new File(this.fileConstants.cacheFilesMinecraft, "book-mappings-" + Constants.MINECRAFT_VERSION + ".json"));
+        this.getTargetVersionImpl().convention(this.getProject().provider(() -> {
+            throw new GradleException(
+                    "targetVersion has not been populated. " +
+                            "Its should only be accessed from others tasks' inputs or predicates and " +
+                            "only after checking if it's present."
+            );
+        }));
     }
 
     @TaskAction
@@ -42,18 +50,21 @@ public abstract class CheckTargetVersionExistsTask extends DefaultMappingsTask {
                     .download();
 
             final JsonElement parsed = JsonParser.parseReader(new FileReader(metaFile));
-            this.targetVersion = StreamSupport.stream(parsed.getAsJsonArray().spliterator(), false)
+            this.getTargetVersionImpl().set(StreamSupport.stream(parsed.getAsJsonArray().spliterator(), false)
                     .max(Comparator.comparing(
                             element -> element.getAsJsonObject().get("build").getAsInt(),
                             Integer::compare
                     ))
-                    .map(element -> element.getAsJsonObject().get("version").getAsString());
+                    .map(element -> element.getAsJsonObject().get("version").getAsString())
+                    .orElse(null)
+            );
         } catch (IOException e) {
-            this.targetVersion = Optional.empty();
+            this.getLogger().error("Failed to read target version", e);
         }
     }
 
-    public Optional<String> getTargetVersion() {
-        return this.targetVersion;
+    @Internal
+    public Provider<String> getTargetVersion() {
+        return this.getTargetVersionImpl();
     }
 }
