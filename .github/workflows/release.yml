@@ -1,4 +1,7 @@
 name: Release
+on: [push]
+
+jobs:
   publish:
     if: ${{ github.repository_owner == 'BookkeepersMC' }}
     runs-on: ubuntu-latest
