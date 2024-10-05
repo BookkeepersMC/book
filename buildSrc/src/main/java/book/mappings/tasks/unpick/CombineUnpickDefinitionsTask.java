@@ -27,7 +27,6 @@ import org.gradle.workers.WorkerExecutor;
 import org.jetbrains.annotations.VisibleForTesting;
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
-import book.mappings.tasks.unpick.gen.UnpickGen;
 import book.mappings.util.UnpickUtil;
 
 public abstract class CombineUnpickDefinitionsTask extends DefaultMappingsTask {
@@ -44,8 +43,6 @@ public abstract class CombineUnpickDefinitionsTask extends DefaultMappingsTask {
 
     public CombineUnpickDefinitionsTask() {
         super(Constants.Groups.UNPICK);
-
-        this.dependsOn(this.getProject().getTasks().withType(UnpickGen.class));
     }
 
     @TaskAction

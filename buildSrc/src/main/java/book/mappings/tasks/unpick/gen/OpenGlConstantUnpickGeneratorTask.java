@@ -38,7 +38,7 @@ import org.quiltmc.launchermeta.version.v1.DownloadableFile;
 import org.quiltmc.launchermeta.version.v1.Library;
 import org.quiltmc.launchermeta.version.v1.Version;
 
-public abstract class OpenGlConstantUnpickGeneratorTask extends DefaultMappingsTask implements UnpickGen {
+public abstract class OpenGlConstantUnpickGeneratorTask extends DefaultMappingsTask implements UnpickGenTask {
     public static final String TASK_NAME = "openGlUnpickGen";
     public static final String OPEN_GL_REGISTRY =
             "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml";

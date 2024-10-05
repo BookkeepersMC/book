@@ -17,18 +17,18 @@ public abstract class DownloadDictionaryFileTask extends DefaultMappingsTask {
     public static final String DEFAULT_DICTIONARY_FILE =
             "https://raw.githubusercontent.com/ix0rai/qm-base-allowed-wordlist/" + REVISION + "/allowed_english_words.txt";
 
-    @OutputFile
-    public abstract RegularFileProperty getOutput();
-
     @Input
     public abstract Property<String> getUrl();
+
+    @OutputFile
+    public abstract RegularFileProperty getOutput();
 
     public DownloadDictionaryFileTask() {
         super(Constants.Groups.LINT_GROUP);
 
-        this.getOutput().convention(() -> this.mappingsExt().getFileConstants().dictionaryFile);
-
         this.getUrl().convention(DEFAULT_DICTIONARY_FILE);
+
+        this.getOutput().convention(() -> this.mappingsExt().getFileConstants().dictionaryFile);
     }
 
     @TaskAction
