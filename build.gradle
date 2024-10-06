@@ -34,6 +34,12 @@ plugins {
 
 mappings {
 	enigmaProfile = file("enigma_profile.json")
+
+	unpick = file("unpick/unpick.json")
+}
+
+combineUnpickDefinitions {
+	unpickDefinitions.from 'unpick/definitions/'
 }
 
 def USE_SNAPSHOT_HASHES = false
@@ -110,8 +116,8 @@ import book.mappings.tasks.mappings.EnigmaMappingsServerTask
 import book.mappings.util.MappingsJavadocProvider
 
 clean.doFirst {
-	delete mappings.fileConstants.tempDir, mappings.fileConstants.cacheFilesMinecraft,
-			mappings.fileConstants.unpickGlDefinitions, mappings.fileConstants.unpickGlStateManagerDefinitions
+	delete mappings.fileConstants.tempDir, mappings.fileConstants.cacheFilesMinecraft
+			// mappings.fileConstants.generatedUnpickDefinitions
 }
 
 tasks.build.dependsOn "compressTiny", "tinyJar", "v2UnmergedMappingsJar", "v2MergedMappingsJar"

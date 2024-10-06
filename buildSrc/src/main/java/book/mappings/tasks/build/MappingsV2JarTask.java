@@ -20,7 +20,7 @@ public abstract class MappingsV2JarTask extends Jar implements MappingsTask {
         this.outputsNeverUpToDate();
         this.getDestinationDirectory().set(this.getProject().file("build/libs"));
 
-        final File unpickMetaFile = this.mappingsExt().getFileConstants().unpickMeta;
+        final File unpickMetaFile = this.mappingsExt().getUnpick().get().getAsFile();
         final String version = this.libs().findVersion("unpick").map(VersionConstraint::getRequiredVersion)
                 .orElseThrow(() -> new RuntimeException("Could not find unpick version"));
 

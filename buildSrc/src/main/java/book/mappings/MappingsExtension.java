@@ -13,6 +13,8 @@ import java.io.IOException;
 public abstract class MappingsExtension {
     public final Provider<EnigmaProfile> enigmaProfile;
 
+    public abstract RegularFileProperty getUnpick();
+
     private final FileConstants fileConstants;
 
     public static MappingsExtension get(Project project) {

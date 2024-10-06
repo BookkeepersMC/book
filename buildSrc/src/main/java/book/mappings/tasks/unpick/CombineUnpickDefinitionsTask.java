@@ -15,9 +15,13 @@ import java.util.Set;
 import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Reader;
 import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Writer;
 import javax.inject.Inject;
+
+import org.gradle.api.GradleException;
+import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.workers.WorkAction;
@@ -32,8 +36,8 @@ import book.mappings.util.UnpickUtil;
 public abstract class CombineUnpickDefinitionsTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "combineUnpickDefinitions";
 
-    @InputDirectory
-    public abstract DirectoryProperty getInput();
+    @InputFiles
+    public abstract ConfigurableFileCollection getUnpickDefinitions();
 
     @OutputFile
     public abstract RegularFileProperty getOutput();
@@ -47,9 +51,8 @@ public abstract class CombineUnpickDefinitionsTask extends DefaultMappingsTask {
 
     @TaskAction
     public void run() {
-        final WorkQueue workQueue = this.getWorkerExecutor().noIsolation();
-        workQueue.submit(CombineAction.class, parameters -> {
-            parameters.getInput().set(this.getInput());
+        this.getWorkerExecutor().noIsolation().submit(CombineAction.class, parameters -> {
+            parameters.getInput().from(this.getUnpickDefinitions());
             parameters.getOutput().set(this.getOutput());
         });
     }
@@ -57,23 +60,22 @@ public abstract class CombineUnpickDefinitionsTask extends DefaultMappingsTask {
     @VisibleForTesting
     public static void combineUnpickDefinitions(Collection<File> input, Path output) {
         try {
-            Files.deleteIfExists(output);
-
             final UnpickV2Writer writer = new UnpickV2Writer();
 
             // Sort inputs to get reproducible outputs (also for testing)
-            final List<File> files = new ArrayList<>(input);
-            files.sort(Comparator.comparing(File::getName));
+            input.stream()
+                    .filter(file -> file.getName().endsWith(".unpick"))
+                    // Sort inputs to get reproducible outputs (also for testing)
+                    .sorted(Comparator.comparing(File::getName))
+                    .forEach(file -> {
+                        try (UnpickV2Reader reader = new UnpickV2Reader(new FileInputStream(file))) {
+                            reader.accept(writer);
+                        } catch (IOException e) {
+                            throw new GradleException("Failed to read unpick definition", e);
+                        }
+                    });
 
-            for (final File file : files) {
-                if (!file.getName().endsWith(".unpick")) {
-                    continue;
-                }
-
-                try (UnpickV2Reader reader = new UnpickV2Reader(new FileInputStream(file))) {
-                    reader.accept(writer);
-                }
-            }
+            Files.deleteIfExists(output);
 
             Files.writeString(output, UnpickUtil.getLfOutput(writer));
         } catch (IOException e) {
@@ -82,8 +84,8 @@ public abstract class CombineUnpickDefinitionsTask extends DefaultMappingsTask {
     }
 
     public interface CombineParameters extends WorkParameters {
-        @InputDirectory
-        DirectoryProperty getInput();
+        @InputFiles
+        ConfigurableFileCollection getInput();
 
         @OutputFile
         RegularFileProperty getOutput();
@@ -91,12 +93,13 @@ public abstract class CombineUnpickDefinitionsTask extends DefaultMappingsTask {
 
     public abstract static class CombineAction implements WorkAction<CombineParameters> {
         @Inject
-        public CombineAction() {
-        }
+        public CombineAction() { }
 
         @Override
         public void execute() {
-            final Set<File> input = this.getParameters().getInput().getAsFileTree().getFiles();
+            final Set<File> input = this.getParameters().getInput()
+                    .getAsFileTree()
+                    .getFiles();
             final Path output = this.getParameters().getOutput().getAsFile().get().toPath();
             combineUnpickDefinitions(input, output);
         }
