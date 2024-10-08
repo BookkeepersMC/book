@@ -3,7 +3,7 @@ package book.mappings.tasks;
 import org.gradle.api.Task;
 import org.gradle.api.artifacts.VersionCatalog;
 import org.gradle.api.artifacts.VersionCatalogsExtension;
-import book.mappings.MappingsExtension;
+import book.mappings.BookMappingsExtension;
 import book.mappings.util.DownloadImmediate;
 import org.gradle.api.file.Directory;
 import org.gradle.api.file.RegularFile;
@@ -38,8 +38,8 @@ public interface MappingsTask extends Task {
         this.getOutputs().upToDateWhen(task -> false);
     }
 
-    default MappingsExtension mappingsExt() {
-        return MappingsExtension.get(this.getProject());
+    default BookMappingsExtension mappingsExt() {
+        return BookMappingsExtension.get(this.getProject());
     }
 
     default VersionCatalogsExtension versionCatalogs() {

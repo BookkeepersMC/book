@@ -2,7 +2,9 @@ package book.mappings.tasks;
 
 import org.gradle.api.Project;
 import org.gradle.api.file.FileCollection;
+import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
+import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.Internal;
 import org.quiltmc.enigma.api.EnigmaProfile;
@@ -13,13 +15,21 @@ import java.util.stream.Stream;
 
 import static org.quiltmc.enigma_plugin.Arguments.SIMPLE_TYPE_FIELD_NAMES_PATH;
 
-public abstract class EnigmaProfileConsumingTask extends DefaultMappingsTask {
+public interface EnigmaProfileConsumingTask extends MappingsTask {
     @Internal(
             "An EnigmaProfile cannot be fingerprinted. " +
                     "Up-to-date-ness is ensured by getSimpleTypeFieldNamesFiles and its source, " +
                     "MappingsExtension::getEnigmaProfileFile."
     )
-    public abstract Property<EnigmaProfile> getEnigmaProfile();
+    Property<EnigmaProfile> getEnigmaProfile();
+
+    /**
+     * Don't parse this to create an {@link EnigmaProfile}, use {@link #getEnigmaProfile() enigmaProfile} instead.
+     * <p>
+     * This is exposed so it can be passed to external processes.
+     */
+    @InputFile
+    RegularFileProperty getEnigmaProfileConfig();
 
 
     /**
@@ -30,21 +40,5 @@ public abstract class EnigmaProfileConsumingTask extends DefaultMappingsTask {
      * so they must be considered for up-to-date checks.
      */
     @InputFiles
-    protected abstract Property<FileCollection> getSimpleTypeFieldNamesFiles();
-
-    public EnigmaProfileConsumingTask(String group) {
-        super(group);
-
-        final Project project = this.getProject();
-
-        this.getSimpleTypeFieldNamesFiles().set(
-                project.provider(() -> project.files(
-                        this.getEnigmaProfile().get().getServiceProfiles(JarIndexerService.TYPE).stream()
-                        .flatMap(service -> service.getArgument(SIMPLE_TYPE_FIELD_NAMES_PATH).stream())
-                        .map(stringOrStrings -> stringOrStrings.mapBoth(Stream::of, Collection::stream))
-                        .flatMap(bothStringStreams -> bothStringStreams.left().orElseGet(bothStringStreams::rightOrThrow))
-                        .toList()
-                ))
-        );
-    }
+    Property<FileCollection> getSimpleTypeFieldNamesFiles();
 }

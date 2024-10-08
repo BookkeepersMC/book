@@ -19,7 +19,7 @@ public abstract class CheckUnpickVersionsMatchTask extends DefaultMappingsTask i
     public static final String TASK_NAME = "checkUnpickVersionsMatch";
 
     @InputFile
-    public abstract RegularFileProperty getUnpickJson();
+    public abstract RegularFileProperty getUnpickMeta();
 
     @Internal
     protected abstract Property<Boolean> getMatch();
@@ -38,7 +38,7 @@ public abstract class CheckUnpickVersionsMatchTask extends DefaultMappingsTask i
 
     @TaskAction
     public void checkMatch() throws IOException {
-        final JsonElement parsed = JsonParser.parseReader(new FileReader(this.getUnpickJson().getAsFile().get()));
+        final JsonElement parsed = JsonParser.parseReader(new FileReader(this.getUnpickMeta().getAsFile().get()));
         this.getMatch().set(
                 parsed.getAsJsonObject().get("unpickVersion").getAsString().equals(
                         this.libs().findVersion("unpick").map(VersionConstraint::getRequiredVersion).orElse("")

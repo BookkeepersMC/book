@@ -13,6 +13,7 @@ import java.util.Locale;
 import java.util.Objects;
 
 import book.mappings.Constants;
+import book.mappings.tasks.DefaultMappingsTask;
 import book.mappings.tasks.EnigmaProfileConsumingTask;
 import book.mappings.util.ProviderUtil;
 import org.gradle.api.file.RegularFileProperty;
@@ -40,7 +41,7 @@ import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 import org.jetbrains.annotations.VisibleForTesting;
 
-public abstract class AddProposedMappingsTask extends EnigmaProfileConsumingTask {
+public abstract class AddProposedMappingsTask extends DefaultMappingsTask implements EnigmaProfileConsumingTask {
     @InputFile
     public abstract RegularFileProperty getInputJar();
 

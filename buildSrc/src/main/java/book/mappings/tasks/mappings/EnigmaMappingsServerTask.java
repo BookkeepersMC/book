@@ -1,71 +1,73 @@
 package book.mappings.tasks.mappings;
 
-import book.mappings.Constants;
-import book.mappings.tasks.MappingsTask;
-import org.gradle.api.Project;
-import org.gradle.api.file.DirectoryProperty;
+import book.mappings.util.Password;
 import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.tasks.InputDirectory;
-import org.gradle.api.tasks.InputFile;
-import org.gradle.api.tasks.JavaExec;
+import org.gradle.api.provider.Property;
+import org.gradle.api.tasks.*;
+import org.quiltmc.enigma.network.DedicatedEnigmaServer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class EnigmaMappingsServerTask extends JavaExec implements MappingsTask {
-    @InputFile
-    private final RegularFileProperty jarToMap;
-    @InputDirectory
-    protected abstract DirectoryProperty getMappings();
+import static book.mappings.util.ProviderUtil.toOptional;
 
-    private final List<String> serverArgs;
+/**
+ * Starts a {@link DedicatedEnigmaServer}.
+ * <p>
+ * Optional inputs will be passed as command line args if present.
+ * <p>
+ * If {@link book.mappings.BookMappingsPlugin QuiltMappingsPlugin} is applied
+ * the follow gradle properties will be searched for default values:
+ * <ul>
+ *     <li> {@value book.mappings.BookMappingsPlugin#ENIGMA_SERVER_PORT_PROP} then
+ *     		{@value book.mappings.BookMappingsPlugin#PORT_PROP} for {@link #getPort() port}
+ *     <li> {@value book.mappings.BookMappingsPlugin#ENIGMA_SERVER_PASSWORD_PROP} then
+ *     		{@value book.mappings.BookMappingsPlugin#PASSWORD_PROP} for {@link #getPassword() password}
+ *     <li> {@value book.mappings.BookMappingsPlugin#ENIGMA_SERVER_LOG_PROP} then
+ *     		{@value book.mappings.BookMappingsPlugin#LOG_PROP} for the path to {@link #getLogFile() logFile}
+ *     <li> {@value book.mappings.BookMappingsPlugin#ENIGMA_SERVER_ARGS_PROP} then
+ *     		{@value book.mappings.BookMappingsPlugin#ARGS_PROP} for any additional command line args
+ * </ul>
+ */
+public abstract class EnigmaMappingsServerTask extends AbstractEnigmaMappingsTask {
+    @Optional
+    @Input
+    public abstract Property<String> getPort();
+
+    @Optional
+    @Input
+    public abstract Property<Password> getPassword();
+
+    @Optional
+    @OutputFile
+    public abstract RegularFileProperty getLogFile();
 
     public EnigmaMappingsServerTask() {
-        final Project project = this.getProject();
-        this.setGroup(Constants.Groups.MAPPINGS_GROUP);
-        this.getMainClass().set("org.quiltmc.enigma.network.DedicatedServerEnigma");
-        this.classpath(project.getConfigurations().getByName("enigmaRuntime"));
-        this.jvmArgs("-Xmx2048m");
-
-        this.jarToMap = getObjectFactory().fileProperty();
-        this.getMappings().convention(project.getLayout().dir(project.provider(() -> project.file("mappings"))));
-
-        this.serverArgs = new ArrayList<>();
-
-        if (project.hasProperty("port")) {
-            this.serverArgs.add("-port");
-            this.serverArgs.add(project.getProperties().get("port").toString());
-        }
-        if (project.hasProperty("password")) {
-            this.serverArgs.add("-password");
-            this.serverArgs.add(project.getProperties().get("password").toString());
-        }
-        if (project.hasProperty("log")) {
-            this.serverArgs.add("-log");
-            this.serverArgs.add(project.getProperties().get("log").toString());
-        } else {
-            this.serverArgs.add("-log");
-            this.serverArgs.add("build/logs/server.log");
-        }
-        if (project.hasProperty("args")) {
-            this.serverArgs.addAll(List.of(project.getProperties().get("args").toString().split(" ")));
-        }
+        // this configuration can stay here because it's what make this an EnigmaMappingsServerTask
+        this.getMainClass().convention(DedicatedEnigmaServer.class.getName());
     }
 
     @Override
     public void exec() {
-        var args = new ArrayList<>(List.of(
-                "-jar", this.jarToMap.get().getAsFile().getAbsolutePath(),
-                "-mappings", this.getMappings().get().getAsFile().getAbsolutePath(),
-                "-profile", "enigma_profile.json"
-        ));
-        args.addAll(this.serverArgs);
+        final List<String> optionalArgs = new ArrayList<>();
 
-        args(args);
+        toOptional(this.getPort()).ifPresent(port -> {
+            optionalArgs.add("-port");
+            optionalArgs.add(port);
+        });
+
+        toOptional(this.getPassword().map(Password::password)).ifPresent(password -> {
+            optionalArgs.add("-password");
+            optionalArgs.add(password);
+        });
+
+        toOptional(this.getLogFile().getAsFile()).ifPresent(log -> {
+            optionalArgs.add("-log");
+            optionalArgs.add(log.getAbsolutePath());
+        });
+
+        this.args(optionalArgs);
+
         super.exec();
-    }
-
-    public RegularFileProperty getJarToMap() {
-        return this.jarToMap;
     }
 }

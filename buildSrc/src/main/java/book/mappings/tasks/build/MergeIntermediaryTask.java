@@ -1,7 +1,5 @@
 package book.mappings.tasks.build;
 
-import book.mappings.MappingsPlugin;
-import book.mappings.tasks.setup.ExtractTinyMappingsTask;
 import net.fabricmc.mappingio.MappingVisitor;
 import net.fabricmc.mappingio.adapter.MappingDstNsReorder;
 import org.gradle.api.file.RegularFileProperty;
@@ -10,10 +8,7 @@ import org.jetbrains.annotations.VisibleForTesting;
 import book.mappings.Constants;
 import book.mappings.mappingio.DoubleNsCompleterVisitor;
 import book.mappings.mappingio.UnmappedNameRemoverVisitor;
-import book.mappings.tasks.setup.CheckIntermediaryMappingsTask;
-import book.mappings.tasks.setup.DownloadIntermediaryMappingsTask;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;

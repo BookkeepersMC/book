@@ -1,5 +1,6 @@
 package book.mappings.tasks.diff;
 
+import book.mappings.BookMappingsPlugin;
 import book.mappings.tasks.MappingsTask;
 import org.gradle.api.Transformer;
 import org.gradle.api.file.Directory;
@@ -17,7 +18,7 @@ import java.nio.file.Path;
  * <p>
  * A target version is a published mappings version obtained from maven.
  * <p>
- * If {@link book.mappings.MappingsPlugin MappingsPlugin} is applied, any {@code TargetVersionConsumingTask}s
+ * If {@link BookMappingsPlugin MappingsPlugin} is applied, any {@code TargetVersionConsumingTask}s
  * will use {@value CheckTargetVersionExistsTask#TASK_NAME}'s
  * {@link CheckTargetVersionExistsTask#getTargetVersion() targetVersion} by default, and they'll only run if the
  * {@link #getTargetVersion() targetVersion} {@link Provider#isPresent() isPresent}.
