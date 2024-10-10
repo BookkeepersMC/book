@@ -4,6 +4,9 @@ on:
   pull_request_target:
     types: [ labeled ]
 
+# Because it fails the first time running it??
+permissions: write-all    
+
 jobs:
   update:
     if: ${{ github.event.label.name == 'update-base' }}
