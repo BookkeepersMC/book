@@ -1,17 +1,25 @@
 package book.mappings.tasks.build;
 
 import book.mappings.Constants;
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.tasks.InputFile;
 
 import java.io.File;
 
 public abstract class AbstractHashedMergeTask extends AbstractTinyMergeTask {
-    public AbstractHashedMergeTask(String outputMappings) {
-        super(outputMappings, Constants.PER_VERSION_MAPPINGS_NAME);
+    @InputFile
+    public abstract RegularFileProperty getHashedTinyMappings();
+
+    public AbstractHashedMergeTask() {
+        super(Constants.PER_VERSION_MAPPINGS_NAME);
     }
 
     @Override
     public void mergeMappings() throws Exception {
-        File hashedTinyInput = this.getTaskByType(InvertPerVersionMappingsTask.class).getInvertedTinyFile();
-        mergeMappings(hashedTinyInput);
+        final File hashedTinyInput =
+                this.getTaskNamed(InvertPerVersionMappingsTask.TASK_NAME, InvertPerVersionMappingsTask.class)
+                        .getInvertedTinyFile().get().getAsFile();
+
+        this.mergeMappings(hashedTinyInput);
     }
 }

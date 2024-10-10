@@ -86,9 +86,9 @@ test {
 
 gradlePlugin {
 	plugins {
-		mappings {
-			id = 'mappings'
-			implementationClass = 'book.mappings.MappingsPlugin'
+		bookMappings {
+			id = 'book-mappings'
+			implementationClass = 'book.mappings.BookMappingsPlugin'
 		}
 	}
 }

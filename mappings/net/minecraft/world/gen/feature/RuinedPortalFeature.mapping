@@ -37,6 +37,7 @@ CLASS net/minecraft/unmapped/C_unuclzpi net/minecraft/world/gen/feature/RuinedPo
 	METHOD m_zammmhkv isCold (Lnet/minecraft/unmapped/C_hynzadkk;Lnet/minecraft/unmapped/C_cjzoxshv;I)Z
 		ARG 0 pos
 		ARG 1 biome
+		ARG 2 seaLevel
 	METHOD m_zegpgmcd (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 0 instance
 	CLASS C_kyptwvlo Setup
