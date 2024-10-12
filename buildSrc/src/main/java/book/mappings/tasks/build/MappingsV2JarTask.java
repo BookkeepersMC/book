@@ -1,10 +1,7 @@
 package book.mappings.tasks.build;
 
-import java.io.File;
 import java.util.Map;
 
-import org.gradle.api.GradleException;
-import org.gradle.api.artifacts.VersionConstraint;
 import org.gradle.api.file.RegularFile;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Provider;
@@ -12,7 +9,8 @@ import org.gradle.api.tasks.InputFile;
 import org.gradle.jvm.tasks.Jar;
 import book.mappings.Constants;
 import book.mappings.tasks.MappingsTask;
-import book.mappings.tasks.unpick.CombineUnpickDefinitionsTask;
+
+import javax.inject.Inject;
 
 public abstract class MappingsV2JarTask extends Jar implements MappingsTask {
     public static final String JAR_UNPICK_META_PATH = "extras/unpick.json";
@@ -28,25 +26,20 @@ public abstract class MappingsV2JarTask extends Jar implements MappingsTask {
     @InputFile
     public abstract RegularFileProperty getMappings();
 
-    public MappingsV2JarTask() {
+    // unpick version can't be a property because it's used when the task is instantiated
+    public final String unpickVersion;
+
+    @Inject
+    public MappingsV2JarTask(String unpickVersion) {
         this.setGroup(Constants.Groups.BUILD_MAPPINGS_GROUP);
         this.outputsNeverUpToDate();
 
-        final String version = this.libs().findVersion("unpick")
-                .map(VersionConstraint::getRequiredVersion)
-                // provide an informative error message if no version is specified
-                .orElseThrow(() -> new GradleException(
-                        """
-                        Could not find unpick version.
-                        \tIn order to use any MappingsV2JarTask, an "unpick" version must be specified in the 'libs' \
-                        version catalog (usually by adding it to 'gradle/libs.versions.toml').\
-                        """
-                ));
+        this.unpickVersion = unpickVersion;
 
         final Provider<RegularFile> unpickMeta = this.getUnpickMeta();
 
         this.from(unpickMeta, copySpec -> {
-            copySpec.expand(Map.of("version", version));
+            copySpec.expand(Map.of("version", this.unpickVersion));
             copySpec.rename(unused -> JAR_UNPICK_META_PATH);
         });
 
