@@ -435,7 +435,7 @@ CLASS net/minecraft/unmapped/C_astfners net/minecraft/entity/Entity
 		ARG 1 adjustedMovement
 	METHOD m_jjhhwbds updateDynamicGameEventListener (Ljava/util/function/BiConsumer;)V
 		ARG 1 updater
-	METHOD m_jjorggkg (Lnet/minecraft/unmapped/C_astfners;)V
+	METHOD m_jjorggkg (Lnet/minecraft/unmapped/C_astfners;)Z
 		ARG 0 passenger
 	METHOD m_jjzcqljk setYaw (F)V
 		ARG 1 yaw
@@ -479,6 +479,7 @@ CLASS net/minecraft/unmapped/C_astfners net/minecraft/entity/Entity
 	METHOD m_kvxkjouy setFireTicks (I)V
 		ARG 1 ticks
 	METHOD m_kymkfjov isAttackable ()Z
+	METHOD m_lajughou getLootTable ()Ljava/util/Optional;
 	METHOD m_lfjmpwyp hasPlayerRider ()Z
 	METHOD m_lfpuwmgu removeAllPassengers ()V
 	METHOD m_lgmmhwrc hasPassenger (Lnet/minecraft/unmapped/C_astfners;)Z

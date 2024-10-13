@@ -4,6 +4,9 @@ on:
   pull_request_target:
     types: [ labeled ]
 
+# Because it fails the first time running it??
+permissions: write-all    
+
 jobs:
   update:
     if: ${{ github.event.label.name == 'update-base' }}
@@ -12,7 +15,7 @@ jobs:
       result: ${{ steps.update-base.outputs.result }}
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/update-base/
+      - uses: ./.github/actions/base-updater/
         id: update-base
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

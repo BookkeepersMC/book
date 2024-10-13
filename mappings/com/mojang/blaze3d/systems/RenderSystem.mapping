@@ -12,7 +12,6 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 	FIELD recordingQueue RECORDING_QUEUE Ljava/util/concurrent/ConcurrentLinkedQueue;
 	FIELD renderThread renderThread Ljava/lang/Thread;
 	FIELD savedProjectionMatrix savedProjectionMatrix Lorg/joml/Matrix4f;
-	FIELD savedVertexSorting savedVertexSorting Lnet/minecraft/unmapped/C_onfzhami;
 	FIELD shaderColor SHADER_COLOR [F
 	FIELD shaderFog shaderFog Lnet/minecraft/unmapped/C_vidgpspy;
 	FIELD shaderGameTime shaderGameTime F
@@ -24,7 +23,6 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 	FIELD sharedSequentialLines SHARED_SEQUENTIAL_LINES Lcom/mojang/blaze3d/systems/RenderSystem$C_qjasdctt;
 	FIELD sharedSequentialQuad SHARED_SEQUENTIAL_QUAD Lcom/mojang/blaze3d/systems/RenderSystem$C_qjasdctt;
 	FIELD textureMatrix textureMatrix Lorg/joml/Matrix4f;
-	FIELD vertexSorting vertexSorting Lnet/minecraft/unmapped/C_onfzhami;
 	METHOD activeTexture activeTexture (I)V
 		ARG 0 texture
 	METHOD backupProjectionMatrix backupProjectionMatrix ()V
@@ -106,7 +104,6 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 		ARG 0 name
 		ARG 1 consumer
 	METHOD getTextureMatrix getTextureMatrix ()Lorg/joml/Matrix4f;
-	METHOD getVertexSorting getVertexSorting ()Lnet/minecraft/unmapped/C_onfzhami;
 	METHOD glBindBuffer glBindBuffer (II)V
 	METHOD glBindVertexArray glBindVertexArray (I)V
 	METHOD glBufferData glBufferData (ILjava/nio/ByteBuffer;I)V
@@ -202,9 +199,6 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 	METHOD restoreProjectionMatrix restoreProjectionMatrix ()V
 	METHOD setErrorCallback setErrorCallback (Lorg/lwjgl/glfw/GLFWErrorCallbackI;)V
 		ARG 0 callback
-	METHOD setProjectionMatrix setProjectionMatrix (Lorg/joml/Matrix4f;Lnet/minecraft/unmapped/C_onfzhami;)V
-		ARG 0 projectionMatrix
-		ARG 1 sorter
 	METHOD setShaderColor setShaderColor (FFFF)V
 		ARG 0 red
 		ARG 1 green
