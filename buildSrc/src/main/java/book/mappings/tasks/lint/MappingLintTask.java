@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.function.Function;
 
+import book.mappings.tasks.MappingsDirConsumingTask;
 import org.quiltmc.enigma.api.Enigma;
 import org.quiltmc.enigma.api.EnigmaProject;
 import org.quiltmc.enigma.api.ProgressListener;
@@ -46,12 +47,12 @@ import org.gradle.workers.WorkerExecutor;
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
 
-public abstract class MappingLintTask extends DefaultMappingsTask {
+public abstract class MappingLintTask extends DefaultMappingsTask implements MappingsDirConsumingTask {
     public static final String TASK_NAME = "mappingLint";
 
     @Incremental
     @InputDirectory
-    public abstract DirectoryProperty getMappingDirectory();
+    public abstract DirectoryProperty getMappingsDir();
 
     @InputFile
     public abstract RegularFileProperty getJarFile();
@@ -59,15 +60,16 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
     @Input
     public abstract SetProperty<Checker<Entry<?>>> getCheckers();
 
+    @InputFile
+    public abstract RegularFileProperty getDictionaryFile();
+
     @Inject
     public abstract WorkerExecutor getWorkerExecutor();
 
     public MappingLintTask() {
-        super(Constants.Groups.LINT_GROUP);
-        this.dependsOn(DownloadDictionaryFileTask.TASK_NAME);
+        super(Constants.Groups.LINT);
         // Ignore outputs for up-to-date checks as there aren't any (so only inputs are checked)
         this.getOutputs().upToDateWhen(task -> true);
-        this.getCheckers().set(Checker.DEFAULT_CHECKERS);
     }
 
     @TaskAction
@@ -77,9 +79,9 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
         workQueue.submit(LintAction.class, parameters -> {
             parameters.getJarFile().set(this.getJarFile());
             parameters.getCheckers().set(this.getCheckers());
-            parameters.getSpellingFile().set(this.mappingsExt().getFileConstants().dictionaryFile);
+            parameters.getSpellingFile().set(this.getDictionaryFile().get().getAsFile());
 
-            for (final FileChange change : changes.getFileChanges(this.getMappingDirectory())) {
+            for (final FileChange change : changes.getFileChanges(this.getMappingsDir())) {
                 if (change.getChangeType() != ChangeType.REMOVED && change.getFileType() == FileType.FILE) {
                     parameters.getMappingFiles().from(change.getFile());
                 }
@@ -214,7 +216,6 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
             }
         }
 
-        private record CheckerError(Severity severity, String message) {
-        }
+        private record CheckerError(Severity severity, String message) { }
     }
 }

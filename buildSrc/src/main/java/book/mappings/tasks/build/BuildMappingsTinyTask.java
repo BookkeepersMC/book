@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
+import book.mappings.tasks.MappingsDirConsumingTask;
 import book.mappings.util.ProviderUtil;
+import org.gradle.api.tasks.InputFile;
 import org.quiltmc.enigma.command.MapSpecializedMethodsCommand;
 import org.quiltmc.enigma.api.translation.mapping.serde.MappingParseException;
 import org.gradle.api.file.RegularFileProperty;
@@ -16,21 +18,17 @@ import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
 import book.mappings.tasks.jarmapping.MapPerVersionMappingsJarTask;
 
-public abstract class BuildMappingsTinyTask extends DefaultMappingsTask {
+public abstract class BuildMappingsTinyTask extends DefaultMappingsTask implements MappingsDirConsumingTask {
     public static final String TASK_NAME = "buildMappingsTiny";
-    @InputDirectory
-    public abstract RegularFileProperty getMappings();
+
+    @InputFile
+    public abstract RegularFileProperty getPerVersionMappingsJar();
 
     @OutputFile
     public abstract RegularFileProperty getOutputMappings();
 
     public BuildMappingsTinyTask() {
-        super(Constants.Groups.BUILD_MAPPINGS_GROUP);
-        this.dependsOn(MapPerVersionMappingsJarTask.TASK_NAME);
-        this.getOutputMappings().convention(() ->
-                new File(this.fileConstants.buildDir, String.format("%s.tiny", Constants.MAPPINGS_NAME))
-        );
-        this.getMappings().set(this.getProject().file("mappings"));
+        super(Constants.Groups.BUILD_MAPPINGS);
     }
 
     @TaskAction
@@ -38,8 +36,9 @@ public abstract class BuildMappingsTinyTask extends DefaultMappingsTask {
         this.getLogger().lifecycle(":generating tiny mappings");
 
         buildMappingsTiny(
-                this.fileConstants.perVersionMappingsJar.toPath(),
-                this.getMappings().get().getAsFile().toPath(),
+                // this.fileConstants.perVersionMappingsJar.toPath(),
+                ProviderUtil.getPath(this.getPerVersionMappingsJar()),
+                ProviderUtil.getPath(this.getMappingsDir()),
                 ProviderUtil.getPath(this.getOutputMappings())
         );
     }

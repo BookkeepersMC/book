@@ -32,13 +32,7 @@ public abstract class RemoveIntermediaryTask extends DefaultMappingsTask {
     public abstract RegularFileProperty getOutputMappings();
 
     public RemoveIntermediaryTask() {
-        super(Constants.Groups.BUILD_MAPPINGS_GROUP);
-        this.dependsOn(CheckIntermediaryMappingsTask.TASK_NAME, MergeIntermediaryTask.TASK_NAME);
-        this.onlyIf(task -> this.getTaskNamed(CheckIntermediaryMappingsTask.TASK_NAME, CheckIntermediaryMappingsTask.class).isPresent());
-
-        this.getOutputMappings().convention(() -> new File(fileConstants.buildDir, "mappings-intermediary.tiny"));
-
-        this.getInput().convention(this.getTaskNamed(MergeIntermediaryTask.TASK_NAME, MergeIntermediaryTask.class).getOutputMappings());
+        super(Constants.Groups.BUILD_MAPPINGS);
     }
 
     @TaskAction

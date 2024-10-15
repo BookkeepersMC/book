@@ -17,14 +17,14 @@ public abstract class AbstractDecompiler {
         this.project = project;
     }
 
-    public void decompile(Path file, Path outputDir, Map<String, Object> options, Collection<File> libraries) {
-        decompile(file.toFile(), outputDir.toFile(), options, libraries);
+    public void decompile(Collection<Path> sources, Path outputDir, Map<String, Object> options, Collection<File> libraries) {
+        this.decompile(sources.stream().map(Path::toFile).toList(), outputDir.toFile(), options, libraries);
     }
 
-    public abstract void decompile(File file, File outputDir, Map<String, Object> options, Collection<File> libraries);
+    public abstract void decompile(Collection<File> sources, File outputDir, Map<String, Object> options, Collection<File> libraries);
 
     protected Project getProject() {
-        return project;
+        return this.project;
     }
 
     public void withClassJavadocProvider(ClassJavadocProvider javadocProvider) {

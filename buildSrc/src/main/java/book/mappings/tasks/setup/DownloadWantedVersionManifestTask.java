@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.Optional;
@@ -37,7 +36,7 @@ public abstract class DownloadWantedVersionManifestTask extends DefaultMappingsT
     public abstract RegularFileProperty getVersionFile();
 
     public DownloadWantedVersionManifestTask() {
-        super(Constants.Groups.SETUP_GROUP);
+        super(Constants.Groups.SETUP);
 
         // provide an informative error message if version data can't be obtained
         this.getManifestVersion().convention(this.getProject().provider(() -> {

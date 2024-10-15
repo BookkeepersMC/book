@@ -1,6 +1,5 @@
 package book.mappings.tasks.setup;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.gradle.api.file.RegularFileProperty;
@@ -16,7 +15,7 @@ public abstract class DownloadVersionsManifestTask extends DefaultMappingsTask {
     public abstract RegularFileProperty getManifestFile();
 
     public DownloadVersionsManifestTask() {
-        super(Constants.Groups.SETUP_GROUP);
+        super(Constants.Groups.SETUP);
     }
 
     @TaskAction

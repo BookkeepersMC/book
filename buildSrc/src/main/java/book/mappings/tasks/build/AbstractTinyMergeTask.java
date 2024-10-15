@@ -10,7 +10,6 @@ import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.VisibleForTesting;
 import book.mappings.Constants;
 import book.mappings.mappingio.CompleteInitializersVisitor;
@@ -38,7 +37,7 @@ public abstract class AbstractTinyMergeTask extends DefaultMappingsTask {
     }
 
     public AbstractTinyMergeTask(String mergeName, String fillName) {
-        super(Constants.Groups.BUILD_MAPPINGS_GROUP);
+        super(Constants.Groups.BUILD_MAPPINGS);
 
         this.mergeName = mergeName;
         this.fillName = fillName;

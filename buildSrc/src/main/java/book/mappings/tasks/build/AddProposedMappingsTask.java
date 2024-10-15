@@ -1,7 +1,6 @@
 package book.mappings.tasks.build;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
@@ -52,7 +51,7 @@ public abstract class AddProposedMappingsTask extends DefaultMappingsTask implem
     public abstract RegularFileProperty getOutputMappings();
 
     public AddProposedMappingsTask() {
-        super(Constants.Groups.BUILD_MAPPINGS_GROUP);
+        super(Constants.Groups.BUILD_MAPPINGS);
     }
 
     @TaskAction
@@ -92,11 +91,9 @@ public abstract class AddProposedMappingsTask extends DefaultMappingsTask implem
         final Path commandOutput = extraProcessing ? processedMappings : output;
 
         runCommands(jar,
-                commandInput,
-                commandOutput,
+                commandInput, commandOutput,
                 profile,
-                namespaces.get(0),
-                "named"
+                namespaces.getFirst(), "named"
         );
 
         if (extraProcessing) {

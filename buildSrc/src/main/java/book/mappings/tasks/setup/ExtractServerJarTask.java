@@ -1,6 +1,5 @@
 package book.mappings.tasks.setup;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
@@ -21,7 +20,7 @@ public abstract class ExtractServerJarTask extends DefaultMappingsTask {
     public abstract RegularFileProperty getServerJar();
 
     public ExtractServerJarTask() {
-        super(Constants.Groups.SETUP_GROUP);
+        super(Constants.Groups.SETUP);
     }
 
     @TaskAction

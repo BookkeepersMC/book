@@ -26,7 +26,6 @@ import org.quiltmc.launchermeta.version.v1.DownloadableFile;
 import org.quiltmc.launchermeta.version.v1.Library;
 import org.quiltmc.launchermeta.version.v1.Version;
 import book.mappings.Constants;
-import book.mappings.FileConstants;
 import book.mappings.tasks.DefaultMappingsTask;
 
 public abstract class DownloadMinecraftLibrariesTask extends DefaultMappingsTask {
@@ -45,7 +44,7 @@ public abstract class DownloadMinecraftLibrariesTask extends DefaultMappingsTask
     protected abstract MapProperty<String, File> getArtifactsByUrlImpl();
 
     public DownloadMinecraftLibrariesTask() {
-        super(Constants.Groups.SETUP_GROUP);
+        super(Constants.Groups.SETUP);
         // TODO is this because library sources may change even on the same version?
         this.outputsNeverUpToDate();
 
