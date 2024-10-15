@@ -4,6 +4,7 @@ import net.fabricmc.mappingio.MappingVisitor;
 import net.fabricmc.mappingio.adapter.MappingDstNsReorder;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
+import org.gradle.api.tasks.Optional;
 import org.jetbrains.annotations.VisibleForTesting;
 import book.mappings.Constants;
 import book.mappings.mappingio.DoubleNsCompleterVisitor;
@@ -13,8 +14,15 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
+import static book.mappings.util.ProviderUtil.exists;
+
 public abstract class MergeIntermediaryTask extends AbstractTinyMergeTask {
     public static final String TASK_NAME = "mergeIntermediary";
+
+    @Override
+    @Optional
+    @InputFile
+    public abstract RegularFileProperty getInput();
 
     @InputFile
     public abstract RegularFileProperty getMergedTinyMappings();
@@ -24,6 +32,8 @@ public abstract class MergeIntermediaryTask extends AbstractTinyMergeTask {
                 Constants.INTERMEDIARY_MAPPINGS_NAME,
                 Constants.PER_VERSION_MAPPINGS_NAME
         );
+
+        this.onlyIf(unused -> exists(this.getInput()));
     }
 
     @Override

@@ -9,22 +9,24 @@ import net.fabricmc.mappingio.format.tiny.Tiny2FileWriter;
 import net.fabricmc.mappingio.tree.MemoryMappingTree;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
+import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 import org.jetbrains.annotations.VisibleForTesting;
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
-import book.mappings.tasks.setup.CheckIntermediaryMappingsTask;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
 
+import static book.mappings.util.ProviderUtil.exists;
+
 public abstract class RemoveIntermediaryTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "removeIntermediary";
 
+    @Optional
     @InputFile
     public abstract RegularFileProperty getInput();
 
@@ -33,6 +35,8 @@ public abstract class RemoveIntermediaryTask extends DefaultMappingsTask {
 
     public RemoveIntermediaryTask() {
         super(Constants.Groups.BUILD_MAPPINGS);
+
+        this.onlyIf(unused -> exists(this.getInput()));
     }
 
     @TaskAction

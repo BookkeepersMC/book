@@ -20,14 +20,9 @@ import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
-import org.gradle.api.artifacts.Configuration;
-import org.gradle.api.artifacts.ConfigurationContainer;
-import org.gradle.api.artifacts.VersionCatalogsExtension;
-import org.gradle.api.artifacts.VersionConstraint;
-import org.gradle.api.file.Directory;
-import org.gradle.api.file.DirectoryProperty;
-import org.gradle.api.file.ProjectLayout;
-import org.gradle.api.file.RegularFile;
+import org.gradle.api.artifacts.*;
+import org.gradle.api.file.*;
+import org.gradle.api.model.ObjectFactory;
 import org.gradle.api.plugins.ExtensionContainer;
 import org.gradle.api.plugins.JavaBasePlugin;
 import org.gradle.api.plugins.JavaPluginExtension;
@@ -102,8 +97,10 @@ public abstract class BookMappingsPlugin implements Plugin<Project> {
             Constants.MAPPINGS_NAME + "-" + Constants.MAPPINGS_VERSION;
 
     @Inject
-    @NotNull
     public abstract ProviderFactory getProviders();
+
+    @Inject
+    public abstract ObjectFactory getObjects();
 
     @Override
     public void apply(@NotNull Project project) {
@@ -465,22 +462,6 @@ public abstract class BookMappingsPlugin implements Plugin<Project> {
             mappingLint.get().dependsOn(task);
         });
 
-        final var checkIntermediaryMappings =
-                tasks.register(CheckIntermediaryMappingsTask.TASK_NAME, CheckIntermediaryMappingsTask.class);
-
-        final var downloadIntermediaryMappings = tasks.register(
-                DownloadIntermediaryMappingsTask.TASK_NAME, DownloadIntermediaryMappingsTask.class,
-                task -> {
-                    // TODO temporary, until CheckIntermediaryMappingsTask is eliminated
-                    task.dependsOn(checkIntermediaryMappings);
-                    task.onlyIf(unused -> checkIntermediaryMappings.get().isPresent());
-
-                    task.getMappingsConfiguration().convention(intermediaryMappings);
-
-                    task.getJarFile().convention(createMappingsDest.apply(Constants.INTERMEDIARY_MAPPINGS_NAME, "jar"));
-                }
-        );
-
         final var mergeTinyV2 = tasks.register(MergeTinyV2Task.TASK_NAME, MergeTinyV2Task.class, task -> {
             // TODO this used to be dependent on v2UnmergedMappingsJar, but afaict it has no effect on this task
 
@@ -500,7 +481,21 @@ public abstract class BookMappingsPlugin implements Plugin<Project> {
         final var extractTinyIntermediaryMappings = tasks.register(
                 EXTRACT_TINY_INTERMEDIARY_MAPPINGS_TASK_NAME, ExtractTinyMappingsTask.class,
                 task -> {
-                    task.getJarFile().convention(downloadIntermediaryMappings.flatMap(DownloadMappingsTask::getJarFile));
+                    task.getJarFile().convention(
+                            providers.provider(() -> {
+                                        try {
+                                            return intermediaryMappings.getSingleFile();
+                                        } catch (ResolveException e) {
+                                            // returning null results in an empty provider
+                                            return null;
+                                        }
+                                    })
+                                    .flatMap(file -> {
+                                        final RegularFileProperty regularFile = this.getObjects().fileProperty();
+                                        regularFile.set(file);
+                                        return regularFile;
+                                    })
+                    );
 
                     task.getTinyFile().convention(createMappingsDest.apply(Constants.INTERMEDIARY_MAPPINGS_NAME, "tiny"));
                 }
@@ -509,9 +504,6 @@ public abstract class BookMappingsPlugin implements Plugin<Project> {
         final var mergeIntermediary = tasks.register(
                 MergeIntermediaryTask.TASK_NAME, MergeIntermediaryTask.class,
                 task -> {
-                    // TODO temporary, until CheckIntermediaryMappingsTask is eliminated
-                    task.dependsOn(checkIntermediaryMappings);
-                    task.onlyIf(unused -> checkIntermediaryMappings.get().isPresent());
 
                     task.getInput().convention(
                             extractTinyIntermediaryMappings.flatMap(ExtractTinyMappingsTask::getTinyFile)
@@ -528,9 +520,6 @@ public abstract class BookMappingsPlugin implements Plugin<Project> {
         final var removeIntermediary = tasks.register(
                 RemoveIntermediaryTask.TASK_NAME, RemoveIntermediaryTask.class,
                 task -> {
-                    // TODO temporary, until CheckIntermediaryMappingsTask is eliminated
-                    task.dependsOn(checkIntermediaryMappings);
-                    task.onlyIf(unused -> checkIntermediaryMappings.get().isPresent());
 
                     task.getInput().convention(mergeIntermediary.flatMap(MergeIntermediaryTask::getOutputMappings));
 
@@ -564,12 +553,9 @@ public abstract class BookMappingsPlugin implements Plugin<Project> {
         }
 
         final var intermediaryV2MappingsJar = tasks.register(
-                INTERMEDIARY_V_2_MAPPINGS_JAR_TASK_NAME, MappingsV2JarTask.class, unpickVersion
+                INTERMEDIARY_V_2_MAPPINGS_JAR_TASK_NAME, IntermediaryMappingsV2JarTask.class, unpickVersion
         );
         intermediaryV2MappingsJar.configure(task -> {
-            // TODO temporary, until CheckIntermediaryMappingsTask is eliminated
-            task.dependsOn(checkIntermediaryMappings);
-            task.onlyIf(unused -> checkIntermediaryMappings.get().isPresent());
 
             task.getMappings().convention(removeIntermediary.flatMap(RemoveIntermediaryTask::getOutputMappings));
 
@@ -672,12 +658,9 @@ public abstract class BookMappingsPlugin implements Plugin<Project> {
         });
 
         final var intermediaryV2MergedMappingsJar = tasks.register(
-                INTERMEDIARY_V_2_MERGED_MAPPINGS_JAR_TASK_NAME, MappingsV2JarTask.class, unpickVersion
+                INTERMEDIARY_V_2_MERGED_MAPPINGS_JAR_TASK_NAME, IntermediaryMappingsV2JarTask.class, unpickVersion
         );
         intermediaryV2MergedMappingsJar.configure(task -> {
-            // TODO temporary, until CheckIntermediaryMappingsTask is eliminated
-            task.dependsOn(checkIntermediaryMappings);
-            task.onlyIf(unused -> checkIntermediaryMappings.get().isPresent());
 
             task.getArchiveFileName().convention(ARCHIVE_FILE_NAME_PREFIX + "-intermediary-mergedv2.jar");
 
