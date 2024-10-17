@@ -3,29 +3,20 @@ package book.mappings.tasks.build;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.jvm.tasks.Jar;
+
 import book.mappings.Constants;
 import book.mappings.tasks.MappingsTask;
 
-public class TinyJarTask extends Jar implements MappingsTask {
+public abstract class TinyJarTask extends Jar implements MappingsTask {
     public static final String TASK_NAME = "tinyJar";
 
+    public static final String JAR_MAPPINGS_PATH = "mappings/mappings.tiny";
+
     @InputFile
-    private final RegularFileProperty mappings;
+    public abstract RegularFileProperty getMappings();
 
     public TinyJarTask() {
-        setGroup(Constants.Groups.BUILD_MAPPINGS_GROUP);
-        dependsOn(MergeTinyTask.TASK_NAME);
-
-        mappings = getProject().getObjects().fileProperty();
-        mappings.convention(this.getTaskByType(MergeTinyTask.class)::getOutputMappings);
-
-        getArchiveFileName().set(String.format("%s-%s.jar", Constants.MAPPINGS_NAME, Constants.MAPPINGS_VERSION));
-        getDestinationDirectory().set(getProject().file("build/libs"));
-        this.getArchiveClassifier().convention("");
-        from(mappings).rename(original -> "mappings/mappings.tiny");
-    }
-
-    public RegularFileProperty getMappings() {
-        return mappings;
+        this.setGroup(Constants.Groups.BUILD_MAPPINGS);
+        this.from(this.getMappings()).rename(original -> JAR_MAPPINGS_PATH);
     }
 }

@@ -1,11 +1,11 @@
 package book.mappings.decompile.vineflower;
 
-import org.jetbrains.java.decompiler.main.extern.IResultSaver;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.jar.Manifest;
+
+import org.jetbrains.java.decompiler.main.extern.IResultSaver;
 
 public class VineflowerResultSaver implements IResultSaver {
     private final Path outputPath;

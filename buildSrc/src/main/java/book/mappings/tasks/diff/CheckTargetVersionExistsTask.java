@@ -4,55 +4,68 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Comparator;
-import java.util.Optional;
 import java.util.stream.StreamSupport;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import org.gradle.api.GradleException;
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.provider.Property;
+import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
 
-public class CheckTargetVersionExistsTask extends DefaultMappingsTask {
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+public abstract class CheckTargetVersionExistsTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "checkTargetVersionExists";
 
     @Internal
-    private Optional<String> targetVersion = Optional.empty();
+    protected abstract Property<String> getTargetVersionImpl();
 
     @OutputFile
-    private final File metaFile;
+    public abstract RegularFileProperty getMetaFile();
 
     public CheckTargetVersionExistsTask() {
         super("diff");
-        this.outputsNeverUpToDate();
-        metaFile = new File(fileConstants.cacheFilesMinecraft, "book-mappings-" + Constants.MINECRAFT_VERSION + ".json");
+        this.getTargetVersionImpl().convention(this.getProject().provider(() -> {
+            throw new GradleException(
+                    "targetVersion has not been populated. " +
+                            "Its should only be accessed from others tasks' inputs or predicates and " +
+                            "only after checking if it's present."
+            );
+        }));
     }
 
     @TaskAction
     public void checkExists() {
         try {
+            final File metaFile = this.getMetaFile().get().getAsFile();
             this.startDownload()
                     .src("https://bookkeepersmc.github.io/meta/v2/versions/mappings" + Constants.MINECRAFT_VERSION)
                     .dest(metaFile)
                     .overwrite(true)
                     .download();
 
-            JsonElement parsed = JsonParser.parseReader(new FileReader(metaFile));
-            targetVersion = StreamSupport.stream(parsed.getAsJsonArray().spliterator(), false)
-                    .max(Comparator.comparing(element -> element.getAsJsonObject().get("build").getAsInt(), Integer::compare))
-                    .map(element -> element.getAsJsonObject().get("version").getAsString());
+            final JsonElement parsed = JsonParser.parseReader(new FileReader(metaFile));
+            this.getTargetVersionImpl().set(StreamSupport.stream(parsed.getAsJsonArray().spliterator(), false)
+                    .max(Comparator.comparing(
+                            element -> element.getAsJsonObject().get("build").getAsInt(),
+                            Integer::compare
+                    ))
+                    .map(element -> element.getAsJsonObject().get("version").getAsString())
+                    .orElse(null)
+            );
         } catch (IOException e) {
-            targetVersion = Optional.empty();
+            this.getLogger().error("Failed to read target version", e);
         }
     }
 
-    public Optional<String> getTargetVersion() {
-        return targetVersion;
-    }
-
-    public File getMetaFile() {
-        return metaFile;
+    @Internal
+    public Provider<String> getTargetVersion() {
+        return this.getTargetVersionImpl();
     }
 }

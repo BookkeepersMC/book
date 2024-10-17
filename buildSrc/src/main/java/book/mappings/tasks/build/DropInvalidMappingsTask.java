@@ -1,36 +1,39 @@
 package book.mappings.tasks.build;
 
-import org.quiltmc.enigma.command.DropInvalidMappingsCommand;
+import org.gradle.api.GradleException;
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
-import book.mappings.tasks.jarmapping.MapPerVersionMappingsJarTask;
+import book.mappings.tasks.MappingsDirConsumingTask;
 
-import java.io.File;
+import org.quiltmc.enigma.command.DropInvalidMappingsCommand;
 
-public class DropInvalidMappingsTask extends DefaultMappingsTask {
+public abstract class DropInvalidMappingsTask extends DefaultMappingsTask implements MappingsDirConsumingTask {
     public static final String TASK_NAME = "dropInvalidMappings";
-    private final File mappings = getProject().file("mappings");
+
+    @InputFile
+    public abstract RegularFileProperty getPerVersionMappingsJar();
 
     public DropInvalidMappingsTask() {
-        super(Constants.Groups.BUILD_MAPPINGS_GROUP);
-        getInputs().dir(mappings);
-        this.dependsOn(MapPerVersionMappingsJarTask.TASK_NAME);
+        super(Constants.Groups.BUILD_MAPPINGS);
     }
 
     @TaskAction
     public void dropInvalidMappings() {
-        getLogger().info(":dropping invalid mappings");
+        this.getLogger().info(":dropping invalid mappings");
 
-        String[] args = new String[]{
-                fileConstants.perVersionMappingsJar.getAbsolutePath(),
-                mappings.getAbsolutePath()
+        final String[] args = new String[]{
+                this.getPerVersionMappingsJar().get().getAsFile().getAbsolutePath(),
+                this.getMappingsDir().get().getAsFile().getAbsolutePath()
         };
 
         try {
             new DropInvalidMappingsCommand().run(args);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new GradleException("Failed to drop mappings", e);
         }
     }
 }

@@ -1,21 +1,24 @@
 package book.mappings.decompile.vineflower;
 
-import net.fabricmc.fernflower.api.IFabricJavadocProvider;
+import java.io.File;
+import java.nio.file.Path;
+import java.util.Collection;
+import java.util.Map;
+
 import org.gradle.api.Project;
 import org.gradle.api.logging.LogLevel;
+
 import org.jetbrains.java.decompiler.main.decompiler.BaseDecompiler;
 import org.jetbrains.java.decompiler.main.extern.IFernflowerLogger;
 import org.jetbrains.java.decompiler.main.extern.IFernflowerPreferences;
 import org.jetbrains.java.decompiler.main.extern.IResultSaver;
+
 import book.mappings.decompile.AbstractDecompiler;
 import book.mappings.decompile.javadoc.ClassJavadocProvider;
 import book.mappings.decompile.javadoc.FieldJavadocProvider;
 import book.mappings.decompile.javadoc.MethodJavadocProvider;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.util.Collection;
-import java.util.Map;
+import net.fabricmc.fernflower.api.IFabricJavadocProvider;
 
 public class VineflowerDecompiler extends AbstractDecompiler {
     private IFabricJavadocProvider javadocProvider;
@@ -28,8 +31,8 @@ public class VineflowerDecompiler extends AbstractDecompiler {
     }
 
     @Override
-    public void decompile(File file, File outputDir, Map<String, Object> options, Collection<File> libraries) {
-        Path outputPath = outputDir.toPath();
+    public void decompile(Collection<File> sources, File outputDir, Map<String, Object> options, Collection<File> libraries) {
+        final Path outputPath = outputDir.toPath();
 
         // disable "inconsistent inner class" warning due to spam in the logs
         options.put(IFernflowerPreferences.WARN_INCONSISTENT_INNER_CLASSES, "0");
@@ -37,7 +40,7 @@ public class VineflowerDecompiler extends AbstractDecompiler {
         IFabricJavadocProvider javadocProvider = null;
         if (this.javadocProvider != null) {
             javadocProvider = this.javadocProvider;
-        } else if (hasMemberJavadocProvider()) {
+        } else if (this.hasMemberJavadocProvider()) {
             javadocProvider = new VineflowerJavadocProvider(this.classJavadocProvider, this.fieldJavadocProvider, this.methodJavadocProvider);
         }
 
@@ -45,11 +48,12 @@ public class VineflowerDecompiler extends AbstractDecompiler {
             options.put(IFabricJavadocProvider.PROPERTY_NAME, javadocProvider);
         }
 
-        IResultSaver resultSaver = new VineflowerResultSaver(outputPath);
+        final IResultSaver resultSaver = new VineflowerResultSaver(outputPath);
 
-        BaseDecompiler decompiler = new BaseDecompiler(resultSaver, options, new LoggerImpl());
+        final BaseDecompiler decompiler = new BaseDecompiler(resultSaver, options, new LoggerImpl());
 
-        decompiler.addSource(file);
+        sources.forEach(decompiler::addSource);
+
         for (File library : libraries) {
             decompiler.addLibrary(library);
         }

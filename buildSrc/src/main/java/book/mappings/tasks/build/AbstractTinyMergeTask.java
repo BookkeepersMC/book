@@ -10,8 +10,9 @@ import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
-import org.jetbrains.annotations.NotNull;
+
 import org.jetbrains.annotations.VisibleForTesting;
+
 import book.mappings.Constants;
 import book.mappings.mappingio.CompleteInitializersVisitor;
 import book.mappings.tasks.DefaultMappingsTask;
@@ -25,24 +26,20 @@ import net.fabricmc.mappingio.tree.MemoryMappingTree;
 
 public abstract class AbstractTinyMergeTask extends DefaultMappingsTask {
     @InputFile
-    protected final RegularFileProperty input;
+    public abstract RegularFileProperty getInput();
 
     @OutputFile
-    public File outputMappings;
+    public abstract RegularFileProperty getOutputMappings();
 
     protected final String mergeName;
     protected final String fillName;
 
-    public AbstractTinyMergeTask(String outputMappings, String mergeName) {
-        this(outputMappings, mergeName, mergeName);
+    public AbstractTinyMergeTask(String mergeName) {
+        this(mergeName, mergeName);
     }
 
-    public AbstractTinyMergeTask(String outputMappings, String mergeName, String fillName) {
-        super(Constants.Groups.BUILD_MAPPINGS_GROUP);
-        this.outputMappings = new File(fileConstants.buildDir, outputMappings);
-        getOutputs().file(this.outputMappings);
-
-        input = getProject().getObjects().fileProperty();
+    public AbstractTinyMergeTask(String mergeName, String fillName) {
+        super(Constants.Groups.BUILD_MAPPINGS);
 
         this.mergeName = mergeName;
         this.fillName = fillName;
@@ -52,24 +49,32 @@ public abstract class AbstractTinyMergeTask extends DefaultMappingsTask {
     public abstract void mergeMappings() throws Exception;
 
     protected void mergeMappings(File mergeTinyInput) throws Exception {
-        File mappingsTinyInput = input.get().getAsFile();
+        final File mappingsTinyInput = this.getInput().get().getAsFile();
 
-        getLogger().lifecycle(":merging {} and {}", Constants.MAPPINGS_NAME, this.mergeName);
-        mergeMappings(mappingsTinyInput.toPath(), mergeTinyInput.toPath(), outputMappings.toPath(),
-            this::getFirstVisitor, this::getPreWriteVisitor);
+        this.getLogger().lifecycle(":merging {} and {}", Constants.MAPPINGS_NAME, this.mergeName);
+        mergeMappings(
+                mappingsTinyInput.toPath(), mergeTinyInput.toPath(),
+                this.getOutputMappings().get().getAsFile().toPath(),
+                this::getFirstVisitor, this::getPreWriteVisitor
+        );
     }
 
     @VisibleForTesting
     public static void mergeMappings(Path mappingsTinyInput, Path mergeTinyInput, Path outputMappings,
                                      Function<MappingVisitor, MappingVisitor> firstVisitor,
                                      Function<MappingVisitor, MappingVisitor> preWriteVisitor) throws IOException {
-        MemoryMappingTree tree = new MemoryMappingTree(false); // hashed is the src namespace
+        final MemoryMappingTree tree = new MemoryMappingTree(false); // hashed is the src namespace
         MappingReader.read(mergeTinyInput, MappingFormat.TINY_2_FILE, tree);
         MappingReader.read(mappingsTinyInput, MappingFormat.TINY_2_FILE, tree);
         try (Tiny2FileWriter w = new Tiny2FileWriter(Files.newBufferedWriter(outputMappings), false)) {
             tree.accept(firstVisitor.apply(
                 new CompleteInitializersVisitor(
-                    new MappingSourceNsSwitch(preWriteVisitor.apply(w), "official", /*Drop methods not in hashed*/ true)
+                        new MappingSourceNsSwitch(
+                                preWriteVisitor.apply(w),
+                                "official",
+                                // Drop methods not in hashed
+                                true
+                        )
                 )
             ));
         }
@@ -81,14 +86,5 @@ public abstract class AbstractTinyMergeTask extends DefaultMappingsTask {
 
     protected MappingVisitor getPreWriteVisitor(MappingVisitor writer) {
         return writer;
-    }
-
-    public RegularFileProperty getInput() {
-        return input;
-    }
-
-    @NotNull
-    public File getOutputMappings() {
-        return outputMappings;
     }
 }

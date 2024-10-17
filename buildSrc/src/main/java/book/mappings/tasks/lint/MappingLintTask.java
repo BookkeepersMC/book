@@ -4,27 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 
-import org.quiltmc.enigma.api.Enigma;
-import org.quiltmc.enigma.api.EnigmaProject;
-import org.quiltmc.enigma.api.ProgressListener;
-import org.quiltmc.enigma.api.analysis.index.jar.EntryIndex;
-import org.quiltmc.enigma.api.class_provider.ClasspathClassProvider;
-import org.quiltmc.enigma.api.translation.mapping.EntryMapping;
-import org.quiltmc.enigma.api.translation.mapping.serde.MappingParseException;
-import org.quiltmc.enigma.api.translation.mapping.serde.enigma.EnigmaMappingsReader;
-import org.quiltmc.enigma.api.translation.mapping.tree.EntryTree;
-import org.quiltmc.enigma.api.translation.representation.AccessFlags;
-import org.quiltmc.enigma.api.translation.representation.entry.ClassEntry;
-import org.quiltmc.enigma.api.translation.representation.entry.Entry;
-import org.quiltmc.enigma.api.translation.representation.entry.MethodEntry;
 import javax.inject.Inject;
+
 import org.gradle.api.GradleException;
 import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.file.DirectoryProperty;
@@ -47,50 +31,60 @@ import org.gradle.workers.WorkAction;
 import org.gradle.workers.WorkParameters;
 import org.gradle.workers.WorkQueue;
 import org.gradle.workers.WorkerExecutor;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
+import book.mappings.tasks.MappingsDirConsumingTask;
 
-public abstract class MappingLintTask extends DefaultMappingsTask {
+import org.quiltmc.enigma.api.Enigma;
+import org.quiltmc.enigma.api.EnigmaProject;
+import org.quiltmc.enigma.api.ProgressListener;
+import org.quiltmc.enigma.api.analysis.index.jar.EntryIndex;
+import org.quiltmc.enigma.api.class_provider.ClasspathClassProvider;
+import org.quiltmc.enigma.api.translation.mapping.EntryMapping;
+import org.quiltmc.enigma.api.translation.mapping.serde.MappingParseException;
+import org.quiltmc.enigma.api.translation.mapping.serde.enigma.EnigmaMappingsReader;
+import org.quiltmc.enigma.api.translation.mapping.tree.EntryTree;
+import org.quiltmc.enigma.api.translation.representation.AccessFlags;
+import org.quiltmc.enigma.api.translation.representation.entry.ClassEntry;
+import org.quiltmc.enigma.api.translation.representation.entry.Entry;
+import org.quiltmc.enigma.api.translation.representation.entry.MethodEntry;
+
+public abstract class MappingLintTask extends DefaultMappingsTask implements MappingsDirConsumingTask {
     public static final String TASK_NAME = "mappingLint";
-    private final DirectoryProperty mappingDirectory = getProject().getObjects().directoryProperty();
-    private final RegularFileProperty jarFile;
-
-    public MappingLintTask() {
-        super(Constants.Groups.LINT_GROUP);
-        this.dependsOn(DownloadDictionaryFileTask.TASK_NAME);
-        // Ignore outputs for up-to-date checks as there aren't any (so only inputs are checked)
-        getOutputs().upToDateWhen(task -> true);
-        jarFile = getProject().getObjects().fileProperty();
-        getCheckers().set(Checker.DEFAULT_CHECKERS);
-    }
 
     @Incremental
     @InputDirectory
-    public DirectoryProperty getMappingDirectory() {
-        return mappingDirectory;
-    }
+    public abstract DirectoryProperty getMappingsDir();
 
     @InputFile
-    public RegularFileProperty getJarFile() {
-        return jarFile;
-    }
+    public abstract RegularFileProperty getJarFile();
 
     @Input
     public abstract SetProperty<Checker<Entry<?>>> getCheckers();
 
+    @InputFile
+    public abstract RegularFileProperty getDictionaryFile();
+
     @Inject
     public abstract WorkerExecutor getWorkerExecutor();
 
+    public MappingLintTask() {
+        super(Constants.Groups.LINT);
+        // Ignore outputs for up-to-date checks as there aren't any (so only inputs are checked)
+        this.getOutputs().upToDateWhen(task -> true);
+    }
+
     @TaskAction
     public void run(InputChanges changes) {
-        WorkQueue workQueue = getWorkerExecutor().noIsolation();
+        final WorkQueue workQueue = this.getWorkerExecutor().noIsolation();
 
         workQueue.submit(LintAction.class, parameters -> {
-            parameters.getJarFile().set(getJarFile());
-            parameters.getCheckers().set(getCheckers());
-            parameters.getSpellingFile().set(this.mappingsExt().getFileConstants().dictionaryFile);
+            parameters.getJarFile().set(this.getJarFile());
+            parameters.getCheckers().set(this.getCheckers());
+            parameters.getSpellingFile().set(this.getDictionaryFile().get().getAsFile());
 
-            for (FileChange change : changes.getFileChanges(getMappingDirectory())) {
+            for (final FileChange change : changes.getFileChanges(this.getMappingsDir())) {
                 if (change.getChangeType() != ChangeType.REMOVED && change.getFileType() == FileType.FILE) {
                     parameters.getMappingFiles().from(change.getFile());
                 }
@@ -100,13 +94,15 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
         workQueue.await();
     }
 
-    private static EntryTree<EntryMapping> readMappings(FileCollection files) throws IOException, MappingParseException {
-        Path[] paths = files.getFiles().stream().map(File::toPath).toArray(Path[]::new);
+    private static EntryTree<EntryMapping> readMappings(
+            FileCollection files
+    ) throws IOException, MappingParseException {
+        final Path[] paths = files.getFiles().stream().map(File::toPath).toArray(Path[]::new);
         return EnigmaMappingsReader.readFiles(ProgressListener.createEmpty(), paths);
     }
 
     private static String getFullName(EntryTree<EntryMapping> mappings, Entry<?> entry) {
-        String name = mappings.get(entry).targetName();
+        String name = Objects.requireNonNull(mappings.get(entry)).targetName();
 
         if (name == null) {
             name = "<anonymous>";
@@ -143,20 +139,24 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
         @Override
         public void execute() {
             try {
-                LintParameters params = getParameters();
-                Set<Checker<Entry<?>>> checkers = getParameters().getCheckers().get();
+                final LintParameters params = this.getParameters();
+                final Set<Checker<Entry<?>>> checkers = this.getParameters().getCheckers().get();
 
-                checkers.forEach(checker -> checker.update(getParameters()));
+                checkers.forEach(checker -> checker.update(this.getParameters()));
 
-                Map<Severity, List<String>> messagesBySeverity = new EnumMap<>(Severity.class);
+                final Map<Severity, List<String>> messagesBySeverity = new EnumMap<>(Severity.class);
 
                 // Set up Enigma
-                Enigma enigma = Enigma.create();
-                EnigmaProject project = enigma.openJar(params.getJarFile().get().getAsFile().toPath(), new ClasspathClassProvider(), ProgressListener.createEmpty());
-                EntryTree<EntryMapping> mappings = readMappings(getParameters().getMappingFiles());
+                final Enigma enigma = Enigma.create();
+                final EnigmaProject project = enigma.openJar(
+                        params.getJarFile().get().getAsFile().toPath(),
+                        new ClasspathClassProvider(),
+                        ProgressListener.createEmpty()
+                );
+                final EntryTree<EntryMapping> mappings = readMappings(this.getParameters().getMappingFiles());
                 project.setMappings(mappings, ProgressListener.createEmpty());
-                Function<Entry<?>, AccessFlags> accessProvider = entry -> {
-                    EntryIndex index = project.getJarIndex().getIndex(EntryIndex.class);
+                final Function<Entry<?>, AccessFlags> accessProvider = entry -> {
+                    final EntryIndex index = project.getJarIndex().getIndex(EntryIndex.class);
 
                     if (entry instanceof ClassEntry c) {
                         return index.getClassAccess(c);
@@ -166,19 +166,23 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
                 };
 
                 mappings.getAllEntries().parallel().forEach(entry -> {
-                    EntryMapping mapping = mappings.get(entry);
+                    final EntryMapping mapping = mappings.get(entry);
                     assert mapping != null;
-                    List<CheckerError> localErrors = new ArrayList<>();
+                    final List<CheckerError> localErrors = new ArrayList<>();
 
-                    for (Checker<Entry<?>> checker : checkers) {
-                        checker.check(entry, mapping, accessProvider, (severity, message) -> localErrors.add(new CheckerError(severity, message)));
+                    for (final Checker<Entry<?>> checker : checkers) {
+                        checker.check(
+                                entry, mapping, accessProvider,
+                                (severity, message) -> localErrors.add(new CheckerError(severity, message))
+                        );
                     }
 
                     if (!localErrors.isEmpty()) {
-                        String name = getFullName(mappings, entry);
+                        final String name = getFullName(mappings, entry);
 
-                        for (CheckerError error : localErrors) {
-                            messagesBySeverity.computeIfAbsent(error.severity(), s -> new ArrayList<>()).add(name + ": " + error.message());
+                        for (final CheckerError error : localErrors) {
+                            messagesBySeverity.computeIfAbsent(error.severity(), s -> new ArrayList<>())
+                                    .add(name + ": " + error.message());
                         }
                     }
                 });
@@ -187,21 +191,21 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
                     int errors = 0;
                     int warnings = 0;
 
-                    for (var entry : messagesBySeverity.entrySet()) {
+                    for (final var entry : messagesBySeverity.entrySet()) {
                         if (entry.getKey() == Severity.ERROR) {
-                            for (String message : entry.getValue()) {
+                            for (final String message : entry.getValue()) {
                                 errors++;
                                 LOGGER.error("error: {}", message);
                             }
                         } else {
-                            for (String message : entry.getValue()) {
+                            for (final String message : entry.getValue()) {
                                 warnings++;
                                 LOGGER.warn("warning: {}", message);
                             }
                         }
                     }
 
-                    String message = String.format("Found %d errors and %d warnings!", errors, warnings);
+                    final String message = String.format("Found %d errors and %d warnings!", errors, warnings);
                     LOGGER.warn(message);
 
                     if (errors > 0) {
@@ -215,7 +219,6 @@ public abstract class MappingLintTask extends DefaultMappingsTask {
             }
         }
 
-        private record CheckerError(Severity severity, String message) {
-        }
+        private record CheckerError(Severity severity, String message) { }
     }
 }

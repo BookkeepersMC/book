@@ -1,13 +1,14 @@
 package book.mappings.mappingio;
 
-import net.fabricmc.mappingio.MappedElementKind;
-import net.fabricmc.mappingio.MappingVisitor;
-import net.fabricmc.mappingio.adapter.ForwardingMappingVisitor;
-import org.jetbrains.annotations.Nullable;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+
+import org.jetbrains.annotations.Nullable;
+
+import net.fabricmc.mappingio.MappedElementKind;
+import net.fabricmc.mappingio.MappingVisitor;
+import net.fabricmc.mappingio.adapter.ForwardingMappingVisitor;
 
 /**
  * A {@link ForwardingMappingVisitor} that completes a given namespace with names from another one,

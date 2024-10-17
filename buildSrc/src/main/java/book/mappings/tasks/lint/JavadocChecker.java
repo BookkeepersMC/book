@@ -1,13 +1,13 @@
 package book.mappings.tasks.lint;
 
+import java.util.function.Function;
+import java.util.regex.Pattern;
+
 import org.quiltmc.enigma.api.translation.mapping.EntryMapping;
 import org.quiltmc.enigma.api.translation.representation.AccessFlags;
 import org.quiltmc.enigma.api.translation.representation.entry.Entry;
 import org.quiltmc.enigma.api.translation.representation.entry.LocalVariableEntry;
 import org.quiltmc.enigma.api.translation.representation.entry.MethodEntry;
-
-import java.util.function.Function;
-import java.util.regex.Pattern;
 
 public final class JavadocChecker implements Checker<Entry<?>> {
     private static final Pattern PARAM_DOC_LINE = Pattern.compile("^@param\\s+[^<].*$");

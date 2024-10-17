@@ -1,12 +1,12 @@
 package book.mappings.mappingio;
 
-import net.fabricmc.mappingio.MappedElementKind;
-import net.fabricmc.mappingio.MappingVisitor;
-import net.fabricmc.mappingio.adapter.ForwardingMappingVisitor;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+
+import net.fabricmc.mappingio.MappedElementKind;
+import net.fabricmc.mappingio.MappingVisitor;
+import net.fabricmc.mappingio.adapter.ForwardingMappingVisitor;
 
 /**
  * A {@link ForwardingMappingVisitor} that fills all destination namespaces with missing {@code <init>} names.

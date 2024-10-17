@@ -1,5 +1,6 @@
 name: Release
 on: [push]
+
 jobs:
   publish:
     if: ${{ github.repository_owner == 'BookkeepersMC' }}

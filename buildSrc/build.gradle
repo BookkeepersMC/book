@@ -1,6 +1,7 @@
 plugins {
 	id 'java'
 	id 'java-gradle-plugin'
+	id 'checkstyle'
 }
 
 repositories {
@@ -84,11 +85,16 @@ test {
 	enableAssertions = false
 }
 
+checkstyle {
+	toolVersion = "10.17.0"
+	configFile = file('checkstyle.xml')
+}
+
 gradlePlugin {
 	plugins {
-		mappings {
-			id = 'mappings'
-			implementationClass = 'book.mappings.MappingsPlugin'
+		bookMappings {
+			id = 'book-mappings'
+			implementationClass = 'book.mappings.BookMappingsPlugin'
 		}
 	}
 }
