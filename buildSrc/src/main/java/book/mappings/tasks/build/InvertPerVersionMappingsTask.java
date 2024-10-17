@@ -2,13 +2,13 @@ package book.mappings.tasks.build;
 
 import java.io.File;
 
-import book.mappings.BookMappingsPlugin;
-import book.mappings.tasks.setup.ExtractTinyMappingsTask;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
+
 import org.jetbrains.annotations.VisibleForTesting;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
 

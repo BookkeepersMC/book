@@ -1,16 +1,15 @@
 package book.mappings.tasks.build;
 
-import book.mappings.tasks.MappingsDirConsumingTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
-import org.quiltmc.enigma.command.DropInvalidMappingsCommand;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
-import book.mappings.tasks.jarmapping.MapPerVersionMappingsJarTask;
+import book.mappings.tasks.MappingsDirConsumingTask;
 
-import java.io.File;
+import org.quiltmc.enigma.command.DropInvalidMappingsCommand;
 
 public abstract class DropInvalidMappingsTask extends DefaultMappingsTask implements MappingsDirConsumingTask {
     public static final String TASK_NAME = "dropInvalidMappings";

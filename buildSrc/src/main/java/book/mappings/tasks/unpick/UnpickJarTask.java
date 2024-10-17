@@ -3,10 +3,10 @@ package book.mappings.tasks.unpick;
 import java.util.List;
 
 import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.model.ObjectFactory;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.JavaExec;
 import org.gradle.api.tasks.OutputFile;
+
 import book.mappings.Constants;
 import book.mappings.tasks.MappingsTask;
 

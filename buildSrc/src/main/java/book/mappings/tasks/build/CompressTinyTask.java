@@ -1,6 +1,5 @@
 package book.mappings.tasks.build;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,6 +9,7 @@ import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
 
@@ -44,5 +44,6 @@ public abstract class CompressTinyTask extends DefaultMappingsTask {
 
             outputStream.finish();
         }
+
     }
 }

@@ -1,10 +1,11 @@
 package book.mappings.tasks.build;
 
-import book.mappings.tasks.decompile.DecompileTask;
-import org.apache.commons.io.FileUtils;
-
 import java.io.IOException;
 import java.util.Map;
+
+import book.mappings.tasks.decompile.DecompileTask;
+
+import org.apache.commons.io.FileUtils;
 
 public abstract class GenFakeSourceTask extends DecompileTask {
     public static final String TASK_NAME = "genFakeSource";

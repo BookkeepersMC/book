@@ -1,27 +1,7 @@
 package quilt.internal;
 
-import book.mappings.Constants;
-import net.fabricmc.mappingio.tree.MappingTree;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.condition.EnabledIf;
-import org.junit.jupiter.api.io.CleanupMode;
-import org.junit.jupiter.api.io.TempDir;
-import book.mappings.tasks.build.AddProposedMappingsTask;
-import book.mappings.tasks.build.BuildMappingsTinyTask;
-import book.mappings.tasks.build.InvertPerVersionMappingsTask;
-import book.mappings.tasks.build.MergeIntermediaryTask;
-import book.mappings.tasks.build.MergeTinyTask;
-import book.mappings.tasks.build.MergeTinyV2Task;
-import book.mappings.tasks.build.RemoveIntermediaryTask;
-import book.mappings.tasks.unpick.CombineUnpickDefinitionsTask;
-import book.mappings.tasks.unpick.RemapUnpickDefinitionsTask;
-import book.mappings.util.JarRemapper;
-import org.quiltmc.enigma.api.EnigmaProfile;
-import quilt.internal.util.UnpickFile;
+import static org.junit.jupiter.api.Assertions.*;
+import static quilt.internal.util.MappingAssertions.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,8 +12,29 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static quilt.internal.util.MappingAssertions.*;
+import book.mappings.Constants;
+import book.mappings.tasks.build.AddProposedMappingsTask;
+import book.mappings.tasks.build.BuildMappingsTinyTask;
+import book.mappings.tasks.build.InvertPerVersionMappingsTask;
+import book.mappings.tasks.build.MergeIntermediaryTask;
+import book.mappings.tasks.build.MergeTinyTask;
+import book.mappings.tasks.build.MergeTinyV2Task;
+import book.mappings.tasks.build.RemoveIntermediaryTask;
+import book.mappings.tasks.unpick.CombineUnpickDefinitionsTask;
+import book.mappings.tasks.unpick.RemapUnpickDefinitionsTask;
+import book.mappings.util.JarRemapper;
+
+import net.fabricmc.mappingio.tree.MappingTree;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.condition.EnabledIf;
+import org.junit.jupiter.api.io.CleanupMode;
+import org.junit.jupiter.api.io.TempDir;
+import org.quiltmc.enigma.api.EnigmaProfile;
+import quilt.internal.util.UnpickFile;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @EnabledIf("obfJarExists")

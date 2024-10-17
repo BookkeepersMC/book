@@ -1,6 +1,7 @@
 package book.mappings.tasks;
 
 import org.gradle.api.Task;
+
 import book.mappings.BookMappingsExtension;
 import book.mappings.util.DownloadImmediate;
 

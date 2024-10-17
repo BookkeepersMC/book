@@ -1,11 +1,11 @@
 package quilt.internal.util;
 
+import java.util.Map;
+
 import daomephsta.unpick.impl.representations.AbstractConstantGroup;
 import daomephsta.unpick.impl.representations.FlagConstantGroup;
 import daomephsta.unpick.impl.representations.SimpleConstantGroup;
 import daomephsta.unpick.impl.representations.TargetMethods;
-
-import java.util.Map;
 
 public class UnpickFile {
     private final Map<String, AbstractConstantGroup<?>> groups;

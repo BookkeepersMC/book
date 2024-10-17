@@ -2,13 +2,14 @@ package book.mappings.tasks.diff;
 
 import java.util.Map;
 
-import book.mappings.Constants;
-import book.mappings.tasks.jarmapping.MapJarTask;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
+
+import book.mappings.Constants;
+import book.mappings.tasks.jarmapping.MapJarTask;
 
 public abstract class RemapTargetMinecraftJarTask extends MapJarTask implements UnpickVersionsMatchConsumingTask {
     public static final String TASK_NAME = "remapTargetMinecraftJar";

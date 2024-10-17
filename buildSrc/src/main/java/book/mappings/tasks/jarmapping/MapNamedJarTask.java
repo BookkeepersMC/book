@@ -15,4 +15,3 @@ public abstract class MapNamedJarTask extends MapJarTask {
         return JAVAX_TO_JETBRAINS;
     }
 }
-

@@ -1,9 +1,10 @@
 package book.mappings.tasks.decompile;
 
-import book.mappings.decompile.Decompilers;
-import org.apache.commons.io.FileUtils;
-
 import java.io.IOException;
+
+import book.mappings.decompile.Decompilers;
+
+import org.apache.commons.io.FileUtils;
 
 public abstract class DecompileVineflowerTask extends DecompileTask {
     public DecompileVineflowerTask() {

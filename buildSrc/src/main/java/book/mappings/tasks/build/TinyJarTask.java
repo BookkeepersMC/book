@@ -3,6 +3,7 @@ package book.mappings.tasks.build;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.jvm.tasks.Jar;
+
 import book.mappings.Constants;
 import book.mappings.tasks.MappingsTask;
 

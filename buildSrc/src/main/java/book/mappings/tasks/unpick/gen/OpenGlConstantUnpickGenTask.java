@@ -17,17 +17,17 @@ import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.provider.MapProperty;
+import org.gradle.api.tasks.*;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.TextNode;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.apache.commons.io.FileUtils;
-import org.gradle.api.file.ConfigurableFileCollection;
-import org.gradle.api.file.FileCollection;
-import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.provider.MapProperty;
-import org.gradle.api.tasks.*;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
@@ -136,7 +136,6 @@ public abstract class OpenGlConstantUnpickGenTask extends DefaultMappingsTask im
 
                     final ZipEntry e2 = zip.getEntry("org/lwjgl/opengl/GL" + version + "C.class");
                     final ClassReader reader2 = new ClassReader(zip.getInputStream(e2).readAllBytes());
-
 
                     reader.accept(
                             new ClassVisitor(Opcodes.ASM9) {

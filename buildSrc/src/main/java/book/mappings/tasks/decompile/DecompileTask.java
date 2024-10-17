@@ -1,8 +1,11 @@
 package book.mappings.tasks.decompile;
 
-import book.mappings.decompile.javadoc.UniversalJavadocProvider;
+import static book.mappings.util.ProviderUtil.toOptional;
+
+import java.io.IOException;
+import java.util.HashMap;
+
 import org.gradle.api.file.ConfigurableFileCollection;
-import org.gradle.api.file.FileCollection;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.MapProperty;
 import org.gradle.api.provider.Property;
@@ -12,22 +15,15 @@ import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.Constants;
 import book.mappings.decompile.AbstractDecompiler;
 import book.mappings.decompile.Decompilers;
 import book.mappings.decompile.javadoc.ClassJavadocProvider;
 import book.mappings.decompile.javadoc.FieldJavadocProvider;
 import book.mappings.decompile.javadoc.MethodJavadocProvider;
+import book.mappings.decompile.javadoc.UniversalJavadocProvider;
 import book.mappings.tasks.DefaultMappingsTask;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
-import static book.mappings.util.ProviderUtil.toOptional;
 
 public abstract class DecompileTask extends DefaultMappingsTask {
     @Input

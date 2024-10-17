@@ -1,6 +1,7 @@
 package book.mappings.tasks;
 
 import org.gradle.api.DefaultTask;
+
 import book.mappings.FileConstants;
 
 public abstract class DefaultMappingsTask extends DefaultTask implements MappingsTask {

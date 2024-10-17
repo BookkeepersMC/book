@@ -2,13 +2,15 @@ package book.mappings.tasks.setup;
 
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
+
+import org.apache.commons.io.FileUtils;
 
 public abstract class ExtractServerJarTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "extractServerJar";

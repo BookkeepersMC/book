@@ -1,15 +1,16 @@
 package book.mappings.tasks.mappings;
 
-import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.provider.Property;
-import org.gradle.api.tasks.*;
-import org.gradle.api.tasks.options.Option;
-import org.quiltmc.enigma.network.DedicatedEnigmaServer;
+import static book.mappings.util.ProviderUtil.toOptional;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static book.mappings.util.ProviderUtil.toOptional;
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.provider.Property;
+import org.gradle.api.tasks.*;
+import org.gradle.api.tasks.options.Option;
+
+import org.quiltmc.enigma.network.DedicatedEnigmaServer;
 
 /**
  * Starts a {@link DedicatedEnigmaServer}.

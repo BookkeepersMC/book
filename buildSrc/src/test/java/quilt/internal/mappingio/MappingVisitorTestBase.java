@@ -1,13 +1,13 @@
 package quilt.internal.mappingio;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.function.Function;
+
 import net.fabricmc.mappingio.MappingVisitor;
 import net.fabricmc.mappingio.tree.MappingTree;
 import net.fabricmc.mappingio.tree.MemoryMappingTree;
 import quilt.internal.util.MappingAssertions;
-
-import java.io.IOException;
-import java.nio.file.Path;
-import java.util.function.Function;
 
 public abstract class MappingVisitorTestBase extends MappingAssertions {
     public static Path file(String name) {

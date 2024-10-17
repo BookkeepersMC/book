@@ -10,14 +10,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import daomephsta.unpick.constantmappers.datadriven.parser.FieldKey;
-import daomephsta.unpick.constantmappers.datadriven.parser.MethodKey;
-import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Reader;
-import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Remapper;
-import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Writer;
 import javax.inject.Inject;
-import net.fabricmc.mappingio.MappingVisitor;
-import net.fabricmc.mappingio.adapter.MappingNsCompleter;
+
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Input;
@@ -28,11 +22,20 @@ import org.gradle.workers.WorkAction;
 import org.gradle.workers.WorkParameters;
 import org.gradle.workers.WorkQueue;
 import org.gradle.workers.WorkerExecutor;
+
 import org.jetbrains.annotations.VisibleForTesting;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
 import book.mappings.util.UnpickUtil;
 
+import daomephsta.unpick.constantmappers.datadriven.parser.FieldKey;
+import daomephsta.unpick.constantmappers.datadriven.parser.MethodKey;
+import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Reader;
+import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Remapper;
+import daomephsta.unpick.constantmappers.datadriven.parser.v2.UnpickV2Writer;
+import net.fabricmc.mappingio.MappingVisitor;
+import net.fabricmc.mappingio.adapter.MappingNsCompleter;
 import net.fabricmc.mappingio.format.tiny.Tiny2FileReader;
 import net.fabricmc.mappingio.tree.MappingTree;
 import net.fabricmc.mappingio.tree.MemoryMappingTree;

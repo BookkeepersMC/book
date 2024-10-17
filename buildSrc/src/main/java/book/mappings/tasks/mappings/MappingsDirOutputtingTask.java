@@ -1,8 +1,9 @@
 package book.mappings.tasks.mappings;
 
-import book.mappings.tasks.MappingsTask;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.tasks.Internal;
+
+import book.mappings.tasks.MappingsTask;
 
 public interface MappingsDirOutputtingTask extends MappingsTask {
     @Internal(

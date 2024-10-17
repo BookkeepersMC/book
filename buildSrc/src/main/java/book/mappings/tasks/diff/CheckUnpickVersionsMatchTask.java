@@ -3,8 +3,8 @@ package book.mappings.tasks.diff;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import javax.inject.Inject;
+
 import org.gradle.api.GradleException;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
@@ -13,9 +13,11 @@ import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.tasks.DefaultMappingsTask;
 
-import javax.inject.Inject;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 public abstract class CheckUnpickVersionsMatchTask extends DefaultMappingsTask implements TargetVersionConsumingTask {
     public static final String TASK_NAME = "checkUnpickVersionsMatch";

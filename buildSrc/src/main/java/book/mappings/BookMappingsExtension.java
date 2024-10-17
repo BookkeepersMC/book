@@ -1,15 +1,16 @@
 package book.mappings;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.file.RegularFile;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Provider;
-import org.quiltmc.enigma.api.EnigmaProfile;
 
-import java.io.File;
-import java.io.IOException;
+import org.quiltmc.enigma.api.EnigmaProfile;
 
 public abstract class BookMappingsExtension {
     public static final String EXTENSION_NAME = "bookMappings";
@@ -20,8 +21,7 @@ public abstract class BookMappingsExtension {
 
     /**
      * Don't parse this to create an {@link EnigmaProfile}, use {@link #enigmaProfile} instead.
-     * <p>
-     * This is exposed so it can be passed to external processes.
+     * <p>This is exposed so it can be passed to external processes.
      */
     public abstract RegularFileProperty getEnigmaProfileConfig();
 

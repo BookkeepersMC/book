@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.util.regex.Pattern;
 
 import javax.annotation.Nullable;
+
 import org.gradle.api.Action;
 
 import net.fabricmc.tinyremapper.OutputConsumerPath;

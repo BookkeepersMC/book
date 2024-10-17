@@ -1,7 +1,12 @@
 package book.mappings.tasks.lint;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
+
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.DirectoryProperty;
@@ -10,12 +15,8 @@ import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.TaskAction;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.util.*;
-import java.util.regex.Pattern;
-import java.nio.file.Path;
-import java.util.stream.Stream;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 
 public abstract class FindDuplicateMappingFilesTask extends DefaultTask {
     public static final String TASK_NAME = "findDuplicateMappingFiles";

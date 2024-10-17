@@ -11,34 +11,36 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.tasks.InputFile;
+import org.gradle.api.tasks.OutputFile;
+import org.gradle.api.tasks.TaskAction;
+
+import org.jetbrains.annotations.VisibleForTesting;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
 import book.mappings.tasks.EnigmaProfileConsumingTask;
 import book.mappings.util.ProviderUtil;
-import org.gradle.api.file.RegularFileProperty;
-import org.quiltmc.enigma.api.Enigma;
-import org.quiltmc.enigma.api.EnigmaProfile;
-import org.quiltmc.enigma.api.EnigmaProject;
-import org.quiltmc.enigma.command.Command;
-import org.quiltmc.enigma.command.FillClassMappingsCommand;
-import org.quiltmc.enigma.command.CommandsUtil;
-import org.quiltmc.enigma.api.translation.mapping.EntryMapping;
-import org.quiltmc.enigma.api.translation.mapping.MappingDelta;
-import org.quiltmc.enigma.api.translation.mapping.serde.MappingSaveParameters;
-import org.quiltmc.enigma.api.translation.mapping.tree.DeltaTrackingTree;
-import org.quiltmc.enigma.api.translation.mapping.tree.EntryTree;
-import org.quiltmc.enigma.util.EntryTreePrinter;
-import org.quiltmc.enigma.util.Utils;
+
 import net.fabricmc.mappingio.MappingWriter;
 import net.fabricmc.mappingio.adapter.MappingDstNsReorder;
 import net.fabricmc.mappingio.format.MappingFormat;
 import net.fabricmc.mappingio.format.tiny.Tiny2FileReader;
 import net.fabricmc.mappingio.tree.MemoryMappingTree;
-
-import org.gradle.api.tasks.InputFile;
-import org.gradle.api.tasks.OutputFile;
-import org.gradle.api.tasks.TaskAction;
-import org.jetbrains.annotations.VisibleForTesting;
+import org.quiltmc.enigma.api.Enigma;
+import org.quiltmc.enigma.api.EnigmaProfile;
+import org.quiltmc.enigma.api.EnigmaProject;
+import org.quiltmc.enigma.api.translation.mapping.EntryMapping;
+import org.quiltmc.enigma.api.translation.mapping.MappingDelta;
+import org.quiltmc.enigma.api.translation.mapping.serde.MappingSaveParameters;
+import org.quiltmc.enigma.api.translation.mapping.tree.DeltaTrackingTree;
+import org.quiltmc.enigma.api.translation.mapping.tree.EntryTree;
+import org.quiltmc.enigma.command.Command;
+import org.quiltmc.enigma.command.CommandsUtil;
+import org.quiltmc.enigma.command.FillClassMappingsCommand;
+import org.quiltmc.enigma.util.EntryTreePrinter;
+import org.quiltmc.enigma.util.Utils;
 
 public abstract class AddProposedMappingsTask extends DefaultMappingsTask implements EnigmaProfileConsumingTask {
     @InputFile

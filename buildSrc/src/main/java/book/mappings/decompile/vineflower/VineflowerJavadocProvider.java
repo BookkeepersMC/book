@@ -1,12 +1,14 @@
 package book.mappings.decompile.vineflower;
 
-import net.fabricmc.fernflower.api.IFabricJavadocProvider;
 import org.jetbrains.java.decompiler.struct.StructClass;
 import org.jetbrains.java.decompiler.struct.StructField;
 import org.jetbrains.java.decompiler.struct.StructMethod;
+
 import book.mappings.decompile.javadoc.ClassJavadocProvider;
 import book.mappings.decompile.javadoc.FieldJavadocProvider;
 import book.mappings.decompile.javadoc.MethodJavadocProvider;
+
+import net.fabricmc.fernflower.api.IFabricJavadocProvider;
 
 public class VineflowerJavadocProvider implements IFabricJavadocProvider {
     private final ClassJavadocProvider classJavadocProvider;

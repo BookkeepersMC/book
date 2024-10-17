@@ -1,15 +1,12 @@
 package book.mappings.util;
 
-import org.gradle.api.Project;
-import org.gradle.api.file.Directory;
-import org.gradle.api.file.FileSystemLocation;
-import org.gradle.api.file.FileSystemLocationProperty;
-import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.provider.Provider;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.util.Optional;
+
+import org.gradle.api.file.FileSystemLocation;
+import org.gradle.api.file.FileSystemLocationProperty;
+import org.gradle.api.provider.Provider;
 
 public final class ProviderUtil {
     private ProviderUtil() {

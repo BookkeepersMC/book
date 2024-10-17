@@ -1,14 +1,13 @@
 package book.mappings.tasks.mappings;
 
-import book.mappings.Constants;
-import book.mappings.tasks.EnigmaProfileConsumingTask;
-import book.mappings.tasks.MappingsDirConsumingTask;
-import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.JavaExec;
 import org.gradle.api.tasks.UntrackedTask;
+
+import book.mappings.Constants;
+import book.mappings.tasks.EnigmaProfileConsumingTask;
+import book.mappings.tasks.MappingsDirConsumingTask;
 
 @UntrackedTask(because =
         """

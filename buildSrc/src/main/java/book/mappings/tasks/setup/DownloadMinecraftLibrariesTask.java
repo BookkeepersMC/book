@@ -11,7 +11,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.apache.commons.io.FileUtils;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.file.RegularFileProperty;
@@ -22,11 +21,14 @@ import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.TaskAction;
+
+import book.mappings.Constants;
+import book.mappings.tasks.DefaultMappingsTask;
+
+import org.apache.commons.io.FileUtils;
 import org.quiltmc.launchermeta.version.v1.DownloadableFile;
 import org.quiltmc.launchermeta.version.v1.Library;
 import org.quiltmc.launchermeta.version.v1.Version;
-import book.mappings.Constants;
-import book.mappings.tasks.DefaultMappingsTask;
 
 public abstract class DownloadMinecraftLibrariesTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "downloadMinecraftLibraries";

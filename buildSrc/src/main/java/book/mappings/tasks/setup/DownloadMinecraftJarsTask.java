@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import com.google.common.hash.HashCode;
-import com.google.common.hash.Hashing;
-import com.google.common.io.Files;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
@@ -14,10 +11,15 @@ import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
-import org.quiltmc.launchermeta.version.v1.Downloads;
-import org.quiltmc.launchermeta.version.v1.Version;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
+
+import com.google.common.hash.HashCode;
+import com.google.common.hash.Hashing;
+import com.google.common.io.Files;
+import org.quiltmc.launchermeta.version.v1.Downloads;
+import org.quiltmc.launchermeta.version.v1.Version;
 
 public abstract class DownloadMinecraftJarsTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "downloadMinecraftJars";

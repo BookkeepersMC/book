@@ -1,10 +1,11 @@
 package book.mappings.tasks.build;
 
-import book.mappings.Constants;
+import java.io.File;
+
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 
-import java.io.File;
+import book.mappings.Constants;
 
 public abstract class AbstractHashedMergeTask extends AbstractTinyMergeTask {
     @InputFile

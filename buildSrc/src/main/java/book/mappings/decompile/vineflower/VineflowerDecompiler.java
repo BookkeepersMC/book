@@ -1,21 +1,24 @@
 package book.mappings.decompile.vineflower;
 
-import net.fabricmc.fernflower.api.IFabricJavadocProvider;
+import java.io.File;
+import java.nio.file.Path;
+import java.util.Collection;
+import java.util.Map;
+
 import org.gradle.api.Project;
 import org.gradle.api.logging.LogLevel;
+
 import org.jetbrains.java.decompiler.main.decompiler.BaseDecompiler;
 import org.jetbrains.java.decompiler.main.extern.IFernflowerLogger;
 import org.jetbrains.java.decompiler.main.extern.IFernflowerPreferences;
 import org.jetbrains.java.decompiler.main.extern.IResultSaver;
+
 import book.mappings.decompile.AbstractDecompiler;
 import book.mappings.decompile.javadoc.ClassJavadocProvider;
 import book.mappings.decompile.javadoc.FieldJavadocProvider;
 import book.mappings.decompile.javadoc.MethodJavadocProvider;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.util.Collection;
-import java.util.Map;
+import net.fabricmc.fernflower.api.IFabricJavadocProvider;
 
 public class VineflowerDecompiler extends AbstractDecompiler {
     private IFabricJavadocProvider javadocProvider;

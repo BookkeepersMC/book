@@ -1,13 +1,13 @@
 package book.mappings.tasks.lint;
 
+import java.util.function.Function;
+
 import org.quiltmc.enigma.api.translation.mapping.EntryMapping;
 import org.quiltmc.enigma.api.translation.representation.AccessFlags;
 import org.quiltmc.enigma.api.translation.representation.entry.ClassEntry;
 import org.quiltmc.enigma.api.translation.representation.entry.Entry;
 import org.quiltmc.enigma.api.translation.representation.entry.FieldEntry;
 import org.quiltmc.enigma.api.translation.representation.entry.MethodEntry;
-
-import java.util.function.Function;
 
 public class EntryNamingChecker implements Checker<Entry<?>> {
     private static final String UNMAPPED_CLASS_PACKAGE = "net/minecraft/unmapped/";

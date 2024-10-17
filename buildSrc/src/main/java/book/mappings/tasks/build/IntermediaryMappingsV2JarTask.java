@@ -1,10 +1,12 @@
 package book.mappings.tasks.build;
 
+import static book.mappings.util.ProviderUtil.exists;
+
+import javax.inject.Inject;
+
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Optional;
-
-import static book.mappings.util.ProviderUtil.exists;
 
 public abstract class IntermediaryMappingsV2JarTask extends MappingsV2JarTask {
     @Override
@@ -12,6 +14,7 @@ public abstract class IntermediaryMappingsV2JarTask extends MappingsV2JarTask {
     @InputFile
     public abstract RegularFileProperty getMappings();
 
+    @Inject
     public IntermediaryMappingsV2JarTask(String unpickVersion) {
         super(unpickVersion);
 

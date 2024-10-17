@@ -8,16 +8,18 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.Optional;
 
-import org.apache.commons.io.FileUtils;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.RegularFile;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.*;
-import org.quiltmc.launchermeta.version_manifest.VersionEntry;
-import org.quiltmc.launchermeta.version_manifest.VersionManifest;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
+
+import org.apache.commons.io.FileUtils;
+import org.quiltmc.launchermeta.version_manifest.VersionEntry;
+import org.quiltmc.launchermeta.version_manifest.VersionManifest;
 
 public abstract class DownloadWantedVersionManifestTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "downloadWantedVersionManifest";

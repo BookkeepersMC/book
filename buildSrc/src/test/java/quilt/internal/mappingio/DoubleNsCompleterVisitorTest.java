@@ -1,12 +1,13 @@
 package quilt.internal.mappingio;
 
+import java.nio.file.Path;
+
 import book.mappings.mappingio.DoubleNsCompleterVisitor;
+
 import net.fabricmc.mappingio.tree.MappingTree;
 import net.fabricmc.mappingio.tree.MemoryMappingTree;
 import org.junit.jupiter.api.Test;
 import quilt.internal.TestUtil;
-
-import java.nio.file.Path;
 
 public class DoubleNsCompleterVisitorTest extends MappingVisitorTestBase {
     public static final Path FILE = file("doubleNsCompleter.tiny");

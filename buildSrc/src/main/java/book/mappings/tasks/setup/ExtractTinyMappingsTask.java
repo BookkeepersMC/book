@@ -1,8 +1,7 @@
 package book.mappings.tasks.setup;
 
-import book.mappings.Constants;
-import book.mappings.tasks.DefaultMappingsTask;
-import org.apache.commons.io.FileUtils;
+import java.io.IOException;
+
 import org.gradle.api.file.FileTree;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.InputFile;
@@ -10,7 +9,10 @@ import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 
-import java.io.IOException;
+import book.mappings.Constants;
+import book.mappings.tasks.DefaultMappingsTask;
+
+import org.apache.commons.io.FileUtils;
 
 public abstract class ExtractTinyMappingsTask extends DefaultMappingsTask {
     public static final String TINY_MAPPINGS_FILE_NAME_SUFFIX = "mappings.tiny";

@@ -1,15 +1,10 @@
 package book.mappings.tasks.diff;
 
-import book.mappings.tasks.decompile.DecompileTask;
-import book.mappings.decompile.javadoc.MappingsJavadocProvider;
-import org.apache.commons.io.FileUtils;
-import org.gradle.api.GradleException;
-import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.provider.Property;
-import org.gradle.api.tasks.Input;
-import org.gradle.api.tasks.InputFile;
-
 import java.io.IOException;
+
+import book.mappings.tasks.decompile.DecompileTask;
+
+import org.apache.commons.io.FileUtils;
 
 public abstract class DecompileTargetTask extends DecompileTask implements UnpickVersionsMatchConsumingTask {
     // @Input

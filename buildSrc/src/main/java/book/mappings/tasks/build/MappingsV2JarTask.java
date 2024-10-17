@@ -2,16 +2,17 @@ package book.mappings.tasks.build;
 
 import java.util.Map;
 
+import javax.inject.Inject;
+
 import org.gradle.api.file.RegularFile;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Optional;
 import org.gradle.jvm.tasks.Jar;
+
 import book.mappings.Constants;
 import book.mappings.tasks.MappingsTask;
-
-import javax.inject.Inject;
 
 public abstract class MappingsV2JarTask extends Jar implements MappingsTask {
     public static final String JAR_UNPICK_META_PATH = "extras/unpick.json";

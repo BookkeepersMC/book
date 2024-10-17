@@ -1,7 +1,7 @@
 package book.mappings.tasks.setup;
 
-import book.mappings.Constants;
-import book.mappings.tasks.DefaultMappingsTask;
+import java.io.IOException;
+
 import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
@@ -9,7 +9,8 @@ import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 
-import java.io.IOException;
+import book.mappings.Constants;
+import book.mappings.tasks.DefaultMappingsTask;
 
 public abstract class DownloadMappingsTask extends DefaultMappingsTask {
     @InputFiles

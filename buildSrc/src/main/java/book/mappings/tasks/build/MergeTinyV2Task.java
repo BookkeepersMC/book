@@ -1,10 +1,10 @@
 package book.mappings.tasks.build;
 
-import org.jetbrains.annotations.VisibleForTesting;
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.function.Function;
+
+import org.jetbrains.annotations.VisibleForTesting;
 
 public abstract class MergeTinyV2Task extends AbstractHashedMergeTask {
     public static final String TASK_NAME = "mergeTinyV2";

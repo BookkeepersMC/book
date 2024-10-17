@@ -1,21 +1,22 @@
 package book.mappings.decompile.javadoc;
 
-import net.fabricmc.mappingio.format.tiny.Tiny2FileReader;
-import net.fabricmc.mappingio.tree.MappingTree;
-import net.fabricmc.mappingio.tree.MemoryMappingTree;
+import java.io.File;
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+
 import org.gradle.api.GradleException;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
 import org.gradle.api.provider.ValueSource;
 import org.gradle.api.provider.ValueSourceParameters;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
+import net.fabricmc.mappingio.format.tiny.Tiny2FileReader;
+import net.fabricmc.mappingio.tree.MappingTree;
+import net.fabricmc.mappingio.tree.MemoryMappingTree;
 
 public class MappingsJavadocProvider implements UniversalJavadocProvider {
-    private transient final MemoryMappingTree tree = new MemoryMappingTree();
+    private final transient MemoryMappingTree tree = new MemoryMappingTree();
     private final int namespaceId;
 
     public MappingsJavadocProvider(File mappingsFile, String namespace) throws IOException {
@@ -133,7 +134,7 @@ public class MappingsJavadocProvider implements UniversalJavadocProvider {
         return "Mapping not found";
     }
 
-    public static abstract class Source implements ValueSource<MappingsJavadocProvider, Source.Params> {
+    public abstract static class Source implements ValueSource<MappingsJavadocProvider, Source.Params> {
         @Override
         public MappingsJavadocProvider obtain() {
             final Params params = this.getParameters();

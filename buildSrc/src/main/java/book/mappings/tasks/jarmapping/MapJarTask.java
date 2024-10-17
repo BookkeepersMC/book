@@ -5,6 +5,7 @@ import java.util.Map;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.tasks.*;
+
 import book.mappings.tasks.DefaultMappingsTask;
 import book.mappings.util.JarRemapper;
 

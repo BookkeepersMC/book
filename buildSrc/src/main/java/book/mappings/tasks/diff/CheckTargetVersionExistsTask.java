@@ -4,11 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Comparator;
-import java.util.Optional;
 import java.util.stream.StreamSupport;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.RegularFileProperty;
 import org.gradle.api.provider.Property;
@@ -16,8 +13,12 @@ import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
+
 import book.mappings.Constants;
 import book.mappings.tasks.DefaultMappingsTask;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 public abstract class CheckTargetVersionExistsTask extends DefaultMappingsTask {
     public static final String TASK_NAME = "checkTargetVersionExists";

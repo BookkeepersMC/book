@@ -4,9 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-import de.undercouch.gradle.tasks.download.DownloadAction;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+
+import de.undercouch.gradle.tasks.download.DownloadAction;
 
 public class DownloadImmediate {
     private DownloadImmediate(Project project, Task task, String src, File dest, boolean overwrite) throws IOException {

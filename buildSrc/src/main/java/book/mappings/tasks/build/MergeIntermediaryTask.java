@@ -1,20 +1,23 @@
 package book.mappings.tasks.build;
 
-import net.fabricmc.mappingio.MappingVisitor;
-import net.fabricmc.mappingio.adapter.MappingDstNsReorder;
-import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.tasks.InputFile;
-import org.gradle.api.tasks.Optional;
-import org.jetbrains.annotations.VisibleForTesting;
-import book.mappings.Constants;
-import book.mappings.mappingio.DoubleNsCompleterVisitor;
-import book.mappings.mappingio.UnmappedNameRemoverVisitor;
+import static book.mappings.util.ProviderUtil.exists;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-import static book.mappings.util.ProviderUtil.exists;
+import org.gradle.api.file.RegularFileProperty;
+import org.gradle.api.tasks.InputFile;
+import org.gradle.api.tasks.Optional;
+
+import org.jetbrains.annotations.VisibleForTesting;
+
+import book.mappings.Constants;
+import book.mappings.mappingio.DoubleNsCompleterVisitor;
+import book.mappings.mappingio.UnmappedNameRemoverVisitor;
+
+import net.fabricmc.mappingio.MappingVisitor;
+import net.fabricmc.mappingio.adapter.MappingDstNsReorder;
 
 public abstract class MergeIntermediaryTask extends AbstractTinyMergeTask {
     public static final String TASK_NAME = "mergeIntermediary";

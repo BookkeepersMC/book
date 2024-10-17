@@ -1,6 +1,7 @@
 plugins {
 	id 'java'
 	id 'java-gradle-plugin'
+	id 'checkstyle'
 }
 
 repositories {
@@ -82,6 +83,11 @@ test {
 	dependsOn inputTestObf
 	useJUnitPlatform()
 	enableAssertions = false
+}
+
+checkstyle {
+	toolVersion = "10.17.0"
+	configFile = file('checkstyle.xml')
 }
 
 gradlePlugin {

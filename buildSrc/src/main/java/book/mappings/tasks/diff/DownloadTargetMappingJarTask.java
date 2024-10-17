@@ -4,11 +4,9 @@ import java.io.File;
 import java.io.IOException;
 
 import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.provider.Provider;
-import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
-import book.mappings.Constants;
+
 import book.mappings.tasks.DefaultMappingsTask;
 
 public abstract class DownloadTargetMappingJarTask extends DefaultMappingsTask implements TargetVersionConsumingTask {

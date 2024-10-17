@@ -1,7 +1,8 @@
 package book.mappings.tasks.diff;
 
-import book.mappings.BookMappingsPlugin;
-import book.mappings.tasks.MappingsTask;
+import java.io.File;
+import java.nio.file.Path;
+
 import org.gradle.api.Transformer;
 import org.gradle.api.file.Directory;
 import org.gradle.api.file.RegularFile;
@@ -10,8 +11,8 @@ import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Optional;
 
-import java.io.File;
-import java.nio.file.Path;
+import book.mappings.BookMappingsPlugin;
+import book.mappings.tasks.MappingsTask;
 
 /**
  * A task that takes a target version as input.

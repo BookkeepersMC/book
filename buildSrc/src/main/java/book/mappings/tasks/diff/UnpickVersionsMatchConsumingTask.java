@@ -1,10 +1,11 @@
 package book.mappings.tasks.diff;
 
-import book.mappings.BookMappingsPlugin;
 import org.gradle.api.provider.Property;
 import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Optional;
+
+import book.mappings.BookMappingsPlugin;
 
 /**
  * A task that takes whether two unpick versions match as input.

@@ -1,11 +1,12 @@
 package quilt.internal.mappingio;
 
+import java.nio.file.Path;
+
 import book.mappings.mappingio.CompleteInitializersVisitor;
+
 import net.fabricmc.mappingio.tree.MappingTree;
 import org.junit.jupiter.api.Test;
 import quilt.internal.TestUtil;
-
-import java.nio.file.Path;
 
 public class CompleteInitializersVisitorTest extends MappingVisitorTestBase {
     public static final Path FILE = file("completeInitializers.tiny");
