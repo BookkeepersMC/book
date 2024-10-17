@@ -15,7 +15,7 @@ jobs:
       result: ${{ steps.update-base.outputs.result }}
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/base-updater/
+      - uses: QuiltMC/quilt-mappings/.github/actions/update-base@1.21.1
         id: update-base
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
